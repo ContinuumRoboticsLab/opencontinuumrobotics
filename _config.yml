@@ -1,0 +1,94 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Open Continuum Robotics Project
+name: Continuum Robotics Lab
+email: crl-info@cs.toronto.edu
+description: >- # this means to ignore newlines until "baseurl:"
+  Open Continuum Robotics Project by the Continuum Robotics Laboratory, University of Toronto
+
+  Empowering everyone to build their own continuum robot and start their research.
+#move ~jbk to url for local deployment
+baseurl: "~jbk/opencontinuumrobotics" # the subpath of your site, e.g. /blog
+url: "https://www.cs.toronto.edu" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: BurgnerKahrs
+github_username:  ContinuumRoboticsLab
+
+logo: "/assets/images/CR_logo_icon.png"
+date_format: "%Y-%m-%d"
+
+include: ["_pages"]
+
+# Build settings
+theme: minimal-mistakes-jekyll #minima
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "default", "dirt", "neon", "mint", "plum", "sunrise"
+plugins:
+  - jekyll-feed
+locale: en-GB
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      read_time: true
+      show_date: true
+      paginate: 5 # amount of posts to show
+      paginate_path: /page:num/
+      paginate_path: /blog/page:num
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      image: /assets/images/
+
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/CRLaboratory"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/ContinuumRoboticsLab"
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
