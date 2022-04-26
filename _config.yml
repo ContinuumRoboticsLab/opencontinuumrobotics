@@ -25,8 +25,10 @@ description: >- # this means to ignore newlines until "baseurl:"
   Open Continuum Robotics Project by the Continuum Robotics Laboratory, University of Toronto
 
   Empowering everyone to build their own continuum robot and start their research.
-#move ~jbk to url for local deployment
-baseurl: "~jbk/opencontinuumrobotics" # the subpath of your site, e.g. /blog
+#local deployment
+baseurl: "/opencontinuumrobotics"
+#remote deploy
+#baseurl: "/~jbk/opencontinuumrobotics" # the subpath of your site, e.g. /blog
 url: "https://www.cs.toronto.edu" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: BurgnerKahrs
 github_username:  ContinuumRoboticsLab
@@ -50,6 +52,8 @@ defaults:
       type: posts
     values:
       layout: single
+      author_profile: true
+      mathjax: true
       read_time: true
       show_date: true
       paginate: 5 # amount of posts to show
@@ -61,7 +65,8 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
+      mathjax: true
       image: /assets/images/
 
 footer:

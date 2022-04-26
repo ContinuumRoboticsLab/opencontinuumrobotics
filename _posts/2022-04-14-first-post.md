@@ -1,5 +1,6 @@
 ---
 title: "Open Continuum Robotics Project"
+author: jbk
 ---
 # Welcome
 
