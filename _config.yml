@@ -45,6 +45,12 @@ plugins:
   - jekyll-feed
 locale: en-GB
 
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-9L7XX6LPRC"
+    anonymize_ip: false # default
+
 defaults:
   # _posts
   - scope:
@@ -59,6 +65,7 @@ defaults:
       paginate: 5 # amount of posts to show
       paginate_path: /page:num/
       paginate_path: /blog/page:num
+      share: true
   # _pages
   - scope:
       path: ""

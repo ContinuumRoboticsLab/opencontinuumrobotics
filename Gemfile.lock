@@ -106,12 +106,14 @@ GEM
     webrick (1.7.0)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-darwin-21
 
 DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.2.2)
   jekyll-feed (~> 0.12)
+  kramdown (~> 2.3.2)
   minimal-mistakes-jekyll
   tzinfo (~> 1.2)
   tzinfo-data

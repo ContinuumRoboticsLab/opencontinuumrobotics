@@ -1,8 +1,10 @@
 ---
 title: "Open Continuum Robotics Project"
 author: jbk
+header:
+  teaser: /assets/images/posts/cr_welcome_teaser.png
 ---
-# Welcome
+*What is the open continuum robotics project?*
 
 After over a decade of research on continuum robotics, the time is right to empower the world with open hardware and open software to build their own continuum robots. At the [Continuum Robotics Lab](https://crl.utm.utoronto.ca), we are excited to share that we will be launching our open robotics project in 2022. 
 

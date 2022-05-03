@@ -1,6 +1,10 @@
 ---
 title: "Motion Primitives"
 author: jbk
+toc: true
+category: 101
+header:
+  teaser: /assets/images/posts/cr_motion_primitives_teaser.png
 ---
 *What are the motion capabilities of a continuum robot?*
 
