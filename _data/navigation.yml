@@ -1,3 +1,7 @@
 main:
+  - title: "Software"
+    url: /software/
+  - title: "Hardware"
+    url: /hardware/
   - title: "Blog"
     url: /blog/
