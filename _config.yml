@@ -18,23 +18,23 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: OpenCR
-subtitle: Open Continuum Robotics Project
-name: Continuum Robotics Lab
-email: crl-info@cs.toronto.edu
+#title: Project
+#subtitle: Open Continuum Robotics Project
+name: Open Continuum Robotics Project
+email: opencrproject@cs.toronto.edu
 description: >- # this means to ignore newlines until "baseurl:"
   Open Continuum Robotics Project by the Continuum Robotics Laboratory, University of Toronto
 
   Empowering everyone to build their own continuum robot and start their research.
 #local deployment
-baseurl: "/opencontinuumrobotics"
+#baseurl: "/opencontinuumrobotics"
 #remote deploy
-#baseurl: "/~jbk/opencontinuumrobotics" # the subpath of your site, e.g. /blog
+baseurl: "/~jbk/opencontinuumrobotics" # the subpath of your site, e.g. /blog
 url: "https://www.cs.toronto.edu" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: BurgnerKahrs
+twitter_username: OpenCRProject1
 github_username:  ContinuumRoboticsLab
 
-logo: "/assets/images/CR_logo_icon.png"
+logo: "/assets/images/openCRProject_logo_header.png"
 date_format: "%Y-%m-%d"
 
 include: ["_pages"]
@@ -81,7 +81,7 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/CRLaboratory"
+      url: "https://twitter.com/OpenCRProject1"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/ContinuumRoboticsLab"
