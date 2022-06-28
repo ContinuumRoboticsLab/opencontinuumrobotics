@@ -31,7 +31,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 #remote deploy
 baseurl: "/~jbk/opencontinuumrobotics" # the subpath of your site, e.g. /blog
 url: "https://www.cs.toronto.edu" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: OpenCRProject1
+twitter_username: Open_CR_Project
 github_username:  ContinuumRoboticsLab
 
 logo: "/assets/images/openCRProject_logo_header.png"
@@ -76,6 +76,10 @@ defaults:
       author_profile: false
       mathjax: true
       image: /assets/images/
+
+category_archive:
+  type: liquid
+  path: /categories/
 
 footer:
   links:
