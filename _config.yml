@@ -52,6 +52,10 @@ analytics:
     tracking_id: "G-9L7XX6LPRC"
     anonymize_ip: false # default
 
+category_archive:
+  type: jekyll-archives
+  path: /blog/categories/
+
 defaults:
   # _posts
   - scope:

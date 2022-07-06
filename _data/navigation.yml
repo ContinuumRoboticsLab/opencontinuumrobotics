@@ -5,3 +5,14 @@ main:
     url: /hardware/
   - title: "Blog"
     url: /blog/
+
+blognav:
+  - title: "Recent"
+    url: /blog/
+  - title: "Continuum Robotics 101"
+    url: /categories/101/
+  - title: "By Category"
+    url: /categories/
+  - title: "By Year"
+    url: /year-archive/
+  
