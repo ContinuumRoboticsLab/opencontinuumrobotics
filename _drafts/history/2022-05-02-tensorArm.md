@@ -3,10 +3,17 @@ title: "Tensor arm"
 author: jbk
 toc: true
 category: history
+excerpt: An early continuum robot was driven by cables.
 header:
   teaser: /assets/images/posts/history/tensorArm_teaser.jpeg
 ---
-The Tensor Arm is a cable-driven hinged robot manipulator which was first presented in 1967. The manipulator is composed of a series of fifteen disks which are interconnected via universal joints and have multiple tendon routing channels. Actuation is achieved by tendons which terminate at respective disks. The design was patented in 1970 [^fn1]. According to the definition of a continuum robot, also the Tensor Arm is a quasi-continous but hyperredundant robot due to the presence of universal joints connecting the disks.
+The Tensor Arm is an early continuum robot presented in 1967 by Victor Anderson at the Marine Physical Laboratory (MPL) of the Scripps Institute of Oceanography in San Diego, CA, USA. It is a cable-driven hinged robot. The arm is composed of a series of fifteen disks accomodating multiple tendon routing channels which are interconnected via universal joints, resulting in two unrestricted degrees of freedom between each pair of disks. According to Anderson, the arm was invented to provide a manipulator with dexterity similar to the human arm.
+
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/posts/history/tensorArm_teaser.jpeg){: style="float: center"}
+
+Tensor arm is hydraulically actuated by nylon tendons routed along the exterior of the arm rather than by actuators placed at each joint. Four tendons are fixed to end disks at 90 degrees offsets to induce bending of a segment of the arm with two degrees of freedom. A pull on one side that is not compensated by an equal pull on the other side causes the arm to bend. 
+
+The design was patented in 1970 [^fn1]. According to the definition of a continuum robot, the Tensor Arm does not qualify as a continuum robot, but a quasi-continous, i.e. hyperredundant, robot, due to the presence of universal joints connecting the disks.
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/posts/history/tensorArm_patent.png){: style="float: left"}
 
 ## References
