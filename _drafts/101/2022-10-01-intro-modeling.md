@@ -19,9 +19,8 @@ of any robot.
 
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/posts/cr_101_modelingIntro_jointspace.png){: style="float: center"}
 
-# Mapping between Joint and Task Space
-The term joint space may be confusing for continuum robots as we commonly think of revolute or prismatic
-joints. Those are not necessarily present in a continuum robot as
+## Mapping between Joint and Task Space
+The term joint space may be confusing for continuum robots as we commonly think of revolute or prismatic joints. Those are not necessarily present in a continuum robot as
 actuation may be achieved by pulling on tendons or changing pressure in
 pneumatic components. Yet, we commonly refer to those actuator
 parameters as the robot's joint space and we are interested
@@ -65,7 +64,7 @@ for rigid-link systems. There exist multiple approaches on how this
 space curve can be determined based on the joint space parameters of a
 continuum robot. Those can be divided into **mechanics-based frameworks** and **kinematic frameworks**.
 
-# Mechanics-based Frameworks
+## Mechanics-based Frameworks
 
 Mechanics-based frameworks can either build on kinematics frameworks,
 such as lumped-parameter models, or build on classical elasticity theory
@@ -96,7 +95,7 @@ Today, we are focussing on the constant curvature
 kinematic framework, which is the most well-known and widely used
 kinematics framework for continuum robots. We will explore mechanics-based frameworks in future posts.
 
-# Constant Curvature Kinematic Framework
+## Constant Curvature Kinematic Framework
 
 Notice that, independent of the underlying physical structure, a common
 property exhibited by the majority of continuum robots is that the
@@ -153,7 +152,7 @@ exist.
 
 
 
-# Summary
+## Remarks
 
 Constant curvature is often referred to as the **constant curvature assumption**, but care must be taken when using this phrase
 because it may not always accurately describe the methodology used in

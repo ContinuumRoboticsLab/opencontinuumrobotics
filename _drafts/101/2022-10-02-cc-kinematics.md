@@ -7,7 +7,7 @@ excerpt: lorep ipsum
 header:
     teaser: assets/images/posts/cr_101_cc_teaser.png
 ---
-In our introductory post about [modeling of continuum robots]({% post_url 2022-10-01-intro_modeling %}), we learned that the constant curvature kinematics framework is very common. Today, we will look at the mappings between joint and configuration space, i.e. the **robot dependent mapping**, and between configuration and task space, i.e. the **robot independent mapping**.
+In our introductory post about [modeling of continuum robots]({% post_url 2022-10-01-intro-modeling %}), we learned that the constant curvature kinematics framework is very common. Today, we will look at the mappings between joint and configuration space, i.e. the **robot dependent mapping**, and between configuration and task space, i.e. the **robot independent mapping**.
 
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/posts/cr_101_modelingIntro_mappings.png)
 
@@ -20,7 +20,7 @@ configuration space in terms of circular arc parameters. Arc parameters
 define the robot's configuration and consist of triplets of curvature
 $$\kappa \in \mathbb{R}^{m}$$, the angle of the plane containing the arc
 $$\phi \in \mathbb{R}^{m}$$, and arc length $$\ell \in \mathbb{R}^{m}$$,
-where $m$ is the number of constant curvature arcs. Alternatively, the
+where $$m$$ is the number of constant curvature arcs. Alternatively, the
 relationship $$\theta = \kappa s$$ allows parameterization based on the
 angle $$\theta$$ by which the arc bends.
 
@@ -46,6 +46,9 @@ robot. The shape can be described by a curve in task space. Under the
 constant curvature framework: a concatenation of constant curvature
 arcs.
 
+![]({{ site.url }}{{ site.baseurl }}/assets/images/posts/cr_101_cc_concatenation_of_arcs.jpg)
+
+
 The geometric features of a space curve or curve in three-dimensional
 space are a classic topic of differential geometry. In general, each
 point on a curve $$g$$ can be described by a moving frame with respect to
@@ -57,7 +60,7 @@ parameterized by arc length s.
 
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/posts/cr_101_cc_frames.png)
 
-A common assignment of the base frame $\{ 0\}$ of a continuum robot in
+A common assignment of the base frame $$\{ 0\}$$ of a continuum robot in
 its zero configuration is:
 - origin at the base
 - $$+ {\widehat{\mathbf{z}}}_{0}$$ tangent pointing towards the tip of the
