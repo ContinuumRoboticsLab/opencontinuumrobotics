@@ -7,8 +7,7 @@ excerpt: Modeling of tendon-driven continuum robots using the constant-curvature
 header:
     teaser: /assets/images/posts/cr_101_tdcr_teaser.jpg
 ---
-Today, we are looking at how tendon-driven continuum robots (TDCR) are modelled using the [constant
-curvature kinematics framework]({% post_url 2022-10-02-cc-kinematics %}) introduced last month. In doing so, we assume that the TDCR undergoes a pure bending motion, i.e. has infinite
+Today, we are looking at how tendon-driven continuum robots (TDCR) are modelled using the [constant curvature kinematics framework]({% post_url /2022-11-04-cc-kinematics %}) introduced last month. In doing so, we assume that the TDCR undergoes a pure bending motion, i.e. has infinite
 torsional rigidity, and is not affected by gravitational effects. We
 also assume that the tendons follow a continuous curve, parallel to the
 backbone. Furthermore, we neglect friction in the tendon paths and any

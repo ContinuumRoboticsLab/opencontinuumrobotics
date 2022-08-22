@@ -43,3 +43,4 @@ To increase the range of motion of a continuum robot, we can stack multiple of t
 The backbone of a continuum robot does not necessarily have to be continuous. The biological counterpart, e.g. snakes, have a continuous external appearance, but are vertebrates with an internal segmented backbone comprised of many very short rigid-links.
 
 A similar paradigm can be applied to compose a discrete continuum robot. As in a serial robot arm, this can be achieved by concatenating multiple links connected by revolute joints. By keeping the link length short, the appearance of such a serial robot arm is resembling a continuous structure. In robotics, this type of robot is commonly referred to as a hyper-redundant robot, as it exhibits a high number of degrees of freedom in joint space. Those highly hyper-redundant robots can also be referred to as quasi-continuous or pseudocontinuum.
+{: .notice}

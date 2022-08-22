@@ -13,11 +13,9 @@ ratios of 1:250. The composition of concentrically arranged elastic
 tubes with pre-curvatures allows for simple, yet dextrous, robotic
 manipulators at a millimetre scale. Actuation is achieved mechanically
 by relative rotation and axial translation of the tubes and results in
-tentacle-like motions. CTCR are particularly
-promising for medical interventions, such as
+tentacle-like motions. CTCR are particularly promising for medical interventions, such as
 diagnosis through natural orifices or minimally invasive surgery. In today's post, 
-we review the general structure of CTCR and look into
-the motion capabilities and underlying mechanics. 
+we review the general structure of CTCR and look into the motion capabilities and underlying mechanics. 
 
 ## General Design
 
@@ -87,15 +85,6 @@ The tubes interact elastically and make one another bend and twist.
 |![image]({{ site.url }}{{ site.baseurl }}/assets/images/posts/cr_101_ctcr_motion_sequence.jpg)|
 |Motion sequence of a CTCR composed of 3 tubes. Initially all three tubes are aligned (left). The middle and inner tube are then extended and rotated axially by the same angle. The innermost tube is then further extended. As all tubes can be axially rotated and extended/contracted, a multitude of possible shapes is attainable.|
 
-## Summary
-
-Today, we looked at the general structure of a CTCR as a
-concentric assembly of pre-curved or straight tubes. Each tube is
-rotated and translated at its base, with mechanical actuators located in
-an actuation unit. Depending on the tube pre-curvature and stiffness, in
-particular of the presence of dominating or balanced tube pairs, the
-robot behaviour varies in terms of degree of freedom and motion
-capabilities.
 
 ## Further Reading
 

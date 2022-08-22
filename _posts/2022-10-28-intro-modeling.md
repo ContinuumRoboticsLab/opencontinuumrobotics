@@ -3,8 +3,8 @@ title: "Introduction to Modeling"
 author: jbk
 toc: true
 category: 101
-excerpt: lorep ipsum
-header:
+excerpt: The slender structure of continuously bending robots can be represented by a space curve. 
+header: 
     teaser: /assets/images/posts/cr_101_modelingIntro_teaser.png
 ---
 
@@ -47,7 +47,7 @@ approach to a continuum robot, it is more effective to utilize the
 structure and geometry of a continuum robot to come up with a more
 suitable kinematic framework.
 
-We have seen several [example continuum robots]({% post_url 2022-09-02-cr-intro %}). From a
+We have seen several [example continuum robots]({% post_url /2022-09-23-cr-intro %}). From a
 mechanical standpoint, these continuum robots can be seen as slender
 structures, i.e. structures that are much longer in one direction than
 the other two directions. This slender structure is continuously bending
