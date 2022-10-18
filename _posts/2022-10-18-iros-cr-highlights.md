@@ -7,7 +7,7 @@ excerpt: A curated list of continuum robotics research presented @IROS22.
 header:
   teaser: /assets/images/posts/research/iros_2022_teaser.jpg
 ---
-This year's [IEEE/RSJ International Conference on Intelligent Robots and Systems](https://iros2022.org) holds a firework of continuum robotics research! Getting ready for the conference and creating your itineary? We curated a list of papers and their presentations timeslotsç!
+This year's [IEEE/RSJ International Conference on Intelligent Robots and Systems](https://iros2022.org) holds a firework of continuum robotics research! Getting ready for the conference and creating your itineary? This is a curated a list of papers and their presentations timeslots we found interesting for this year's [program](https://ras.papercept.net/conferences/conferences/IROS22/program)!
 
 ## Design
 
