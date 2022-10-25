@@ -1,7 +1,7 @@
 # Open Continuum Robotics Project Website
 This website is based on the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
 
-Install Jekyll on your machine. Run
+Install [Jekyll](https://jekyllrb.com/) on your machine. Run
 
     bundle exec jekyll serve --watch  --future  
 
