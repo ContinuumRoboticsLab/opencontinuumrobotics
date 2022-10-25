@@ -15,7 +15,7 @@ The ultimate goal of continuum robotics is to have a continuously bending manipu
 
 3. While a continuum structure may in principle have an inﬁnite number of degrees of freedom in that it can bend, twist, contract, and eventually shear at any point along it, we will only be able to control a ﬁnite number of degrees of freedom by actuators.
 
-
+## Defining Feature ##
 The defining feature of a continuum robot is a continuously curving core structure, often referred to as backbone, whose shape can be actuated in some way. An almost universal additional property is that the backbone is compliant; that is, it yields smoothly to externally applied loads. Such a continuous structure has an inﬁnite dimensional configuration or shape space - at least in principle. In fact, only a ﬁnite number of degrees of freedom (DOF) are controllable/actuatable due to mechanical constraints in building continuum robots. If a continuum robot is controlled discretely (restricting the allowable shapes of the robot to a finite set, or a shape set defined by a finite set of inputs) then it will not only be much easier to realize from a mechanical standpoint, but also be much easier to control. Nevertheless, the compliance inherent in the continuum structure still allows the robot to adapt to contact with its environment and to compensate for the limitations in its actuatable degrees of freedom.
 
 The motion capabilities of a continuum robot can be expressed by a set of motion primitives:
@@ -43,4 +43,11 @@ To increase the range of motion of a continuum robot, we can stack multiple of t
 The backbone of a continuum robot does not necessarily have to be continuous. The biological counterpart, e.g. snakes, have a continuous external appearance, but are vertebrates with an internal segmented backbone comprised of many very short rigid-links.
 
 A similar paradigm can be applied to compose a discrete continuum robot. As in a serial robot arm, this can be achieved by concatenating multiple links connected by revolute joints. By keeping the link length short, the appearance of such a serial robot arm is resembling a continuous structure. In robotics, this type of robot is commonly referred to as a hyper-redundant robot, as it exhibits a high number of degrees of freedom in joint space. Those highly hyper-redundant robots can also be referred to as quasi-continuous or pseudocontinuum.
+
+
+***Further Reading***: Wondering how one could design a continuum robot that had extension/contracting, bending, and twisting all in one? We recently introduced FAS - A fullt actuated segment for tendon-driven continuum robots[^fn1].
 {: .notice}
+
+
+## References
+[^fn1]: R.M. Grassmann, P. Rao, Q. Peyron, J. Burgner-Kahrs: FAS—A Fully Actuated Segment for Tendon-Driven Continuum Robots. Frontiers in Robotocs and AI, 9:873446, 2022. doi: [10.3389/frobt.2022.873446](https://doi.org/10.3389/frobt.2022.873446)
