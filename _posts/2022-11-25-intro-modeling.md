@@ -172,9 +172,9 @@ about the accuracy and limitations of the constant curvature kinematic
 framework when we look at different continuum robot types throughout the
 course.
 
-# Further Reading
+***Further Reading***: Curious about modeling and can't wait for the next 101 blog post going into more detail? Webster & Jones[^fn1] published a beginner-friendly review on modeling continuum robots using the constant curvature framework.
+{: .notice}
 
-Webster, R.J. & Jones, B.A., 2010. Design and Kinematic Modeling of
-Constant Curvature Continuum Robots: A Review. The International Journal
-of Robotics Research, 29(13), pp. 1661--1683.
-doi: [10.1177/0278364910368147](https://doi.org/10.1177%2F0278364910368147)
+## References
+
+[^fn1]: Webster, R.J. & Jones, B.A., 2010. Design and Kinematic Modeling of Constant Curvature Continuum Robots: A Review. The International Journal of Robotics Research, 29(13), pp. 1661--1683.doi: [10.1177/0278364910368147](https://doi.org/10.1177%2F0278364910368147)

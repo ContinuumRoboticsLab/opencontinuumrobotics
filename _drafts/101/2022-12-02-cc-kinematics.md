@@ -7,7 +7,7 @@ excerpt: lorep ipsum
 header:
     teaser: assets/images/posts/cr_101_cc_teaser.png
 ---
-In our introductory post about [modeling of continuum robots]({% post_url /2022-11-25-intro-modeling.md}), we learned that the constant curvature kinematics framework is very common. Today, we will look at the mappings between joint and configuration space, i.e. the **robot dependent mapping**, and between configuration and task space, i.e. the **robot independent mapping**.
+Today, we dive deeper into the common constant curvature kinematics framework. We look at the mappings between joint and configuration space, i.e. the **robot dependent mapping**, and between configuration and task space, i.e. the **robot independent mapping**.
 
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/posts/cr_101_modelingIntro_mappings.png)
 

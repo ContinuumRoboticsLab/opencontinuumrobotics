@@ -3,7 +3,13 @@ This website is based on the [Minimal Mistakes Jekyll theme](https://github.com/
 
 Install Jekyll on your machine. Run
 
-    bundle exec jekyll serve --watch  --future  
+    bundle exec jekyll serve --watch  --future 
+
+to compile the website locally and see all future posts. Run
+
+    bundle exec jekyll serve --watch --drafts --future
+
+to include posts in the drafts folder.
 
 # How to contribute to the blog
 - posts are written in [Markdown](https://www.markdownguide.org/basic-syntax/) (see posts in _posts folder for examples)
