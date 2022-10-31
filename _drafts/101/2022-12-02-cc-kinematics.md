@@ -1,9 +1,9 @@
 ---
-title: "Constant Curvature Kinematics"
+title: "Constant Curvature Kinematics Framework"
 author: jbk
 toc: true
 category: 101
-excerpt: lorep ipsum
+excerpt: This kinematics framework is widely used for continuum robots.
 header:
     teaser: assets/images/posts/cr_101_cc_teaser.png
 ---

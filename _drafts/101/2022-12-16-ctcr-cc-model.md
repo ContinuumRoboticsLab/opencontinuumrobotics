@@ -8,7 +8,6 @@ header:
     teaser: /assets/images/posts/cr_101_ctcr_model_teaser.jpg
 ---
 
-
 After making some simplifying assumptions, we will then determine the robot dependent
 mapping under the constant curvature kinematics framework. We derive the
 mapping for general CTCR composed of multiple tubes and then discuss the
