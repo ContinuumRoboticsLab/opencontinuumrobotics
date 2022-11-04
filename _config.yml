@@ -47,11 +47,12 @@ plugins:
 locale: en-GB
 environment: production
 
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: "G-9L7XX6LPRC"
-    anonymize_ip: false # default
+# did not get this to work. used a workaround and added Google Analytics Script to _includes/head/custom.html
+#analytics:
+#  provider: "google-gtag"
+#  google:
+#    tracking_id: "G-9L7XX6LPRC"
+#    anonymize_ip: false # default
 
 category_archive:
   type: jekyll-archives
