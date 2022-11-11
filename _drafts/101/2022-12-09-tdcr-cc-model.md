@@ -228,3 +228,5 @@ System for Minimally Invasive Surgery of the Throat. The International
 Journal of Robotics Research 28 (9): 1134--53.
 [https://doi.org/10.1177/0278364908104278](https://doi.org/10.1177/0278364908104278)\
 Section 5.2
+
+P. Rao, Q. Peyron, S. Lilge, and J. Burgner-Kahrs, “How to Model Tendon-Driven Continuum Robots and Benchmark Modelling Performance,” Front. Robot. AI, vol. 7, p. 20, Feb. 2021, doi: 10.3389/frobt.2020.630245.
