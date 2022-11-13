@@ -42,12 +42,7 @@ position and orientation, but also the pose of all its "joints". In
 continuum robot kinematics, the joint pose in task space relates to the
 position and orientation of the end of each constant curvature arc.
 Ultimately, we are also interested in knowing the shape of the continuum
-robot. The shape can be described by a curve in task space. Under the
-constant curvature framework: a concatenation of constant curvature
-arcs.
-
-![]({{ site.url }}{{ site.baseurl }}/assets/images/posts/cr_101_cc_concatenation_of_arcs.jpg)
-
+robot. The shape can be described by a curve in task space. 
 
 The geometric features of a space curve or curve in three-dimensional
 space are a classic topic of differential geometry. In general, each
@@ -218,7 +213,7 @@ While Frenet-Seret frames are uniquely defined for any regular curve
 with nonzero curvature, by contrast, a parallel transport frame is not
 unique but well defined at points where the curvature vanishes. The
 freedom lies in choosing the initial frame. For instance, we can choose
-the initial the initial tangent vector
+the initial tangent vector
 $$\widehat{\mathbf{t}}(0) = {\widehat{\mathbf{z}}}_{0}$$. The initial
 vector $${\widehat{\mathbf{m}}}_{1}$$ perpendicular to
 $$\widehat{\mathbf{t}}(0)$$ depends on the direction of curvature defined
@@ -230,16 +225,28 @@ $$\widehat{\mathbf{t}},{\widehat{\mathbf{m}}}_{1},\text{and}{\widehat{\mathbf{m}
 and integrate the tangent to obtain the curve.
 
 ## Concatenation of Arcs
+Under the constant curvature framework, the shape of a continuum robot becomes a concatenation of constant curvature
+arcs.
+
+![]({{ site.url }}{{ site.baseurl }}/assets/images/posts/cr_101_cc_concatenation_of_arcs.jpg)
+
 
 Above, we saw how we can obtain the moving frame along a single constant
-curvature arc. As the robot dependent mapping usually results in $m$
+curvature arc. As the robot dependent mapping usually results in $$m$$
 triplets of arc parameters $$\{\kappa,\phi,\ell\}$$, we have to consider
 that the succeeding arc is defined with respect to the previous arc's
-end frame . Consequently, $$T_{m - 1}(\ell_{m - 1})$$ has to
-be pre-multiplied to the local frames of arc $$m$$:
+end frame. Consequently, $$T_{m - 1}(\ell_{m - 1})$$ has to
+be pre-multiplied to the local frame of arc $$m$$:
 $$T_{m}(s) = T_{m - 1}(\ell_{m - 1})T(s)$$.
 
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/posts/cr_101_cc_arcConcatenation.png)
 
 Note, that there may be cases, where the local frame is required to span
 the cross section of the robot and to express the material orientation.
+
+***Further Reading***: Webster & Jones[^fn1] published a beginner-friendly review on modeling continuum robots using the constant curvature framework. In addition to the different approaches to the *robot independent mapping* outlined here, they also discuss Denavit-Hartenberg parameters, integral representations, and exponential coordinates. All these methods fundamentally produce the same result for piece- wise constant-curvature robots.
+{: .notice}
+
+# References
+
+[^fn1]: Webster, R.J. & Jones, B.A., 2010. Design and Kinematic Modeling of Constant Curvature Continuum Robots: A Review. The International Journal of Robotics Research, 29(13), pp. 1661--1683.doi: [10.1177/0278364910368147](https://doi.org/10.1177%2F0278364910368147)

@@ -3,11 +3,14 @@ title: "Fictional Continuum Robots"
 author: jbk
 toc: true
 category: history
-excerpt: 
+excerpt: Many fiction writers have thought of continuously bendable robots.
 header:
-  teaser: /assets/images/posts/history/tensorArm_teaser.jpeg
+  teaser: /assets/images/posts/history/teaser_fictionalCR.png
 ---
-Continuous and bendable structures as well as continuum robots often appear in fiction. In a series of blog posts, we will..
+Continuous and bendable structures as well as continuum robots often appear in fiction. 
+Science fiction books and movies are often a reflection of humankinds fears and desires for technological progress. Through the creation of future realities, science fiction sparks our imagination with out-of-this-world experiences. At the same time, it helps us to reflect on the effects of current and developing technologies.
+
+In a series of blog posts, we will highlight occurences of continuum robots and leave the interpretation to the reader's imagination and reflection.
 
 |![image]({{ site.url }}{{ site.baseurl }}/assets/images/posts/history/b-9_Robot_LostInSpace.jpg)|
 |The B-9 Environmental Control Robot is a Class M-3 General Utility Non-Theorizing Environmental Robot (G.U.N.T.E.R.) appearing in the television show Lost in Space (1965 to 1968). B-9's features continuum arms.|
