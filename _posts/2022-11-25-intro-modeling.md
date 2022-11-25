@@ -13,6 +13,7 @@ relationship between joint space and task space. This kinematic mapping is essen
 
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/posts/cr_101_modelingIntro_jointspace.png){: style="float: center"}
 
+
 ## Mapping between Joint and Task Space
 The term joint space may be confusing for continuum robots as we commonly think of revolute or prismatic joints. Those are not necessarily present in a continuum robot as actuation may be achieved by pulling on tendons or changing pressure in pneumatic components. Yet, we commonly refer to those actuator parameters as the robot's joint space and we are interested in determining the relationship between joint space parameters and the resulting appearance of the robot in task space, i.e. its position and orientation at the tip or its shape.
 
@@ -20,7 +21,8 @@ Perhaps the most familiar kinematic modelling framework for roboticists is the d
 
 We have seen several [example continuum robots]({% post_url /2022-10-21-cr-intro %}). From a mechanical standpoint, these continuum robots can be seen as slender structures, i.e. structures that are much longer in one direction than the other two directions. This slender structure is continuously bending and can be represented by a space curve. 
 
-![image]({{ site.url }}{{ site.baseurl }}/assets/images/posts/cr_101_modeling_spacecurve.png)
+|![image]({{ site.url }}{{ site.baseurl }}/assets/images/posts/cr_101_modeling_spacecurve.png)|
+|(Images adapted, from left to right © OC Robotics Ltd, © FESTO, © Titan Medical Inc.)|
 
 Therefore, we model continuum kinematics via a frame which evolves along a continuous backbone, parameterized by arc length $$s$$. The local motion of the backbone at a point is modeled in terms of the local frame at s. This strategy allows computation of the forward kinematics and construction of continuum Jacobians, analogous to those for rigid-link systems. There exist multiple approaches on how this space curve can be determined based on the joint space parameters of a continuum robot. Those can be divided into **mechanics-based frameworks** and **kinematic frameworks**.
 
