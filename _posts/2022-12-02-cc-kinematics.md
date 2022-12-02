@@ -30,7 +30,7 @@ unique robot design influence arc parameters in different ways. In
 particular, consideration of the forces and moments applied by actuators
 coupled with suitable approximations yields this mapping from actuator
 variables (pressure, length changes, tension, rotation angles etc.) to curved links
-described by arc parameters. We will look at different continuum robots and their robot depenbdent mappingin future posts. Today, we will assume that the robot dependent mapping, i.e., from joint to configuration space is known.
+described by arc parameters. We will look at different continuum robots and their robot depenbdent mappingin future posts. For now, we will assume that the robot dependent mapping, i.e., from joint to configuration space is known.
 
 # Robot Independent Mapping
 
@@ -249,4 +249,4 @@ the cross section of the robot and to express the material orientation.
 
 # References
 
-[^fn1]: Webster, R.J. & Jones, B.A., 2010. Design and Kinematic Modeling of Constant Curvature Continuum Robots: A Review. The International Journal of Robotics Research, 29(13), pp. 1661--1683.doi: [10.1177/0278364910368147](https://doi.org/10.1177%2F0278364910368147)
+[^fn1]: Webster, R.J. & Jones, B.A., 2010. Design and Kinematic Modeling of Constant Curvature Continuum Robots: A Review. The International Journal of Robotics Research, 29(13), pp. 1661--1683. doi: [10.1177/0278364910368147](https://doi.org/10.1177%2F0278364910368147)
