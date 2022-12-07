@@ -21,7 +21,7 @@ to include posts in the drafts folder.
         title: "TITLE"
         author: your author abbreviation
         toc: true/false
-        category: 101/coolCR/hands-on/history/opinion/research
+        category: [101/coolCR/hands-on/history/opinion/research]
         excerpt: short excerpt
         header:
             teaser: /assets/images/posts/teaserImageFilename
@@ -30,6 +30,7 @@ to include posts in the drafts folder.
 
 - images for posts are stored in assets/posts folder
 - select a teaser image for the post (500x300)
+- select one of the categories for the post
 - once post is ready for publication move to the _posts folder
 - if this is your first post, make sure that you create your author profile in _data/authors.yml
 
