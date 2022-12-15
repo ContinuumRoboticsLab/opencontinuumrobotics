@@ -25,10 +25,15 @@ pr:
 
 sl:
   name        : "Sven Lilge"
-  bio         : "PhD Student."
-  avatar      : "/assets/images/male-avatar.jpg"
+  bio         : "PhD Candidate."
+  avatar      : "/assets/images/sven_author.jpg"
   location    : "Toronto, Canada"
+  twitter     : "SvenLilge"
+  linkedin    : "sven-lilge-315579168"
   links:
   - label     : "Email"
     icon      : "fas fa-fw fa-envelope-square"
     url       : "mailto:slilge@cs.toronto.edu"
+  - label     : "Website"
+    icon      : "fas fa-fw fa-link"
+    url       : "https://www.cs.toronto.edu/~slilge/"
