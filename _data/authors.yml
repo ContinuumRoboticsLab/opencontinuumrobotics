@@ -15,8 +15,8 @@ jbk:
 
 pr:
   name        : "Priyanka Rao"
-  bio         : "PhD Student."
-  avatar      : "/assets/images/female-avatar.jpg"
+  bio         : "PhD Candidate."
+  avatar      : "/assets/images/pr_author.jpg"
   location    : "Toronto, Canada"
   links:
   - label     : "Email"
