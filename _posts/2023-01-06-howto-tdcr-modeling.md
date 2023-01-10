@@ -9,7 +9,7 @@ header:
 ---
 As you've been reading so far, there are multiple facets to [continuum
 robot modeling]({% post_url /2022-11-25-intro-modeling %}).
-We will pick up the thread and follow it into the world of modeling
+We will pick up this thread today and follow it into the world of modeling
 tendon-driven continuum robots. We will be narrowing our focus on
 modeling the forward mapping from actuation inputs such as tendon
 tension or displacements to the final backbone shape in task space. 
@@ -114,6 +114,11 @@ the robot parameters can be varied based on your application. The following mode
 -   A static modeling approach modeling each subsegment, i.e. between
     neighbouring disks, as a Cosserat rod subject to tendon loads
     (Subsegment Cosserat Rod Model) [^Gao2017]
+
+***Resources:*** Our review paper and repository are great resources to get started on your modeling journey for tendon-driven continuum robots.
+[Paper](https://doi.org/10.3389/frobt.2020.630245){: .btn .btn--info}
+[GitHub](https://github.com/ContinuumRoboticsLab/tdcr-modeling){: .btn .btn--danger}
+{: .notice}
 
 If you would like to **contribute** to the [TDCR modeling repository](https://github.com/ContinuumRoboticsLab/tdcr-modeling) with your own implementation of other models in literature, please get in touch! We would love to improve the existing arsenal of models provided to the community.
 {: .notice--success}

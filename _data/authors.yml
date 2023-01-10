@@ -2,7 +2,7 @@ jbk:
   name    : "Jessica Burgner-Kahrs"
   bio     : "Professor. Roboticist."
   avatar  : "/assets/images/jbk.png"
-  location: "Toronto, Canada"
+  location: "University of Toronto, Canada"
   twitter : "BurgnerKahrs"
   linkedin: "jessica-burgner-kahrs"
   links:
@@ -17,7 +17,7 @@ pr:
   name        : "Priyanka Rao"
   bio         : "PhD Candidate."
   avatar      : "/assets/images/pr_author.jpg"
-  location    : "Toronto, Canada"
+  location    : "University of Toronto, Canada"
   links:
   - label     : "Email"
     icon      : "fas fa-fw fa-envelope-square"
@@ -27,7 +27,7 @@ sl:
   name        : "Sven Lilge"
   bio         : "PhD Candidate."
   avatar      : "/assets/images/sven_author.jpg"
-  location    : "Toronto, Canada"
+  location    : "University of Toronto, Canada"
   twitter     : "SvenLilge"
   linkedin    : "sven-lilge-315579168"
   links:

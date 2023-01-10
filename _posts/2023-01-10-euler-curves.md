@@ -41,6 +41,12 @@ influence of gravity, we hypothesized [^Rao2021a] [^Rao2022] that they
 can be used to represent the backbone experiencing an external force at
 the tip as well.
 
+Euler Curve
+: The Euler curve (also known as the Euler spiral) is defined as a curve in which the curvature increases linearly with arclength.
+
+**History**: The Euler spiral, defined by the linear relationship between curvature and arclength, was first proposed as a problem of elasticity by James Bernoulli, then solved accurately by Leonhard Euler. An Euler curve is known by several other names, including “clothoid,” and “Cornu spiral.” The underlying mathematical equation is most commonly known as the Fresnel integral. The profusion of names reflects the fact that the curve has been discovered several different times, each for a completely different application: first, as a particular problem in the theory of elastic springs; second, as a graphical computation technique for light diffraction patterns; and third, as a railway transition spiral. (Learn more about the [mathematical history of the Euler spiral](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-111.pdf).)
+{: .notice}
+
 ## Euler Arc Spline representation
 
 When using Euler curves, the robot-independent mapping (configuration to task space)

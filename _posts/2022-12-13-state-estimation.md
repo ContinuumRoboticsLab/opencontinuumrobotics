@@ -109,6 +109,7 @@ To summarize, the main benefits of our proposed approach are its universal appli
 ***Further Reading***: You can check out the theoretical and implementation details as well as our achieved results (both in simulation and experiments) in our [open access publication](https://journals.sagepub.com/doi/epub/10.1177/02783649221128843)[^fn1].
 For further reading on the state estimation in robotics, we point the reader to 
 [Tim Barfoot's book on state estimation](http://asrl.utias.utoronto.ca/~tdb/bib/barfoot_ser17.pdf), which can serve as an excellent starting point and resource.
+[Paper](https://journals.sagepub.com/doi/epub/10.1177/02783649221128843){: .btn .btn--info} 
 {: .notice}
 
 # References
