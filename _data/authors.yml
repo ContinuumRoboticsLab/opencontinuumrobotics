@@ -37,3 +37,16 @@ sl:
   - label     : "Website"
     icon      : "fas fa-fw fa-link"
     url       : "https://www.cs.toronto.edu/~slilge/"
+
+rmg:
+  name        : "Reinhard M. Grassmann"
+  bio         : "PhD Candidate."
+  avatar      : "/assets/images/rmg_author.jpg"
+  location    : "University of Toronto, Canada"
+  links:
+  - label     : "Email"
+    icon      : "fas fa-fw fa-envelope-square"
+    url       : "mailto:reinhard.grassmann@utoronto.ca"
+  - label     : "Website"
+    icon      : "fas fa-fw fa-link"
+    url       : "https://reinhardgrassmann.github.io"
