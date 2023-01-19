@@ -12,7 +12,7 @@ Today, we continue our introduction to sensing the state of a continuum robot. I
 To sense information about the state of a continuum robot, it may be desirable to not integrate sensors to the robot, but to use readily available external sensing methods. 
 
 ## External Sensors
-The most common external sensing techniques for continuum robots are coordinate, image-based, and laser-based sensing.
+The most common external sensing means for continuum robots are coordinate measurements using mechanical or laser probes and image-based techniques.
 
 ### Coordinate Measurement
 A coordinate measuring machine/arm is used to measure the geometry of the robot by sensing discrete points on its surface using a probe. There exist two common types of probes typically used for continuum robots: mechanical probes and laser probes. 
@@ -46,6 +46,6 @@ We have looked at the most prominent sensors used for continuum robots. Consider
 Some areas of open research are concerned with continuous, real-time shape measurements of variable curvature, multi-section continuum robots, continuous force measurements along the robot’s body, and tactile sensing skins.
 
 ## Sensing in a Nutshell
-As continuum robots are flexible bending/extending structures, sensing can be quite a challenge. The smaller the size of the continuum robot, the more challenging the sensor selection and its integration becomes. In our Sensing 101 Part I and Part II blog posts, we have seen that multiple sensing modalities exist, each of which has its advantages and challenges. As no measurement technique is perfect and as no sensing modality suits all needs, the selection of sensors is a trade-off between application requirements and the particular continuum robot. 
+As continuum robots are flexible bending/extending structures, sensing can be quite a challenge. The smaller the size of the continuum robot, the more challenging the sensor selection and its integration becomes. In our Sensing 101 [Part 1]({% post_url /2023-01-13-sensing-part1 %})  and [Part 2]({% post_url /2023-01-20-sensing-part2 %}) blog posts, we have seen that multiple sensing modalities exist, each of which has its advantages and challenges. As no measurement technique is perfect and as no sensing modality suits all needs, the selection of sensors is a trade-off between application requirements and the particular continuum robot. 
 
 Some application areas, such as surgery, may also provide additional sensing means, such as medical imaging to reason about the position/pose or shape of a continuum robot operating within the human body (ultrasound, fluoroscopy, computed tomography, or magnetic resonance imaging). At the same time, applications may impose restrictions on which sensing modalities can be used. Think of a continuum robot for non-destructive inspection of a jet engine. Electromagnetic tracking would not be feasible in terms of range and external cameras would have no line-of-sight.
