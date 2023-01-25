@@ -7,10 +7,8 @@ excerpt: A simple free-space model for CTCR.
 header:
     teaser: /assets/images/posts/cr_101_ctcr_model_teaser.jpg
 ---
-
-After making some simplifying assumptions, we will then determine the robot dependent
-mapping under the constant curvature kinematics framework. We derive the
-mapping for general CTCR composed of multiple tubes and then discuss the
+Today, we are looking at how [concentric tube continuum robots]({% post_url /2022-11-18-ctcr-intro %}) (CTCR) are modelled using the [constant curvature kinematics framework]({% post_url /2022-12-02-cc-kinematics %}).
+We derive the mapping for general CTCR composed of multiple tubes and then discuss the
 limitations.
 
 Under the assumption that the robot's shape is composed of
@@ -203,8 +201,8 @@ parameters have to be considered (either zero curvature in straight tube
 sections or the respective precurvature in curved sections, alongside ID
 and OD, as well as $$E$$).
 
-The constant curvature kinematics as defined in Module 3, $$\phi$$ is
-expected to be expressed locally, i.e., w.r.t. the previous segment for
+The [constant curvature kinematics franmework]({% post_url /2022-12-02-cc-kinematics %}) assumes that $$\phi$$ is
+expressed locally, i.e., w.r.t. the previous segment for
 the robot independent mapping. Consequently, after determining
 $$\phi_{i}$$ expressed in the base frame for each segment using Equation
 ($$1$$), we will need to apply a final correction step
