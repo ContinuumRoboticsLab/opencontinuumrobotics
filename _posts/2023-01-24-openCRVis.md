@@ -2,6 +2,7 @@
 title: "Visualizing Tendon-driven Continuum Robots in MATLAB"
 author: jbk
 toc: false
+classes: wide
 category: hands-on
 excerpt: Launching the CRVisToolkit providing you with utilities to create professional looking plots of tendon-driven continuum robots using MATLAB.
 header:

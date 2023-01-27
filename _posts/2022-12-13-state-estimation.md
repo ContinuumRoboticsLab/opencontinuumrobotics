@@ -2,6 +2,7 @@
 title: "State Estimation using Gaussian Process Regression"
 author: sl
 toc: false
+classes: wide
 category: research
 excerpt: 
 header:

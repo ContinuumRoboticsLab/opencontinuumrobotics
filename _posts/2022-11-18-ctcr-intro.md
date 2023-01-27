@@ -2,6 +2,7 @@
 title: "Concentric Tube Continuum Robots"
 author: jbk
 toc: true
+toc_sticky: true
 category: 101
 excerpt: The smallest among all continuum robots.
 header:

@@ -2,6 +2,7 @@
 title: "Representing the Backbone of Tendon-driven Continuum Robots using Euler Curves"
 author: pr
 toc: true
+toc_sticky: true
 category: research
 excerpt: Euler curves are a more powerful representation than constant curvature arcs to represent the shape of a continuum robot.
 header:

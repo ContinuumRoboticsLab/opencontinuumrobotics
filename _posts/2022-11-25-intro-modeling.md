@@ -2,6 +2,7 @@
 title: "Introduction to Modeling"
 author: jbk
 toc: true
+toc_sticky: true
 category: 101
 excerpt: The slender structure of continuously bending robots can be represented by a space curve. 
 header: 

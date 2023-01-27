@@ -2,6 +2,7 @@
 title: "Getting Started on a Model for Tendon-driven Continuum Robots"
 author: pr
 toc: true
+toc_sticky: true
 category: 101
 excerpt: We outline three major steps to designing the right model for a tenon-driven continuum robot for your purposes.
 header:

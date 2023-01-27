@@ -2,6 +2,7 @@
 title: "Constant-Curvature Model of Tendon-driven Continuum Robots"
 author: jbk
 toc: true
+toc_sticky: true
 category: 101
 excerpt: Modeling of tendon-driven continuum robots using the constant-curvature kinematics framework.
 header:

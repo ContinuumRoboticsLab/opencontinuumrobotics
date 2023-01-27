@@ -2,6 +2,7 @@
 title: "2022 - That's a wrap"
 author: jbk
 toc: true
+toc_sticky: true
 category: coolCR
 excerpt: A recap of the highlights of the year for the Open Continuum Robotics Project.
 header:

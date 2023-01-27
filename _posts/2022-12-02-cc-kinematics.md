@@ -2,6 +2,7 @@
 title: "Constant Curvature Kinematics Framework"
 author: jbk
 toc: true
+toc_sticky: true
 category: 101
 excerpt: This kinematics framework is widely used for continuum robots.
 header:

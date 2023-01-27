@@ -1,7 +1,8 @@
 ---
 title: "Fictional Continuum Robots"
 author: jbk
-toc: true
+toc: false
+classes: wide
 category: history
 excerpt: Many fiction writers have thought of continuously bendable robots.
 header:

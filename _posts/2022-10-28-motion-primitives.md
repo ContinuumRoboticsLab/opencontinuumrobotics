@@ -2,6 +2,7 @@
 title: "Motion Primitives"
 author: jbk
 toc: true
+toc_sticky: true
 category: 101
 header:
   teaser: /assets/images/posts/cr_motion_primitives_teaser.png

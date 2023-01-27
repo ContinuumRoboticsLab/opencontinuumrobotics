@@ -1,7 +1,8 @@
 ---
 title: "Tensor arm"
 author: jbk
-toc: true
+toc: false
+classes: wide
 category: history
 excerpt: An early continuum robot was driven by cables.
 header:

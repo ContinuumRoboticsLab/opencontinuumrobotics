@@ -2,6 +2,7 @@
 title: "Sensing for Continuum Robots - Part 1"
 author: jbk
 toc: true
+toc_sticky: true
 category: 101
 excerpt: Continuum robots must perceive their own position, pose, or full shape, namely proprioception, and be able to feel external stimuli, namely exteroception.
 header:

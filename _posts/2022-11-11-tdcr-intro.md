@@ -2,6 +2,7 @@
 title: "Tendon-driven Continuum Robots"
 author: jbk
 toc: true
+toc_sticky: true
 category: 101
 excerpt: Tendon-driven continuum robots are the most common type.
 header:

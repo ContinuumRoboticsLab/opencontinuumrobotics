@@ -2,6 +2,7 @@
 title: "Sensing for Continuum Robots - Part 2"
 author: jbk
 toc: true
+toc_sticky: true
 category: 101
 excerpt: 
 header:

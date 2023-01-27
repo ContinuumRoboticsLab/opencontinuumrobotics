@@ -2,6 +2,7 @@
 title: "The string girdling Earth problem and how it relates to tendon displacement"
 author: rmg
 toc: false
+classes: wide
 category: hands-on
 excerpt: Students often ask *\"How much do I need to pull on a tendon?\"*
 header:

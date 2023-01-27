@@ -2,6 +2,7 @@
 title: "Open-source Modeling Dataset"
 author: jbk
 toc: false
+classes: wide
 category: research
 excerpt: The first public dataset for a concentric tube continuum robot to democrotize research on their learning-based and physics-based modeling.
 header:

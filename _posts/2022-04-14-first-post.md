@@ -1,6 +1,8 @@
 ---
 title: "Open Continuum Robotics Project"
 author: jbk
+toc: false
+classes: wide
 header:
   teaser: /assets/images/posts/cr_welcome_teaser.png
 ---
