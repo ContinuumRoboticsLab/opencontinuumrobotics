@@ -4,7 +4,7 @@ author: jbk
 toc: false
 classes: wide
 category: history
-excerpt: The first concentric tube continuum robot was published in 2005! And yet, the community usually refers to two papers from 2006 as the first.
+excerpt: The first concentric tube continuum robot was published in 2005! And yet, the community usually refers to two papers from 2006 as the first. Why?
 header:
     teaser: /assets/images/posts/history/ctcr_teaser.jpg
 ---

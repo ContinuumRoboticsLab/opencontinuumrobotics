@@ -35,7 +35,7 @@ function [fig] = draw_ctcr(g,tube_end,r_tube,options)
 %
 ```
 
-We provide an example file `ctcr_draw_example.m` to create a figure of a CTCR with three tubes. The example also makes use of the new utility function `robotindependentmapping(kappa, phi, ell, ptsperseg)`. This function takes [constant curvature paramaters]({% post_url /2022-12-02-cc-kinematics %}) and generates a backbone curve. This backbone curve $g$ is in the format required by `draw_ctcr(g,tube_end,r_tube,options)` and `draw_tdcr(g,seg_end,r_disk,r_height,options)`.
+We provide an example file `ctcr_draw_example.m` to create a figure of a CTCR with three tubes. The example also makes use of the new utility function `robotindependentmapping(kappa, phi, ell, ptsperseg)`. This function takes [constant curvature parameters]({% post_url /2022-12-02-cc-kinematics %}) and generates a backbone curve. This backbone curve $g$ is in the format required by `draw_ctcr(g,tube_end,r_tube,options)` and `draw_tdcr(g,seg_end,r_disk,r_height,options)`.
 
 ```matlab
 function g = robotindependentmapping(kappa, phi, ell, ptsperseg)
