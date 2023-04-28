@@ -17,7 +17,7 @@ Medical robotics was just on the onset in the mid eighties and was using repurpo
 
 The trend towards more minimally invasive surgey and ultimatley keyhole access to operate promises benefits for patient care, such as shorter hopsitalization and quicker recovery times. While industrial style robots certainly play an important role in medical robotics today, their large footprint and size naturally places them beside physicians and outside of the patient. But as soon as one wants to move away from large incisions and the need to open the body, thin, versatile, and dextrous robotics enters the scene. Small-scale continuum robots could sneak into a patient with more dextrous motion capabilties than conventional robots and the ability to reach surgical sites inaccessible by conventional robots or standard medical instruments! And that ability is more defining than accuracy and payload. In contrast to industrial automation, small-scale continuum robots promise significant benefit over serial robot arms! 
 
-With medical applications, continuum robots found a compelling use case. Motivated by unsought of minimally-invasie approaches and the ability to navigate within the human body through natural orifices or miniscule inscisions, research in continuum robotics excelled. Over the past decades we have witnessed a vast surge in medical continuum robots. In fact, the majority of continuum robot papers draw their motivation from medical applications. The prominent surveys in the field of continuum robotics are centered around medicine[^BurgnerKahrs2015][^daVeiga2020][^Dupont2022] and I refer the interested reader to those surveys to learn about the breadth and depth of medical continuum robotics research. 
+With medical applications, continuum robots found a compelling use case. Motivated by unsought of minimally-invasie approaches and the ability to navigate within the human body through natural orifices or miniscule inscisions, research in continuum robotics excelled. Over the past decades we have witnessed a vast surge in medical continuum robots. In fact, the majority of continuum robot papers draw their motivation from medical applications. The prominent surveys in the field of continuum robotics are centered around medicine[^BurgnerKahrs2015] [^daVeiga2020] [^Dupont2022] and I refer the interested reader to those surveys to learn about the breadth and depth of medical continuum robotics research. 
 
 ## The Untapped Potential
 One may argue that continuum robots found their sweet spot in the medical application domain. While this is certainly the case, the untapped potential of continuum robots in non-medical applications is enormous! Think about autonomous small-scale or medium-scale continuum robots in in-situ and non-destructive inspection, maintenance, repair, and operations. 
@@ -28,9 +28,9 @@ One may argue that continuum robots found their sweet spot in the medical applic
 This in-situ inspection is just one of many examples where we can build on our expertise in continuum robotics in the medical domain and innovate the next generation of autonomous continuum robot systems. 
 In fact, non-medical applications for continuum robots are characterized by similar challenges: 
 
-- limited accessiblity 
-- tortuous pathways in constrained environments
-- need for dextrous manipulation at the location of interest
+- limited accessiblity,
+- tortuous pathways in constrained environments, and
+- need for dextrous manipulation at the location of interest.
 
 At the same time, turning to new application domains opens new research questions challenging to solve:
 
@@ -38,11 +38,11 @@ At the same time, turning to new application domains opens new research question
 - How can we avoid buckling for continuum robots navigating cluttered environments?
 - How can we achieve dextrous steering and motion capalities and bear sufficient loads?
 
-I envision a new generation of continuum robots that are of small and medium scale, dextrous enough to enter an environment for in-situ inspection, maintenance, and repair through multiple keyholes, and act autonomously, able to collaborate with one another to achieve the task. 
+I envision a new generation of continuum robots that are of small and medium scale, dextrous enough to enter an environment for in-situ inspection, maintenance, and repair through multiple keyholes, which act autonomously and are able to collaborate with one another to achieve the task. 
 
 
 ## Call to Action
-I believe, that we as the continuum robotics community, should turn to non-medical use-cases to invent this next-generation of continuum robot systems with autonomous capabilities. By focussing on medical applications, we have naturally limited our design choices to certain continuum robot sizes, materials, workspaces, control paradigms, etc. that are informed by the medical application. In fact, most medical continuum robots are rather short if they can work in free spaces or need the environmental constraints for steering (such as vasculature for robotic catheters). 
+I believe, that we as the continuum robotics community, should turn to non-medical use-cases to invent this next-generation of continuum robot systems with autonomous capabilities. By focussing on medical applications, we have naturally limited our design choices to certain continuum robot dimensions, materials, workspaces, control paradigms, etc. that are informed by anatomical constraints and clinical requirements. In fact, most medical continuum robots are rather short if they can are designed to work in free spaces. Longer medical continuum robots need environmental constraints for steering - such as vasculature for robotic catheters. 
 
 Drawing motivation from one application domain lead to narrow thinking and limited creativity. Continuum robotics researchers and innovators have become too focused on the specific needs and constraints of medicine. I argue that this prevented us from considering new and unconventional ideas!
 

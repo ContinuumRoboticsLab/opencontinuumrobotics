@@ -13,9 +13,9 @@ feature_row:
     excerpt: "A set of MATLAB functions for visualization and plotting of continuum robots. And utility functions to support your research."
     url: /hands-on/2023/01/24/openCRVis.html
     btn_class: "btn--success"
-  - image_path: /assets/images/cr_with_sim.jpg
+  - image_path: /assets/images/posts/hands-on/one-module-teaser.jpeg
     title: "OpenCR Hardware"
-    excerpt: "Coming soon: CAD drawings, components, assembly instructions, code, etc. for you to build a continuum robot for research."
+    excerpt: "Actuation Module: CAD drawings, components, assembly instructions, code, etc. for you to build a continuum robot for research."
     url: /hardware/
     btn_class: "btn--info"
 ---
