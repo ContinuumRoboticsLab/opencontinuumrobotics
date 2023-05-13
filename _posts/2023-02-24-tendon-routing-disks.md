@@ -8,11 +8,11 @@ excerpt: Let's conceptually think about tendon routing disks. They provide chann
 header:
     teaser: /assets/images/posts/101-tendon-routing-teaser.jpg
 ---
-We have looked into the general [motion primitives]({% post_url /2022-10-28-motion-primitives %}) in continuum robotics: spatial bending, twisting, extension/contraction. Today, we look at partially constrained tendon paths and how the design of tendon routing disk influences the motion capabilities.
+We have looked into the general [motion primitives]({% post_url /2022-10-28-motion-primitives %}) in continuum robotics: spatial bending, twisting, extension/contraction. Today, we look at partially constrained tendon paths and how the design of tendon routing disks influences the motion capabilities.
 
 Let's recap: When we first looked at [tendon-driven continuum robots]({% post_url /2022-11-11-tdcr-intro %}), we looked at the most general design, i.e. with tendon routing disks at equidistant spacing afixed to a a flexible backbone. Tendons terminate at the end disk of each segment to actuate it. Most generally, these tendons are routed in parallel to the central backbone. For spatial bending either 3 separate tendons or 2 antagonistic tendon pairs are used. To achieve a tendon-driven continuum robot segment capable of all motion primitive, we will expand our understanding of tendon routing disks and its implications. 
 
-Let's conceptually think about tendon routing disks. They provide channels to route the tendon actuating a continuum robot.  We depict four conceptual tendon routing disk types below. The dotted arrows indicate the degree of freedom of the disks themselves and the solid arrows indicate the motion primitives achievable. We omit the tendon themselves.
+Let's conceptually think about tendon routing disks. They provide channels to route the tendon actuating a continuum robot.  We depict four conceptual tendon routing disk types below. The dotted arrows indicate the degree of freedom of the disks themselves and the solid arrows indicate the motion primitives achievable. We omit the tendon themselves in the drawings.
 
 ![]({{ site.url }}{{ site.baseurl }}/assets/images/posts/101_FSD.jpg)
 
