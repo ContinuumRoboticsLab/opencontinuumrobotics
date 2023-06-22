@@ -23,10 +23,11 @@ I personally like to present motion planning as a generic optimization problem a
 Consider:
 
 $\boldsymbol{\xi}^* = \underset{\boldsymbol{\xi}}{\texttt{argmin}}\  \texttt{cost}(\boldsymbol{\xi})$
+
 $s.t. \ \ \ c(\boldsymbol{\xi}) \ge 0$
 $\ \ \ \ \ \ \ \ d(\boldsymbol{\xi}) = 0$
 
-where $\boldsymbol{\xi}$ represents some trajectory, path, or plan parameterization, $\texttt{cost}$ is some cost function defined over these, $\boldsymbol{\xi}^*$ is an optimal plan under the cost function, and $c$ and $d$ are generic, as-of-yet-unspecified inequality and equality constraints.
+where $\boldsymbol{\xi}$ represents some trajectory, path, or plan parameterization, $\texttt{cost}$ is some cost function defined over these, $\boldsymbol{\xi}^*$ is an optimal plan under the cost function, and $c$ and $d$ are generic, as-of-yet-unspecified inequality and equality constraints (or sets of such constraints).
 
 This generic optimization formalization is sufficiently expressive to talk about most of the basics of motion planning, and by varying how aspects of this formalization are defined we can arrive at most of the ways people have historically thought about motion planning.
 
@@ -39,9 +40,13 @@ Often people consider minimizing path length, so we can imagine defining $\textt
 We also want to *constrain* the trajectory such that the robot ends in a goal configuration (broadly as an element of some goal set), and such that the entire trajectory avoids obstacles.
 
 We can then cast this simple problem into our optimization framework simply as:
+
 $\boldsymbol{\xi}^* = \underset{\boldsymbol{\xi}}{\texttt{argmin}}\  \texttt{length}(\boldsymbol{\xi})$
+
 $s.t. \ \ \ \boldsymbol{\xi}(0) = \textrm{start configuration}$
+
 $\ \ \ \ \ \ \ \ \boldsymbol{\xi}(1) \in \textrm{goal set}$
+
 $\ \ \ \ \ \ \ \ \boldsymbol{\xi}(s) \textrm{ is collision free } \forall s \in [0,1]$
 
 As in most interesting things, key considerations lie in the details (which I've completely ignored above). How is your trajectory parameterized? How do you define your goal set? How do you represent your robot and environment geometry, enabling you to check for collision? Is length even the right objective to minimize? The answer to these questions depends on your specific problem/robot/etc. If I knew what this is for you, I'd just solve your problems myself and take all the credit.
@@ -72,7 +77,7 @@ Rather than a graph constructed via a discretization over the robot's actions, t
 
 When adding states, (usually) the new state and the edge connecting it to the graph are checked for validity (e.g., joint-limit satisfaction and obstacle avoidance). If the state and/or edge are not valid, they aren't added to the graph.
 
-At some point, the hope is that the graph will contain a goal state, and then by running graph search (e.g., A*) on this randomly-generated graph to find a path from the start state to a goal. If the graph is a tree, this search is trivial as there's only one path in the graph (ignoring some nuance, that's what tree means).
+At some point, the hope is that the graph will contain a goal state, and then by running graph search (e.g., A\*) on this randomly-generated graph to find a path from the start state to a goal. If the graph is a tree, this search is trivial as there's only one path in the graph (ignoring some nuance, that's what tree means).
 
 The specifics of the graph, how the states/actions are sampled, how the connections are made, etc., are what distinguish the sampling-based methods from each other.
 
@@ -80,9 +85,9 @@ Okay, so let's map these concepts back to our optimization formulation.
 Cost: If there are multiple paths in the graph, then the graph search over the graph can provide the lowest cost path in the graph, however the lowest cost path _possible_ may not be in the graph at any given iteration. Many of the earlier versions of these methods ignored cost and instead attempted to find any path that avoided obstacles, providing a property called probabilistic-completeness. Since then, other methods build upon this to provide a guarantee called asymptotic optimality, which intuitively means that their best path will approach an optimal path (in cost) as runtime progresses (only getting arbitrarily close to an optimal path in the limit though). This contrasts with the discrete grid/lattice-based search methods in that those methods typically only provide a property called resolution completeness/optimality which intuitively means the path is complete or optimal for the resolution of the discretization, but not necessarily in general.
 Constraints: As with the discrete grid/lattice-based search methods, the sampling-based methods usually encode constraint satisfaction by only considering states/edges in the graph construction or search that satisfy the constraints, including obstacle avoidance.
 
-Canonical probabilistically-complete methods include Probabilistic Roadmaps (PRM)[^5] and Rapidly-exploring Random Trees (RRT)[^6]. Popular asymptotically-optimal methods include PRM*/RRT*[^7], Batch-Informed Trees (BIT*)[^8], and Asymptotically-Optimal-RRT (AO-RRT)[^9].
+Canonical probabilistically-complete methods include Probabilistic Roadmaps (PRM)[^5] and Rapidly-exploring Random Trees (RRT)[^6]. Popular asymptotically-optimal methods include PRM/RRT[^7], Batch-Informed Trees (BIT)[^8], and Asymptotically-Optimal-RRT (AO-RRT)[^9].
 
-***Super-duper important point!*** Just because you're using sampling-based methods does not mean you're getting probabilistic completeness or asymptotic optimality. There are properties/assumptions you must satisfy in your specific application of these methods that are frequently nuanced, you'll need to ensure that you satisfy these things.
+***Super-duper important point!*** Just because you're using sampling-based methods does not mean you're getting probabilistic completeness or asymptotic optimality. There are properties/assumptions you must satisfy in your specific application of these methods that are frequently nuanced, you'll need to ensure that you satisfy these things. Read the papers detailing these methods for details!
 {: .notice--danger}
 
 
@@ -99,7 +104,7 @@ Is it just that easy? Unfortunately, no. The prior paragraph is true at a high l
 
 Canonical methods include CHOMP[^11], which leverages a variation of gradient descent, and TrajOpt[^12] which leverages Sequential Quadratic Programming (SQP). A different method, that is not nearly as popular as those methods, combines sampling-based planning with interior point optimization[^13]. I include it in this list because it was part of yours truly's PhD work, and so here is a shameless plug.
 
-There is also a method called Cross-Entropy Motion Planning (CEMP)[^14] that leverages a gradient-free optimization method (the cross-entropy method, as you may have guessed from the name). This is notable because many problems one may encounter in leveraging optimization-based methods may come from the gradients, or lack-thereof.
+There is also a method called Cross-Entropy Motion Planning (CEMP)[^14] that leverages a gradient-free optimization method (the cross-entropy method, as you may have guessed from the name). This is notable because many difficulties one may encounter in leveraging optimization-based methods may come from the gradients, or lack-thereof.
 
 This concludes Part 1 of my introduction to motion planning for continuum robots. In next week's [Part 2]({% post_url /2023-06-30-intro-mp-part2 %}), we will look at the challenges of motion planning for continuum robots. Stay tuned!
 {: .notice--success}
