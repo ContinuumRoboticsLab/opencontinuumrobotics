@@ -50,3 +50,17 @@ rmg:
   - label     : "Website"
     icon      : "fas fa-fw fa-link"
     url       : "https://reinhardgrassmann.github.io"
+
+ak:
+  name        : "Alan Kuntz"
+  bio         : "Assistant Professor."
+  avatar      : "/assets/images/ak_author.jpeg"
+  location    : "University of Utah, USA"
+  linkedin    : "alan-kuntz-1a494a135"
+  links:
+  - label     : "Email"
+    icon      : "fas fa-fw fa-envelope-square"
+    url       : "mailto:alan.kuntz@utah.edu"
+  - label     : "Website"
+    icon      : "fas fa-fw fa-link"
+    url       : "https://users.cs.utah.edu/~adk/"
