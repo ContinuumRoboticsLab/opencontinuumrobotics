@@ -56,12 +56,18 @@ Okay, so this is the first step---representing your problem. Next, let's solve i
 ## How do methods typically work?
 In my head I broadly group modern motion planning methods into three groups, discrete grid/lattice-based search methods, sampling-based methods, and optimization-based methods. There's an implied fourth group, "other" or maybe "miscellany", but I'm going to focus on the first three in this post.
 
-### Discrete grid/lattice-based search methods
+{% include figure image_path="/assets/images/posts/101-motion-planning-intro-part1-Fig1.png" 
+caption="We can parameterize a robot's configuration space by its actuation variables. Consider here a (ridiculously over-) simplified case of a single-tube concentric tube robot (which makes it just a tube robot, really, nothing concentric about it). We can actuate this robot by translating it in and out of its rectangular base, and by rotating it. A configuration can then be described as a point in this plane where one axis represents the translational value and one the rotational value. In practice, this space will be higher dimensional. For instance, a two-tube concentric tube robot would probably have a 4-dimensional space, two rotational and two translational, and a three-tube robot a 6-dimensional space, etc. It is in this space, which you can think about as the parameterized configuration space, that motion planning frequently happens." %}
+
+## Discrete grid/lattice-based search methods
 At their simplest, these methods consider a graph or tree (which is just a special kind of graph) embedded in the robot's configuration space. If you are unsure what I mean by "graph or tree" stop now and read [this](https://en.wikipedia.org/wiki/Graph_%28abstract_data_type%29) and [this](https://en.wikipedia.org/wiki/Tree_%28data_structure%29) before moving on.
 
 Notably for these methods, the graph is usually implied by a *discretization* over the robot's possible actions. Imagine vertices of the graph as representing configurations or states of the robot, and edges as actions between states, which when applied from the source state result in the robot transitioning to the destination state. This action discretization is frequently defined in advance (and you can imagine applying this concept to robot's with continuous action spaces simply by discretizing those action spaces). Due to the constant discretization, you can conceptualize these as creating something like a grid or lattice as the graph.
 
 With this conceptualization, motion planning then reduces to a *search* over that graph, seeking the "shortest" path from your start vertex to any vertex that represents a goal configuration or state.
+
+{% include figure image_path="/assets/images/posts/101-motion-planning-intro-part1-Fig2.png" 
+caption="In the discrete grid/lattice-based search methods, we can conceptualize something like this grid-shaped graph embedded in the configuration space. Some of this graph may correspond to configurations where the robot's shape collides with obstacles, such as this red volume which represents configurations where the tube is colliding with that liver there. (It's a liver. Don't ask me where it came from, I don't make the rules. Regardless, we don't want to run into it with our robot). If we have a start and goal configuration that are on this graph, or that we can easily connect to this graph, then we can run a graph search algorithm on this graph which, if we do it correctly, will return for us a collision free path (shown here in pink). Note: In these figures I've drawn a configuration space obstacle that corresponds to the liver obstacle in the robot's workspace. This is just an example. This drawing is NOT what the configuration space obstacle would actually look like. In fact, in general it is infeasible to fully describe the configuration space obstacles. Many of the motion planning methods I describe here were designed in part to overcome this very issue." %}
 
 How does this map back to our optimization formalization above? The cost function is minimized by applying a graph-search method that minimizes the accumulation of edge cost (so you need to define a cost over edges and recognize that without substantial modification you're limited to considering objectives that can be modeled by costs that accumulate). The constraints are enforced simply by not considering edges that would result in a violation of the constraints during the search.
 
@@ -70,7 +76,7 @@ Cannonical graph search methods (not specific to motion plannning) include [Unif
 The key to applying these methods in motion planning is frequently in coming up with an effective and admissible/consistent heuristic (see A* details for what that means). More advanced methods applied to motion planning specifically include D\*[^1], D*-Lite[^2], and LPA\*[^3].
 It's also very much worth noting that inadmissible heuristics can also be leveraged to potentially great effect (see Multi-Heuristic A\*[^4]).
 
-### Sampling-based methods
+## Sampling-based methods
 Perhaps the most popular class of motion planning methods, the sampling-based approaches are closely related to the graph-search methods. In fact, these methods frequently leverage graph search but on a graph constructed in a different manner.
 
 Rather than a graph constructed via a discretization over the robot's actions, the sampling-based methods leverage _random sampling_ to construct the graph incrementally (this is why they are called sampling-based, as you may have guessed). The graph (or tree, which again, is just a special kind of graph) is embedded in the robot's configuration space as above. It is constructed by iteratively randomly sampling states (or actions, sometimes) and attempting to connect the newly sampled state (or state resulting from the sampled action) to the graph/tree.
@@ -79,11 +85,16 @@ When adding states, (usually) the new state and the edge connecting it to the gr
 
 At some point, the hope is that the graph will contain a goal state, and then by running graph search (e.g., A\*) on this randomly-generated graph to find a path from the start state to a goal. If the graph is a tree, this search is trivial as there's only one path in the graph (ignoring some nuance, that's what tree means).
 
+{% include figure image_path="/assets/images/posts/101-motion-planning-intro-part1-Fig3.png" 
+caption="In the sampling-based methods, the graph (or tree) is constructed in the configuration space via random sampling. It will almost certainly have a much different structure than the grid/lattice graphs will, and subsequently the algorithms will exhibit different properties." %}
+
 The specifics of the graph, how the states/actions are sampled, how the connections are made, etc., are what distinguish the sampling-based methods from each other.
 
 Okay, so let's map these concepts back to our optimization formulation.
-Cost: If there are multiple paths in the graph, then the graph search over the graph can provide the lowest cost path in the graph, however the lowest cost path _possible_ may not be in the graph at any given iteration. Many of the earlier versions of these methods ignored cost and instead attempted to find any path that avoided obstacles, providing a property called probabilistic-completeness. Since then, other methods build upon this to provide a guarantee called asymptotic optimality, which intuitively means that their best path will approach an optimal path (in cost) as runtime progresses (only getting arbitrarily close to an optimal path in the limit though). This contrasts with the discrete grid/lattice-based search methods in that those methods typically only provide a property called resolution completeness/optimality which intuitively means the path is complete or optimal for the resolution of the discretization, but not necessarily in general.
-Constraints: As with the discrete grid/lattice-based search methods, the sampling-based methods usually encode constraint satisfaction by only considering states/edges in the graph construction or search that satisfy the constraints, including obstacle avoidance.
+
+**Cost:** If there are multiple paths in the graph, then the graph search over the graph can provide the lowest cost path in the graph, however the lowest cost path _possible_ may not be in the graph at any given iteration. Many of the earlier versions of these methods ignored cost and instead attempted to find any path that avoided obstacles, providing a property called probabilistic-completeness. Since then, other methods build upon this to provide a guarantee called asymptotic optimality, which intuitively means that their best path will approach an optimal path (in cost) as runtime progresses (only getting arbitrarily close to an optimal path in the limit though). This contrasts with the discrete grid/lattice-based search methods in that those methods typically only provide a property called resolution completeness/optimality which intuitively means the path is complete or optimal for the resolution of the discretization, but not necessarily in general.
+
+**Constraints:** As with the discrete grid/lattice-based search methods, the sampling-based methods usually encode constraint satisfaction by only considering states/edges in the graph construction or search that satisfy the constraints, including obstacle avoidance.
 
 Canonical probabilistically-complete methods include Probabilistic Roadmaps (PRM)[^5] and Rapidly-exploring Random Trees (RRT)[^6]. Popular asymptotically-optimal methods include PRM/RRT[^7], Batch-Informed Trees (BIT)[^8], and Asymptotically-Optimal-RRT (AO-RRT)[^9].
 
@@ -91,7 +102,7 @@ Canonical probabilistically-complete methods include Probabilistic Roadmaps (PRM
 {: .notice--danger}
 
 
-### Optimization-based methods
+## Optimization-based methods
 Given the formulation we started with, i.e., casting the motion planning problem as constrained optimization, you may be asking yourself: "wait, why don't we just use optimization methods from, you know, _mathematics_, to solve this problem?" Great question! Enter the optimization-based motion planning methods.
 
 This class of methods leverages nonlinear, constrained optimization methods from the field of optimization itself explicitly to solve the motion planning problem using variations of our above formulation---rather than relying on the graph-search to minimize cost.
@@ -99,6 +110,9 @@ This class of methods leverages nonlinear, constrained optimization methods from
 As of now, the majority of these methods (with an exception mentioned below) leverage gradients (and frequently higher-order derivatives) of the objective function and/or of the constraint functions in iterative optimization methods. Think penalty methods, augmented Lagrangian methods, interior point methods, etc. If these concepts are new to you, there is an amazing textbook on the subject by Wright and Nocedal [^10] that is open almost perpetually in my office.
 
 At a high level there isn't much more to the story. These methods take exactly the optimization-based formulation above and apply optimization techniques that work directly on such formulations.
+
+{% include figure image_path="/assets/images/posts/101-motion-planning-intro-part1-Fig4.png" 
+caption="Potentially abandoning the notion of a graph entirely, the optimization-based methods instead frequently parameterize a curve in the configuration space that connects the start and goal. Here that initial parameterization is just an evenly spaced set of configurations in between the start and goal, without consideration of the obstacles. These methods then leverage numerical optimization to minimize an objective while ensuring constraint satisfaction (such as by bringing the path out of regions of the space that collide with obstacles, a process here represented by the blue arrows)."%}
 
 Is it just that easy? Unfortunately, no. The prior paragraph is true at a high level, but the low level is where the details lie. The specific ways in which these methods define cost and their constraint functions such that they work well with the optimization techniques---e.g., ensuring they have gradients that are well-behaved---can make these methods a bit tricky to use in practice. However in many cases they end up working very, very well, which can make it worth the complexity.
 
