@@ -73,7 +73,7 @@ How does this map back to our optimization formalization above? The cost functio
 
 Cannonical graph search methods (not specific to motion plannning) include [Uniform Cost Search (UCS)](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Practical_optimizations_and_infinite_graphs) (closely related to [Djikstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)) and [A\* search](https://en.wikipedia.org/wiki/A*_search_algorithm).
 
-The key to applying these methods in motion planning is frequently in coming up with an effective and admissible/consistent heuristic (see A* details for what that means). More advanced methods applied to motion planning specifically include D\*[^1], D*-Lite[^2], and LPA\*[^3].
+The key to applying these methods in motion planning is frequently in coming up with an effective and admissible/consistent heuristic (see A* details for what that means). More advanced methods applied to motion planning specifically include D\*[^1], D\*-Lite[^2], and LPA\*[^3].
 It's also very much worth noting that inadmissible heuristics can also be leveraged to potentially great effect (see Multi-Heuristic A\*[^4]).
 
 ## Sampling-based methods
@@ -83,7 +83,7 @@ Rather than a graph constructed via a discretization over the robot's actions, t
 
 When adding states, (usually) the new state and the edge connecting it to the graph are checked for validity (e.g., joint-limit satisfaction and obstacle avoidance). If the state and/or edge are not valid, they aren't added to the graph.
 
-At some point, the hope is that the graph will contain a goal state, and then by running graph search (e.g., A\*) on this randomly-generated graph to find a path from the start state to a goal. If the graph is a tree, this search is trivial as there's only one path in the graph (ignoring some nuance, that's what tree means).
+At some point, the hope is that the graph will contain a goal state, and then by running graph search (e.g., A\*) on this randomly-generated graph the method will find a path from the start state to a goal. If the graph is a tree, this search is trivial as there's only one path in the graph (ignoring some nuance, that's what tree means).
 
 {% include figure image_path="/assets/images/posts/101-motion-planning-intro-part1-Fig3.png" 
 caption="In the sampling-based methods, the graph (or tree) is constructed in the configuration space via random sampling. It will almost certainly have a much different structure than the grid/lattice graphs will, and subsequently the algorithms will exhibit different properties." %}
@@ -96,7 +96,7 @@ Okay, so let's map these concepts back to our optimization formulation.
 
 **Constraints:** As with the discrete grid/lattice-based search methods, the sampling-based methods usually encode constraint satisfaction by only considering states/edges in the graph construction or search that satisfy the constraints, including obstacle avoidance.
 
-Canonical probabilistically-complete methods include Probabilistic Roadmaps (PRM)[^5] and Rapidly-exploring Random Trees (RRT)[^6]. Popular asymptotically-optimal methods include PRM/RRT[^7], Batch-Informed Trees (BIT)[^8], and Asymptotically-Optimal-RRT (AO-RRT)[^9].
+Canonical probabilistically-complete methods include Probabilistic Roadmaps (PRM)[^5] and Rapidly-exploring Random Trees (RRT)[^6]. Popular asymptotically-optimal methods include PRM\*/RRT\*[^7], Batch-Informed Trees (BIT)[^8], and Asymptotically-Optimal-RRT (AO-RRT)[^9].
 
 ***Super-duper important point!*** Just because you're using sampling-based methods does not mean you're getting probabilistic completeness or asymptotic optimality. There are properties/assumptions you must satisfy in your specific application of these methods that are frequently nuanced, you'll need to ensure that you satisfy these things. Read the papers detailing these methods for details!
 {: .notice--danger}
@@ -120,7 +120,7 @@ Canonical methods include CHOMP[^11], which leverages a variation of gradient de
 
 There is also a method called Cross-Entropy Motion Planning (CEMP)[^14] that leverages a gradient-free optimization method (the cross-entropy method, as you may have guessed from the name). This is notable because many difficulties one may encounter in leveraging optimization-based methods may come from the gradients, or lack-thereof.
 
-This concludes Part 1 of my introduction to motion planning for continuum robots. In next week's [Part 2]({% post_url /2023-06-23-intro-mp-part1 %}) we will look at the challenges of motion planning for continuum robots. Stay tuned!
+This concludes Part 1 of my introduction to motion planning for continuum robots. In next week's [Part 2]({% post_url /2023-06-30-intro-mp-part2 %}) we will look at the challenges of motion planning for continuum robots. Stay tuned!
 {: .notice--success}
 
 ## References
