@@ -120,7 +120,7 @@ Canonical methods include CHOMP[^11], which leverages a variation of gradient de
 
 There is also a method called Cross-Entropy Motion Planning (CEMP)[^14] that leverages a gradient-free optimization method (the cross-entropy method, as you may have guessed from the name). This is notable because many difficulties one may encounter in leveraging optimization-based methods may come from the gradients, or lack-thereof.
 
-This concludes Part 1 of my introduction to motion planning for continuum robots. In next week's [Part 2]({% post_url /2023-06-30-intro-mp-part2 %}) we will look at the challenges of motion planning for continuum robots. Stay tuned!
+This concludes Part 1 of my introduction to motion planning for continuum robots. In next week's [Part 2]({% post_url /2023-06-28-intro-mp-part2 %}) we will look at the challenges of motion planning for continuum robots. Stay tuned!
 {: .notice--success}
 
 ## References
