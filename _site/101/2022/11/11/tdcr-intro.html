@@ -1,0 +1,507 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Tendon-driven Continuum Robots -</title>
+<meta name="description" content="Tendon-driven continuum robots are the most common type.">
+
+
+  <meta name="author" content="Jessica Burgner-Kahrs">
+  
+  <meta property="article:author" content="Jessica Burgner-Kahrs">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Tendon-driven Continuum Robots">
+<meta property="og:url" content="https://continuumroboticslab.github.io/opencontinuumrobotics/101/2022/11/11/tdcr-intro.html">
+
+
+  <meta property="og:description" content="Tendon-driven continuum robots are the most common type.">
+
+
+
+  <meta property="og:image" content="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_tdcr_teaser.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-11-11T00:00:00-05:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://continuumroboticslab.github.io/opencontinuumrobotics/101/2022/11/11/tdcr-intro.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Open Continuum Robotics Project",
+      "url": "https://continuumroboticslab.github.io/opencontinuumrobotics/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/opencontinuumrobotics/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/opencontinuumrobotics/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/opencontinuumrobotics/"><img src="/opencontinuumrobotics/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/opencontinuumrobotics/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/software/">Software</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/hardware/">Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/blog/">Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/opencontinuumrobotics/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Jessica Burgner-Kahrs</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Professor. Roboticist.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Tendon-driven Continuum Robots">
+    <meta itemprop="description" content="Tendon-driven continuum robots are the most common type.">
+    <meta itemprop="datePublished" content="2022-11-11T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Tendon-driven Continuum Robots
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-11-11T00:00:00-05:00">2022-11-11</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#structure-of-tdcr">Structure of TDCR</a></li><li><a href="#motion-capabilities">Motion Capabilities</a></li><li><a href="#remarks">Remarks</a></li><li><a href="#references">References</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Continuous motion is most commonly achieved by using tendons in continuum robotics. In so called tendon-driven continuum robots (TDCR) several tendons are routed alongside the robot’s flexible backbone and fixed at different locations. TDCR can consist of multiple stacked segments, where each segment end is deﬁned by the termination of one or multiple tendons. When pulling these tendons, a load will be applied to the compliant backbone and the corresponding segment will bend in the direction of the routed tendon. Tendon actuation is an extrinsic actuation principle, as no actuators are located within the robot’s structure.</p>
+
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_1_segment_motion.jpg" alt="image" style="float: center" /></p>
+
+<h2 id="structure-of-tdcr">Structure of TDCR</h2>
+<p>There exist two design principles in TDCR, which differ by the tendon path.</p>
+
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_design_schematic_one.jpg" alt="image" style="float: left" />  The first design consists of a primary flexible, slender backbone. A finite number of spacer disks is equally distributed along the whole length of the TDCR. Guiding holes within the spacer disks are used to route the tendons along the robot backbone. This design realizes a <strong>partially constrained tendon path</strong>, in which the tendon path is straight within a subsegment (i.e. between two individual spacer disks), forming a series of line segments along the robot.</p>
+
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_design_schematic_two.jpeg" alt="image" style="float: right" /> The second design uses a backbone which usually has a larger diameter and features inner lumens to guide the tendons without the need of separate spacer disks. In contrast to the previous design, here a <strong>fully constrained tendon path</strong> is realized. It is assumed that the tendons follow a continuous curve, parallel to the backbone.</p>
+
+<p>For both designs, several components have been considered for realizing the flexible backbone: Either as a single piece flexible tube or rod that has a uniform stiffness, a flexible tube, or rod with a cutting pattern to allow for non uniform stiffness, or a discrete assembly of multiple stacked compliant joints. Special care needs to be taken when choosing the material of the tendons and the guiding channels to minimize friction and possible stretching of the tendons. Commonly used tendons are either threads, wires, twisted or braided ropes, or tubes made of Nylon, Teﬂon, Kevlar, or NiTi.</p>
+
+<h2 id="motion-capabilities">Motion Capabilities</h2>
+<p>For each segment, any number of tendons can be employed and routed along the robot’s backbone, while at least two are needed to allow for bending in one degree of freedom (planar bending). Since tendons cannot be pushed, using one tendon results in a bending degree of freedom which can only be controller actively in one direction. A pair of antagonistic tendons, i.e., located on opposite sides of the backbone, is required for control of both directions for in-plane bending.  Similarly, a minimum of three tendons is required for bending in two degrees of freedom (spatial bending). Spatial bending can also be realized with a total of four tendons, i.e., two antagonistic pairs as depicted below. It is important to note, that not all tendons can be independently actuated.</p>
+
+<p>The tendon routing path determines the motion capabilities. Tendons can be employed using many different routing paths along the backbone, e.g. helical or converging paths. Tendonds can be co-located, i.e., tendons share the same routing channel but terminate at different segments. Alternatively, tendons can be routed through channels dedicated to the segment they are actuating.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_general_structure.jpg" alt="image" style="float: center" /></td>
+    </tr>
+    <tr>
+      <td>General structure of a tendon-driven continuum robot. Tendons terminate at the end disk of each segment to actuate it. They are routed in parallel to the central backbone. For spatial bending either 3 tendons or 2 antagonistic pairs are used. This example TDCR has two segments actuated by antagonistic tendon pairs.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="remarks">Remarks</h2>
+<p>The design for a TDCR is a straightforward one to achieve continuous bending along the backbone. The use of tendons allows the transmission of forces from remotely located actuators to the backbone. This extrinsic actuation and the compactness of tendons allows miniaturization due to reduced weight and volume of the robot body. However, any increase of the number of segments requires an additional set of motors to actuate it, resulting in a bulky actuator system. This increase in complexity leads to limitations in performance as the number of segments cannot be increased indefinitely.</p>
+
+<p>In addition, the use of tendons brings further complexities to the system. There is friction between the disks and the tendons that results in loss of transmission forces. The direction of frictional force is dependent on the direction of their bending. Depending on the material, the tendon itself may undergo elastic deformations that can result in their extension. Another property of tendons is that they can only support tension and tend to get slack in the presence of compression. When additional forces are applied, a portion of these forces are used to recover from the state of slack. This recovery leads to what is known as actuator backlash where the tendon does not behave as per the input from the actuators. Therefore, all of these complexities must be accounted for while developing a TDCR system.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_examples.jpg" alt="image" style="float: center" /></td>
+    </tr>
+    <tr>
+      <td>Top left: From its initial straight configuration a single-segment TDCR is actuated by pulling on a single tendon causing planar bending. Bottom left: A TDCR with converging tendon paths actuated by antagonistic tendon pairs. Middle: A single segment TDCR with helical tendon path causing the robot to undergo bending and torsion as the tendon gets pulled. Right: Spatial bending of a three segment continuum robot. Three tendons are co-located.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="notice"><strong><em>Further Reading</em></strong>: Curious to learn more about tendon-driven continuum robots? You don’t want to wait for the next blog post? Then this open access paper<sup id="fnref:fn1" role="doc-noteref"><a href="#fn:fn1" class="footnote" rel="footnote">1</a></sup>  from my lab is for you!</p>
+
+<h2 id="references">References</h2>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:fn1" role="doc-endnote">
+      <p>P. Rao, Q. Peyron, S. Lilge, and J. Burgner-Kahrs: How to Model Tendon-Driven Continuum Robots and Benchmark Modelling Performance. Frontiers in Robotics &amp; AI, 7:1-20, 2021, doi: <a href="https://doi.org/10.3389/frobt.2020.630245">10.3389/frobt.2020.630245</a>. <a href="#fnref:fn1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/opencontinuumrobotics/categories/#101" class="page__taxonomy-item" rel="tag">101</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-11-11T00:00:00-05:00">2022-11-11</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Tendon-driven+Continuum+Robots%20https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2022%2F11%2F11%2Ftdcr-intro.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2022%2F11%2F11%2Ftdcr-intro.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2022%2F11%2F11%2Ftdcr-intro.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/opencontinuumrobotics/history/2022/11/08/tensorArm.html" class="pagination--pager" title="Tensor arm
+">Previous</a>
+    
+    
+      <a href="/opencontinuumrobotics/history/2022/11/15/earlyCR.html" class="pagination--pager" title="Early Continuum Robots - The 1980s
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/OpenCRProject1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/opencontinuumrobotics/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,564 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Introduction to Motion Planning for Continuum Robots - Part 2 -</title>
+<meta name="description" content="What makes motion planning particularly challenging for continuum robots? How does the continuum robotics community tackle those challenges?">
+
+
+  <meta name="author" content="Alan Kuntz">
+  
+  <meta property="article:author" content="Alan Kuntz">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Introduction to Motion Planning for Continuum Robots - Part 2">
+<meta property="og:url" content="https://continuumroboticslab.github.io/opencontinuumrobotics/101/2023/06/28/intro-mp-part2.html">
+
+
+  <meta property="og:description" content="What makes motion planning particularly challenging for continuum robots? How does the continuum robotics community tackle those challenges?">
+
+
+
+  <meta property="og:image" content="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/101-motion-planning-intro-part2-teaser.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-06-28T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://continuumroboticslab.github.io/opencontinuumrobotics/101/2023/06/28/intro-mp-part2.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Open Continuum Robotics Project",
+      "url": "https://continuumroboticslab.github.io/opencontinuumrobotics/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/opencontinuumrobotics/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/opencontinuumrobotics/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/opencontinuumrobotics/"><img src="/opencontinuumrobotics/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/opencontinuumrobotics/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/software/">Software</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/hardware/">Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/blog/">Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/opencontinuumrobotics/assets/images/AK_author.jpeg" alt="Alan Kuntz" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Alan Kuntz</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Assistant Professor.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Utah, USA</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:alan.kuntz@utah.edu" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://users.cs.utah.edu/~adk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/alan-kuntz-1a494a135" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Introduction to Motion Planning for Continuum Robots - Part 2">
+    <meta itemprop="description" content="What makes motion planning particularly challenging for continuum robots? How does the continuum robotics community tackle those challenges?">
+    <meta itemprop="datePublished" content="2023-06-28T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Introduction to Motion Planning for Continuum Robots - Part 2
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-06-28T00:00:00-04:00">2023-06-28</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#what-makes-motion-planning-particularly-challenging-for-continuum-robots">What makes motion planning particularly challenging for continuum robots?</a></li><li><a href="#how-has-the-community-overcome-these-challenges">How has the community overcome these challenges?</a><ul><li><a href="#modeling-accuracy-or-lack-thereof">Modeling accuracy (or lack thereof)</a></li><li><a href="#computation-speed-or-lack-thereof">Computation speed (or lack thereof)</a></li></ul></li><li><a href="#so-whats-next">So what’s next?</a><ul><li><a href="#leveraging-learned-models-in-planning">Leveraging learned models in planning</a></li><li><a href="#principled-planning-under-uncertainty">Principled planning under uncertainty</a></li><li><a href="#multi-fidelity-planning">Multi-fidelity planning</a></li></ul></li><li><a href="#closing-remarks">Closing remarks</a></li><li><a href="#references">References</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Today, we continue our introduction to motion planning for continuum robots. If you have missed Part 1 of the intro, look at <a href="/101/2023/06/23/intro-mp-part1.html">last week’s blog post</a> before you continue here!</p>
+
+<h2 id="what-makes-motion-planning-particularly-challenging-for-continuum-robots">What makes motion planning particularly challenging for continuum robots?</h2>
+<p>First, let’s discuss one of the primary differences between continuum robots and more “traditional” robots (for lack of a better term)—modeling.</p>
+
+<p>As you’ve seen in prior (and future, I promise) blogs on this site, modeling the mechanics of continuum robots is fundamentally different from more traditional serial-link manipulator arms.</p>
+
+<p>As a subset of mechanics, consider just the forward kinematics (FK) problem for continuum robots, i.e., mapping the robot’s joint state to the robot’s resultant shape in space.
+For concentric tube robots this may be mapping the robot’s tubes’ rotation/translation values to the robot’s shape and for tendon-driven robots this may be mapping the robot’s tendon tensions/displacements to the robot’s shape.</p>
+
+<p>What’s <em>actually</em> happening in the physical world is complicated here. There are elastic elements interacting with (potentially) other elastic elements in complex ways. There is difficult-to-model friction between components of the robot, hysteresis, potentially difficult-to-predict material properties, etc.</p>
+
+<p>The continuum robotics community has taken a variety of approaches to modeling, but a fundamental trend exists: a <strong>trade-off between accuracy and speed-of-computation</strong>. That is, models which may be fast to compute are typically fast because they neglect to account for some of the physical phenomenon present in the actual robot. On the flip side, models that account for those phenomenon are slow to compute. In reality, there’s a spectrum here.</p>
+
+<p>Constant curvature models, for instance, may take a purely geometric approach to FK, which is fast to compute, but tend to be less accurate. On the other end of the spectrum, you could consider leveraging something like finite element analysis to simulate the physics of a continuum robot to compute its shape. This would improve accuracy but would be much, much slower to compute. Somewhere in the middle of these you may find things like the Cosserat rod/string models, which are a popular way to model continuum robots and will be discussed in other blog posts here (this is the approach we take in my lab, usually, when we aren’t using machine learning-based methods).</p>
+
+<p>Let’s contrast this with serial-link manipulator arms. For these, FK typically require only the multiplication of a handful of matrices, which is comparatively VERY fast, and comparatively VERY accurate, as these robots are rigid.</p>
+
+<p>Okay, so why is this a problem when performing motion planning for continuum robots?</p>
+
+<p>Well, one way to think about motion planning is that we are reasoning <em>in advance of actually moving</em> about the best way to move the robot to achieve our goals. This means that we need our ability to reason about motion to be accurate, otherwise how we predict the robot will move doesn’t mean much. For this reason, model inaccuracy plays havoc with naïve motion planning methods (such as we’ve discussed in last week’s <a href="/101/2023/06/23/intro-mp-part1.html">post</a>), and continuum robots have inaccurate models.</p>
+
+<p>Further, the ways in which we are reasoning in advance about moving require us to consider a <em>whole bunch of potential motions</em> for the robot. Every vertex in the grid/lattice-based and sampling-based methods represents an FK computation. Every edge between them requires multiple (often many) FK computations. In the optimization-based methods, the computation of objective and constraint gradients frequently require many FK computations. So the time it takes to compute FK has HUGE implications in motion planning.</p>
+
+<p>This modeling tension, fast but inaccurate or (somewhat) accurate but slow, is one of the fundamental challenges of applying motion planning to continuum robots, and the one I’ll focus on for the rest of this post.</p>
+
+<figure class="">
+  <img src="/opencontinuumrobotics/assets/images/posts/101-motion-planning-intro-part2-Fig1.png" alt="" /><figcaption>
+      As continuum robot models become more accurate, they tend to take longer to compute. This represents one of the fundamental challenges associated with applying motion planning to continuum robots.
+
+    </figcaption></figure>
+
+<h2 id="how-has-the-community-overcome-these-challenges">How has the community overcome these challenges?</h2>
+
+<h3 id="modeling-accuracy-or-lack-thereof">Modeling accuracy (or lack thereof)</h3>
+<p>The continuum robotics community (myself included) has largely taken an extremely unsatisfying approach to overcoming modeling inaccuracy. This approach, also used by much of the non-continuum robotics planning world, boils down to a simple idea: don’t let the robot get close to things. That way, if the model is inaccurate, hopefully the robot is far enough away from its environment that it won’t collide with it in unexpected ways.</p>
+
+<p>As an example, in one of my papers<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">1</a></sup>, we build into the objective function a notion of distance from obstacles. Specifically, We  define the cost of a configuration $\boldsymbol{q}$ as:</p>
+
+\[\begin{split}
+    &amp;\texttt{cost}(\boldsymbol{q})=\left\{
+    \begin{array}{rcl}
+    \cfrac{1}{\texttt{clear}(\boldsymbol{q})},&amp;&amp;\texttt{clear}(\boldsymbol{q}) &gt; 0\\
+    \infty,&amp;&amp;\texttt{clear}(\boldsymbol{q}) \le 0,
+    \end{array}\right.
+  \end{split}\]
+
+<p>where $\texttt{clear}$ is, informally defined here, the signed distance from the robot’s body at that configuration to the nearest obstacle.</p>
+
+<p>The cost of a path $\boldsymbol{\xi}$ then becomes
+\(\texttt{Cost}(\boldsymbol{\xi}) = \int_0^1 \texttt{cost}(\boldsymbol{\xi}(s))ds .\)</p>
+
+<p>where $s$ is a normalized path arclength parameter. Note here that I’ve used little ‘c’ cost for cost over configuration and big ‘C’ Cost for cost over a path. Creative, I know.</p>
+
+<p>You should really read the paper if you want formality here, but this should give you the gist. Also note that in the paper the notation is slightly different, but I’ve changed it here to more-closely match what I’ve used in the last <a href="/101/2023/06/23/intro-mp-part1.html">post</a>.</p>
+
+<p>In that method, we leverage both sampling-based motion planning and optimization-based motion planning in parallel (building on [13]), where the method attempts to minimize the $\texttt{cost}$ of a path. This results in paths that travel as far from obstacles as possible, while still being constrained at the start and end configurations.</p>
+
+<h3 id="computation-speed-or-lack-thereof">Computation speed (or lack thereof)</h3>
+<p>The community has taken a variety of approaches to overcome the slow computation speed of continuum robot mechanical models. Here are a few, with some examples.</p>
+
+<p><strong>The first, and most obvious, is the use of a fast-but-inaccurate mechanical model:</strong>
+For instance, in Lyons et al. <sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">2</a></sup>, the authors simplify the mechanical model of concentric tube robots in two key ways. First, they assume that the tubes are torsionally rigid. Second, they assume that the stiffness of each tube dominates all of the tubes nested inside of it. This means that the shape of a tube is assumed to be independent of the motions of the tubes internal to it and that each tube deploys in a constant-curvature circular shape. The mechanical model that leverages these assumptions is sufficiently fast for planning, but again as discussed above <em>ad nauseam</em>, comes at the significant cost of accuracy.</p>
+
+<p><strong>Another approach is to lean on advances in software engineering and programming languages to speed up the computation:</strong>
+Leibrandt et. al.<sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote" rel="footnote">3</a></sup> leverage <a href="https://en.wikipedia.org/wiki/Template_metaprogramming">template metaprogramming in C++</a>, which (I’m oversimplifying this explanation) moves a lot of expensive run-time computation to compile-time computation for concentric tube robots. This enabled very fast kinematics computation. The method leverages this in a PRM-style motion planner. In our paper<sup id="fnref:15:1" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">1</a></sup> mentioned above, we use this template-based kinematic model, wrapping our parallel sampling and optimization method around it. Speaking of, our<sup id="fnref:15:2" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">1</a></sup> use of <a href="https://en.wikipedia.org/wiki/Parallel_computing">parallelism</a> is another example of leveraging software engineering concepts to speed up computation in planning for continuum robots.</p>
+
+<p><strong>We can also consider leveraging precomputation:</strong>
+In the paper <sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote" rel="footnote">4</a></sup> (its extension <sup id="fnref:19" role="doc-noteref"><a href="#fn:19" class="footnote" rel="footnote">5</a></sup>), the authors propose leveraging precomputation to build a roadmap for planning <em>after the environment is known but in advance of when it is needed</em>. This is a pretty specific (and restrictive) scenario, but makes sense in the application put forth by the papers, namely in surgery. These works present the case that pre-operative medical imaging provides the method with a 3D environment a day (or more) prior to when the surgery will happen. The method can then leverage that time to compute a dense, collision-free roadmap before it’s needed at surgery time. The proposed method utilizes the sampling-based method Rapidly-exploring Random Graph (RRG) (which is also presented in <sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">6</a></sup>, in addition to PRM* and RRT*). The method also utilizes one of, if not the most precise (at the time, at least) mechanical models available for concentric tube robots. This dense, collision-free roadmap is built over the course of many hours using this accurate model and the anatomical environment segmented from the pre-operative medical imaging. Then, at the time of the surgery, the method proposes an interactive-rate supervisory control-style scheme in which a haptic device is used by the surgeon to input a desired tip position for the robot in the patient. Leveraging a nearest-neighbor data structure, the vertex in the roadmap that corresponds to the configuration with the robot’s tip closest to the desired position is then identified. Graph search is performed to identify a path on the roadmap from the current configuration to that configuration, and then the method “steps off” of the roadmap and leveraging damped least-squares iterative inverse kinematics <sup id="fnref:20" role="doc-noteref"><a href="#fn:20" class="footnote" rel="footnote">7</a></sup><sup id="fnref:21" role="doc-noteref"><a href="#fn:21" class="footnote" rel="footnote">8</a></sup>, which is conceptually very similar to resolved-rates control, drives the tip of the robot as close to the desired tip position as it can. This then repeats in a loop.</p>
+
+<p>In our paper<sup id="fnref:22" role="doc-noteref"><a href="#fn:22" class="footnote" rel="footnote">9</a></sup>, my group has built upon this concept in a few ways. Among other contributions, we adapt the concepts to work for tendon-driven continuum robots (<sup id="fnref:18:1" role="doc-noteref"><a href="#fn:18" class="footnote" rel="footnote">4</a></sup> and <sup id="fnref:19:1" role="doc-noteref"><a href="#fn:19" class="footnote" rel="footnote">5</a></sup> are specific to concentric tube robots), introduce a modification to mechanical modeling and collision detection to improve speed, and remove the need to have the environment in advance of precomputing the dense roadmap. The method still heavily leverages precomputation, but only requires the environment immediately prior to when the supervisory control loop is started.</p>
+
+<h2 id="so-whats-next">So what’s next?</h2>
+<p>What are the open problems or areas to be explored in motion planning for continuum robots? Here are a few that I’m personally excited about.</p>
+<h3 id="leveraging-learned-models-in-planning">Leveraging learned models in planning</h3>
+<p>There has recently been a large interest in machine learning-based mechanical models of continuum robots, both for their potential to learn unmodeled (or unknowable/unmodelable) effects and their potential for fast computation (e.g., frequently the shape computation of a learned model is faster than the physics-based equivalent). I’ll leave the details of these methods to another post, written by myself or someone else. However germane to THIS post, how to leverage these types of models for motion planning of continuum robots is as-yet underexplored.</p>
+
+<h3 id="principled-planning-under-uncertainty">Principled planning under uncertainty</h3>
+<p>Motion planning in a way that handles uncertainty in a principled way has been leveraged to great effect in other areas of robotics. Given the uncertainty associated with continuum robots, the application/exploration of using these types of methods/formulations in planning for continuum robots has great potential.</p>
+
+<h3 id="multi-fidelity-planning">Multi-fidelity planning</h3>
+<p>The fact that we have a variety of models for continuum robots that trade computation speed for accuracy implies exciting potential for the use of multi-fidelity planning. One can imagine, as maybe the most obvious example, using a fast but inaccurate model to prioritize edge evaluation in a lazy planning paradigm, look up Lazy PRM if that doesn’t make sense to you, where full edge evaluation is then done with a high-fidelity model.</p>
+
+<h2 id="closing-remarks">Closing remarks</h2>
+<p>Hopefully the above alongside last week’s <a href="/101/2023/06/23/intro-mp-part1.html">Part 1</a> were a relatively gentle introduction to motion planning and how it relates conceptually to continuum robots. This wasn’t intended to be a comprehensive survey of planning for continuum robots. Rather, my intention was to give you the vocabulary and an understanding of the rough concepts sufficient for you to investigate the rest of the literature yourself, and to innovate on the state-of-the-art as you need for your specific problems.</p>
+
+<h2 id="references">References</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:15" role="doc-endnote">
+      <p>A. Kuntz, M. Fu, R. Alterovitz: Planning High-Quality Motions for Concentric Tube Robots in Point Clouds via Parallel Sampling and optimization. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 2205-2212, 2019. doi: <a href="https://doi.org/10.1109/IROS40897.2019.8968172">10.1109/IROS40897.2019.8968172</a> <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:15:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:15:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
+    </li>
+    <li id="fn:16" role="doc-endnote">
+      <p>L. A. Lyons, R. J. Webster, R. Alterovitz: Motion planning for active cannulas. IEEE/RSJ International Conference on Intelligent Robots and Systems, pp. 801-806, 2009. doi: <a href="https://doi.org/10.1109/IROS.2009.5354249">10.1109/IROS.2009.5354249</a> <a href="#fnref:16" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:17" role="doc-endnote">
+      <p>K. Leibrandt, C. Bergeles, G.-Z. Yang: Concentric Tube Robots: Rapid, Stable Path-Planning and Guidance for Surgical Use. IEEE Robotics &amp; Automation Magazine, vol. 24, no. 2, pp. 42-53, 2017. doi: <a href="https://doi.org/10.1109/MRA.2017.2680546">10.1109/MRA.2017.2680546</a> <a href="#fnref:17" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:18" role="doc-endnote">
+      <p>L. G. Torres, C. Baykal,  R. Alterovitz: Interactive-rate motion planning for concentric tube robots. IEEE International Conference on Robotics and Automation (ICRA), pp. 1915-1921, 2014. doi: <a href="https://doi.org/10.1109/ICRA.2014.6907112">10.1109/ICRA.2014.6907112</a> <a href="#fnref:18" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:18:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:19" role="doc-endnote">
+      <p>L. G. Torres et al.: A motion planning approach to automatic obstacle avoidance during concentric tube robot teleoperation. IEEE International Conference on Robotics and Automation (ICRA), pp. 2361-2367, 2015. doi: <a href="https://doi.org/10.1109/ICRA.2015.7139513">10.1109/ICRA.2015.7139513</a> <a href="#fnref:19" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:19:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>S. Karaman and E. Frazzoli: Sampling-based algorithms for optimal motion planning. The International Journal of Robotics Research, 30(7):846-894, 2011. doi: <a href="https://doi.org/10.1177/0278364911406761">10.1177/0278364911406761</a> <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:20" role="doc-endnote">
+      <p>Y. Nakamura and H. Hanafusa: Inverse Kinematic Solutions With Singularity Robustness for Robot Manipulator Control. ASME. J. Dyn. Sys., Meas., Control., 108(3):163–171, 1986. doi: <a href="https://doi.org/10.1115/1.3143764">10.1115/1.3143764</a> <a href="#fnref:20" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:21" role="doc-endnote">
+      <p>C. W. Wampler: Manipulator Inverse Kinematic Solutions Based on Vector Formulations and Damped Least-Squares Methods. IEEE Transactions on Systems, Man, and Cybernetics, 16(1):93-101, 1986. doi: <a href="https://doi.org/10.1109/TSMC.1986.289285">10.1109/TSMC.1986.289285</a> <a href="#fnref:21" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:22" role="doc-endnote">
+      <p>M. Bentley, C. Rucker, A. Kuntz: Interactive-Rate Supervisory Control for Arbitrarily-Routed Multitendon Robots via Motion Planning. IEEE Access, vol. 10, pp. 80999-81019, 2022. doi: <a href="https://doi.org/10.1109/ACCESS.2022.3194515">10.1109/ACCESS.2022.3194515</a> <a href="#fnref:22" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/opencontinuumrobotics/categories/#101" class="page__taxonomy-item" rel="tag">101</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-06-28T00:00:00-04:00">2023-06-28</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Introduction+to+Motion+Planning+for+Continuum+Robots+-+Part+2%20https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2023%2F06%2F28%2Fintro-mp-part2.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2023%2F06%2F28%2Fintro-mp-part2.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2023%2F06%2F28%2Fintro-mp-part2.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html" class="pagination--pager" title="Introduction to Motion Planning for Continuum Robots - Part 1
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/OpenCRProject1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/opencontinuumrobotics/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  </body>
+</html>

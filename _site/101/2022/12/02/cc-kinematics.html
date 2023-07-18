@@ -1,0 +1,709 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Constant Curvature Kinematics Framework -</title>
+<meta name="description" content="This kinematics framework is widely used for continuum robots.">
+
+
+  <meta name="author" content="Jessica Burgner-Kahrs">
+  
+  <meta property="article:author" content="Jessica Burgner-Kahrs">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Constant Curvature Kinematics Framework">
+<meta property="og:url" content="https://continuumroboticslab.github.io/opencontinuumrobotics/101/2022/12/02/cc-kinematics.html">
+
+
+  <meta property="og:description" content="This kinematics framework is widely used for continuum robots.">
+
+
+
+  <meta property="og:image" content="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_cc_teaser.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-02T00:00:00-05:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://continuumroboticslab.github.io/opencontinuumrobotics/101/2022/12/02/cc-kinematics.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Open Continuum Robotics Project",
+      "url": "https://continuumroboticslab.github.io/opencontinuumrobotics/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/opencontinuumrobotics/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/opencontinuumrobotics/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/opencontinuumrobotics/"><img src="/opencontinuumrobotics/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/opencontinuumrobotics/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/software/">Software</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/hardware/">Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/blog/">Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/opencontinuumrobotics/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Jessica Burgner-Kahrs</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Professor. Roboticist.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Constant Curvature Kinematics Framework">
+    <meta itemprop="description" content="This kinematics framework is widely used for continuum robots.">
+    <meta itemprop="datePublished" content="2022-12-02T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Constant Curvature Kinematics Framework
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-02T00:00:00-05:00">2022-12-02</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#robot-dependent-mapping">Robot Dependent Mapping</a></li><li><a href="#robot-independent-mapping">Robot Independent Mapping</a><ul><li><a href="#geometry-of-circular-arcs">Geometry of Circular Arcs</a></li><li><a href="#frenet-serret-frames">Frenet-Serret Frames</a></li><li><a href="#parallel-transport-frames">Parallel Transport Frames</a></li><li><a href="#concatenation-of-arcs">Concatenation of Arcs</a></li></ul></li><li><a href="#references">References</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Today, we dive deeper into the common constant curvature kinematics framework. We look at the mappings between joint and configuration space, i.e. the <strong>robot dependent mapping</strong>, and between configuration and task space, i.e. the <strong>robot independent mapping</strong>.</p>
+
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_modelingIntro_mappings.png" alt="image" /></p>
+
+<h1 id="robot-dependent-mapping">Robot Dependent Mapping</h1>
+
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_cc_arcParameter.png" alt="image" style="float: right" />
+The robot dependent mapping relates the robot’s joint space
+\(q \in \mathbb{R}^{n}\) (\(n\) is the number of “joints” or actuators) to
+configuration space in terms of circular arc parameters. Arc parameters
+define the robot’s configuration and consist of triplets of curvature
+\(\kappa \in \mathbb{R}^{m}\), the angle of the plane containing the arc
+\(\phi \in \mathbb{R}^{m}\), and arc length \(\ell \in \mathbb{R}^{m}\),
+where \(m\) is the number of constant curvature arcs. Alternatively, the
+relationship \(\theta = \kappa s\) allows parameterization based on the
+angle \(\theta\) by which the arc bends.</p>
+
+<p>The mapping from the joint space of a continuum robot to its
+configuration space is specific to the robot, as the actuators and
+unique robot design influence arc parameters in different ways. In
+particular, consideration of the forces and moments applied by actuators
+coupled with suitable approximations yields this mapping from actuator
+variables (pressure, length changes, tension, rotation angles etc.) to curved links
+described by arc parameters. We will look at different continuum robots and their robot depenbdent mappingin future posts. For now, we will assume that the robot dependent mapping, i.e., from joint to configuration space is known.</p>
+
+<h1 id="robot-independent-mapping">Robot Independent Mapping</h1>
+
+<p>The robot independent mapping relates the configuration space of a
+continuum robot, i.e. \(m\) triplets of arc parameters
+\(\{\kappa,\phi,\ell\}\), to its task space. As with rigid-link serial
+robots, we may not only be interested in calculating the end-effector
+position and orientation, but also the pose of all its “joints”. In
+continuum robot kinematics, the joint pose in task space relates to the
+position and orientation of the end of each constant curvature arc.
+Ultimately, we are also interested in knowing the shape of the continuum
+robot. The shape can be described by a curve in task space.</p>
+
+<p>The geometric features of a space curve or curve in three-dimensional
+space are a classic topic of differential geometry. In general, each
+point on a curve \(g\) can be described by a moving frame with respect to
+some reference frame, for instance the robot’s base.
+The moving frame has one axis aligned with the tangent of the curve.
+The other axes of the moving frame must be normal to the curve, but are
+otherwise allowed to rotate freely about the curve. The curve is
+parameterized by arc length s.</p>
+
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_cc_frames.png" alt="image" /></p>
+
+<p>A common assignment of the base frame \(\{ 0\}\) of a continuum robot in
+its zero configuration is:</p>
+<ul>
+  <li>origin at the base</li>
+  <li>\(+ {\widehat{\mathbf{z}}}_{0}\) tangent pointing towards the tip of the
+robot</li>
+  <li>\(+ {\widehat{\mathbf{y}}}_{0}\) such that if \(\phi = 0\), positive
+curvature produces bending about the \(+ {\widehat{\mathbf{y}}}_{0}\)</li>
+  <li>orthogonal coordinate frame \({\widehat{\mathbf{x}}}_{0} = {\widehat{\mathbf{z}}}_{0} \times {\widehat{\mathbf{y}}}_{0}\)</li>
+</ul>
+
+<p>The homogeneous transformation along a constant-curvature robot backbone
+has been derived from a variety of perspectives, such as the geometry of
+circular arcs, Frenet–Serret frames, and parallel transport frames, all
+of which lead to equivalent results.</p>
+
+<h2 id="geometry-of-circular-arcs">Geometry of Circular Arcs</h2>
+<p>The geometry of a continuum robot provides a means of determining the
+pose of points along it using the arc geometry. When \(\phi = 0\), the
+coordinates of any point on the circular arc of radius \(r\) in the
+\(\widehat{x}\widehat{z}\)-plane centered at 
+\(\lbrack r\;0\;0\rbrack^{T}\) are 
+\(\mathbf{p}(s) = \lbrack
+r(1 - \cos\theta)\; 0 \; r\sin\theta \rbrack^{T}\) with \(r = \kappa^{-1}\),
+\(s \in \lbrack 0,\ell\rbrack\) and \(\theta = \kappa s\). The local frame
+at \(\mathbf{p}(s)\) is determined as a rotation about the positive y-axis
+by \(\theta\).</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_cc_circularArc.png" alt="image" /></td>
+    </tr>
+    <tr>
+      <td>For \(\phi = 0\), the arc lies within the \(\widehat{x}\widehat{z}\)-plane. Here, the local frame at $s+\ell$ is depicted and a point $p$ on the curve.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When \(\phi \neq 0\), i.e., the arc is rotated about \(\widehat{z}\) by
+\(\phi\), the homogeneous transformation from the base to a local point
+\(\mathbf{p}\) at arc length \(s\) can be described as</p>
+
+<p>\(T(s) = \begin{bmatrix}
+\text{Rot}(\widehat{z},\phi) &amp; \mathbf{0} \\
+0\;0\;0 &amp; 1 \\
+\end{bmatrix}\begin{bmatrix}
+\text{Rot}(\widehat{y},\theta) &amp; \mathbf{p}(s) \\
+0\;0\;0 &amp; 1 \\
+\end{bmatrix}\).</p>
+
+<p>This transformation can be written in terms of arc parameters as</p>
+
+<p>\(T(s) = \begin{bmatrix}
+\cos\phi\cos\kappa s &amp; -\sin\phi &amp; \cos\phi\sin\kappa s &amp; \frac{\cos\phi(1 - \cos\kappa s)}{\kappa} \\
+\sin\phi\cos\kappa s &amp; \cos\phi &amp; \sin\phi\sin\kappa s &amp; \frac{\sin\phi(1 - \cos\kappa s)}{\kappa} \\
+-\sin\kappa s &amp; 0 &amp; \cos\kappa s &amp; \frac{\sin\kappa s}{\kappa} \\
+0 &amp; 0 &amp; 0 &amp; 1\\
+\end{bmatrix}\).</p>
+
+<p>Note, the special case of \(\kappa = 0\), i.e., the segment of the robot
+is straight. In this case, the definition of \(\mathbf{p}(s)\) as stated
+above does not hold. Instead, it becomes
+\(\mathbf{p}(\mathbf{s}) = \lbrack 0\;0\;s\rbrack^{T}\).</p>
+
+<h2 id="frenet-serret-frames">Frenet-Serret Frames</h2>
+
+<p>The fundamental theorem of space curves tells that given the curvature
+\(\kappa\) and torsion \(\tau\) of an arc-length parameterized
+space curve, we can recover the curve itself.</p>
+
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_cc_frenetframes.png" alt="image" style="float: right" />
+Frenet-Serret frames are defined according to this theorem: One axis is
+tangent to the curve, such that we can look at the change in <strong>tangent</strong>
+direction \(\widehat{t}\) as we move along the curve. Since \(\widehat{t}\)
+can change at any rate (or not at all), we have another axis of the
+frame \(\widehat{n}\) which is the principal <strong>normal</strong> that expresses the
+direction of change, and the scalar \(\kappa\) (the curvature) that
+expresses the magnitude of change. By convention we choose \(\widehat{n}\)
+to be the normal pointing to the left of the curve, i.e., if at any
+point we consider a plane spanned by the tangent and the normal,
+\(\widehat{n}\) is a quarter turn in the counter-clockwise direction from
+\(\widehat{t}\). Together with a third vector
+\(\widehat{b} = \widehat{t} \times \widehat{n}\) called the <strong>binormal</strong>,
+we end up with an orthonormal coordinate frame called the Frenet frame.
+\(\tau\) is the torsion, which describes the way the normal and binormal
+twist around the curve.</p>
+
+<p>Consequently, how the frame changes as we move along the curve is given
+by the Frenet-Serret formula:</p>
+
+<p>\(\frac{d}{ds}\begin{bmatrix}
+\widehat{\mathbf{t}} \\
+\widehat{\mathbf{n}} \\
+\widehat{\mathbf{b}} \\
+\end{bmatrix} = \begin{bmatrix}
+0 &amp; \kappa &amp; 0 \\
+-\kappa &amp; 0 &amp; \tau \\
+0 &amp; -\tau &amp; 0 \\
+\end{bmatrix}\begin{bmatrix}
+\widehat{\mathbf{t}} \\
+\widehat{\mathbf{n}} \\
+\widehat{\mathbf{b}} \\
+\end{bmatrix}\).</p>
+
+<p>According to the base frame assignment described above, we choose the
+initial tangent vector
+\(\widehat{\mathbf{t}}(0) = {\widehat{\mathbf{z}}}_{0}\). The initial
+normal vector perpendicular to \(\widehat{\mathbf{t}}(0)\) depends on the
+direction of curvature defined by \(\phi\), so that
+\(\widehat{\mathbf{n}}(0) = \lbrack\cos\phi\sin\phi 0\rbrack\). Given the
+parameter \(\kappa\) and \(\tau\), we can recover the curve’s shape.
+Intuitively this means, that we start drawing a curve, and bend and
+twist at the prescribed rate. Formally, we can integrate the
+Frenet-Serret equations, which tell us what is the rate of change of the
+tangent, normal, and binormal in terms of the curvature and the torsion
+functions. This is a coupled system of ordinary differential equations.
+We can solve that for the tangent, binormal and normal. Once we have the
+tangent, we can integrate it to obtain the curve</p>
+
+\[\mathbf{p}(s) = \int_{0}^{\ell}\widehat{\mathbf{t}}(s)ds\]
+
+<p>and obtain the homogenous transformation matrix as</p>
+
+\[T(s) = \begin{bmatrix}
+\lbrack\begin{matrix}
+\widehat{\mathbf{n}} &amp; \widehat{\mathbf{b}} &amp; \widehat{\mathbf{t}} \\
+\end{matrix}\rbrack &amp; \mathbf{p}(s) \\
+0\;0\;0 &amp; 1 \\
+\end{bmatrix}\]
+
+<p>which is equivalent to \(T(s)\) derived in the previous section if
+\(\tau = 0\).</p>
+
+<p>Note, that the Frenet-Serret formula fails for \(\kappa = 0\), i.e.
+straight lines. Special care must be taken if a segment of a continuum
+robot could be straight (e.g. in its zero configuration).</p>
+
+<h2 id="parallel-transport-frames">Parallel Transport Frames</h2>
+
+<p>The parallel transport frame (also referred to as Bishop frame) is an
+alternative approach to defining a moving frame that is well defined
+even when the curvature is zero, i.e., the curve has a vanishing second
+derivative. One can express parallel transport of an orthonormal frame
+along a curve simply by parallel transporting each component of the
+frame. The tangent vector and any convenient arbitrary basis for the
+remainder of the frame are used.</p>
+
+\[\frac{d}{ds}\begin{bmatrix}
+\widehat{t} \\
+\widehat{m_{1}} \\
+\widehat{m_{2}} \\
+\end{bmatrix} = \begin{bmatrix}
+0 &amp; k_{1} &amp; k_{2} \\
+- k_{1} &amp; 0 &amp; 0 \\
+- k_{2} &amp; 0 &amp; 0 \\
+\end{bmatrix}\begin{bmatrix}
+\widehat{t} \\
+\widehat{m_{1}} \\
+\widehat{m_{2}} \\
+\end{bmatrix}\]
+
+<p>with \(\kappa = \sqrt{k_{1}^{2} + k_{2}^{2}}\).</p>
+
+<p>While Frenet-Seret frames are uniquely defined for any regular curve
+with nonzero curvature, by contrast, a parallel transport frame is not
+unique but well defined at points where the curvature vanishes. The
+freedom lies in choosing the initial frame. For instance, we can choose
+the initial tangent vector
+\(\widehat{\mathbf{t}}(0) = {\widehat{\mathbf{z}}}_{0}\). The initial
+vector \({\widehat{\mathbf{m}}}_{1}\) perpendicular to
+\(\widehat{\mathbf{t}}(0)\) depends on the direction of curvature defined
+by \(\phi\), so that
+\({\widehat{\mathbf{m}}}_{1}(0) = \lbrack\cos\phi\;\sin\phi\; 0\rbrack\). We
+can then solve this coupled system of ordinary differential equations
+for
+\(\widehat{\mathbf{t}},{\widehat{\mathbf{m}}}_{1},\text{and}{\widehat{\mathbf{m}}}_{2}\)
+and integrate the tangent to obtain the curve.</p>
+
+<h2 id="concatenation-of-arcs">Concatenation of Arcs</h2>
+<p>Under the constant curvature framework, the shape of a continuum robot becomes a concatenation of constant curvature
+arcs.</p>
+
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_cc_concatenation_of_arcs.jpg" alt="" /></p>
+
+<p>Above, we saw how we can obtain the moving frame along a single constant
+curvature arc. As the robot dependent mapping usually results in \(m\)
+triplets of arc parameters \(\{\kappa,\phi,\ell\}\), we have to consider
+that the succeeding arc is defined with respect to the previous arc’s
+end frame. Consequently, \(T_{m - 1}(\ell_{m - 1})\) has to
+be pre-multiplied to the local frame of arc \(m\):
+\(T_{m}(s) = T_{m - 1}(\ell_{m - 1})T(s)\).</p>
+
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_cc_arcConcatenation.png" alt="image" /></p>
+
+<p>Note, that there may be cases, where the local frame is required to span
+the cross section of the robot and to express the material orientation.</p>
+
+<p class="notice"><strong><em>Further Reading</em></strong>: Webster &amp; Jones<sup id="fnref:fn1" role="doc-noteref"><a href="#fn:fn1" class="footnote" rel="footnote">1</a></sup> published a beginner-friendly review on modeling continuum robots using the constant curvature framework. In addition to the different approaches to the <em>robot independent mapping</em> outlined here, they also discuss Denavit-Hartenberg parameters, integral representations, and exponential coordinates. All these methods fundamentally produce the same result for piece- wise constant-curvature robots.</p>
+
+<h1 id="references">References</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:fn1" role="doc-endnote">
+      <p>Webster, R.J. &amp; Jones, B.A., 2010. Design and Kinematic Modeling of Constant Curvature Continuum Robots: A Review. The International Journal of Robotics Research, 29(13), pp. 1661–1683. doi: <a href="https://doi.org/10.1177%2F0278364910368147">10.1177/0278364910368147</a> <a href="#fnref:fn1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/opencontinuumrobotics/categories/#101" class="page__taxonomy-item" rel="tag">101</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-12-02T00:00:00-05:00">2022-12-02</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Constant+Curvature+Kinematics+Framework%20https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2022%2F12%2F02%2Fcc-kinematics.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2022%2F12%2F02%2Fcc-kinematics.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2022%2F12%2F02%2Fcc-kinematics.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/opencontinuumrobotics/history/2022/11/29/fictionalCR.html" class="pagination--pager" title="Fictional Continuum Robots
+">Previous</a>
+    
+    
+      <a href="/opencontinuumrobotics/coolcr/2022/12/06/cr-goes-poetry.html" class="pagination--pager" title="Continuum Robotics goes Poetry
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/OpenCRProject1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/opencontinuumrobotics/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  </body>
+</html>

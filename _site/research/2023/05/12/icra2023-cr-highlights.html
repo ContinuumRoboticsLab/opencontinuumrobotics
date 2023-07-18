@@ -1,0 +1,644 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Continuum Robots @ICRA23 -</title>
+<meta name="description" content="A curated list of continuum robotics research presented">
+
+
+  <meta name="author" content="Jessica Burgner-Kahrs">
+  
+  <meta property="article:author" content="Jessica Burgner-Kahrs">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Continuum Robots @ICRA23">
+<meta property="og:url" content="https://continuumroboticslab.github.io/opencontinuumrobotics/research/2023/05/12/icra2023-cr-highlights.html">
+
+
+  <meta property="og:description" content="A curated list of continuum robotics research presented">
+
+
+
+  <meta property="og:image" content="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/research/icra2023-teaser.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-05-12T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://continuumroboticslab.github.io/opencontinuumrobotics/research/2023/05/12/icra2023-cr-highlights.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Open Continuum Robotics Project",
+      "url": "https://continuumroboticslab.github.io/opencontinuumrobotics/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/opencontinuumrobotics/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/opencontinuumrobotics/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/opencontinuumrobotics/"><img src="/opencontinuumrobotics/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/opencontinuumrobotics/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/software/">Software</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/hardware/">Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/blog/">Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/opencontinuumrobotics/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Jessica Burgner-Kahrs</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Professor. Roboticist.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Continuum Robots @ICRA23">
+    <meta itemprop="description" content="A curated list of continuum robotics research presented">
+    <meta itemprop="datePublished" content="2023-05-12T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Continuum Robots @ICRA23
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-12T00:00:00-04:00">2023-05-12</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          21 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#keynotes">Keynotes</a><ul><li><a href="#accelerating-medical-robotics-innovation-with-the-open-continuum-robotics-project">Accelerating Medical Robotics Innovation with the Open Continuum Robotics Project</a></li></ul></li><li><a href="#workshop-and-tutorials">Workshop and Tutorials</a><ul><li><a href="#monday">Monday</a></li><li><a href="#friday">Friday</a></li></ul></li><li><a href="#talks">Talks</a><ul><li><a href="#fea-based-soft-robotic-modeling-simulating-a-soft-actuator-in-sofa-i">FEA-Based Soft Robotic Modeling: Simulating a Soft-Actuator in SOFA (I)</a></li><li><a href="#sorosim-a-matlab-toolbox-for-hybrid-rigid-soft-robots-based-on-the-geometric-variable-strain-approach-i">SoRoSim: A MATLAB Toolbox for Hybrid Rigid-Soft Robots Based on the Geometric Variable-Strain Approach (I)</a></li><li><a href="#a-geometrically-exact-assumed-strain-modes-approach-for-the-geometrico-and-kinemato-static-modellings-of-continuum-parallel-robots-i">A Geometrically-Exact Assumed Strain Modes Approach for the Geometrico and Kinemato-Static Modellings of Continuum Parallel Robots (I)</a></li><li><a href="#towards-a-physics-based-model-for-steerable-eversion-growing-robots">Towards a Physics-Based Model for Steerable Eversion Growing Robots</a></li><li><a href="#statics-and-dynamics-of-continuum-robots-based-on-cosserat-rods-and-optimal-control-theories-i">Statics and Dynamics of Continuum Robots Based on Cosserat Rods and Optimal Control Theories (I)</a></li><li><a href="#cobra-from-industrial-to-medical-surgery-with-slender-continuum-robots-i">COBRA: From Industrial to Medical Surgery with Slender Continuum Robots (I)</a></li><li><a href="#a-generalized-framework-for-concentric-tube-robot-design-using-gradient-based-optimization-i">A Generalized Framework for Concentric Tube Robot Design Using Gradient-Based Optimization (I)</a></li><li><a href="#magnetic-soft-continuum-robots-with-braided-reinforcement">Magnetic Soft Continuum Robots with Braided Reinforcement</a></li><li><a href="#kinetostatic-modeling-of-tendon-driven-parallel-continuum-robots-i">Kinetostatic Modeling of Tendon-Driven Parallel Continuum Robots (I)</a></li></ul></li><li><a href="#posters">Posters</a><ul><li><a href="#a-soft-hybrid-actuated-continuum-robot-based-on-dual-origami-structures">A Soft Hybrid-Actuated Continuum Robot Based on Dual Origami Structures</a></li><li><a href="#image-based-pose-estimation-and-shape-reconstruction-for-robot-manipulators-and-soft-continuum-robots-via-differentiable-rendering">Image-Based Pose Estimation and Shape Reconstruction for Robot Manipulators and Soft, Continuum Robots Via Differentiable Rendering</a></li><li><a href="#discrete-time-model-based-control-of-soft-manipulator-with-fbg-sensing">Discrete-Time Model Based Control of Soft Manipulator with FBG Sensing</a></li><li><a href="#a-soft-robot-with-three-dimensional-shape-sensing-and-contact-recognition-multi-modal-sensing-via-tunable-soft-optical-sensors">A Soft Robot with Three Dimensional Shape Sensing and Contact Recognition Multi-Modal Sensing Via Tunable Soft Optical Sensors</a></li><li><a href="#on-tendon-driven-continuum-robots-with-compressible-backbones">On Tendon Driven Continuum Robots with Compressible Backbones</a></li><li><a href="#data-driven-estimation-of-forces-along-the-backbone-of-concentric-tube-continuum-robots">Data-Driven Estimation of Forces Along the Backbone of Concentric Tube Continuum Robots</a></li><li><a href="#modeling-of-a-robotic-transcatheter-delivery-system">Modeling of a Robotic Transcatheter Delivery System</a></li><li><a href="#a-novel-concentric-tube-steerable-drilling-robot-for-minimally-invasive-treatment-of-spinal-tumors-using-cavity-and-u-shape-drilling-techniques">A Novel Concentric Tube Steerable Drilling Robot for Minimally Invasive Treatment of Spinal Tumors Using Cavity and U-Shape Drilling Techniques</a></li><li><a href="#magnetic-ball-chain-robots-for-endoluminal-interventions">Magnetic Ball Chain Robots for Endoluminal Interventions</a></li><li><a href="#model-based-pose-estimation-of-steerable-catheters-under-bi-plane-image-feedback">Model-Based Pose Estimation of Steerable Catheters under Bi-Plane Image Feedback</a></li><li><a href="#image-segmentation-for-continuum-robots-from-a-kinematic-prior">Image Segmentation for Continuum Robots from a Kinematic Prior</a></li><li><a href="#an-equivalent-two-section-method-for-calculating-the-workspace-of-multi-segment-continuum-robots">An Equivalent Two Section Method for Calculating the Workspace of Multi-Segment Continuum Robots</a></li><li><a href="#happarray-haptic-pneumatic-pouch-array-for-feedback-in-hand-held-robots">HaPPArray: Haptic Pneumatic Pouch Array for Feedback in Hand-Held Robots</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>This year’s <a href="https://www.icra2023.org">IEEE International Conference on Robotics and Automation</a> holds a firework of continuum robotics research! Are you getting ready for the conference and creating your itineary? The following presentations, workshops, and papers are on my list this year. You can find the full conference <a href="https://ras.papercept.net/conferences/conferences/ICRA23/program">program</a> online!</p>
+
+<h2 id="keynotes">Keynotes</h2>
+<p>My keynote presentation at this year’s ICRA is all about the <a href="https://www.opencontinuumrobotics.com">Open Continuum Robotics Project</a>.</p>
+
+<h3 id="accelerating-medical-robotics-innovation-with-the-open-continuum-robotics-project">Accelerating Medical Robotics Innovation with the Open Continuum Robotics Project</h3>
+<p class="notice">Tuesday, 17:00 - 18:30 - Healthcare Robotics</p>
+
+<p><strong>Speaker:</strong> Jessica Burgner-Kahrs</p>
+
+<p><strong>Abstract:</strong> From robotically steered catheters and bronchoscopes to single port flexible instruments, continuum robotics has led to great advances in medical robotics over the past decade. Yet, research findings remain stubbornly difficult to reproduce because continuum robotics hardware and software are not readily available, and no common systems exist. Ultimately this slows the pace of innovation.</p>
+
+<p>The Open Continuum Robotics Project combines hardware, software, and education with the goal of fostering more collaborative, cost-effective, and reproducible research. This enables rapid prototyping and iterative design, allowing researchers and clinicians to test and refine their ideas more quickly – including in resource-constrained settings. In this way, the Open Continuum Robotics Project accelerates the development of new technologies and treatments in medical robotics.</p>
+
+<h2 id="workshop-and-tutorials">Workshop and Tutorials</h2>
+<p>ICRA 2023 features an incredible rich set of workshops and tutorials this year, which makes it very hard to choose which one to attend (or when to rush from one room to the next #FOMO). The following ones feature aspects of continuum robotics and are worth a look!</p>
+
+<h3 id="monday">Monday</h3>
+<ul>
+  <li>MW02: <a href="https://www.growing-robots.com/">Soft Growing Robots: From Search-and-Rescue to Intraluminal Interventions</a></li>
+  <li>MW05: <a href="https://www.santannapisa.it/en/icra-2023-workshop-small-scale-medical-robots">Shrinking the Cutting Edge: Making Small-Scale Medical Robots for Humans</a></li>
+  <li>MW10: <a href="https://www.origabot.cnrs.fr/workshop-icra-2023/">Origami-based structures for designing soft robots with new capabilities</a></li>
+</ul>
+
+<h3 id="friday">Friday</h3>
+<ul>
+  <li>FW12: <a href="https://www.mirmi.tum.de/mirmi/events/icra-2023-workshop/">Geometric Representations: The Roles of Screw Theory, Lie algebra, &amp; Geometric Algebra</a></li>
+  <li>FW16: <a href="https://soft-robotics-workshop.bitbucket.io">Soft Robotics: Fusing function with structure</a></li>
+  <li>FW22: <a href="https://sites.google.com/view/icra2023ws-force-shape/home">Force and shape perception for surgical instruments and robots</a></li>
+  <li>FT29: <a href="http://www.softrobotictoolbox.org">Towards an accessible soft robotics toolbox and validation test rig</a></li>
+</ul>
+
+<h2 id="talks">Talks</h2>
+<p>The majority of oral presentations of ICRA 2023 are adressing continuum robot modeling, with a focus on kinetostatics and dynamics using Cosserat theory and optimal control theory. It is fantastic to see a trend towards open toolboxes and knowledge mobilization! There are also some exciting soft continuum robot designs!</p>
+
+<h3 id="fea-based-soft-robotic-modeling-simulating-a-soft-actuator-in-sofa-i">FEA-Based Soft Robotic Modeling: Simulating a Soft-Actuator in SOFA (I)</h3>
+<p class="notice">09:50-10:00, Paper TuAT2.9</p>
+
+<p><strong>Authors:</strong> Ferrentino, Pasquale; Roels, Ellen; Brancart, Joost; Terryn, Seppe	; Van Assche, Guy; Vanderborght, Bram</p>
+
+<p><strong>Abstract:</strong> Soft robotics modeling is a research topic that is evolving fast. Many techniques are present in literature but most of them require analytical models with a lot of equations that are time-consuming, hard to resolve, and not so easy to handle. For this reason, the help of a soft mechanics simulator is essential in this field. In fact, this paper presents a tutorial on how to build a soft-robot model using an open-source Finite Element Analysis (FEA) simulator, called SOFA. This software is able to generate a simulation scene from a code written in Python or XML, so it can be used by people that with different fields of competence like mechanical knowledge, knowledge of material properties and programming skills. As a case study, a Python simulation of a cable-driven soft actuator that makes contact with a rigid object is considered. The basic working principles of SOFA required to make a scene are explained step by step. In particular, it shows how to simulate the mechanics and animate the bending behavior of the actuator. Furthermore, it will be shown also how to retrieve and save data from simulation, demonstrating that SOFA can easily adapt to a multi-disciplinary subject as the research in soft-robotics, but also be useful for teaching simulation and programming language principles to engineering students.</p>
+
+<h3 id="sorosim-a-matlab-toolbox-for-hybrid-rigid-soft-robots-based-on-the-geometric-variable-strain-approach-i">SoRoSim: A MATLAB Toolbox for Hybrid Rigid-Soft Robots Based on the Geometric Variable-Strain Approach (I)</h3>
+<p class="notice">15:40-15:50, Paper TuBT2.5</p>
+
+<p><strong>Authors:</strong> Mathew, Anup Teejo; Ben Hmida, Ikhlas; Armanini, Costanza; Boyer, Frédéric; Renda, Federico</p>
+
+<p><strong>Abstract:</strong> Soft robotics has been a trending topic within the robotics community for almost two decades. However, available tools for the modeling and analysis of soft robots are still limited. This paper introduces a user-friendly MATLAB toolbox, SoRoSim, that integrates the Geometric Variable Strain model of Cosserat rods to facilitate the static and dynamic analysis of soft, rigid, or hybrid robotic systems. We present a brief overview of the design and structure of the toolbox and validate it by comparing its results with those published in the literature. To highlight the toolbox’s potential to efficiently model, simulate, optimize, and control various robotic systems, we demonstrate four sample applications. The demonstrated applications explore different actuator and external loading conditions of single-, branched-, open-, and closed-chain robotic systems. We think that the soft-robotics research community will significantly benefit from the SoRoSim toolbox for a wide variety of applications.</p>
+
+<h3 id="a-geometrically-exact-assumed-strain-modes-approach-for-the-geometrico-and-kinemato-static-modellings-of-continuum-parallel-robots-i">A Geometrically-Exact Assumed Strain Modes Approach for the Geometrico and Kinemato-Static Modellings of Continuum Parallel Robots (I)</h3>
+<p class="notice">15:50-16:00, Paper TuBT2.6</p>
+
+<p><strong>Authors:</strong> Briot, Sébastien; Boyer, Frédéric</p>
+
+<p><strong>Abstract:</strong> There is a growing interest on the study of continuum parallel robots (CPRs) due to their higher stiffness and better dynamics capacities than serial continuum robots (SCRs). Several works have focused on the computation of their geometrico- and kinemato-static models, that can be sorted into two main categories: (i) models based on the continuous Cosserat equations: They are very accurate but assessing elastic stability with them is tricky; (ii) discretized models: They allow easily checking the elastic stability but they require a large number of elastic variables to be accurate.
+In this paper, we extend an approach based on assumed strain modes developed for the dynamics of SCRs to the statics of CPRs. This method is able to predict the robot configuration with an excellent accuracy with a very limited number of elastic variables, contrary to other discretization methods. The method is also more than 100 times faster than finite differences for a better prediction accuracy. Finally, it is possible to assess the robot elastic stability by only checking the Hessian of the potential energy as for any discretization method, thus making the analysis of this property simpler.</p>
+
+<h3 id="towards-a-physics-based-model-for-steerable-eversion-growing-robots">Towards a Physics-Based Model for Steerable Eversion Growing Robots</h3>
+<p class="notice">16:00-16:10, Paper TuBT2.7</p>
+
+<p><strong>Authors:</strong> Wu, Zicong; De Iturrate Reyzabal, Mikel; Sadati, Seyedmohammadhadi; Liu, Hongbin; Ourselin, Sebastien; Leff, Daniel Richard; Katzschmann, Robert Kevin; Rhode, Kawal; Bergeles, Christos</p>
+
+<p><strong>Abstract:</strong> Soft robots that grow through eversion/apical extension can effectively navigate fragile environments such as ducts and vessels inside the human body. This letter presents the physics based model of a miniature steerable eversion growing robot. We demonstrate the robot’s growing, steering, stiffening and interaction capabilities. The interaction between two robot-internal components is explored, i.e., a steerable catheter for robot tip orientation, and a growing sheath for robot elongation/retraction. The behavior of the growing robot under different inner pressures and external tip forces is investigated. Simulations are carried out within the SOFA framework. Extensive experimentation with a physical robot setup demonstrates agreement with the simulations. The comparison demonstrates a mean absolute error of 10–20% between simulation and experimental results for curvature values, including catheter-only experiments, sheath-only experiments and full system experiments. To our knowledge, this is the first work to explore physics-based modelling of a tendon-driven steerable eversion growing robot. While our work is motivated by early breast cancer detection through mammary duct inspection and uses our MAMMOBOT robot prototype, our approach is general and relevant to similar growing robots.</p>
+
+<h3 id="statics-and-dynamics-of-continuum-robots-based-on-cosserat-rods-and-optimal-control-theories-i">Statics and Dynamics of Continuum Robots Based on Cosserat Rods and Optimal Control Theories (I)</h3>
+<p class="notice">16:20-16:30, Paper TuBT2.9</p>
+
+<p><strong>Authors:</strong> Boyer, Frédéric; Lebastard, Vincent; Candelier, Fabien; Renda, Federico; Alamir, Mazen</p>
+
+<p><strong>Abstract:</strong> This paper explores the relationship between optimal control and Cosserat beam theory from the perspective of solving the forward and inverse dynamics (and statics as a subcase) of continuous manipulators and snake-like bio-inspired locomotors. By invoking the principle of minimum potential energy, and the Gauss principle of least constraint, it is shown that the quasi-static and dynamic evolution of these robots, are solutions of optimal control problems (OCPs) in the space variable, which can be solved at each step (of loading or time) of a simulation with the shooting method. In addition to offering an alternative viewpoint on several simulation approaches proposed in the recent past, the optimal control viewpoint allows us to improve some of them while providing a better understanding of their numerical properties. The approach and its properties are illustrated through a set of numerical examples validated against a reference simulator.</p>
+
+<h3 id="cobra-from-industrial-to-medical-surgery-with-slender-continuum-robots-i">COBRA: From Industrial to Medical Surgery with Slender Continuum Robots (I)</h3>
+<p class="notice">15:00-15:10, Paper WeBT2.1</p>
+
+<p><strong>Authors:</strong> Alatorre, David; Robles-Linares, Jose A.; Russo, Matteo; Elbanna, Mohamed A.; Wild, Samuel; Dong, Xin; Mohammad, Abdelkhalick; Kell, James; Norton, Andy; Axinte, Dragos</p>
+
+<p><strong>Abstract:</strong> The maintenance of critical industrial components is often hindered by limited access, tortuous passages, and complex geometries. In highly constrained environments, inspection tasks are currently performed with borescopes, but even skilled operators struggle with hard-to-reach targets and the limited mobility prevents in-situ repair when defects are identified. Thanks to an active shape control, snake-like and continuum robots can outperform borescopes for short range inspection as well as enable intervention. However, their actuation technology limits their scalability in length, as longer bodies pose control challenges due to their intrinsically low stiffness and space constraints. To overcome the limitations of both borescopes and continuum robots, we here propose a modular design at their intersection, with both active tendon-driven and passively flexible segments. The main elements of the novel design, including actuation and control interface, are described, and the system is demonstrated in scenarios for aerospace assets, nuclear installations, and robot-assisted surgery.</p>
+
+<h3 id="a-generalized-framework-for-concentric-tube-robot-design-using-gradient-based-optimization-i">A Generalized Framework for Concentric Tube Robot Design Using Gradient-Based Optimization (I)</h3>
+<p class="notice">10:10-10:20, Paper ThAT2.8</p>
+
+<p><strong>Authors:</strong> Lin, Jui-Te;Girerd, Cedric; Yan, Jiayao; Hwang, John T.; Morimoto, Tania K.</p>
+
+<p><strong>Abstract:</strong> Concentric tube robots (CTRs) show particular promise for minimally invasive surgery due to their inherent compliance and ability to navigate in constrained environments. Due to variations in anatomy among patients and variations in task requirements among procedures, it is necessary to customize the design of these robots on a patient- or population-specific basis. However, the complex kinematics and large design space make the design problem challenging. Here we propose a computational framework that can efficiently optimize a robot design and a motion plan to enable safe navigation through the patient’s anatomy. The current framework is the first fully gradient-based method for CTR design optimization and motion planning, enabling an efficient and scalable solution for simultaneously optimizing continuous variables, even across multiple anatomies. The framework is demonstrated using two clinical examples, laryngoscopy and heart biopsy, where the optimization problems are solved for a single patient and across multiple patients, respectively.</p>
+
+<h3 id="magnetic-soft-continuum-robots-with-braided-reinforcement">Magnetic Soft Continuum Robots with Braided Reinforcement</h3>
+<p class="notice">10:20-10:30, Paper ThAT2.9</p>
+
+<p><strong>Authors:</strong> Lloyd, Peter Robert; Onaizah, Onaizah; Pittiglio, Giovanni; Chathuranga, Damith Suresh; Chandler, James Henry; Valdastri, Pietro</p>
+
+<p><strong>Abstract:</strong> Flexible catheters are used in a wide variety of surgical interventions including neurological, pancreatic and cardiovascular. In many cases a lack of dexterity and miniaturization along with excessive stiffness results in large regions of the anatomy being deemed inaccessible. Soft continuum robots have the potential to mitigate these issues. Due to its enormous potential for miniaturization, magnetic actuation is of particular interest in this field. Currently, flexible magnetic catheters often rely on forces of anatomical interaction to generate large deformations during navigation and for soft anatomical structures this could be considered potentially damaging. In this study we demonstrate the insertion of a high aspect ratio, 50 mm long by 2 mm diameter, soft magnetic catheter capable of navigating up to a 180 degree bend without the aid of interactive forces. This magnetic catheter is reinforced with a lengthwise braided structure and its magnetization allows it to shape form along tortuous paths. We demonstrate our innovation in a planar silicone pancreas phantom. We also compare our approach with a mechanically equivalent tip driven magnetic catheter and with an identically magnetized, unreinforced catheter.</p>
+
+<h3 id="kinetostatic-modeling-of-tendon-driven-parallel-continuum-robots-i">Kinetostatic Modeling of Tendon-Driven Parallel Continuum Robots (I)</h3>
+<p class="notice">15:00-15:10, Paper ThBT5.1</p>
+
+<p><strong>Authors:</strong> Lilge, Sven; Burgner-Kahrs, Jessica</p>
+
+<p><strong>Abstract:</strong> Tendon-driven parallel continuum robots consist of multiple individual continuous kinematic chains, that are actuated in bending utilizing tendons routed along their backbones. This work derives and proposes a Cosserat rod based kinetostatic modeling framework for such parallel structures that allows for efficiently solving the forward, inverse and velocity kinetostatic problems. Using this model, the kinematic properties such as reachable workspace, singularities, manipulability and compliance of tendon-driven parallel continuum robots are studied in detail. Experiments are conducted using a real robotic prototype to validate the derived modeling approach. Overall, a median pose accuracy of 4.9 mm, corresponding to 3.4% of the continuum robots’ lengths, and 6.2◦ is achieved. The median of the model’s computation time results in 0.51 s on standard computing hardware. Fast computations of below 100 ms can be achieved, if an appropriate initial guess for solving the kinetostatic model is available, making the model suitable for a range of different applications including optimization or control.</p>
+
+<h2 id="posters">Posters</h2>
+<p>The poster presentations at ICRA 2023 cover various aspects of (soft) continuum robots, including design, control, and sensing.</p>
+
+<h3 id="a-soft-hybrid-actuated-continuum-robot-based-on-dual-origami-structures">A Soft Hybrid-Actuated Continuum Robot Based on Dual Origami Structures</h3>
+<p class="notice">08:30-10:10, Paper TuPO1S-01.2</p>
+
+<p><strong>Authors:</strong> Tao, Jian; Hu, Qiqiang; Luo, Tianzhi; Dong, Erbao</p>
+
+<p><strong>Abstract:</strong> Soft continuum robots have shown tremendous potential for medical and industrial applications owing to their flexibility and continuous deformability. However, their telescopic and bending capabilities and variable stiffness are still limited. This study proposes a novel origami-inspired soft continuum robot to possess large telescopic and bending capabilities while improving stiffness based on the principle of antagonistic actuation. The soft robot consists of dual origami structures. The inner forms an air chamber actuated by pneumatics, and the outer is controlled by nine tendon-driven actuators. The proposed design uses the advantages of a hybrid actuation to achieve motion and stiffness control. The performance of the soft robot is studied experimentally based on single and three robot modules. Results show that the robot has an excellent stretch ratio and a maximum bending angle of 180°. The robot can also increase stiffness to resist the bending deformation induced by self-weight and loads.</p>
+
+<h3 id="image-based-pose-estimation-and-shape-reconstruction-for-robot-manipulators-and-soft-continuum-robots-via-differentiable-rendering">Image-Based Pose Estimation and Shape Reconstruction for Robot Manipulators and Soft, Continuum Robots Via Differentiable Rendering</h3>
+<p class="notice">Tuesday 08:30-10:10, Paper TuPO1S-01.6, Room T8</p>
+
+<p><strong>Authors:</strong> Lu, Jingpei; Liu, Fei; Girerd, Cedric; Yip, Michael C.</p>
+
+<p><strong>Abstract:</strong> State estimation from measured data is crucial for robotic applications as autonomous systems rely on sensors to capture the motion and localize in the 3D world. Among sensors that are designed for measuring a robot’s pose, or for soft robots, their shape, vision sensors are favorable because they are information-rich, easy to set up, and cost-effective. With recent advancements in computer vision, deep learning-based methods no longer require markers for identifying feature points on the robot. However, learning-based methods are data-hungry and hence not suitable for soft and prototyping robots, as building such bench-marking datasets is usually infeasible. In this work, we achieve image-based robot pose estimation and shape reconstruction from camera images. Our method requires no precise robot meshes, but rather utilizes a differentiable renderer and primitive shapes. It hence can be applied to robots for which CAD models might not be available or are crude. Our parameter estimation pipeline is fully differentiable. The robot shape and pose are estimated iteratively by back-propagating the image loss to update the parameters. We demonstrate that our method of using geometrical shape primitives can achieve high accuracy in shape reconstruction for a soft continuum robot and pose estimation for a robot manipulator.</p>
+
+<h3 id="discrete-time-model-based-control-of-soft-manipulator-with-fbg-sensing">Discrete-Time Model Based Control of Soft Manipulator with FBG Sensing</h3>
+<p class="notice">08:30-10:10, Paper TuPO1S-01.8</p>
+
+<p><strong>Authors:</strong> Franco, Enrico; Aktas, Ayhan; Treratanakulchai, Shen; Garriga-Casanovas, Arnau; Donder, Abdulhamit; Rodriguez y Baena, Ferdinando</p>
+
+<p><strong>Abstract:</strong> In this article we investigate the discrete-time model based control of a planar soft continuum manipulator with proprioceptive sensing provided by fiber Bragg gratings. A control algorithm is designed with a discrete-time energy shaping approach which is extended to account for control-related lag of digital nature. A discrete-time nonlinear observer is employed to estimate the uncertain bending stiffness of the manipulator and to compensate constant matched disturbances. Simulations and experiments demonstrate the effectiveness of the controller compared to a continuous time implementation.</p>
+
+<h3 id="a-soft-robot-with-three-dimensional-shape-sensing-and-contact-recognition-multi-modal-sensing-via-tunable-soft-optical-sensors">A Soft Robot with Three Dimensional Shape Sensing and Contact Recognition Multi-Modal Sensing Via Tunable Soft Optical Sensors</h3>
+<p class="notice">08:30-10:10, Paper TuPO1S-02.1</p>
+
+<p><strong>Authors:</strong> McCandless, Max; Juliá Wise, Frank; Russo, Sheila</p>
+
+<p><strong>Abstract:</strong> Soft optical sensing strategies are rapidly developing for soft robotic systems as a means to increase the controllability of soft compliant robots. In this paper, we present a roughness tuning strategy for the fabrication of soft optical sensors to achieve the dual functionality of shape sensing combined with contact recognition within a single multi-modal sensor. The molds used to fabricate the soft sensors are roughened via laser micromachining to achieve asymmetrical sensor responses when bent in opposite directions. We demonstrate the integration of these sensors into a fully soft robotic platform consisting of a multi-directional bending module with integrated 3D shape sensing and a gripper with tip position monitoring along with contact force recognition. We show the accuracy of our sensing strategy in validation experiments and a pick-andplace task is performed to demonstrate the robot’s functionality.</p>
+
+<h3 id="on-tendon-driven-continuum-robots-with-compressible-backbones">On Tendon Driven Continuum Robots with Compressible Backbones</h3>
+<p class="notice">08:30-10:10, Paper TuPO1S-03.7</p>
+
+<p><strong>Authors:</strong> Srivastava, Manu; Walker, Ian</p>
+
+<p><strong>Abstract:</strong> This paper discusses the effect of axial backbone compression on tendon-driven continuum robots. A new mechanics model for compensating for this effect that does not require tendon tension sensing or knowledge of manipulator material properties/stiffnesses is introduced and analyzed. In addition, we provide an analytical expression for the minimum preload on the tendons to achieve a given bend, a quantity determined empirically thus far. Our model is computationally efficient and achieves real time control on low cost hardware. The analysis is supported by experimental results demonstrating significant improvement over kinematics in open loop control of a tendon-driven continuum hose robot.</p>
+
+<h3 id="data-driven-estimation-of-forces-along-the-backbone-of-concentric-tube-continuum-robots">Data-Driven Estimation of Forces Along the Backbone of Concentric Tube Continuum Robots</h3>
+<p class="notice">Tuesday 15:00-16:40, Paper TuPO2S-02.6, Room T8</p>
+
+<p><strong>Authors:</strong> Donat, Heiko; Mohammadi, Pouya; Steil, Jochen J.</p>
+
+<p><strong>Abstract:</strong> Concentric tube continuum robots (CTCRs) belong to the family of continuum robots with applications in minimally invasive surgeries. Because of this application domain, measuring the external forces along the body of the robot is paramount. CTCRs are made up of thin elastic rods and are intended to be applied inside the human body, where conventional sensor-based measurements are not feasible. Consequently, research is resorting to estimate the forces through geometric, numeric, or optimization methods. However, these methods often suffer from slow convergence. In this paper, we introduce a novel data-driven approach for estimating contact forces along the body of a CTCR that offers an estimation precision comparable to the current state-of-the-art optimization-based approaches, but exhibits nearly two orders of magnitude faster convergence. The proposed method is scalable and exhibits a significant performance in response to a wide range of external forces. The approach was evaluated in simulations and on a real 2-tube CTCR.</p>
+
+<h3 id="modeling-of-a-robotic-transcatheter-delivery-system">Modeling of a Robotic Transcatheter Delivery System</h3>
+<p class="notice">09:00-10:40, Paper WePO1S-01.6</p>
+
+<p><strong>Authors:</strong> Nayar, Namrata Unnikrishnan; Qi, Ronghuai; Desai, Jaydev P.</p>
+
+<p><strong>Abstract:</strong> Intracardiac transcatheter systems guided by advanced imaging modalities are gaining popularity in treating mitral regurgitation in non-surgical candidates. Robotically steerable transcatheter systems must use model-based control strategies to ensure safer and more effective transcatheter procedures with less trauma while using smaller control gains. In this paper, a 4-DoF robotically steerable tendon-driven robot was fabricated, and the relationship between the tendon displacement and the joint angle was derived. This relation was derived in two parts to make this approach applicable to any other catheter system. A model was derived to determine the tendon tensions needed to achieve desired joint angles. Then, the tendon characteristics were studied, and a tendon elongation (TE) model was derived as a function of tendon length. Executing the modeling process in two steps makes it easy to introduce additional parameters like length, friction, and pose, to characterize complex systems like catheters. The TE model was used to actuate the joints of the robot and RMSE was computed to characterize its performance. Also, PID control was used along with the TE model to improve the system’s performance, and the contribution of the model and the controller in the system was recorded.</p>
+
+<h3 id="a-novel-concentric-tube-steerable-drilling-robot-for-minimally-invasive-treatment-of-spinal-tumors-using-cavity-and-u-shape-drilling-techniques">A Novel Concentric Tube Steerable Drilling Robot for Minimally Invasive Treatment of Spinal Tumors Using Cavity and U-Shape Drilling Techniques</h3>
+<p class="notice">09:00-10:40, Paper WePO1S-01.11</p>
+
+<p><strong>Authors:</strong> Sharma, Susheela; Park, Ji Hwan; Amadio, Jordan P.; Khadem, Mohsen; Alambeigi, Farshid</p>
+
+<p><strong>Abstract:</strong> In this paper, we present the design, fabrication, and evaluation of a novel flexible, yet structurally strong, Concentric Tube Steerable Drilling Robot (CT-SDR) to improve minimally invasive treatment of spinal tumors. Inspired by concentric tube robots, the proposed two degree-of-freedom (DoF) CT-SDR, for the first time, not only allows a surgeon to intuitively and quickly drill smooth planar and out-of-plane J- and U- shape curved trajectories, but it also, enables drilling cavities through a hard tissue in a minimally invasive fashion. We successfully evaluated the performance and efficacy of the proposed CT-SDR in drilling various planar and out-of-plane J-shape branch, U-shape, and cavity drilling scenarios on simulated bone materials.</p>
+
+<h3 id="magnetic-ball-chain-robots-for-endoluminal-interventions">Magnetic Ball Chain Robots for Endoluminal Interventions</h3>
+<p class="notice">09:00-10:40, Paper WePO1S-01.12</p>
+
+<p><strong>Authors:</strong> Pittiglio, Giovanni; Mencattelli, Margherita; Dupont, Pierre</p>
+
+<p><strong>Abstract:</strong> This paper introduces a novel class of hyperredundant robots comprised of chains of permanently magnetized spheres enclosed in a cylindrical polymer skin. With their shape controlled using an externally-applied magnetic field, the spherical joints of these robots enable them to bend to very small radii of curvature. These robots can be used as steerable tips for endoluminal instruments. A kinematic model is derived based on minimizing magnetic and elastic potential energy. Simulation is used to demonstrate the enhanced steerability of these robots in comparison to magnetic soft continuum robots designed using either distributed or lumped magnetic material. Experiments are included to validate the model and to demonstrate the steering capability of ball chain robots in bifurcating channels.</p>
+
+<h3 id="model-based-pose-estimation-of-steerable-catheters-under-bi-plane-image-feedback">Model-Based Pose Estimation of Steerable Catheters under Bi-Plane Image Feedback</h3>
+<p class="notice">09:00-10:40, Paper WePO1S-03.2</p>
+
+<p><strong>Authors:</strong> Lawson, Jared; Chitale, Rohan; Simaan, Nabil</p>
+
+<p><strong>Abstract:</strong> Small catheters undergo significant torsional deflections during endovascular interventions. A key challenge in enabling robot control of these catheters is the estimation of their bending planes. This paper considers approaches for estimating these bending planes based on bi-plane image feedback. The proposed approaches attempt to minimize error between either the direct (position-based) or instantaneous (velocity-based) kinematics with the reconstructed kinematics from bi-plane image feedback. A comparison between these methods is carried out on a setup using two cameras in lieu of a bi-plane fluoroscopy setup. The results show that the position-based approach is less susceptible to segmentation noise and works best when the segment is in a non-straight configuration. These results suggest that estimation of the bending planes can be accompanied with errors under 30◦. Considering that the torsional buildup of these catheters can be more than 180◦, we believe that this method can be used for catheter control with improved safety due to the reduction of this uncertainty.</p>
+
+<h3 id="image-segmentation-for-continuum-robots-from-a-kinematic-prior">Image Segmentation for Continuum Robots from a Kinematic Prior</h3>
+<p class="notice">09:00-10:40, Paper WePO1S-03.4</p>
+
+<p><strong>Authors:</strong> Watson, Connor; Nguyen, Anna; Morimoto, Tania K.</p>
+
+<p><strong>Abstract:</strong> In this work, we address the problem of robust segmentation of a continuum robot from images without the need for training data or markers. We present a method that leverages information about the kinematics of these robots to produce an estimate of the robot shape, which is refined through optimization over global image statistics. Our approach can be straightforwardly applied to any continuum robot design and is able to handle partial occlusions of the robot body, as well as challenging background conditions. We validate our method experimentally for a concentric tube robot in a simulated surgical environment and show that our method significantly outperforms a naive projection of the robot shape and color thresholding, which is commonly used in current vision-based estimation algorithms for these robots. Overall, this work has the potential to improve the viability of vision-based state estimation for continuum robots in real-world settings.</p>
+
+<h3 id="an-equivalent-two-section-method-for-calculating-the-workspace-of-multi-segment-continuum-robots">An Equivalent Two Section Method for Calculating the Workspace of Multi-Segment Continuum Robots</h3>
+<p class="notice">09:00-10:40, Paper ThPO1S-12.4</p>
+
+<p><strong>Authors:</strong> Fan, Yeman; Liu, Dikai</p>
+
+<p><strong>Abstract:</strong> Obtaining the shape and size of a robot’s workspace is essential for both its design and control. However, determining the accurate workspace of a multi-segment continuum robot by graphic or analytical methods is a challenging task due to its inherent flexibility and complex structure. Existing numerical methods have limitations when applied to a continuum robot. This paper presents an Equivalent Two Section (ETS) method for calculating the workspace of multi-segment continuum robots. This method is based on the forward kinematics and a piecewise constant curvature (PCC) model to determine the boundaries of the workspace. In order to verify the proposed method, simulation experiments are conducted using six different maximum bending angles and seven different number of segments. Results of the ETS method are compared to the true workspaces of these configurations estimated by an exhaustive approach. The results show that the proposed ETS method is both efficient and accurate, and has small estimation errors. Discussions on the advantages and limitations of the proposed ETS method are also presented.</p>
+
+<h3 id="happarray-haptic-pneumatic-pouch-array-for-feedback-in-hand-held-robots">HaPPArray: Haptic Pneumatic Pouch Array for Feedback in Hand-Held Robots</h3>
+<p class="notice">15:00-16:40, Paper ThPO2S-23.1</p>
+
+<p><strong>Authors:</strong> Luo, Xiaolei; Lin, Jui-Te; Morimoto, Tania K.</p>
+
+<p><strong>Abstract:</strong> Haptic feedback can provide operators of hand-held robots with active guidance during challenging tasks and with critical information on environment interactions. Yet for such haptic feedback to be effective, it must be lightweight, capable of integration into a hand-held form factor, and capable of displaying easily discernible cues. We present the design and evaluation of HaPPArray — a haptic pneumatic pouch array — where the pneumatic pouches can be actuated alone or in sequence to provide information to the user. A 3x3 array of pouches was integrated into a handle, representative of an interface for a hand-held robot. When actuated individually, users were able to correctly identify the pouch being actuated with 86% accuracy, and when actuated in sequence, users were able to correctly identify the associated direction cue with 89% accuracy. These results, along with a demonstration of how the direction cues can be used for haptic guidance of a medical robot, suggest that HaPPArray can be an effective approach for providing haptic feedback for hand-held robots.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/opencontinuumrobotics/categories/#research" class="page__taxonomy-item" rel="tag">research</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-05-12T00:00:00-04:00">2023-05-12</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Continuum+Robots+%40ICRA23%20https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2Fresearch%2F2023%2F05%2F12%2Ficra2023-cr-highlights.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2Fresearch%2F2023%2F05%2F12%2Ficra2023-cr-highlights.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2Fresearch%2F2023%2F05%2F12%2Ficra2023-cr-highlights.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/opencontinuumrobotics/hands-on/2023/04/28/one-actuation-module.html" class="pagination--pager" title="One Actuation Module to Create them All
+">Previous</a>
+    
+    
+      <a href="/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html" class="pagination--pager" title="Introduction to Motion Planning for Continuum Robots - Part 1
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/OpenCRProject1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/opencontinuumrobotics/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  </body>
+</html>

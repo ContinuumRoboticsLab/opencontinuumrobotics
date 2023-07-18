@@ -1,0 +1,569 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Continuum Robotics 101 -</title>
+<meta name="description" content="We are starting our 101 blog post series. In this category, we will present introductory concepts in continuum robotics targeted at novices who have prior knowledge in fundemantal robotics and in serial manipulators. The material is based off the Continuum Robotics course I taught at Leibniz University Hannover in 2017 and 2018 and the Introduction to Continuum Robotics I am teaching at the University of Toronto since 2021.">
+
+
+  <meta name="author" content="Jessica Burgner-Kahrs">
+  
+  <meta property="article:author" content="Jessica Burgner-Kahrs">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Continuum Robotics 101">
+<meta property="og:url" content="https://continuumroboticslab.github.io/opencontinuumrobotics/101/2022/10/21/cr-intro.html">
+
+
+  <meta property="og:description" content="We are starting our 101 blog post series. In this category, we will present introductory concepts in continuum robotics targeted at novices who have prior knowledge in fundemantal robotics and in serial manipulators. The material is based off the Continuum Robotics course I taught at Leibniz University Hannover in 2017 and 2018 and the Introduction to Continuum Robotics I am teaching at the University of Toronto since 2021.">
+
+
+
+  <meta property="og:image" content="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_redundant_continuous_teaser.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-10-21T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://continuumroboticslab.github.io/opencontinuumrobotics/101/2022/10/21/cr-intro.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Open Continuum Robotics Project",
+      "url": "https://continuumroboticslab.github.io/opencontinuumrobotics/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/opencontinuumrobotics/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/opencontinuumrobotics/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/opencontinuumrobotics/"><img src="/opencontinuumrobotics/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/opencontinuumrobotics/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/software/">Software</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/hardware/">Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opencontinuumrobotics/blog/">Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/opencontinuumrobotics/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Jessica Burgner-Kahrs</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Professor. Roboticist.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Continuum Robotics 101">
+    <meta itemprop="description" content="We are starting our 101 blog post series. In this category, we will present introductory concepts in continuum robotics targeted at novices who have prior knowledge in fundemantal robotics and in serial manipulators. The material is based off the Continuum Robotics course I taught at Leibniz University Hannover in 2017 and 2018 and the Introduction to Continuum Robotics I am teaching at the University of Toronto since 2021.">
+    <meta itemprop="datePublished" content="2022-10-21T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Continuum Robotics 101
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-10-21T00:00:00-04:00">2022-10-21</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#four-examples">Four Examples</a><ul><li><a href="#example-1-bionic-motion-robot">Example 1: Bionic Motion Robot</a></li><li><a href="#example-2-snake-arm-robot">Example 2: Snake-arm Robot</a></li><li><a href="#example-3-multi-articulated-instruments">Example 3: Multi-articulated Instruments</a></li><li><a href="#example-4-soft-finger-gripper">Example 4: Soft Finger Gripper</a></li></ul></li><li><a href="#definition">Definition</a></li><li><a href="#summary">Summary</a></li><li><a href="#references">References</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p class="notice">We are starting our 101 blog post series. In this category, we will present introductory concepts in continuum robotics targeted at novices who have prior knowledge in fundemantal robotics and in serial manipulators. The material is based off the <strong><em>Continuum Robotics</em></strong> course I taught at Leibniz University Hannover in 2017 and 2018 and the <strong><em>Introduction to Continuum Robotics</em></strong> I am teaching at the University of Toronto since 2021.</p>
+
+<p>Today, we are looking at two questions</p>
+
+<p><em>How can we identify a continuum robot?
+What differentiates continuum robots from other robot types?</em></p>
+
+<p>When thinking about a robot, what comes to our minds are usually manipulator arms, i.e., serial robot arms, performing repetitive tasks in automation and manufacturing, or humanoid robots, i.e., human-like walking robots interacting with their environment in everyday tasks. Those robots are inspired by the human anatomy as they resemble a similar structure in terms of rigid-links and joints. These rigid-link robots usually have similar degrees-of-freedom as their human counterpart. Naturally, the tasks and use cases are those that a human would typically do, such as welding, moving objects, etc., but with the additional speed and repeatability of a robot. Another typical robot type is mobile platforms, i.e., wheeled robots. A prominent example is a vacuum cleaning robot that many of us might deploy in our homes.</p>
+
+<p>Robotics is revolutionizing automation in the manufacturing sector. The <a href="https://ifr.org/ifr-press-releases/news/robot-sales-rise-again">World Robotics 2021 Industrial Robots</a> report shows a record of 3 million industrial robots operating in factories around the world – an increase of 10%!
+Robotics also found its way out of the factory into the service domain, where it has already had a significant impact in areas such as medicine, logistics, or agriculture and is growing in economic impact. 
+Beside the general market trends in manufacturing and service robotics, there exist applications which are characterized by hard-to-reach areas, tortuous paths, and highly unstructured environments, for instance intracorporal or intraluminal medical applications, non-destructive inspection or in maintenance, repair and operation (MRO). These applications mostly require highly dexterous and miniaturized robots. Intuitively, one would increase the number of discrete joints and reduce the length of the rigid-links in order to increase the DOF in task space. The robot is then referred to as redundant. The more joints one adds and the shorter the link length in between these joints becomes, the robot structure becomes hyperredundant (see figure above). However, the discrete structure of rigid-links connected by joints cannot be miniaturized to any arbitrary size. In fact, the integration of mechatronic components reaches physical miniaturization limits.</p>
+
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_redundant_continuous.png" alt="image" style="float: left" /></p>
+
+<p>To overcome these limitation, there has been a paradigm shift away from rigid-link, discrete structures to continuously bending ones. These are commonly referred to as continuum robots. 
+Continuum robots differ fundamentally from traditional robots, as they are jointless structures. Their appearance is evocative of animals and organs such as trunks, tongues, worms, and snakes. Composed of flexible, elastic, or soft materials, continuum robots can perform complex bending motions and appear with curvilinear shapes.</p>
+
+<p>Continuum robots have a high potential to navigate and operate in confined spaces currently unreachable to standard robots, as their diameter to length ratio can be quite low. These robots are usually developed to reach sites of interests through complex and winding trajectories, in contrast to either standard mechanical tools or stiff serial robots.</p>
+
+<h2 id="four-examples">Four Examples</h2>
+<p>Before formally defining a continuum robot, we look at three commercially available and one continuum robot on the verge to being commercially available, to illustrate how continuum robots look like and what they can do.</p>
+
+<h3 id="example-1-bionic-motion-robot">Example 1: Bionic Motion Robot</h3>
+<p>The company FESTO has been pioneering continuum robots at comparable size to collaborative serial robot arms. Here, we see the latest version of their pneumatically actuated continuum robot called the Bionic Motion Robot. Consisting of three concatenated segments, each of which consists of three elastomer bellows, it can extend/contract and bend by changing the pressure within the bellows. With a diameter of 13cm and length of 85 cm, the Bionic Motion Robot weighs about 3kg and can also carry about 3kg. The Bionic Motion Robot is advertised for collaborative tasks with humans as it is light-weight and safe, e.g. in assembly.
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/JbGhtpSfPmU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --></p>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/JbGhtpSfPmU" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<h3 id="example-2-snake-arm-robot">Example 2: Snake-arm Robot</h3>
+<p>The snake-arm robot developed by OCRobotics is probably the longest among all continuum robots with 5m length. The snake-arm robot is driven by wire ropes guided through channels on the circumference of the cylinders composing the robot structure. Two wire ropes terminate at each cylinder along the robot, forming the links. As a result, by pushing/pulling on a wire rope, the respective segment can bend up to 27.5 degrees. At a diameter of 12.5cm and overall length of up to 5m (3m of which are articulated) the robot has a payload of up to 10kg. OCRobotics has been acquired by GE Aviation in 2017 to move the technology towards use in aviation industry for repair and operations.
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Ij8VX9YUT_Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --></p>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/Ij8VX9YUT_Y" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<h3 id="example-3-multi-articulated-instruments">Example 3: Multi-articulated Instruments</h3>
+<p>The multi-articulated instruments developed by Titan Medical Inc. are following a comparable actuation mechanism as the snake-arm robot. To achieve bending into an S-curve the instrument is composed of two segments each of which are driven by four wires terminating at their end. Pushing or pulling on the wire pairs achieves bending in all directions. These multi-articulated instruments are part of a surgical robot system intended for use in single-port interventions, i.e. entering the human body through a single incision. The instruments are teleoperated by the surgeon, i.e. the motion of the instruments is commanded via an input device at the surgeon’s console. The system is not yet commercially available.</p>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://player.vimeo.com/video/462286259?dnt=true" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<h3 id="example-4-soft-finger-gripper">Example 4: Soft Finger Gripper</h3>
+<p>Using continuously bending structures to realize grippers for industrial automation applications has advantages over conventional 2- or 3-claws grippers when a wide range of objects need to be handled which are delicate or amorphous (e.g. food). One example of such a soft gripper is commercially available from Soft Robotic Inc. Each finger is composed of a soft silicone and resembles an accordion. Actuation is achieved by pneumatics: changing the pressure results in bending of a finger. The fingers can be arranged in a parallel or circular pattern depending on the objects to be handled.</p>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/4HVSr3ouCdk" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<p class="notice"><strong>Note:</strong> Examples 1 and 2 are showing continuum robots comparable in size to conventional serial arm robots, while Examples 3 and 4 show smaller scale continuum robots. High dexterity and continuously bending is particularly useful at small scales as this is where conventional serial arm robots fail due to miniaturization constraints. As continuum robotics is an artive area of research, we have not yet seen too many continuum robots being available in commercial products.</p>
+
+<h2 id="definition">Definition</h2>
+<p>Researchers in the continuum robot community have not yet converged to a single definition, such that there exist three major definitions, which are stated in chronological order.</p>
+
+<p>The very first formal definition of continuum robots as a class of robots was proposed by <strong>Robinson &amp; Davies</strong><sup id="fnref:fn1" role="doc-noteref"><a href="#fn:fn1" class="footnote" rel="footnote">1</a></sup> in 1999:</p>
+<blockquote>
+  <p>Continuum robots do not contain rigid links and identifiable rotational joints. Instead the structures bend continuously along their length via elastic deformation and produce motion through the generation of smooth curves, similar to tentacles or tongues of the animal kingdom.</p>
+</blockquote>
+
+<p>The definition focusses on the appearance of continuum robots and puts continuous bending and elastic deformation as key characteristics. It also explicitly excludes rigid links and identifiable joints, such that snake-like robot structures as in Example 2 would formally not qualify for a continuum robot based on this definition.</p>
+
+<p>Defining a continuum robot by relating its kinematic structure to the animal kingdom was proposed by <strong>Walker</strong><sup id="fnref:fn2" role="doc-noteref"><a href="#fn:fn2" class="footnote" rel="footnote">2</a></sup> in 2013:</p>
+<blockquote>
+  <p>Continuum robots can be viewed as being invertebrate robots, as compared with the vertebrate design of conventional rigid-link robots. Continuum robots can bend (and often extend/contract and sometimes twist) at any point along their structure.</p>
+</blockquote>
+
+<p>This definition follows the formalism of invertebrates, i.e. animals without a backbone or bony skeleton. According to this, continuum robots have no rigid links and joints as well. Interestingly, the structure of a continuum robot is often referred to as its backbone - even though it is continuous. In comparison to Robinson &amp; Davies definition, Walker’s definition explicitly includes extension and contraction as a characteristic of continuum robots.</p>
+
+<p>To mathematically formalize the existing definitions, <strong>Burgner-Kahrs, Rucker &amp; Choset</strong><sup id="fnref:fn3" role="doc-noteref"><a href="#fn:fn3" class="footnote" rel="footnote">3</a></sup> propose the following definition:</p>
+<blockquote>
+  <p>A continuum robot is an actuatable structure, whose constitutive material forms curves with continuous tangent vectors.</p>
+</blockquote>
+
+<p>This definition generalizes the previous two in that sense that it does not make assumptions on how the continuum robot is actuated nor on the elasticity of the composing materials, but requires the representation of the morphology to be a continuous curve.</p>
+
+<p>The boundary that separates continuum robots from other snake-like or hyper-redundant manipulators is sometimes obscured by manipulator designs that use continuously bending elastic elements along with conventional discrete joints in the same structure. While these robots may not technically be classified as continuum robots according to the definitions, they are referred to as pseudo-continuum robots or hybrid serial/continuum robots, as they are closely related to continuum robots and share many attributes with them.</p>
+
+<h2 id="summary">Summary</h2>
+<p>Continuum robots are a type of robot which is characterized by its absence of rigid-links and joint and continuous appearance. The motivation behind building continuum robots is that they have certain abilities which make them distinct from other robots:</p>
+<ul>
+  <li>Inherent compliance and flexibility</li>
+  <li>Ability to perform new forms of robot motion and locomotion</li>
+  <li>Miniaturization</li>
+  <li>Adapt shape to maneuver within complex, tortuous environments</li>
+  <li>Ability to avoid obstacles</li>
+  <li>Conform to grasp wide range of objects</li>
+</ul>
+
+<p>These abilities make continuum robots ideal candidates for a variety of applications which can typically not be performed with conventional robots. For instance, in medicine for use in surgical robotics (neurosurgery, urological surgery, lung surgery, etc.) or interventions (cardiovascular or neuroendovascular surgery, bronchoscopy, endoscopy, colonoscopy). Or in maintenance, repair, and operations of capital goods such as jet-engines, or non-destructive testing and inspection such as for cracks or corrosion in oil and gas and petrochemical industries.</p>
+
+<h2 id="references">References</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:fn1" role="doc-endnote">
+      <p>G. Robinson and J.B.C. Davies: Continuum robots - a state of the art. IEEE International Conference on Robotics and Automation, 1999, pp. 2849-2854 vol.4, doi: <a href="https://dx.doi.org/10.1109/ROBOT.1999.774029">10.1109/ROBOT.1999.774029</a>. <a href="#fnref:fn1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:fn2" role="doc-endnote">
+      <p>I.D. Walker: Continuous Backbone “Continuum” Robot Manipulators. ISRN Robotics, 2013, pp.1–19. doi: <a href="https://doi.org/10.5402/2013/726506">10.5402/2013/726506</a> <a href="#fnref:fn2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:fn3" role="doc-endnote">
+      <p>J. Burgner-Kahrs, D.C. Rucker and H. Choset: Continuum Robots for Medical Applications: A Survey. IEEE Transactions on Robotics, 31(6), pp.1261–1280. doi: <a href="https://doi.org/10.1109/TRO.2015.2489500">10.1109/TRO.2015.2489500</a> <a href="#fnref:fn3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/opencontinuumrobotics/categories/#101" class="page__taxonomy-item" rel="tag">101</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-10-21T00:00:00-04:00">2022-10-21</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Continuum+Robotics+101%20https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2022%2F10%2F21%2Fcr-intro.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2022%2F10%2F21%2Fcr-intro.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2022%2F10%2F21%2Fcr-intro.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/opencontinuumrobotics/research/2022/10/18/iros-cr-highlights.html" class="pagination--pager" title="Continuum Robots @IROS22
+">Previous</a>
+    
+    
+      <a href="/opencontinuumrobotics/research/2022/10/25/openCRDataset.html" class="pagination--pager" title="Open-source Modeling Dataset
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/OpenCRProject1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/opencontinuumrobotics/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  </body>
+</html>
