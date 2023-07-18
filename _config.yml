@@ -26,11 +26,14 @@ description: >- # this means to ignore newlines until "baseurl:"
   Open Continuum Robotics Project by the Continuum Robotics Laboratory, University of Toronto
 
   Empowering everyone to build their own continuum robot and start their research.
-#local deployment
-#baseurl: "/opencontinuumrobotics"
+#GitHub deployment
+domain: continuumroboticslab.github.io
+url: https://continuumroboticslab.github.io
+baseurl: /opencontinuumrobotics/
 #remote deploy
-baseurl: "/~jbk/opencontinuumrobotics" # the subpath of your site, e.g. /blog
-url: "https://www.cs.toronto.edu" # the base hostname & protocol for your site, e.g. http://example.com
+#baseurl: "/~jbk/opencontinuumrobotics" # the subpath of your site, e.g. /blog
+#url: "https://www.cs.toronto.edu" # the base hostname & protocol for your site, e.g. http://example.com
+
 twitter_username: Open_CR_Project
 github_username:  ContinuumRoboticsLab
 
