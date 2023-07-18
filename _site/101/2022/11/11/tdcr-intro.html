@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -336,14 +336,14 @@
         
         <p>Continuous motion is most commonly achieved by using tendons in continuum robotics. In so called tendon-driven continuum robots (TDCR) several tendons are routed alongside the robot’s flexible backbone and fixed at different locations. TDCR can consist of multiple stacked segments, where each segment end is deﬁned by the termination of one or multiple tendons. When pulling these tendons, a load will be applied to the compliant backbone and the corresponding segment will bend in the direction of the routed tendon. Tendon actuation is an extrinsic actuation principle, as no actuators are located within the robot’s structure.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_1_segment_motion.jpg" alt="image" style="float: center" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_tdcr_1_segment_motion.jpg" alt="image" style="float: center" /></p>
 
 <h2 id="structure-of-tdcr">Structure of TDCR</h2>
 <p>There exist two design principles in TDCR, which differ by the tendon path.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_design_schematic_one.jpg" alt="image" style="float: left" />  The first design consists of a primary flexible, slender backbone. A finite number of spacer disks is equally distributed along the whole length of the TDCR. Guiding holes within the spacer disks are used to route the tendons along the robot backbone. This design realizes a <strong>partially constrained tendon path</strong>, in which the tendon path is straight within a subsegment (i.e. between two individual spacer disks), forming a series of line segments along the robot.</p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_tdcr_design_schematic_one.jpg" alt="image" style="float: left" />  The first design consists of a primary flexible, slender backbone. A finite number of spacer disks is equally distributed along the whole length of the TDCR. Guiding holes within the spacer disks are used to route the tendons along the robot backbone. This design realizes a <strong>partially constrained tendon path</strong>, in which the tendon path is straight within a subsegment (i.e. between two individual spacer disks), forming a series of line segments along the robot.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_design_schematic_two.jpeg" alt="image" style="float: right" /> The second design uses a backbone which usually has a larger diameter and features inner lumens to guide the tendons without the need of separate spacer disks. In contrast to the previous design, here a <strong>fully constrained tendon path</strong> is realized. It is assumed that the tendons follow a continuous curve, parallel to the backbone.</p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_tdcr_design_schematic_two.jpeg" alt="image" style="float: right" /> The second design uses a backbone which usually has a larger diameter and features inner lumens to guide the tendons without the need of separate spacer disks. In contrast to the previous design, here a <strong>fully constrained tendon path</strong> is realized. It is assumed that the tendons follow a continuous curve, parallel to the backbone.</p>
 
 <p>For both designs, several components have been considered for realizing the flexible backbone: Either as a single piece flexible tube or rod that has a uniform stiffness, a flexible tube, or rod with a cutting pattern to allow for non uniform stiffness, or a discrete assembly of multiple stacked compliant joints. Special care needs to be taken when choosing the material of the tendons and the guiding channels to minimize friction and possible stretching of the tendons. Commonly used tendons are either threads, wires, twisted or braided ropes, or tubes made of Nylon, Teﬂon, Kevlar, or NiTi.</p>
 
@@ -355,7 +355,7 @@
 <table>
   <tbody>
     <tr>
-      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_general_structure.jpg" alt="image" style="float: center" /></td>
+      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_tdcr_general_structure.jpg" alt="image" style="float: center" /></td>
     </tr>
     <tr>
       <td>General structure of a tendon-driven continuum robot. Tendons terminate at the end disk of each segment to actuate it. They are routed in parallel to the central backbone. For spatial bending either 3 tendons or 2 antagonistic pairs are used. This example TDCR has two segments actuated by antagonistic tendon pairs.</td>
@@ -371,7 +371,7 @@
 <table>
   <tbody>
     <tr>
-      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_examples.jpg" alt="image" style="float: center" /></td>
+      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_tdcr_examples.jpg" alt="image" style="float: center" /></td>
     </tr>
     <tr>
       <td>Top left: From its initial straight configuration a single-segment TDCR is actuated by pulling on a single tendon causing planar bending. Bottom left: A TDCR with converging tendon paths actuated by antagonistic tendon pairs. Middle: A single segment TDCR with helical tendon path causing the robot to undergo bending and torsion as the tendon gets pulled. Right: Spatial bending of a three segment continuum robot. Three tendons are co-located.</td>

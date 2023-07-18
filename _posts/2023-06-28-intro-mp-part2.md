@@ -8,7 +8,7 @@ excerpt: What makes motion planning particularly challenging for continuum robot
 header:
     teaser: /assets/images/posts/101-motion-planning-intro-part2-teaser.jpg
 ---
-Today, we continue our introduction to motion planning for continuum robots. If you have missed Part 1 of the intro, look at [last week's blog post]({% post_url /2023-06-23-intro-mp-part1 %}) before you continue here!
+Today, we continue our introduction to motion planning for continuum robots. If you have missed Part 1 of the intro, look at [last week's blog post]({% post_url 2023-06-23-intro-mp-part1 %}) before you continue here!
 
 ## What makes motion planning particularly challenging for continuum robots?
 First, let's discuss one of the primary differences between continuum robots and more "traditional" robots (for lack of a better term)---modeling.

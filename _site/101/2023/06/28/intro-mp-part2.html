@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -328,7 +328,7 @@
             </nav>
           </aside>
         
-        <p>Today, we continue our introduction to motion planning for continuum robots. If you have missed Part 1 of the intro, look at <a href="/101/2023/06/23/intro-mp-part1.html">last week’s blog post</a> before you continue here!</p>
+        <p>Today, we continue our introduction to motion planning for continuum robots. If you have missed Part 1 of the intro, look at <a href="/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html">last week’s blog post</a> before you continue here!</p>
 
 <h2 id="what-makes-motion-planning-particularly-challenging-for-continuum-robots">What makes motion planning particularly challenging for continuum robots?</h2>
 <p>First, let’s discuss one of the primary differences between continuum robots and more “traditional” robots (for lack of a better term)—modeling.</p>
@@ -348,7 +348,7 @@ For concentric tube robots this may be mapping the robot’s tubes’ rotation/t
 
 <p>Okay, so why is this a problem when performing motion planning for continuum robots?</p>
 
-<p>Well, one way to think about motion planning is that we are reasoning <em>in advance of actually moving</em> about the best way to move the robot to achieve our goals. This means that we need our ability to reason about motion to be accurate, otherwise how we predict the robot will move doesn’t mean much. For this reason, model inaccuracy plays havoc with naïve motion planning methods (such as we’ve discussed in last week’s <a href="/101/2023/06/23/intro-mp-part1.html">post</a>), and continuum robots have inaccurate models.</p>
+<p>Well, one way to think about motion planning is that we are reasoning <em>in advance of actually moving</em> about the best way to move the robot to achieve our goals. This means that we need our ability to reason about motion to be accurate, otherwise how we predict the robot will move doesn’t mean much. For this reason, model inaccuracy plays havoc with naïve motion planning methods (such as we’ve discussed in last week’s <a href="/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html">post</a>), and continuum robots have inaccurate models.</p>
 
 <p>Further, the ways in which we are reasoning in advance about moving require us to consider a <em>whole bunch of potential motions</em> for the robot. Every vertex in the grid/lattice-based and sampling-based methods represents an FK computation. Every edge between them requires multiple (often many) FK computations. In the optimization-based methods, the computation of objective and constraint gradients frequently require many FK computations. So the time it takes to compute FK has HUGE implications in motion planning.</p>
 
@@ -382,7 +382,7 @@ For concentric tube robots this may be mapping the robot’s tubes’ rotation/t
 
 <p>where $s$ is a normalized path arclength parameter. Note here that I’ve used little ‘c’ cost for cost over configuration and big ‘C’ Cost for cost over a path. Creative, I know.</p>
 
-<p>You should really read the paper if you want formality here, but this should give you the gist. Also note that in the paper the notation is slightly different, but I’ve changed it here to more-closely match what I’ve used in the last <a href="/101/2023/06/23/intro-mp-part1.html">post</a>.</p>
+<p>You should really read the paper if you want formality here, but this should give you the gist. Also note that in the paper the notation is slightly different, but I’ve changed it here to more-closely match what I’ve used in the last <a href="/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html">post</a>.</p>
 
 <p>In that method, we leverage both sampling-based motion planning and optimization-based motion planning in parallel (building on [13]), where the method attempts to minimize the $\texttt{cost}$ of a path. This results in paths that travel as far from obstacles as possible, while still being constrained at the start and end configurations.</p>
 
@@ -412,7 +412,7 @@ In the paper <sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footn
 <p>The fact that we have a variety of models for continuum robots that trade computation speed for accuracy implies exciting potential for the use of multi-fidelity planning. One can imagine, as maybe the most obvious example, using a fast but inaccurate model to prioritize edge evaluation in a lazy planning paradigm, look up Lazy PRM if that doesn’t make sense to you, where full edge evaluation is then done with a high-fidelity model.</p>
 
 <h2 id="closing-remarks">Closing remarks</h2>
-<p>Hopefully the above alongside last week’s <a href="/101/2023/06/23/intro-mp-part1.html">Part 1</a> were a relatively gentle introduction to motion planning and how it relates conceptually to continuum robots. This wasn’t intended to be a comprehensive survey of planning for continuum robots. Rather, my intention was to give you the vocabulary and an understanding of the rough concepts sufficient for you to investigate the rest of the literature yourself, and to innovate on the state-of-the-art as you need for your specific problems.</p>
+<p>Hopefully the above alongside last week’s <a href="/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html">Part 1</a> were a relatively gentle introduction to motion planning and how it relates conceptually to continuum robots. This wasn’t intended to be a comprehensive survey of planning for continuum robots. Rather, my intention was to give you the vocabulary and an understanding of the rough concepts sufficient for you to investigate the rest of the literature yourself, and to innovate on the state-of-the-art as you need for your specific problems.</p>
 
 <h2 id="references">References</h2>
 

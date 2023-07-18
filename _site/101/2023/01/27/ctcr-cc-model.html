@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -334,7 +334,7 @@
             </nav>
           </aside>
         
-        <p>Today, we are looking at how <a href="/101/2022/11/18/ctcr-intro.html">concentric tube continuum robots</a> (CTCR) are modelled using the <a href="/101/2022/12/02/cc-kinematics.html">constant curvature kinematics framework</a>.
+        <p>Today, we are looking at how <a href="/opencontinuumrobotics/101/2022/11/18/ctcr-intro.html">concentric tube continuum robots</a> (CTCR) are modelled using the <a href="/opencontinuumrobotics/101/2022/12/02/cc-kinematics.html">constant curvature kinematics framework</a>.
 We derive the mapping for general CTCR composed of multiple tubes and then discuss the
 limitations.</p>
 
@@ -388,7 +388,7 @@ outer tube. In the robot’s zero position, all tubes are fully retracted
 and align with the front plate of the actuation unit. Below, we illustrate the joint space of a CTCR with \(N_{t} = 3\) and the base
 coordinate frame.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_ctcr_model_parameter.png" alt="image" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_ctcr_model_parameter.png" alt="image" /></p>
 
 <p>The robot dependent mapping is based on the principles of beam mechanics
 to solve the forward kinematic problem. We assume the tubes to deform
@@ -402,7 +402,7 @@ by applying Bernoulli–Euler beam mechanics.</p>
 for the shape of a single segment composed of several fully overlapping
 concentric curved tubes. Let’s first consider the example depicted here.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_ctcr_cc_model_equilibrium.png" alt="image" style="float: center" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_ctcr_cc_model_equilibrium.png" alt="image" style="float: center" /></p>
 
 <p>For a collection of two tubes with circular precurvatures
 \(\kappa_{1}^{*}\) and \(\kappa_{2}^{*}\), once inserted into each other,
@@ -423,7 +423,7 @@ the second area moment (in \(m^{4}\)) of the symmetric cross section of
 the respective tube. The second area moment \(I\) is a geometrical
 property of the tube’s cross section area which reflects how its points
 are distributed with regard to the central axis. As a
-tube’s <img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_ctcr_tube_cross_section.png" alt="image" style="float: right" /> 
+tube’s <img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_ctcr_tube_cross_section.png" alt="image" style="float: right" /> 
 cross section is an annulus, the second
 area moment can be determined from the inner and outer diameter as</p>
 
@@ -442,7 +442,7 @@ by evaluating the moment equilibrium</p>
 
 \[\kappa = \frac{\sum_{j = 1}^{N_{t}}EI_{j}\kappa_{j}^{*}}{\sum_{j = 1}^{N_{t}}EI_{j}}\]
 
-<p>Let’s now consider the example depicted here.<img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_ctcr_cc_bending_plane.png" alt="image" style="float: right" /> When precurved
+<p>Let’s now consider the example depicted here.<img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_ctcr_cc_bending_plane.png" alt="image" style="float: right" /> When precurved
 tubes are rotated axially, their natural planes of curvature are no
 longer aligned and the direction of the bending moments they apply
 changes. The tubes exert a moment on one another about their respective
@@ -507,7 +507,7 @@ the number of actual segments is dependent on the current joint values
 unit. Here, we show an example of a CTCR composed of three tubes and
 its transition points.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_ctcr_cc_tube_transitions.png" alt="image" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_ctcr_cc_tube_transitions.png" alt="image" /></p>
 
 <p>Using the transition points T, the length of the constant curvature
 segments of the CTCR can be determined as</p>
@@ -528,7 +528,7 @@ parameters have to be considered (either zero curvature in straight tube
 sections or the respective precurvature in curved sections, alongside ID
 and OD, as well as \(E\)).</p>
 
-<p>The <a href="/101/2022/12/02/cc-kinematics.html">constant curvature kinematics franmework</a> assumes that \(\phi\) is
+<p>The <a href="/opencontinuumrobotics/101/2022/12/02/cc-kinematics.html">constant curvature kinematics franmework</a> assumes that \(\phi\) is
 expressed locally, i.e., w.r.t. the previous segment for
 the robot independent mapping. Consequently, after determining
 \(\phi_{i}\) expressed in the base frame for each segment using Equation

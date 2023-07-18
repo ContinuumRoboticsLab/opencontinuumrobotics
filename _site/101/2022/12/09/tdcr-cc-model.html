@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -334,7 +334,7 @@
             </nav>
           </aside>
         
-        <p>Today, we are looking at how tendon-driven continuum robots (TDCR) are modelled using the <a href="/101/2022/12/02/cc-kinematics.html">constant curvature kinematics framework</a> introduced last week. In doing so, we assume that the TDCR undergoes a pure bending motion, i.e. has infinite
+        <p>Today, we are looking at how tendon-driven continuum robots (TDCR) are modelled using the <a href="/opencontinuumrobotics/101/2022/12/02/cc-kinematics.html">constant curvature kinematics framework</a> introduced last week. In doing so, we assume that the TDCR undergoes a pure bending motion, i.e. has infinite
 torsional rigidity, and is not affected by gravitational effects. We
 also assume that the tendons follow a continuous curve, parallel to the
 backbone. Furthermore, we neglect friction in the tendon paths and any
@@ -378,7 +378,7 @@ space \(\mathbf{q} = \lbrack\Delta t_{11}\rbrack\) to arc parameters
 \(\kappa_{1},\phi_{1},\ell_{1}\). As we are only actuating with one tendon, the bending plane is fixed \(\phi_{1} = 0\).
 As the segment has fixed length, \(\ell_{1}\) is constant.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_cc_single_seg_one_tendon_arc.jpg" alt="image" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_tdcr_cc_single_seg_one_tendon_arc.jpg" alt="image" /></p>
 
 <p>For \(\Delta t_{11} \geq 0\), the TDCR remains straight with
 \(\kappa_{1} = 0\). To determine \(\kappa_{1}\) for \(\Delta t_{ij} &lt; 0\), we
@@ -406,7 +406,7 @@ Pulling on one tendon requires releasing the other tendon in order to achieve be
 For \(\mathbf{q} = \lbrack 0,0\rbrack\), \(\kappa_{1} = 0\) and
 \(\phi_{1} = 0\).</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_cc_single_seg_two_tendons_arc.jpg" alt="image" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_tdcr_cc_single_seg_two_tendons_arc.jpg" alt="image" /></p>
 
 <p>The TDCR segment can either bend to the right \(\Delta t_{11} &lt; 0\), which
 implies \(\phi_{1} = 0\), or to the left \(\Delta t_{12} &lt; 0\), which
@@ -438,7 +438,7 @@ the same amount, or pull on two tendons and release the remaining one by
 the same amount. This dependency can be expressed by requiring \(\sum_{j}\Delta t_{1j} = 0\) and
 consequently \(\ell_{1} = \frac{\sum_{j}^{}\ell_{1j}}{3}\).</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_cc_spatial_full.jpg" alt="image" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_tdcr_cc_spatial_full.jpg" alt="image" /></p>
 
 <p>For the robot dependent mapping
 \(\mathbf{q} \rightarrow \{\kappa_{1},\phi_{1},\ell_{1}\}\), 
@@ -446,7 +446,7 @@ we assume that \(\ell_{1}\) is constant, i.e. the segment has a fixed length and
 The segment bends into the bending plane
 \({\widehat{x}}_{p}{\widehat{z}}_{p}\) 
 defined by \(\phi_{1}\) about the \({\widehat{z}}_{0}\)-axis. 
-<img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_cc_disk.jpg" alt="image" style="float: right" />
+<img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_tdcr_cc_disk.jpg" alt="image" style="float: right" />
 To derive relationships for \(\kappa_{1}\) and
 \(\phi_{1}\), we establish relationships between the tendons and the
 central backbone within each disk first. The angular
@@ -465,7 +465,7 @@ curvature of the <em>j</em>-th tendon according to</p>
 
 <p>\(r_{1} = r_{1j} + d_{j}\).</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_tdcr_cc_spatial_r.jpg" alt="image" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_tdcr_cc_spatial_r.jpg" alt="image" /></p>
 
 <p>We can use this relationship to determine the TDCR segment’s curvature
 by integrating the arc length \(s\):</p>

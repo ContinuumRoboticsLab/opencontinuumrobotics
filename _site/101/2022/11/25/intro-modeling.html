@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -337,19 +337,19 @@
         <p>Continuum robots are joint-less and composed of flexible, elastic, or soft materials. As such, they are continuously bending, eventually twisting and extending. In order to have a continuum robot do meaningful things, i.e. move along a predefined path, deploy into a cluttered environment, be teleoperated by a physician to help with brain surgery, we need to describe the
 relationship between joint space and task space. This kinematic mapping is essential for motion planning and control of any robot.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_modelingIntro_jointspace.png" alt="image" style="float: center" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_modelingIntro_jointspace.png" alt="image" style="float: center" /></p>
 
 <h2 id="mapping-between-joint-and-task-space">Mapping between Joint and Task Space</h2>
 <p>The term joint space may be confusing for continuum robots as we commonly think of revolute or prismatic joints. Those are not necessarily present in a continuum robot as actuation may be achieved by pulling on tendons or changing pressure in pneumatic components. Yet, we commonly refer to those actuator parameters as the robot’s joint space and we are interested in determining the relationship between joint space parameters and the resulting appearance of the robot in task space, i.e. its position and orientation at the tip or its shape.</p>
 
 <p>Perhaps the most familiar kinematic modelling framework for roboticists is the discrete approach employed in conventional rigid-link manipulators: a series of rigid links connected by revolute, universal, or spherical joints is described using a series of homogeneous transformations, for example generated from Denavit Hartenberg (D-H) parameters or using the Product of Exponentials (PoE) formula. The underlying assumption, that the robot is composed of rigid-link and joints, does not hold for continuum robots. In fact, the body is continuously bending and the actuators/joints are not connected by rigid links. We could approximate the continuous structure of the robot’s body by a series of virtual joints and find a relationship between those virtual joints and the actual joint space. But the lack of distinct links in continuum robots makes the the D-H and PoE strategies, which define a ﬁnite number of coordinate frames (each fixed in one link), inappropriate for modelling. So rather than trying to fit a modelling approach to a continuum robot, it is more effective to utilize the structure and geometry of a continuum robot to come up with a more suitable kinematic framework.</p>
 
-<p>We have seen several <a href="/101/2022/10/21/cr-intro.html">example continuum robots</a>. From a mechanical standpoint, these continuum robots can be seen as slender structures, i.e. structures that are much longer in one direction than the other two directions. This slender structure is continuously bending and can be represented by a space curve.</p>
+<p>We have seen several <a href="/opencontinuumrobotics/101/2022/10/21/cr-intro.html">example continuum robots</a>. From a mechanical standpoint, these continuum robots can be seen as slender structures, i.e. structures that are much longer in one direction than the other two directions. This slender structure is continuously bending and can be represented by a space curve.</p>
 
 <table>
   <tbody>
     <tr>
-      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_modeling_spacecurve.png" alt="image" /></td>
+      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_modeling_spacecurve.png" alt="image" /></td>
     </tr>
     <tr>
       <td>(Images adapted, from left to right © OC Robotics Ltd, © FESTO, © Titan Medical Inc.)</td>
@@ -376,7 +376,7 @@ relationship between joint space and task space. This kinematic mapping is essen
 <p>Constant curvature kinematic frameworks represent the continuum robot’s configuration space as a ﬁnite number of mutually tangent curved segments each having a constant curvature along its length. Note that <em>constant</em> here refers to invariance with respect to arc length, not time. In this framework, the curvature, length, and angle of the curve’s bending plane - known as the arc parameters - of each segment form a set of configuration coordinates that completely describes the shape of the robot. The position and orientation at any point on the robot, can be written as a function of the arc parameters and the arc length along the backbone to that point. Similar to D-H
 parameters, an arc parameter could be a constant or vary with actuation, depending on the robot design. Usually, a single constant-curvature segment is employed for each actuatable segment of the robot.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_modelingIntro_mappings.png" alt="image" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_modelingIntro_mappings.png" alt="image" /></p>
 
 <p>The forward kinematics of a continuum robot refers to the calculation of the position and orientation of its tip from its joint coordinates. The arc parameters are determined as an intermediate step in this calculation, which is the robot dependent mapping from joint space to
 configuration space as it depends on the robot’s mechanical structure and actuation principle employed. Using these configuration space parameters, the robot independent mapping determines the task space parameters.</p>

@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -336,11 +336,11 @@
         
         <p>Today, we dive deeper into the common constant curvature kinematics framework. We look at the mappings between joint and configuration space, i.e. the <strong>robot dependent mapping</strong>, and between configuration and task space, i.e. the <strong>robot independent mapping</strong>.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_modelingIntro_mappings.png" alt="image" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_modelingIntro_mappings.png" alt="image" /></p>
 
 <h1 id="robot-dependent-mapping">Robot Dependent Mapping</h1>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_cc_arcParameter.png" alt="image" style="float: right" />
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_cc_arcParameter.png" alt="image" style="float: right" />
 The robot dependent mapping relates the robot’s joint space
 \(q \in \mathbb{R}^{n}\) (\(n\) is the number of “joints” or actuators) to
 configuration space in terms of circular arc parameters. Arc parameters
@@ -380,7 +380,7 @@ The other axes of the moving frame must be normal to the curve, but are
 otherwise allowed to rotate freely about the curve. The curve is
 parameterized by arc length s.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_cc_frames.png" alt="image" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_cc_frames.png" alt="image" /></p>
 
 <p>A common assignment of the base frame \(\{ 0\}\) of a continuum robot in
 its zero configuration is:</p>
@@ -413,7 +413,7 @@ by \(\theta\).</p>
 <table>
   <tbody>
     <tr>
-      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_cc_circularArc.png" alt="image" /></td>
+      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_cc_circularArc.png" alt="image" /></td>
     </tr>
     <tr>
       <td>For \(\phi = 0\), the arc lies within the \(\widehat{x}\widehat{z}\)-plane. Here, the local frame at $s+\ell$ is depicted and a point $p$ on the curve.</td>
@@ -453,7 +453,7 @@ above does not hold. Instead, it becomes
 \(\kappa\) and torsion \(\tau\) of an arc-length parameterized
 space curve, we can recover the curve itself.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_cc_frenetframes.png" alt="image" style="float: right" />
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_cc_frenetframes.png" alt="image" style="float: right" />
 Frenet-Serret frames are defined according to this theorem: One axis is
 tangent to the curve, such that we can look at the change in <strong>tangent</strong>
 direction \(\widehat{t}\) as we move along the curve. Since \(\widehat{t}\)
@@ -565,7 +565,7 @@ and integrate the tangent to obtain the curve.</p>
 <p>Under the constant curvature framework, the shape of a continuum robot becomes a concatenation of constant curvature
 arcs.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_cc_concatenation_of_arcs.jpg" alt="" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_cc_concatenation_of_arcs.jpg" alt="" /></p>
 
 <p>Above, we saw how we can obtain the moving frame along a single constant
 curvature arc. As the robot dependent mapping usually results in \(m\)
@@ -575,7 +575,7 @@ end frame. Consequently, \(T_{m - 1}(\ell_{m - 1})\) has to
 be pre-multiplied to the local frame of arc \(m\):
 \(T_{m}(s) = T_{m - 1}(\ell_{m - 1})T(s)\).</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_cc_arcConcatenation.png" alt="image" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_cc_arcConcatenation.png" alt="image" /></p>
 
 <p>Note, that there may be cases, where the local frame is required to span
 the cross section of the robot and to express the material orientation.</p>

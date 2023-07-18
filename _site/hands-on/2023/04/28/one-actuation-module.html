@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -316,7 +316,7 @@
         
         <p>We are excited to announce that our open continuum robotics hardware is now out. It has been a humbling long journey that lead to our manuscript (which is now in review but available as pre-print on arXiv<sup id="fnref:arXiv2023" role="doc-noteref"><a href="#fn:arXiv2023" class="footnote" rel="footnote">1</a></sup>). To increase the reproducibility and accessibility of continuum robotics research, we release the hardware design, component lists, assembly instructions, and software open source here on our website.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/hands-on/one-module-teaser.jpeg" alt="" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/hands-on/one-module-teaser.jpeg" alt="" /></p>
 
 <p>As you are reading this on our blog, you are already aware of our initiative called the OpenCR Project. With this week’s post, we are releasing our open actuation module <sup id="fnref:arXiv2023:1" role="doc-noteref"><a href="#fn:arXiv2023" class="footnote" rel="footnote">1</a></sup> for the continuum robotics community to build torque-controlled continuum robots. The actuation module is capable of measuring the external torque as demonstrated with very simplified toy examples. Its versatile and modular characteristics are highlighted by building three different types of continuum robot prototypes. The presented prototypes are capable of torque control and fast trajectory tracking making them the first of a kind of the respective continuum robot type.</p>
 
@@ -325,23 +325,23 @@
 
 <p>First, in our previous study <sup id="fnref:WS_RSS_2020" role="doc-noteref"><a href="#fn:WS_RSS_2020" class="footnote" rel="footnote">2</a></sup>, we observed that precious time and focus are devoted to building custom prototypes. One can acknowledge that experiments on physical hardware in robotics are necessary and valuable for evaluations. However, over 60% of all prototypes are used for only a single publication. This demonstrates an inefficient habit of not reusing existing prototypes. Thus, a significant amount of time is devoted to creating proprietary hardware and software. This large and growing number of <strong><em>single-use prototypes</em></strong> imposes a barrier for the research community shifting away time and efforts from important research questions.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/hands-on/reused_robot_over_time.png" alt="" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/hands-on/reused_robot_over_time.png" alt="" /></p>
 
 <p>Second, on a more personal note, having the opportunity <sup id="fnref:RoboterFabrik" role="doc-noteref"><a href="#fn:RoboterFabrik" class="footnote" rel="footnote">3</a></sup>, <sup id="fnref:TeachingLab" role="doc-noteref"><a href="#fn:TeachingLab" class="footnote" rel="footnote">4</a></sup> to regularly work with torque-controlled manipulators such as the Franka Emika Panda<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">5</a></sup>, utilizing torque control for continuum robots seems to be a natural next stepping stone. Torque control has a rich history, especially for serial kinematic mechanisms <sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">6</a></sup> <sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">7</a></sup> <sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">8</a></sup> <sup id="fnref:16:1" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">5</a></sup>. However, for some reason, the spread and success of torque-control used in pHRI (physical human-robot interaction) research has not reached our continuum robotics community. Perhaps, one reason is that not much time has been directed to build a continuum robot prototype capable of torque control.</p>
 
 <h2 id="the-opencr-actuation-module">The OpenCR Actuation Module</h2>
 <p>To provide torque-controlled continuum robot prototypes, we propose a modular actuation module consisting of a high-torque brushless electric motor, a high-resolution optical encoder, and a low-gear-ratio transmission. This choice of hardware allows for torque control and fast trajectory tracking in real time. Furthermore, it enables proprioceptive torque sensing by measuring motor currents without relying on additional sensors, e.g., tension sensors or load cells. In addition, the actuation module and its coupling system can be used in different actuation modes for a wide range of continuum robots. For instance, tendon displacement/tension and backbone rotation/torque can be controlled and measured.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/hands-on/one-module-assembly.gif" alt="" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/hands-on/one-module-assembly.gif" alt="" /></p>
 
 <p>Recapping the technological trend towards torque-controlled robot systems in other research fields, we are forecasting a likely impact of the proposed actuation module and continuum robot prototypes built on it. The manuscript <sup id="fnref:arXiv2023:2" role="doc-noteref"><a href="#fn:arXiv2023" class="footnote" rel="footnote">1</a></sup> takes initial steps towards advanced control methodologies. We are confident that the ability of continuum robots utilizing our actuation module (or one with similar capabilities) has a decisive advantage over previous existing prototypes. For example, a CTCR can detect external disturbance as shown here:</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/hands-on/one-module-ctcr-snap.gif" alt="" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/hands-on/one-module-ctcr-snap.gif" alt="" /></p>
 
 <h2 id="one-actuation-module-to-create-them-all">One Actuation Module to Create them All</h2>
 <p>The actuation module is modular and as such allows you to build any (!?) continuum robot. In the nature of the OpenCR project, we build three different types of continuum robots – a parallel CR, a spatial TDCR, and a CTCR. The image below shows renderings and respective prototypes. By providing open-source hardware and software, we hope that this minimizes the repetitive tasks of developing prototypes, allowing researchers worldwide to focus on the main research challenges in continuum robotics. As a welcome side effect, robot-based evaluations can be performed quickly and become reproducible by other groups!</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/hands-on/one-module-create-all.jpeg" alt="" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/hands-on/one-module-create-all.jpeg" alt="" /></p>
 
 <p>To improve our prototypes, we took great inspiration from the Open Dynamic Robot Initiative, where efforts are made to build cost-efficient actuators for torque-controlled legged robots <sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">9</a></sup> and manipulators <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">10</a></sup>. As a matter of fact, open robot hardware projects proliferate progress in robotics <sup id="fnref:RAM_Survey_2023" role="doc-noteref"><a href="#fn:RAM_Survey_2023" class="footnote" rel="footnote">11</a></sup>. Therefore, we encourage you – dear reader – to participate in the development of open-source software and hardware as well as to join the journey of leveraging torque-controlled prototypes. Let’s pave the way with new stepping stones toward untapped or under-investigated research directions.</p>
 

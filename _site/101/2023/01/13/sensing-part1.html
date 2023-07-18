@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -370,7 +370,7 @@
 <table>
   <tbody>
     <tr>
-      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_sensing_p1_chip.jpg" alt="image" /></td>
+      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_sensing_p1_chip.jpg" alt="image" /></td>
     </tr>
     <tr>
       <td>Example chip-on-the-tip small-scale camera (Copyright 2020 Toshiba Imaging).</td>
@@ -387,7 +387,7 @@
 
 <p>FBGs are special sections inscribed in optical fibres. Each grating is characterized by a specific Bragg wavelength. It reflects incoming light with exactly this wavelength (see Figure below). If the fibre is subject to longitudinal stress and/or temperature change, the reflected light spectrum shifts. Assuming that the sensor array is used under stable temperature conditions, the strain can be related to the observed wavelength shift. This locally observed strain information can then be used to determine point-wise curvature information. The curvature along the whole length of the fibre can then be determined by interpolation and the shape, respectively the curve, can be determined by integrating twice.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_sensing_FBG.png" alt="image" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_sensing_FBG.png" alt="image" /></p>
 
 <p>Using this underlying principle, a fibre-optic sensing system is composed of an optical interrogator, also known as measurement unit or data acquisition system, which is an optoelectronic instrument allowing the reading of multiple FBG sensors. During data acquisition, the interrogator measures the wavelength associated with the light reflected by the optical sensors and then converts it into engineering units. The sampling rate is usually about 1kHz. Post-processing is required to infer shape information from the wavelengths measurements.</p>
 
@@ -401,7 +401,7 @@
 <table>
   <tbody>
     <tr>
-      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_sensors_p1_em.jpeg" alt="image" /></td>
+      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_sensors_p1_em.jpeg" alt="image" /></td>
     </tr>
     <tr>
       <td>Examlpe 5DOF electromagnetic tracking sensor with 0.45mm diameter, 6.3 mm length, and up to 4.1m lead wire (Copyright: 2022 Northern Digital Inc.)</td>
@@ -411,7 +411,7 @@
 
 <p>Electromagnetic tracking allows for real-time tracking of pose information with no line-of-sight restrictions and is relatively cost-efficient. In a state-of-the-art EM tracking systems (such as NDI Aurora v2, NDI Inc.), the stated root-mean-square-error (RMS) for 6-DOF sensors is 0.48 mm in position and 0.3° orientation and for 5-DOF sensors 0.7 mm in position and 0.2° in orientation in an environment free of electromagnetic disturbances. Any ferromagnetic material or insufficiently shielded cable may interfere with the field, lead to field distortions and as a result impact the system’s accuracy. Therefore, if electromagnetic sensing is used, the continuum robot and eventually parts of its actuation unit need to be build from non-ferromagnetic materials such as medical-grade stainless steel, aluminum, and titanium. Depending on the size of the continuum robot, embedding electromagnetic sensors into its body can be challenging. As can be seen on the picture, the sensors come with a straight, stiff part which can impact the continuum robot’s ability to bend continuously. While multiple sensors can be tracked at the same time, the number is limited to up to 8 and the sensors cannot be too close to one another to allow for proper tracking.</p>
 
-<p class="notice">We will look at external sensors for continuum robots in next week’s 101 Sensing <a href="/101/2023/01/20/sensing-part2.html">Part 2</a> blog post!</p>
+<p class="notice">We will look at external sensors for continuum robots in next week’s 101 Sensing <a href="/opencontinuumrobotics/101/2023/01/20/sensing-part2.html">Part 2</a> blog post!</p>
 
         
       </section>

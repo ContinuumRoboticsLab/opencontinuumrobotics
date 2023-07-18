@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -328,7 +328,7 @@
         
         <p>In our second release of the Continuum Robot Visualization Toolkit (<a href="https://github.com/ContinuumRoboticsLab/CRVisToolkit">CRVisToolkit</a>), you will find a new set of MATLAB functions for visualization and plotting of concentric tube continuum robots (CTCR). With a framed curve represented by a series $n$ of 4x4 homogeneous transformation matrices (reshaped columnwise into a $n$x16 vector), indices of the tube end points, as well as the tube radii as input, you to create a MATLAB figure. In addition, we provide a utility function <code class="language-plaintext highlighter-rouge">robotindependentmapping(kappa, phi, ell, ptsperseg)</code> which generates a framed backbone curve using constant curvature arc parameters and the desired number of points (per segment) as input.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/hands-on/ctcr_vis_MATLAB.jpg" alt="image" /></p>
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/hands-on/ctcr_vis_MATLAB.jpg" alt="image" /></p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="p">[</span><span class="n">fig</span><span class="p">]</span> <span class="o">=</span> <span class="n">draw_ctcr</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">tube_end</span><span class="p">,</span><span class="n">r_tube</span><span class="p">,</span><span class="n">options</span><span class="p">)</span>
 <span class="c1">% DRAW_CTCR Creates a figure of a concentric tube continuum robot (ctcr)</span>
@@ -352,7 +352,7 @@
 <span class="c1">%</span>
 </code></pre></div></div>
 
-<p>We provide an example file <code class="language-plaintext highlighter-rouge">ctcr_draw_example.m</code> to create a figure of a CTCR with three tubes. The example also makes use of the new utility function <code class="language-plaintext highlighter-rouge">robotindependentmapping(kappa, phi, ell, ptsperseg)</code>. This function takes <a href="/101/2022/12/02/cc-kinematics.html">constant curvature parameters</a> and generates a backbone curve. This backbone curve $g$ is in the format required by <code class="language-plaintext highlighter-rouge">draw_ctcr(g,tube_end,r_tube,options)</code> and <code class="language-plaintext highlighter-rouge">draw_tdcr(g,seg_end,r_disk,r_height,options)</code>.</p>
+<p>We provide an example file <code class="language-plaintext highlighter-rouge">ctcr_draw_example.m</code> to create a figure of a CTCR with three tubes. The example also makes use of the new utility function <code class="language-plaintext highlighter-rouge">robotindependentmapping(kappa, phi, ell, ptsperseg)</code>. This function takes <a href="/opencontinuumrobotics/101/2022/12/02/cc-kinematics.html">constant curvature parameters</a> and generates a backbone curve. This backbone curve $g$ is in the format required by <code class="language-plaintext highlighter-rouge">draw_ctcr(g,tube_end,r_tube,options)</code> and <code class="language-plaintext highlighter-rouge">draw_tdcr(g,seg_end,r_disk,r_height,options)</code>.</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">g</span> <span class="o">=</span> <span class="n">robotindependentmapping</span><span class="p">(</span><span class="n">kappa</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">ptsperseg</span><span class="p">)</span>
 <span class="c1">% ROBOTINDEPENDENTMAPPING creates a framed curve for given configuration parameters</span>

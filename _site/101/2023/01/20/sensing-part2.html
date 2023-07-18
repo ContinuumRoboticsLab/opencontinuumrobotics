@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics//favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -334,7 +334,7 @@
             </nav>
           </aside>
         
-        <p>Today, we continue our introduction to sensing the state of a continuum robot. If you have missed Part I of the intro, look at <a href="/101/2023/01/13/sensing-part1.html">last week’s blog post</a> before you continue here!</p>
+        <p>Today, we continue our introduction to sensing the state of a continuum robot. If you have missed Part I of the intro, look at <a href="/opencontinuumrobotics/101/2023/01/13/sensing-part1.html">last week’s blog post</a> before you continue here!</p>
 
 <p>To sense information about the state of a continuum robot, it may be desirable to not integrate sensors to the robot, but to use readily available external sensing methods.</p>
 
@@ -346,7 +346,7 @@
 
 <p><strong>Mechanical Probes:</strong> To acquire a measurement point, the robot has to be touched with the probe of the measurement arm which is usually operated manually by a user. This technique is suited to measure the position of the tip of the robot or to gather information on the shape of robot by measuring at multiple distinct locations along it.</p>
 
-<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_sensing_p2_discretePoints.png" alt="image" style="float: right" />
+<p><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_sensing_p2_discretePoints.png" alt="image" style="float: right" />
 Mechanical probes provide high accuracies - usually sub-millimetre, but as operation is user-dependent the accuracy can vary. Mechanical probes are fast to setup and ready to use. But as the robot needs to be touched, it is challenging to not deform the robot while touching, which would lead to measurement errors and inconsistencies. As we are mostly interested in obtaining information about the centreline of the robot when we want to infer the shape, a coordinate measurement on the surface of the robot is suboptimal as it induces an offset to the centreline which has to be corrected for in post-processing. Lastly, mechanical probes for coordinate measurement are only suitable for static robot configurations and requires direct access to the robot.</p>
 
 <p><strong>Laser Probes:</strong> To overcome the necessity of touching the robot for measuring coordinates, touch-less laser probes can be used, also referred to as 3D laser scanners. The laser probe is attached to the measurement arm and manually guided by the operator along the continuum robot. The laser probe emits a laser line and using the images from the camera within the probe, the distance of the scanned object from the probe can be determined. By sweeping the continuum robot, a point cloud of its structure can be obtained. This raw point cloud usually includes some noise as well as unwanted objects. Therefore, a post-processing step is performed to clean the data and eventually thin the point cloud in order to extract the shape.</p>
@@ -359,7 +359,7 @@ Mechanical probes provide high accuracies - usually sub-millimetre, but as opera
 <table>
   <tbody>
     <tr>
-      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics//assets/images/posts/cr_101_sensing_p2_3dRecon.jpg" alt="image" /></td>
+      <td><img src="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/cr_101_sensing_p2_3dRecon.jpg" alt="image" /></td>
     </tr>
     <tr>
       <td>The shape of a continuum robot can be resonstructed using two cameras and epipolar geometry. Corresponding image coordinates representing a point on the robot have to be identified in both images, to determine the spatial position.</td>
@@ -381,7 +381,7 @@ Mechanical probes provide high accuracies - usually sub-millimetre, but as opera
 <p>Some areas of open research are concerned with continuous, real-time shape measurements of variable curvature, multi-section continuum robots, continuous force measurements along the robot’s body, and tactile sensing skins.</p>
 
 <h2 id="sensing-in-a-nutshell">Sensing in a Nutshell</h2>
-<p>As continuum robots are flexible bending/extending structures, sensing can be quite a challenge. The smaller the size of the continuum robot, the more challenging the sensor selection and its integration becomes. In our Sensing 101 <a href="/101/2023/01/13/sensing-part1.html">Part 1</a>  and <a href="/101/2023/01/20/sensing-part2.html">Part 2</a> blog posts, we have seen that multiple sensing modalities exist, each of which has its advantages and challenges. As no measurement technique is perfect and as no sensing modality suits all needs, the selection of sensors is a trade-off between application requirements and the particular continuum robot.</p>
+<p>As continuum robots are flexible bending/extending structures, sensing can be quite a challenge. The smaller the size of the continuum robot, the more challenging the sensor selection and its integration becomes. In our Sensing 101 <a href="/opencontinuumrobotics/101/2023/01/13/sensing-part1.html">Part 1</a>  and <a href="/opencontinuumrobotics/101/2023/01/20/sensing-part2.html">Part 2</a> blog posts, we have seen that multiple sensing modalities exist, each of which has its advantages and challenges. As no measurement technique is perfect and as no sensing modality suits all needs, the selection of sensors is a trade-off between application requirements and the particular continuum robot.</p>
 
 <p>Some application areas, such as surgery, may also provide additional sensing means, such as medical imaging to reason about the position/pose or shape of a continuum robot operating within the human body (ultrasound, fluoroscopy, computed tomography, or magnetic resonance imaging). At the same time, applications may impose restrictions on which sensing modalities can be used. Think of a continuum robot for non-destructive inspection of a jet engine. Electromagnetic tracking would not be feasible in terms of range and external cameras would have no line-of-sight.</p>
 
