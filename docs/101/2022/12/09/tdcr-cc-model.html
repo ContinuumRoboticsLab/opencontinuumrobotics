@@ -1,0 +1,678 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Constant-Curvature Model of Tendon-driven Continuum Robots -</title>
+<meta name="description" content="Modeling of tendon-driven continuum robots using the constant-curvature kinematics framework.">
+
+
+  <meta name="author" content="Jessica Burgner-Kahrs">
+  
+  <meta property="article:author" content="Jessica Burgner-Kahrs">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Constant-Curvature Model of Tendon-driven Continuum Robots">
+<meta property="og:url" content="http://localhost:4000/101/2022/12/09/tdcr-cc-model.html">
+
+
+  <meta property="og:description" content="Modeling of tendon-driven continuum robots using the constant-curvature kinematics framework.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/cr_101_tdcr_teaser.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-09T00:00:00-05:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/101/2022/12/09/tdcr-cc-model.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Open Continuum Robotics Project",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:4000/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:4000/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="http://localhost:4000/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="http://localhost:4000/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/software/">Software</a>
+            </li><li class="masthead__menu-item">
+              <a href="/hardware/">Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/">Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Jessica Burgner-Kahrs</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Professor. Roboticist.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Constant-Curvature Model of Tendon-driven Continuum Robots">
+    <meta itemprop="description" content="Modeling of tendon-driven continuum robots using the constant-curvature kinematics framework.">
+    <meta itemprop="datePublished" content="2022-12-09T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Constant-Curvature Model of Tendon-driven Continuum Robots
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-09T00:00:00-05:00">2022-12-09</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#one-tendon-actuating-a-segment">One Tendon Actuating a Segment</a></li><li><a href="#planar-bending-segment">Planar Bending Segment</a></li><li><a href="#spatial-bending-segment">Spatial Bending Segment</a></li><li><a href="#extensible-spatial-bending-segment">Extensible Spatial Bending Segment</a></li><li><a href="#multi-segment-tdcr">Multi-segment TDCR</a></li><li><a href="#remarks">Remarks</a></li><li><a href="#references">References</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Today, we are looking at how tendon-driven continuum robots (TDCR) are modelled using the <a href="/101/2022/12/02/cc-kinematics.html">constant curvature kinematics framework</a> introduced last week. In doing so, we assume that the TDCR undergoes a pure bending motion, i.e. has infinite
+torsional rigidity, and is not affected by gravitational effects. We
+also assume that the tendons follow a continuous curve, parallel to the
+backbone. Furthermore, we neglect friction in the tendon paths and any
+effects of external forces.</p>
+
+<p>To determine the robot dependent mapping for a TDCR, we look at its \(m\)
+segments. Each segment is actuated by a number of tendons \(N_{t}\)
+terminating at a segment’s end disk.</p>
+
+<p>We define the coordinate frame for each segment at the base disk
+positioned in its centre and choose the \(+ {\widehat{z}}_{0}\)-axis to
+point toward the end disk and tangent to the backbone. The
+\(+ {\widehat{x}}_{0}\)-axis is pointing toward the first tendon, such
+that pulling on the first tendon results in bending in the
+\({\widehat{x}}_{0}{\widehat{z}}_{0}\)-plane with positive curvature about
+the positive \({\widehat{y}}_{0}\) axis. The tendons are numbered
+counterclockwise \(1\ldots N_{t}\). The distance \(d\) of the tendons to the
+centre of the disk is assumed to be constant per segment.</p>
+
+<p>We further define the joint space of a TDCR as</p>
+
+\[\mathbf{q} = \lbrack\Delta t_{11},\ldots,\Delta t_{1N_{t}},\ldots,\Delta t_{m1},\ldots,\Delta t_{mN_{t}}\rbrack\]
+
+<p>where \(\Delta t_{ij}\) is the tendon displacement of tendon
+\(j \in \lbrack 1,N_{t}\rbrack\) in segment \(i \in \lbrack 1,m\rbrack\). We
+define \(\Delta t_{ij} = \ell_{ij} - \ell_{i}\) , where \(\ell_{i}\) is the
+length of the <strong>i</strong>-th segment such that negative values of
+\(\Delta t_{ij}\) indicate pulling on the tendon and positive values
+indicate releasing the tendon. Therefore, \(\ell_{ij}\) represents the
+length of the \(j\)-th tendon enclosed by segment \(i\). In its zero
+configuration, the TDCR is straight, i.e., the length of each tendon
+\(\ell_{ij} = \ell_{i}\) and \(\mathbf{q} = \mathbf{0}\).</p>
+
+<h2 id="one-tendon-actuating-a-segment">One Tendon Actuating a Segment</h2>
+
+<p>In the simplest case, a TDCR is composed of a single segment of fixed length
+\(\ell_{1}\) and actuated by a single tendon as depicted here.
+Pulling on the tendon by \(\Delta t_{11}\) causes the segment to bend into
+an arc with curvature \(\kappa_{1}\). We seek in a relationship from joint
+space \(\mathbf{q} = \lbrack\Delta t_{11}\rbrack\) to arc parameters
+\(\kappa_{1},\phi_{1},\ell_{1}\). As we are only actuating with one tendon, the bending plane is fixed \(\phi_{1} = 0\).
+As the segment has fixed length, \(\ell_{1}\) is constant.</p>
+
+<p><img src="http://localhost:4000/assets/images/posts/cr_101_tdcr_cc_single_seg_one_tendon_arc.jpg" alt="image" /></p>
+
+<p>For \(\Delta t_{11} \geq 0\), the TDCR remains straight with
+\(\kappa_{1} = 0\). To determine \(\kappa_{1}\) for \(\Delta t_{ij} &lt; 0\), we
+look at the relationship between the tendon length \(\ell_{11}\) and the
+backbone length \(\ell_{1}\) which is constant. The tendon path is
+an arc with radius of curvature \(r_{11}\), which is offset from the
+central backbone by distance \(d\). We utilize the relationship between the arc
+described by the TDCR backbone and the tendon path as both share the
+central angle \(\theta\).</p>
+
+\[\begin{matrix}
+\theta = \frac{\ell_{1}}{r_{1}} \; \text{and} &amp; \theta = \frac{\ell_{11}}{r_{1} - d} \Rightarrow \\
+\ell_{11}r_{1} &amp; = \ell_{1}(r_{1} - d) \Leftrightarrow \\
+r_{1} &amp; = \frac{\ell_{1}d}{\ell_{1} - \ell_{11}} \Leftrightarrow \\
+\kappa_{1} &amp; = \frac{\ell_{1} - \ell_{11}}{\ell_{1}d} = \frac{- \Delta t_{11}}{\ell_{1}d} \\
+\end{matrix}\]
+
+<h2 id="planar-bending-segment">Planar Bending Segment</h2>
+
+<p>To achieve planar bending in two directions, two antagonistic tendons
+are used as depicted below. While the joint space is two-dimensional
+\(\mathbf{q} = \lbrack\Delta t_{11},\Delta t_{12}\rbrack\), the tendon
+displacement is interdependent, i.e. \(\Delta t_{11} = - \Delta t_{12}\). 
+Pulling on one tendon requires releasing the other tendon in order to achieve bending.
+For \(\mathbf{q} = \lbrack 0,0\rbrack\), \(\kappa_{1} = 0\) and
+\(\phi_{1} = 0\).</p>
+
+<p><img src="http://localhost:4000/assets/images/posts/cr_101_tdcr_cc_single_seg_two_tendons_arc.jpg" alt="image" /></p>
+
+<p>The TDCR segment can either bend to the right \(\Delta t_{11} &lt; 0\), which
+implies \(\phi_{1} = 0\), or to the left \(\Delta t_{12} &lt; 0\), which
+implies \(\phi_{1} = \pi\). The curvature of the arc can be determined by
+utilizing the arcs described by the two tendon paths of length
+\(\ell_{11}\) and \(\ell_{12}\). Both of these arcs share the same central
+angle \(\theta\) and are offset from the central backbone by \(d\).</p>
+
+\[\begin{matrix}
+\frac{\ell_{11}}{r_{1} - d} &amp; = \frac{\ell_{12}}{r_{1} + d} \Leftrightarrow \\
+\ell_{11}r_{1} + \ell_{11}d &amp; = \ell_{12}r_{1} - \ell_{12}d \Leftrightarrow \\
+r_{1} &amp; = \frac{d(\ell_{11} + \ell_{12})}{\ell_{12} - \ell_{11}} \Leftrightarrow \\
+\kappa_{1} &amp; = \frac{\ell_{12} - \ell_{11}}{d(\ell_{11} + \ell_{12})} \\
+\end{matrix}\]
+
+<p>As the bending plane is determined by \(\phi_{1}\), we require positive
+curvature and take the absolute value
+\(|\kappa_{1}|\).</p>
+
+<h2 id="spatial-bending-segment">Spatial Bending Segment</h2>
+
+<p>For a spatial bending segment, we look at a TDCR with minimum number of
+tendons, i.e., \(N_{t} = 3\) as depicted below and derive the arc
+parameters for a single segment in the following. The joint space
+\(\mathbf{q} = \lbrack\Delta t_{11},\Delta t_{12},\Delta t_{13}\rbrack\)
+is three-dimensional, but not all tendons can be actuated independently.
+In fact, to bend the segment, we can either pull on one tendon and release the other two by
+the same amount, or pull on two tendons and release the remaining one by
+the same amount. This dependency can be expressed by requiring \(\sum_{j}\Delta t_{1j} = 0\) and
+consequently \(\ell_{1} = \frac{\sum_{j}^{}\ell_{1j}}{3}\).</p>
+
+<p><img src="http://localhost:4000/assets/images/posts/cr_101_tdcr_cc_spatial_full.jpg" alt="image" /></p>
+
+<p>For the robot dependent mapping
+\(\mathbf{q} \rightarrow \{\kappa_{1},\phi_{1},\ell_{1}\}\), 
+we assume that \(\ell_{1}\) is constant, i.e. the segment has a fixed length and cannot extend or contract. 
+The segment bends into the bending plane
+\({\widehat{x}}_{p}{\widehat{z}}_{p}\) 
+defined by \(\phi_{1}\) about the \({\widehat{z}}_{0}\)-axis. 
+<img src="http://localhost:4000/assets/images/posts/cr_101_tdcr_cc_disk.jpg" alt="image" style="float: right" />
+To derive relationships for \(\kappa_{1}\) and
+\(\phi_{1}\), we establish relationships between the tendons and the
+central backbone within each disk first. The angular
+coordinate \(\phi_{1j}\) of each tendon \(j\) about \({\widehat{z}}_{0}\) is
+related to \(\phi_{1}\) according to the following equation</p>
+
+\[\phi_{1j} = (j - 1)\beta - \phi_{1}\]
+
+<p>where \(\beta = \frac{2\pi}{3}\).</p>
+
+<p>The projection of the \(j\)-th tendon on the segment bending plane is a
+curve with radius \(r_{1j}\) (see dashed red line in figure below), which is offset by
+\(d_{j} = d\cos\phi_{1j}\)  from the central backbone. The radius of
+curvature of the central backbone \(r_{1}\) is related to the radius of
+curvature of the <em>j</em>-th tendon according to</p>
+
+<p>\(r_{1} = r_{1j} + d_{j}\).</p>
+
+<p><img src="http://localhost:4000/assets/images/posts/cr_101_tdcr_cc_spatial_r.jpg" alt="image" /></p>
+
+<p>We can use this relationship to determine the TDCR segment’s curvature
+by integrating the arc length \(s\):</p>
+
+\[\begin{matrix}
+\ell_{1j} &amp; = \int ds_{ij} = \int(ds_{ij} - ds + ds) \\
+  &amp; = \ell_{1} + \int_{\theta(0)}^{\theta(\ell_{1})}(r_{1j} - r_{1})d\theta \\
+  &amp; = \ell_{1} - d_{j}(\theta(\ell_{1}) - \theta(0)) \\
+\end{matrix}\]
+
+<p>Rearranging and substituting the definition \(\Delta t_{1j}\) yields the
+central angle of the arc \(\theta = \frac{- \Delta t_{1j}}{d_{j}}\).</p>
+
+<p>Using arc geometry \(\ell_{1} = r_{1}\theta\), we can now determine the
+segment’s curvature as</p>
+
+\[\kappa_{1} = \frac{- \Delta t_{1j}}{d_{j}\ell_{1}}\]
+
+<p>Since the arc described by each tendon projection onto the bending plane
+share the same central angle \(\theta\), we can establish kinematic
+compatibility conditions between two tendons, e.g., tendon \(1\) and \(2\):</p>
+
+\[(\ell_{1} - \ell_{11})d_{2} = (\ell_{1} - \ell_{12})d_{1}\]
+
+<p>Considering
+\(d_{1} = d\cos\phi_{1}\) and \(d_{2} = d\cos(\beta - \phi_{1})\) as well
+as trigonometric relationships, we can determine \(\phi_{1}\) as</p>
+
+<p>\(\phi_{1} = \text{atan2}(\Delta t_{11}\cos\beta - \Delta t_{12}, - \Delta t_{11}\sin\beta)\).</p>
+
+<p>Equivalently, we can express the kinematic compatibility condition
+between tendon \(1\) and \(3\) or tendon \(2\) and \(3\) and determine
+\(\phi_{1}\). Which combination to choose depends on \(\mathbf{q}\). Note,
+that we use the two-argument arctangent
+\(\text{atan2}(y,x) \in \lbrack 0,2\pi\rbrack\) as the single-argument
+\(\text{atan}(x) \in \lbrack 0,\pi\rbrack\) cannot distinguish all
+quadrants.</p>
+
+<h2 id="extensible-spatial-bending-segment">Extensible Spatial Bending Segment</h2>
+
+<p>For TDCR segments that can spatially bend and extend, the joint space
+becomes
+\(\mathbf{q} = \lbrack\Delta t_{11},\cdots,\Delta t_{1N_{t}},\Delta\ell_{1},\cdots,\Delta t_{m1},\cdots,\Delta t_{mN_{t}},\Delta\ell_{m}\rbrack\),
+where \(\Delta\ell_{i}\) describes the relative change in length of the
+central backbone w.r.t. the backbone length in the robot’s zero position
+\(\ell_{i\{ 0\}}\). Consequently, the length of each segment can be
+determined as \(\ell_{i} = \ell_{i\{ 0\}} + \Delta\ell_{i}\). The robot
+independent mapping then follows the approach described before.</p>
+
+<h2 id="multi-segment-tdcr">Multi-segment TDCR</h2>
+
+<p>While we looked at the establishment of the robot independent mapping
+for single segment TDCR in this section, note that the approach for
+multi-segment TDCR is equivalent for each of the \(m\) segments. In the
+constant curvature kinematics framework, we assume that the tendons only
+actuate the segment they terminate at. In other words, we assume that
+there is no effect of tendon coupling and each segment bends
+independently. Therefore, each segment can be individually looked at to
+determine the arc parameter triplet.</p>
+
+<h2 id="remarks">Remarks</h2>
+
+<p>The constant curvature approximation comes at a cost for TDCR. The kinematic
+formulation cannot account for the elastic properties of the backbone.
+It cannot account for any external forces or moments or gravity and is
+therefore limited in its application.</p>
+
+<p>While the configuration space representation theoretically requires an
+inﬁnite number of parameters due to the continuous nature of their
+backbones, a reduced set of parameters can be chosen to represent the
+robot. Furthermore, different assumptions of increasing complexity
+regarding the kinematics and statics of the robot’s
+backbone and tendons can be included in the mapping between joint and
+configuration space. As a result, existing kinematic and static models
+are often tailored to a specific TDCR design and make trade-oﬀs between
+accuracy and computation speed depending on the envisioned application.</p>
+
+<p class="notice"><strong><em>Further Reading</em></strong>: You want to dig deeper into constant curvature modeling of TDCR? Webster &amp; Jones<sup id="fnref:fn1" role="doc-noteref"><a href="#fn:fn1" class="footnote" rel="footnote">1</a></sup> published a beginner-friendly review on modeling continuum robots using the constant curvature framework. Simaan et al.<sup id="fnref:fn2" role="doc-noteref"><a href="#fn:fn2" class="footnote" rel="footnote">2</a></sup> describe the kinematics for multi-segment TDCR using push-pull rods instead of tendons. With Rao<sup id="fnref:fn3" role="doc-noteref"><a href="#fn:fn3" class="footnote" rel="footnote">3</a></sup>, Peyron, and Lilge, we published a survey on modeling of TDCR going into depth of different  techniques.</p>
+
+<h2 id="references">References</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:fn1" role="doc-endnote">
+      <p>Webster, R.J. &amp; Jones, B.A., 2010. Design and Kinematic Modeling of Constant Curvature Continuum Robots: A Review. The International Journal of Robotics Research, 29(13):1661–1683. doi: <a href="https://doi.org/10.1177%2F0278364910368147">10.1177/0278364910368147</a> <a href="#fnref:fn1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:fn2" role="doc-endnote">
+      <p>Simaan, Nabil, Kai Xu, Ankur Kapoor, Wei Wei, Peter Kazanzides, Paul Flint, and Russell Taylor. 2009. Design and Integration of a Telerobotic System for Minimally Invasive Surgery of the Throat. The International Journal of Robotics Research 28 (9):1134–53. doi: <a href="https://doi.org/10.1177/0278364908104278">10.1177/0278364908104278</a> <a href="#fnref:fn2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:fn3" role="doc-endnote">
+      <p>P. Rao, Q. Peyron, S. Lilge, and J. Burgner-Kahrs, 2021. How to Model Tendon-Driven Continuum Robots and Benchmark Modelling Performance. Frontiers in Robotics &amp; AI, 7:1-20. doi: <a href="https://doi.org/10.3389/frobt.2020.630245">10.3389/frobt.2020.630245</a> <a href="#fnref:fn3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#101" class="page__taxonomy-item" rel="tag">101</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-12-09T00:00:00-05:00">2022-12-09</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Constant-Curvature+Model+of+Tendon-driven+Continuum+Robots%20http%3A%2F%2Flocalhost%3A4000%2F101%2F2022%2F12%2F09%2Ftdcr-cc-model.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F101%2F2022%2F12%2F09%2Ftdcr-cc-model.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F101%2F2022%2F12%2F09%2Ftdcr-cc-model.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/coolcr/2022/12/06/cr-goes-poetry.html" class="pagination--pager" title="Continuum Robotics goes Poetry
+">Previous</a>
+    
+    
+      <a href="/research/2022/12/13/state-estimation.html" class="pagination--pager" title="State Estimation using Gaussian Process Regression
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/OpenCRProject1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  </body>
+</html>

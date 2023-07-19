@@ -1,0 +1,521 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Introduction to Modeling -</title>
+<meta name="description" content="The slender structure of continuously bending robots can be represented by a space curve.">
+
+
+  <meta name="author" content="Jessica Burgner-Kahrs">
+  
+  <meta property="article:author" content="Jessica Burgner-Kahrs">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Introduction to Modeling">
+<meta property="og:url" content="http://localhost:4000/101/2022/11/25/intro-modeling.html">
+
+
+  <meta property="og:description" content="The slender structure of continuously bending robots can be represented by a space curve.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/cr_101_modelingIntro_teaser.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-11-25T00:00:00-05:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/101/2022/11/25/intro-modeling.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Open Continuum Robotics Project",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:4000/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:4000/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="http://localhost:4000/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="http://localhost:4000/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/software/">Software</a>
+            </li><li class="masthead__menu-item">
+              <a href="/hardware/">Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/">Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Jessica Burgner-Kahrs</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Professor. Roboticist.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Introduction to Modeling">
+    <meta itemprop="description" content="The slender structure of continuously bending robots can be represented by a space curve.">
+    <meta itemprop="datePublished" content="2022-11-25T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Introduction to Modeling
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-11-25T00:00:00-05:00">2022-11-25</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#mapping-between-joint-and-task-space">Mapping between Joint and Task Space</a></li><li><a href="#mechanics-based-frameworks">Mechanics-based Frameworks</a></li><li><a href="#constant-curvature-kinematic-framework">Constant Curvature Kinematic Framework</a></li><li><a href="#remarks">Remarks</a></li><li><a href="#references">References</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Continuum robots are joint-less and composed of flexible, elastic, or soft materials. As such, they are continuously bending, eventually twisting and extending. In order to have a continuum robot do meaningful things, i.e. move along a predefined path, deploy into a cluttered environment, be teleoperated by a physician to help with brain surgery, we need to describe the
+relationship between joint space and task space. This kinematic mapping is essential for motion planning and control of any robot.</p>
+
+<p><img src="http://localhost:4000/assets/images/posts/cr_101_modelingIntro_jointspace.png" alt="image" style="float: center" /></p>
+
+<h2 id="mapping-between-joint-and-task-space">Mapping between Joint and Task Space</h2>
+<p>The term joint space may be confusing for continuum robots as we commonly think of revolute or prismatic joints. Those are not necessarily present in a continuum robot as actuation may be achieved by pulling on tendons or changing pressure in pneumatic components. Yet, we commonly refer to those actuator parameters as the robot’s joint space and we are interested in determining the relationship between joint space parameters and the resulting appearance of the robot in task space, i.e. its position and orientation at the tip or its shape.</p>
+
+<p>Perhaps the most familiar kinematic modelling framework for roboticists is the discrete approach employed in conventional rigid-link manipulators: a series of rigid links connected by revolute, universal, or spherical joints is described using a series of homogeneous transformations, for example generated from Denavit Hartenberg (D-H) parameters or using the Product of Exponentials (PoE) formula. The underlying assumption, that the robot is composed of rigid-link and joints, does not hold for continuum robots. In fact, the body is continuously bending and the actuators/joints are not connected by rigid links. We could approximate the continuous structure of the robot’s body by a series of virtual joints and find a relationship between those virtual joints and the actual joint space. But the lack of distinct links in continuum robots makes the the D-H and PoE strategies, which define a ﬁnite number of coordinate frames (each fixed in one link), inappropriate for modelling. So rather than trying to fit a modelling approach to a continuum robot, it is more effective to utilize the structure and geometry of a continuum robot to come up with a more suitable kinematic framework.</p>
+
+<p>We have seen several <a href="/101/2022/10/21/cr-intro.html">example continuum robots</a>. From a mechanical standpoint, these continuum robots can be seen as slender structures, i.e. structures that are much longer in one direction than the other two directions. This slender structure is continuously bending and can be represented by a space curve.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="http://localhost:4000/assets/images/posts/cr_101_modeling_spacecurve.png" alt="image" /></td>
+    </tr>
+    <tr>
+      <td>(Images adapted, from left to right © OC Robotics Ltd, © FESTO, © Titan Medical Inc.)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Therefore, we model continuum kinematics via a frame which evolves along a continuous backbone, parameterized by arc length \(s\). The local motion of the backbone at a point is modeled in terms of the local frame at s. This strategy allows computation of the forward kinematics and construction of continuum Jacobians, analogous to those for rigid-link systems. There exist multiple approaches on how this space curve can be determined based on the joint space parameters of a continuum robot. Those can be divided into <strong>mechanics-based frameworks</strong> and <strong>kinematic frameworks</strong>.</p>
+
+<h2 id="mechanics-based-frameworks">Mechanics-based Frameworks</h2>
+
+<p>Mechanics-based frameworks can either build on kinematics frameworks, such as lumped-parameter models, or build on classical elasticity theory for long slender objects such as rods and strings.</p>
+
+<p>In lumped-parameter models, discrete mechanical elements such as point masses, springs, and dampers, are attached to the kinematic framework in order to approximate the mechanical behaviour of a continuous elastic and/or viscous medium. Governing equations can then be obtained from energy methods or Newton-Euler describing how forces and moments propagate from link to link.</p>
+
+<p>In elasticity-based models, Cosserat rod theory and its special case Kirchhoff rod theory are commonly used to describe continuum robots. They resemble variable-curvature and typically describe a material-attached homogeneous reference frame comprising a position vector and a rotation matrix expressing the backbone pose as a function of arc length along the robot. The position vector and rotation both evolve along the arc length according to differential kinematic relationships. In addition, nonlinear ordinary differential equations are formulated for the equilibrium of internal forces and moments carried by the robot. The equilibrium equations are then coupled to the kinematic equations through some material constitutive law (stress–strain). The resulting set of equations can be solved subject to boundary conditions.</p>
+
+<p>Today, we are focussing on the constant curvature kinematic framework, which is the most well-known and widely used kinematics framework for continuum robots. We will explore mechanics-based frameworks in future posts.</p>
+
+<h2 id="constant-curvature-kinematic-framework">Constant Curvature Kinematic Framework</h2>
+
+<p>Notice that, independent of the underlying physical structure, a common property exhibited by the majority of continuum robots is that the resulting backbone can be approximated by a serially connected set of constant curvature sections. This arises due to the following: (1) all continuum robots, i.e. extrinsic and intrinsic actuated, create a series of connected sections; and (2) internal potential energy in each section is uniformly distributed (each section is initially straight, or bent at a fixed configuration); and thus, within each section, internal forces act to drive the unactuated (passive) degrees of freedom to equalize in value along the section. This produces internal section bending of constant curvature at any given point in time. Therefore, in practice, achievable continuum backbone shapes are (fairly close approximations to) sequentially connected segments of circles or helices in three dimensions, with the tangents to successive section end points aligned and the arc lengths of the segments corresponding to robot section lengths.</p>
+
+<p>Constant curvature kinematic frameworks represent the continuum robot’s configuration space as a ﬁnite number of mutually tangent curved segments each having a constant curvature along its length. Note that <em>constant</em> here refers to invariance with respect to arc length, not time. In this framework, the curvature, length, and angle of the curve’s bending plane - known as the arc parameters - of each segment form a set of configuration coordinates that completely describes the shape of the robot. The position and orientation at any point on the robot, can be written as a function of the arc parameters and the arc length along the backbone to that point. Similar to D-H
+parameters, an arc parameter could be a constant or vary with actuation, depending on the robot design. Usually, a single constant-curvature segment is employed for each actuatable segment of the robot.</p>
+
+<p><img src="http://localhost:4000/assets/images/posts/cr_101_modelingIntro_mappings.png" alt="image" /></p>
+
+<p>The forward kinematics of a continuum robot refers to the calculation of the position and orientation of its tip from its joint coordinates. The arc parameters are determined as an intermediate step in this calculation, which is the robot dependent mapping from joint space to
+configuration space as it depends on the robot’s mechanical structure and actuation principle employed. Using these configuration space parameters, the robot independent mapping determines the task space parameters.</p>
+
+<p>Consequently, the inverse kinematics is also decomposed into two mappings. The robot independent inverse mapping from task space to geometrical parameters relates the desired position or pose of the robot’s tip to arc parameters. The robot dependent inverse mappings then determines the respective joint space parameters in order to achieve the arc parameters for each segment. In general, the inverse kinematics of continuum robots is challenging to derive as the number of
+solutions is not deﬁnite and a closed-form solution does not necessarily exist.</p>
+
+<h2 id="remarks">Remarks</h2>
+
+<p>Constant curvature is often referred to as the <strong>constant curvature assumption</strong>, but care must be taken when using this phrase because it may not always accurately describe the methodology used in
+developing a constant-curvature model. One can indeed make an <strong>a priori</strong> assumption of piecewise constant curvature and subsequently formulate mechanics relationships and robot models under that assumption. However, a constant-curvature robot shape also arises as a natural result from
+mechanical principles when certain robot designs and assumptions are considered within a more general variable-curvature framework.</p>
+
+<p>The accuracy of constant curvature kinematic frameworks is contingent on the actual continuum robot and how well it suits the modelling assumption. The inevitable tradeoffs between model complexity, computational expense, and accuracy are the primary principles that should be considered when modelling continuum robots. We look into the accuracy and limitations of the constant curvature kinematic framework for different continuum robot types in our next blog posts.</p>
+
+<p class="notice"><strong><em>Further Reading</em></strong>: Curious about modeling and can’t wait for the next 101 blog post going into more detail? Webster &amp; Jones<sup id="fnref:fn1" role="doc-noteref"><a href="#fn:fn1" class="footnote" rel="footnote">1</a></sup> published a beginner-friendly review on modeling continuum robots using the constant curvature framework.</p>
+
+<h2 id="references">References</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:fn1" role="doc-endnote">
+      <p>Webster, R.J. &amp; Jones, B.A., 2010. Design and Kinematic Modeling of Constant Curvature Continuum Robots: A Review. The International Journal of Robotics Research, 29(13), pp. 1661–1683.doi: <a href="https://doi.org/10.1177%2F0278364910368147">10.1177/0278364910368147</a> <a href="#fnref:fn1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#101" class="page__taxonomy-item" rel="tag">101</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-11-25T00:00:00-05:00">2022-11-25</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Introduction+to+Modeling%20http%3A%2F%2Flocalhost%3A4000%2F101%2F2022%2F11%2F25%2Fintro-modeling.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F101%2F2022%2F11%2F25%2Fintro-modeling.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F101%2F2022%2F11%2F25%2Fintro-modeling.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/history/2022/11/22/emerging.html" class="pagination--pager" title="Continuum Robotics Emerges as a Research Field
+">Previous</a>
+    
+    
+      <a href="/history/2022/11/29/fictionalCR.html" class="pagination--pager" title="Fictional Continuum Robots
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/OpenCRProject1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  </body>
+</html>

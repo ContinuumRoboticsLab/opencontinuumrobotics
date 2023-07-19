@@ -1,0 +1,503 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Tendon Routing Disks and their Effects on Motion Primitives -</title>
+<meta name="description" content="Let’s conceptually think about tendon routing disks. They provide channels to route the tendon actuating a continuum robot.">
+
+
+  <meta name="author" content="Jessica Burgner-Kahrs">
+  
+  <meta property="article:author" content="Jessica Burgner-Kahrs">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Tendon Routing Disks and their Effects on Motion Primitives">
+<meta property="og:url" content="http://localhost:4000/101/2023/02/24/tendon-routing-disks.html">
+
+
+  <meta property="og:description" content="Let’s conceptually think about tendon routing disks. They provide channels to route the tendon actuating a continuum robot.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/101-tendon-routing-teaser.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-24T00:00:00-05:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/101/2023/02/24/tendon-routing-disks.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Open Continuum Robotics Project",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:4000/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:4000/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="http://localhost:4000/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="http://localhost:4000/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/software/">Software</a>
+            </li><li class="masthead__menu-item">
+              <a href="/hardware/">Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/">Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Jessica Burgner-Kahrs</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Professor. Roboticist.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Tendon Routing Disks and their Effects on Motion Primitives">
+    <meta itemprop="description" content="Let’s conceptually think about tendon routing disks. They provide channels to route the tendon actuating a continuum robot.">
+    <meta itemprop="datePublished" content="2023-02-24T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Tendon Routing Disks and their Effects on Motion Primitives
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-02-24T00:00:00-05:00">2023-02-24</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>We have looked into the general <a href="/101/2022/10/28/motion-primitives.html">motion primitives</a> in continuum robotics: spatial bending, twisting, extension/contraction. Today, we look at partially constrained tendon paths and how the design of tendon routing disks influences the motion capabilities.</p>
+
+<p>Let’s recap: When we first looked at <a href="/101/2022/11/11/tdcr-intro.html">tendon-driven continuum robots</a>, we looked at the most general design, i.e. with tendon routing disks at equidistant spacing afixed to a a flexible backbone. Tendons terminate at the end disk of each segment to actuate it. Most generally, these tendons are routed in parallel to the central backbone. For spatial bending either 3 separate tendons or 2 antagonistic tendon pairs are used. To achieve a tendon-driven continuum robot segment capable of all motion primitive, we will expand our understanding of tendon routing disks and its implications.</p>
+
+<p>Let’s conceptually think about tendon routing disks. They provide channels to route the tendon actuating a continuum robot.  We depict four conceptual tendon routing disk types below. The dotted arrows indicate the degree of freedom of the disks themselves and the solid arrows indicate the motion primitives achievable. We omit the tendon themselves in the drawings.</p>
+
+<p><img src="http://localhost:4000/assets/images/posts/101_FSD.jpg" alt="" /></p>
+
+<p>The most common type is afixed to a central backbone and routes the tendons with a fixed distance parallel to the backbone. We refer to this type of tendon routing disk as</p>
+
+<dl>
+  <dt><strong>Type-0</strong></dt>
+  <dd>A tendon routing disk which is fixed and can neither rotate nor translate along the backbone.</dd>
+</dl>
+
+<p>Fixing the tendon routing disks to the central backbone is the most restrictive as they only allow for bending. Allowing the tendon routing disks to freely translate along the central backbone allows for extension.</p>
+
+<dl>
+  <dt><strong>Type-I</strong></dt>
+  <dd>A translational spacer disk which can freely translate along the backbone but not rotate.</dd>
+</dl>
+
+<p>Most realizations of this tendon routing disk type ensure equidistant spacing of the disks as the backbone extends and contracts. This is either achieved by compression springs between disks or magnets within the disks alternating polarity for repulsion.</p>
+
+<p>Conceptually, tendon routing disks may also be freely rotating about the central backbone, but constrained in position along the backbone. Such a tendon routing would enable bending but also twist as the tendon route is not constrained to being parallel.</p>
+
+<dl>
+  <dt><strong>Type-II</strong></dt>
+  <dd>A rotational space disk which can freely rotate about the backbone while translation is prohibited.</dd>
+</dl>
+
+<p>We fabricated a tendon-driven continuum robot segment using type-II disks. The end disk is rigidly attached to the backbone rod which can rotate about its axis. The base disk is fixed in orientation. The image series below  shows different rotation angles $\alpha$.</p>
+
+<p><img src="http://localhost:4000/assets/images/posts/101-type-ii-example.jpg" alt="image" /></p>
+
+<p>Ultimately, the least restrictive tendon routing disk is free to rotate and translate along the central backbone. Consequently, the tendon routing can allow for parallel and non-parallel tendon paths for bending and twisting, while also allowing for extension.</p>
+
+<dl>
+  <dt><strong>Type-III</strong></dt>
+  <dd>A spacer disk which can translate along and rotate freely about the backbone.</dd>
+</dl>
+
+<p>Building on our extensible tendon-driven continuum robot design, we have fabricated a tendon-driven continuum robot segment with type-III disks. The image series below shows the prototype at various backbone rotation angles and applied tendon loads. The flag at the tip indicated the central backbone rotation angle. In addition to bending a twist can be observed. 
+<img src="http://localhost:4000/assets/images/posts/101-type-iii-example.jpg" alt="image" /></p>
+
+<p>The image series below shows the type-III tendon disk prototype contracting while also adjusting the rotation angle. 
+<img src="http://localhost:4000/assets/images/posts/101-type-iii-extension-example.jpg" alt="image" /></p>
+
+<p class="notice--success"><strong>Further Reading</strong>: You want to read more on tendon routing disk types and the prototypes shown above? Check out our open access paper in Frontiers in Robotics &amp; AI<sup id="fnref:Grassmann" role="doc-noteref"><a href="#fn:Grassmann" class="footnote" rel="footnote">1</a></sup>.</p>
+
+<h2 id="references">References</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:Grassmann" role="doc-endnote">
+      <p>R.M. Grassmann, P. Rao, Q. Peyron, J. Burgner-Kahrs: FAS—A Fully Actuated Segment for Tendon-Driven Continuum Robots. Frontiers in Robotocs and AI, 9:873446, 2022. doi: <a href="https://doi.org/10.3389/frobt.2022.873446">10.3389/frobt.2022.873446</a> <a href="#fnref:Grassmann" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#101" class="page__taxonomy-item" rel="tag">101</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-02-24T00:00:00-05:00">2023-02-24</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Tendon+Routing+Disks+and+their+Effects+on+Motion+Primitives%20http%3A%2F%2Flocalhost%3A4000%2F101%2F2023%2F02%2F24%2Ftendon-routing-disks.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F101%2F2023%2F02%2F24%2Ftendon-routing-disks.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F101%2F2023%2F02%2F24%2Ftendon-routing-disks.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/hands-on/2023/02/17/CRVis-ctcr.html" class="pagination--pager" title="CRVisToolkit: Visualizing Concentric Tube Continuum Robots
+">Previous</a>
+    
+    
+      <a href="/opinion/2023/03/17/untapped_potential.html" class="pagination--pager" title="Beyond Medical Applications
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/OpenCRProject1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  </body>
+</html>

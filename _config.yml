@@ -33,6 +33,7 @@ url: https://continuumroboticslab.github.io
 #remote deploy
 #baseurl: "/~jbk/opencontinuumrobotics" # the subpath of your site, e.g. /blog
 #url: "https://www.cs.toronto.edu" # the base hostname & protocol for your site, e.g. http://example.com
+destination: docs
 
 twitter_username: Open_CR_Project
 github_username:  ContinuumRoboticsLab
