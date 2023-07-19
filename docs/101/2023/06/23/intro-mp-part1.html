@@ -23,14 +23,14 @@
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="">
 <meta property="og:title" content="Introduction to Motion Planning for Continuum Robots - Part 1">
-<meta property="og:url" content="https://continuumroboticslab.github.io/101/2023/06/23/intro-mp-part1.html">
+<meta property="og:url" content="https://www.opencontinuumrobotics.com/101/2023/06/23/intro-mp-part1.html">
 
 
   <meta property="og:description" content="A quick introduction to motion planning, how to represent the problem, and what methods exist to solve it.">
 
 
 
-  <meta property="og:image" content="https://continuumroboticslab.github.io/assets/images/posts/101-motion-planning-intro-part1-teaser.jpg">
+  <meta property="og:image" content="https://www.opencontinuumrobotics.com/assets/images/posts/101-motion-planning-intro-part1-teaser.jpg">
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-<link rel="canonical" href="https://continuumroboticslab.github.io/101/2023/06/23/intro-mp-part1.html">
+<link rel="canonical" href="https://www.opencontinuumrobotics.com/101/2023/06/23/intro-mp-part1.html">
 
 
 
@@ -54,7 +54,7 @@
     
       "@type": "Person",
       "name": "Open Continuum Robotics Project",
-      "url": "https://continuumroboticslab.github.io/"
+      "url": "https://www.opencontinuumrobotics.com/"
     
   }
 </script>
@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.opencontinuumrobotics.com/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.opencontinuumrobotics.com/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.opencontinuumrobotics.com/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://www.opencontinuumrobotics.com/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://www.opencontinuumrobotics.com/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://www.opencontinuumrobotics.com/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -534,11 +534,11 @@ It’s also very much worth noting that inadmissible heuristics can also be leve
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Introduction+to+Motion+Planning+for+Continuum+Robots+-+Part+1%20https%3A%2F%2Fcontinuumroboticslab.github.io%2F101%2F2023%2F06%2F23%2Fintro-mp-part1.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Introduction+to+Motion+Planning+for+Continuum+Robots+-+Part+1%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2F101%2F2023%2F06%2F23%2Fintro-mp-part1.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcontinuumroboticslab.github.io%2F101%2F2023%2F06%2F23%2Fintro-mp-part1.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2F101%2F2023%2F06%2F23%2Fintro-mp-part1.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fcontinuumroboticslab.github.io%2F101%2F2023%2F06%2F23%2Fintro-mp-part1.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.opencontinuumrobotics.com%2F101%2F2023%2F06%2F23%2Fintro-mp-part1.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 

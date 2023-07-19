@@ -28,7 +28,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   Empowering everyone to build their own continuum robot and start their research.
 #GitHub deployment
 domain: continuumroboticslab.github.io
-url: https://continuumroboticslab.github.io
+url: https://www.opencontinuumrobotics.com
+#url: https://continuumroboticslab.github.io
 #baseurl: /opencontinuumrobotics
 #remote deploy
 #baseurl: "/~jbk/opencontinuumrobotics" # the subpath of your site, e.g. /blog
