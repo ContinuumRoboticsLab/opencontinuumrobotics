@@ -10,7 +10,7 @@ feature_row1:
 ---
 <!-- {% include feature_row id="feature_row1" type="left" %} -->
 
-![image-left]({{ site.url }}{{ site.baseurl }}/assets/images/posts/hands-on/tdcr_vis_MATLAB.jpg){: .align-left}
+![image-left](/assets/images/posts/hands-on/tdcr_vis_MATLAB.jpg){: .align-left}
 ## CRVisToolkit
 
 A set of MATLAB functions for visualization and plotting of continuum robots and utility functions to support your research.

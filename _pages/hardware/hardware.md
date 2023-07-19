@@ -2,7 +2,7 @@
 permalink: /hardware/
 layout: default
 ---
-![]({{ site.url }}{{ site.baseurl }}/assets/images/posts/hands-on/openCR_actuationModule.jpg){: .align-left}
+![](/assets/images/posts/hands-on/openCR_actuationModule.jpg){: .align-left}
 ## OpenCR Actuation Module
 
 CAD design, component lists, assembly instructions, and software for you to create your continuum robot.
