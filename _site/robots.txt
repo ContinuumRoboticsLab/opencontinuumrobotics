@@ -1,1 +1,1 @@
-Sitemap: https://continuumroboticslab.github.io/opencontinuumrobotics/sitemap.xml
+Sitemap: https://continuumroboticslab.github.io/sitemap.xml

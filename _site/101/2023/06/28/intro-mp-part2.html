@@ -23,14 +23,14 @@
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="">
 <meta property="og:title" content="Introduction to Motion Planning for Continuum Robots - Part 2">
-<meta property="og:url" content="https://continuumroboticslab.github.io/opencontinuumrobotics/101/2023/06/28/intro-mp-part2.html">
+<meta property="og:url" content="https://continuumroboticslab.github.io/101/2023/06/28/intro-mp-part2.html">
 
 
   <meta property="og:description" content="What makes motion planning particularly challenging for continuum robots? How does the continuum robotics community tackle those challenges?">
 
 
 
-  <meta property="og:image" content="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/101-motion-planning-intro-part2-teaser.jpg">
+  <meta property="og:image" content="https://continuumroboticslab.github.io/assets/images/posts/101-motion-planning-intro-part2-teaser.jpg">
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-<link rel="canonical" href="https://continuumroboticslab.github.io/opencontinuumrobotics/101/2023/06/28/intro-mp-part2.html">
+<link rel="canonical" href="https://continuumroboticslab.github.io/101/2023/06/28/intro-mp-part2.html">
 
 
 
@@ -54,7 +54,7 @@
     
       "@type": "Person",
       "name": "Open Continuum Robotics Project",
-      "url": "https://continuumroboticslab.github.io/opencontinuumrobotics/"
+      "url": "https://continuumroboticslab.github.io/"
     
   }
 </script>
@@ -69,7 +69,7 @@
 
 
 
-  <link href="/opencontinuumrobotics/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
 
 
 <!-- https://t.co/dKP3o1e -->
@@ -80,19 +80,19 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/opencontinuumrobotics/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css">
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
 
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -127,18 +127,18 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/opencontinuumrobotics/"><img src="/opencontinuumrobotics/assets/images/openCRProject_logo_header.png" alt=""></a>
+          <a class="site-logo" href="/"><img src="/assets/images/openCRProject_logo_header.png" alt=""></a>
         
-        <a class="site-title" href="/opencontinuumrobotics/">
+        <a class="site-title" href="/">
           
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/opencontinuumrobotics/software/">Software</a>
+              <a href="/software/">Software</a>
             </li><li class="masthead__menu-item">
-              <a href="/opencontinuumrobotics/hardware/">Hardware</a>
+              <a href="/hardware/">Hardware</a>
             </li><li class="masthead__menu-item">
-              <a href="/opencontinuumrobotics/blog/">Blog</a>
+              <a href="/blog/">Blog</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -168,7 +168,7 @@
   
     <div class="author__avatar">
       
-        <img src="/opencontinuumrobotics/assets/images/AK_author.jpeg" alt="Alan Kuntz" itemprop="image">
+        <img src="/assets/images/AK_author.jpeg" alt="Alan Kuntz" itemprop="image">
       
     </div>
   
@@ -328,7 +328,7 @@
             </nav>
           </aside>
         
-        <p>Today, we continue our introduction to motion planning for continuum robots. If you have missed Part 1 of the intro, look at <a href="/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html">last week’s blog post</a> before you continue here!</p>
+        <p>Today, we continue our introduction to motion planning for continuum robots. If you have missed Part 1 of the intro, look at <a href="/101/2023/06/23/intro-mp-part1.html">last week’s blog post</a> before you continue here!</p>
 
 <h2 id="what-makes-motion-planning-particularly-challenging-for-continuum-robots">What makes motion planning particularly challenging for continuum robots?</h2>
 <p>First, let’s discuss one of the primary differences between continuum robots and more “traditional” robots (for lack of a better term)—modeling.</p>
@@ -348,14 +348,14 @@ For concentric tube robots this may be mapping the robot’s tubes’ rotation/t
 
 <p>Okay, so why is this a problem when performing motion planning for continuum robots?</p>
 
-<p>Well, one way to think about motion planning is that we are reasoning <em>in advance of actually moving</em> about the best way to move the robot to achieve our goals. This means that we need our ability to reason about motion to be accurate, otherwise how we predict the robot will move doesn’t mean much. For this reason, model inaccuracy plays havoc with naïve motion planning methods (such as we’ve discussed in last week’s <a href="/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html">post</a>), and continuum robots have inaccurate models.</p>
+<p>Well, one way to think about motion planning is that we are reasoning <em>in advance of actually moving</em> about the best way to move the robot to achieve our goals. This means that we need our ability to reason about motion to be accurate, otherwise how we predict the robot will move doesn’t mean much. For this reason, model inaccuracy plays havoc with naïve motion planning methods (such as we’ve discussed in last week’s <a href="/101/2023/06/23/intro-mp-part1.html">post</a>), and continuum robots have inaccurate models.</p>
 
 <p>Further, the ways in which we are reasoning in advance about moving require us to consider a <em>whole bunch of potential motions</em> for the robot. Every vertex in the grid/lattice-based and sampling-based methods represents an FK computation. Every edge between them requires multiple (often many) FK computations. In the optimization-based methods, the computation of objective and constraint gradients frequently require many FK computations. So the time it takes to compute FK has HUGE implications in motion planning.</p>
 
 <p>This modeling tension, fast but inaccurate or (somewhat) accurate but slow, is one of the fundamental challenges of applying motion planning to continuum robots, and the one I’ll focus on for the rest of this post.</p>
 
 <figure class="">
-  <img src="/opencontinuumrobotics/assets/images/posts/101-motion-planning-intro-part2-Fig1.png" alt="" /><figcaption>
+  <img src="/assets/images/posts/101-motion-planning-intro-part2-Fig1.png" alt="" /><figcaption>
       As continuum robot models become more accurate, they tend to take longer to compute. This represents one of the fundamental challenges associated with applying motion planning to continuum robots.
 
     </figcaption></figure>
@@ -382,7 +382,7 @@ For concentric tube robots this may be mapping the robot’s tubes’ rotation/t
 
 <p>where $s$ is a normalized path arclength parameter. Note here that I’ve used little ‘c’ cost for cost over configuration and big ‘C’ Cost for cost over a path. Creative, I know.</p>
 
-<p>You should really read the paper if you want formality here, but this should give you the gist. Also note that in the paper the notation is slightly different, but I’ve changed it here to more-closely match what I’ve used in the last <a href="/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html">post</a>.</p>
+<p>You should really read the paper if you want formality here, but this should give you the gist. Also note that in the paper the notation is slightly different, but I’ve changed it here to more-closely match what I’ve used in the last <a href="/101/2023/06/23/intro-mp-part1.html">post</a>.</p>
 
 <p>In that method, we leverage both sampling-based motion planning and optimization-based motion planning in parallel (building on [13]), where the method attempts to minimize the $\texttt{cost}$ of a path. This results in paths that travel as far from obstacles as possible, while still being constrained at the start and end configurations.</p>
 
@@ -412,7 +412,7 @@ In the paper <sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footn
 <p>The fact that we have a variety of models for continuum robots that trade computation speed for accuracy implies exciting potential for the use of multi-fidelity planning. One can imagine, as maybe the most obvious example, using a fast but inaccurate model to prioritize edge evaluation in a lazy planning paradigm, look up Lazy PRM if that doesn’t make sense to you, where full edge evaluation is then done with a high-fidelity model.</p>
 
 <h2 id="closing-remarks">Closing remarks</h2>
-<p>Hopefully the above alongside last week’s <a href="/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html">Part 1</a> were a relatively gentle introduction to motion planning and how it relates conceptually to continuum robots. This wasn’t intended to be a comprehensive survey of planning for continuum robots. Rather, my intention was to give you the vocabulary and an understanding of the rough concepts sufficient for you to investigate the rest of the literature yourself, and to innovate on the state-of-the-art as you need for your specific problems.</p>
+<p>Hopefully the above alongside last week’s <a href="/101/2023/06/23/intro-mp-part1.html">Part 1</a> were a relatively gentle introduction to motion planning and how it relates conceptually to continuum robots. This wasn’t intended to be a comprehensive survey of planning for continuum robots. Rather, my intention was to give you the vocabulary and an understanding of the rough concepts sufficient for you to investigate the rest of the literature yourself, and to innovate on the state-of-the-art as you need for your specific problems.</p>
 
 <h2 id="references">References</h2>
 
@@ -465,7 +465,7 @@ In the paper <sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footn
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/opencontinuumrobotics/categories/#101" class="page__taxonomy-item" rel="tag">101</a>
+      <a href="/categories/#101" class="page__taxonomy-item" rel="tag">101</a>
     
     </span>
   </p>
@@ -481,18 +481,18 @@ In the paper <sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footn
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Introduction+to+Motion+Planning+for+Continuum+Robots+-+Part+2%20https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2023%2F06%2F28%2Fintro-mp-part2.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Introduction+to+Motion+Planning+for+Continuum+Robots+-+Part+2%20https%3A%2F%2Fcontinuumroboticslab.github.io%2F101%2F2023%2F06%2F28%2Fintro-mp-part2.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2023%2F06%2F28%2Fintro-mp-part2.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcontinuumroboticslab.github.io%2F101%2F2023%2F06%2F28%2Fintro-mp-part2.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2023%2F06%2F28%2Fintro-mp-part2.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fcontinuumroboticslab.github.io%2F101%2F2023%2F06%2F28%2Fintro-mp-part2.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html" class="pagination--pager" title="Introduction to Motion Planning for Continuum Robots - Part 1
+      <a href="/101/2023/06/23/intro-mp-part1.html" class="pagination--pager" title="Introduction to Motion Planning for Continuum Robots - Part 1
 ">Previous</a>
     
     
@@ -535,7 +535,7 @@ In the paper <sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footn
     
 
     
-      <li><a href="/opencontinuumrobotics/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
     
   </ul>
 </div>

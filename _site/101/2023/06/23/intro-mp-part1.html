@@ -23,14 +23,14 @@
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="">
 <meta property="og:title" content="Introduction to Motion Planning for Continuum Robots - Part 1">
-<meta property="og:url" content="https://continuumroboticslab.github.io/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html">
+<meta property="og:url" content="https://continuumroboticslab.github.io/101/2023/06/23/intro-mp-part1.html">
 
 
   <meta property="og:description" content="A quick introduction to motion planning, how to represent the problem, and what methods exist to solve it.">
 
 
 
-  <meta property="og:image" content="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/posts/101-motion-planning-intro-part1-teaser.jpg">
+  <meta property="og:image" content="https://continuumroboticslab.github.io/assets/images/posts/101-motion-planning-intro-part1-teaser.jpg">
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-<link rel="canonical" href="https://continuumroboticslab.github.io/opencontinuumrobotics/101/2023/06/23/intro-mp-part1.html">
+<link rel="canonical" href="https://continuumroboticslab.github.io/101/2023/06/23/intro-mp-part1.html">
 
 
 
@@ -54,7 +54,7 @@
     
       "@type": "Person",
       "name": "Open Continuum Robotics Project",
-      "url": "https://continuumroboticslab.github.io/opencontinuumrobotics/"
+      "url": "https://continuumroboticslab.github.io/"
     
   }
 </script>
@@ -69,7 +69,7 @@
 
 
 
-  <link href="/opencontinuumrobotics/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
 
 
 <!-- https://t.co/dKP3o1e -->
@@ -80,19 +80,19 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/opencontinuumrobotics/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css">
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
 
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://continuumroboticslab.github.io/opencontinuumrobotics/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://continuumroboticslab.github.io/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://continuumroboticslab.github.io/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://continuumroboticslab.github.io/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://continuumroboticslab.github.io/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://continuumroboticslab.github.io/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://continuumroboticslab.github.io/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -127,18 +127,18 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/opencontinuumrobotics/"><img src="/opencontinuumrobotics/assets/images/openCRProject_logo_header.png" alt=""></a>
+          <a class="site-logo" href="/"><img src="/assets/images/openCRProject_logo_header.png" alt=""></a>
         
-        <a class="site-title" href="/opencontinuumrobotics/">
+        <a class="site-title" href="/">
           
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/opencontinuumrobotics/software/">Software</a>
+              <a href="/software/">Software</a>
             </li><li class="masthead__menu-item">
-              <a href="/opencontinuumrobotics/hardware/">Hardware</a>
+              <a href="/hardware/">Hardware</a>
             </li><li class="masthead__menu-item">
-              <a href="/opencontinuumrobotics/blog/">Blog</a>
+              <a href="/blog/">Blog</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -168,7 +168,7 @@
   
     <div class="author__avatar">
       
-        <img src="/opencontinuumrobotics/assets/images/AK_author.jpeg" alt="Alan Kuntz" itemprop="image">
+        <img src="/assets/images/AK_author.jpeg" alt="Alan Kuntz" itemprop="image">
       
     </div>
   
@@ -377,7 +377,7 @@ $\ \ \ \ \ \ \ \ d(\boldsymbol{\xi}) = 0$</p>
 <p>In my head I broadly group modern motion planning methods into three groups, discrete grid/lattice-based search methods, sampling-based methods, and optimization-based methods. There’s an implied fourth group, “other” or maybe “miscellany”, but I’m going to focus on the first three in this post.</p>
 
 <figure class="">
-  <img src="/opencontinuumrobotics/assets/images/posts/101-motion-planning-intro-part1-Fig1.png" alt="" /><figcaption>
+  <img src="/assets/images/posts/101-motion-planning-intro-part1-Fig1.png" alt="" /><figcaption>
       We can parameterize a robot’s configuration space by its actuation variables. Consider here a (ridiculously over-) simplified case of a single-tube concentric tube robot (which makes it just a tube robot, really, nothing concentric about it). We can actuate this robot by translating it in and out of its rectangular base, and by rotating it. A configuration can then be described as a point in this plane where one axis represents the translational value and one the rotational value. In practice, this space will be higher dimensional. For instance, a two-tube concentric tube robot would probably have a 4-dimensional space, two rotational and two translational, and a three-tube robot a 6-dimensional space, etc. It is in this space, which you can think about as the parameterized configuration space, that motion planning frequently happens.
 
     </figcaption></figure>
@@ -390,7 +390,7 @@ $\ \ \ \ \ \ \ \ d(\boldsymbol{\xi}) = 0$</p>
 <p>With this conceptualization, motion planning then reduces to a <em>search</em> over that graph, seeking the “shortest” path from your start vertex to any vertex that represents a goal configuration or state.</p>
 
 <figure class="">
-  <img src="/opencontinuumrobotics/assets/images/posts/101-motion-planning-intro-part1-Fig2.png" alt="" /><figcaption>
+  <img src="/assets/images/posts/101-motion-planning-intro-part1-Fig2.png" alt="" /><figcaption>
       In the discrete grid/lattice-based search methods, we can conceptualize something like this grid-shaped graph embedded in the configuration space. Some of this graph may correspond to configurations where the robot’s shape collides with obstacles, such as this red volume which represents configurations where the tube is colliding with that liver there. (It’s a liver. Don’t ask me where it came from, I don’t make the rules. Regardless, we don’t want to run into it with our robot). If we have a start and goal configuration that are on this graph, or that we can easily connect to this graph, then we can run a graph search algorithm on this graph which, if we do it correctly, will return for us a collision free path (shown here in pink). Note: In these figures I’ve drawn a configuration space obstacle that corresponds to the liver obstacle in the robot’s workspace. This is just an example. This drawing is NOT what the configuration space obstacle would actually look like. In fact, in general it is infeasible to fully describe the configuration space obstacles. Many of the motion planning methods I describe here were designed in part to overcome this very issue.
 
     </figcaption></figure>
@@ -412,7 +412,7 @@ It’s also very much worth noting that inadmissible heuristics can also be leve
 <p>At some point, the hope is that the graph will contain a goal state, and then by running graph search (e.g., A*) on this randomly-generated graph the method will find a path from the start state to a goal. If the graph is a tree, this search is trivial as there’s only one path in the graph (ignoring some nuance, that’s what tree means).</p>
 
 <figure class="">
-  <img src="/opencontinuumrobotics/assets/images/posts/101-motion-planning-intro-part1-Fig3.png" alt="" /><figcaption>
+  <img src="/assets/images/posts/101-motion-planning-intro-part1-Fig3.png" alt="" /><figcaption>
       In the sampling-based methods, the graph (or tree) is constructed in the configuration space via random sampling. It will almost certainly have a much different structure than the grid/lattice graphs will, and subsequently the algorithms will exhibit different properties.
 
     </figcaption></figure>
@@ -439,7 +439,7 @@ It’s also very much worth noting that inadmissible heuristics can also be leve
 <p>At a high level there isn’t much more to the story. These methods take exactly the optimization-based formulation above and apply optimization techniques that work directly on such formulations.</p>
 
 <figure class="">
-  <img src="/opencontinuumrobotics/assets/images/posts/101-motion-planning-intro-part1-Fig4.png" alt="" /><figcaption>
+  <img src="/assets/images/posts/101-motion-planning-intro-part1-Fig4.png" alt="" /><figcaption>
       Potentially abandoning the notion of a graph entirely, the optimization-based methods instead frequently parameterize a curve in the configuration space that connects the start and goal. Here that initial parameterization is just an evenly spaced set of configurations in between the start and goal, without consideration of the obstacles. These methods then leverage numerical optimization to minimize an objective while ensuring constraint satisfaction (such as by bringing the path out of regions of the space that collide with obstacles, a process here represented by the blue arrows).
 
     </figcaption></figure>
@@ -450,7 +450,7 @@ It’s also very much worth noting that inadmissible heuristics can also be leve
 
 <p>There is also a method called Cross-Entropy Motion Planning (CEMP)<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">14</a></sup> that leverages a gradient-free optimization method (the cross-entropy method, as you may have guessed from the name). This is notable because many difficulties one may encounter in leveraging optimization-based methods may come from the gradients, or lack-thereof.</p>
 
-<p class="notice--success">This concludes Part 1 of my introduction to motion planning for continuum robots. In next week’s <a href="/opencontinuumrobotics/101/2023/06/28/intro-mp-part2.html">Part 2</a> we will look at the challenges of motion planning for continuum robots. Stay tuned!</p>
+<p class="notice--success">This concludes Part 1 of my introduction to motion planning for continuum robots. In next week’s <a href="/101/2023/06/28/intro-mp-part2.html">Part 2</a> we will look at the challenges of motion planning for continuum robots. Stay tuned!</p>
 
 <h2 id="references">References</h2>
 
@@ -518,7 +518,7 @@ It’s also very much worth noting that inadmissible heuristics can also be leve
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/opencontinuumrobotics/categories/#101" class="page__taxonomy-item" rel="tag">101</a>
+      <a href="/categories/#101" class="page__taxonomy-item" rel="tag">101</a>
     
     </span>
   </p>
@@ -534,22 +534,22 @@ It’s also very much worth noting that inadmissible heuristics can also be leve
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Introduction+to+Motion+Planning+for+Continuum+Robots+-+Part+1%20https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2023%2F06%2F23%2Fintro-mp-part1.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Introduction+to+Motion+Planning+for+Continuum+Robots+-+Part+1%20https%3A%2F%2Fcontinuumroboticslab.github.io%2F101%2F2023%2F06%2F23%2Fintro-mp-part1.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2023%2F06%2F23%2Fintro-mp-part1.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcontinuumroboticslab.github.io%2F101%2F2023%2F06%2F23%2Fintro-mp-part1.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fcontinuumroboticslab.github.io%2Fopencontinuumrobotics%2F101%2F2023%2F06%2F23%2Fintro-mp-part1.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fcontinuumroboticslab.github.io%2F101%2F2023%2F06%2F23%2Fintro-mp-part1.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/opencontinuumrobotics/research/2023/05/12/icra2023-cr-highlights.html" class="pagination--pager" title="Continuum Robots @ICRA23
+      <a href="/research/2023/05/12/icra2023-cr-highlights.html" class="pagination--pager" title="Continuum Robots @ICRA23
 ">Previous</a>
     
     
-      <a href="/opencontinuumrobotics/101/2023/06/28/intro-mp-part2.html" class="pagination--pager" title="Introduction to Motion Planning for Continuum Robots - Part 2
+      <a href="/101/2023/06/28/intro-mp-part2.html" class="pagination--pager" title="Introduction to Motion Planning for Continuum Robots - Part 2
 ">Next</a>
     
   </nav>
@@ -589,7 +589,7 @@ It’s also very much worth noting that inadmissible heuristics can also be leve
     
 
     
-      <li><a href="/opencontinuumrobotics/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
     
   </ul>
 </div>
