@@ -64,3 +64,14 @@ ak:
   - label     : "Website"
     icon      : "fas fa-fw fa-link"
     url       : "https://users.cs.utah.edu/~adk/"
+
+aa:
+  name        : "Ankit Aggarwal"
+  bio         : "Mechatronics Engineering Student"
+  avatar      : "/assets/images/ankit.jpeg"
+  location    : "Manipal Institute of Technology, India"
+  linkedin    : "ankitaggarw"
+  links:
+  - label     : "Email"
+    icon      : "fas fa-fw fa-envelope-square"
+    url       : "mailto:ankit.aggarwal2@learner.manipal.edu"

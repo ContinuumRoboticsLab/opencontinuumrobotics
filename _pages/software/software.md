@@ -13,7 +13,7 @@ feature_row1:
 ![image-left](/assets/images/posts/hands-on/tdcr_vis_MATLAB.jpg){: .align-left}
 ## CRVisToolkit
 
-A set of MATLAB functions for visualization and plotting of continuum robots and utility functions to support your research.
+A set of MATLAB and Python functions for visualization and plotting of continuum robots and utility functions to support your research.
 
 [GitHub](https://github.com/ContinuumRoboticsLab/CRVisToolkit){: .btn .btn--info}
 [Blog Post]({% post_url /2023-01-24-openCRVis %}){: .btn .btn--success}

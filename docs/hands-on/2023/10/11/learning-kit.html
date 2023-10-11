@@ -1,0 +1,517 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Learning Kit for Tendon-driven Continuum Robots -</title>
+<meta name="description" content="Hi! I am Ankit and I’ve spend my summer 2023 at the CRL developing a learning kit for Tendon Driven Continuum Robots together with Reinhard Grassmann. The learning kit uses CRL’s latest design papers1 2 and builds on the open actuation module. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots.                 Reinhard M. Grassmann, Priyanka Rao, Quentin Peyron, Jessica Burgner-Kahrs: FAS — A Fully Actuated Segment for Tendon-Driven Continuum Robots. Front. Robot. AI 9:873446, 2022. doi: 10.3389/frobt.2022.873446 &#8617;                 Reinhard M. Grassmann, Chengnan Shentu, Taqi Hamoda, Puspita Triana Dewi, Jessica Burgner-Kahrs. “Open Continuum Robotics – One Actuation Module to Create them All,” 2023, arXiv: 2304.11850 &#8617;">
+
+
+  <meta name="author" content="Ankit Aggarwal">
+  
+  <meta property="article:author" content="Ankit Aggarwal">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Learning Kit for Tendon-driven Continuum Robots">
+<meta property="og:url" content="https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit.html">
+
+
+  <meta property="og:description" content="Hi! I am Ankit and I’ve spend my summer 2023 at the CRL developing a learning kit for Tendon Driven Continuum Robots together with Reinhard Grassmann. The learning kit uses CRL’s latest design papers1 2 and builds on the open actuation module. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots.                 Reinhard M. Grassmann, Priyanka Rao, Quentin Peyron, Jessica Burgner-Kahrs: FAS — A Fully Actuated Segment for Tendon-Driven Continuum Robots. Front. Robot. AI 9:873446, 2022. doi: 10.3389/frobt.2022.873446 &#8617;                 Reinhard M. Grassmann, Chengnan Shentu, Taqi Hamoda, Puspita Triana Dewi, Jessica Burgner-Kahrs. “Open Continuum Robotics – One Actuation Module to Create them All,” 2023, arXiv: 2304.11850 &#8617;">
+
+
+
+  <meta property="og:image" content="https://www.opencontinuumrobotics.com/assets/images/posts/hands-on/one-module-teaser.jpeg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-10-11T00:00:00-07:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Open Continuum Robotics Project",
+      "url": "https://www.opencontinuumrobotics.com/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.opencontinuumrobotics.com/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.opencontinuumrobotics.com/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.opencontinuumrobotics.com/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://www.opencontinuumrobotics.com/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://www.opencontinuumrobotics.com/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://www.opencontinuumrobotics.com/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/software/">Software</a>
+            </li><li class="masthead__menu-item">
+              <a href="/hardware/">Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/">Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/ankit.jpeg" alt="Ankit Aggarwal" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Ankit Aggarwal</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Mechatronics Engineering Student</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Manipal Institute of Technology, India</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:ankit.aggarwal2@learner.manipal.edu" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/ankitaggarw" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Learning Kit for Tendon-driven Continuum Robots">
+    <meta itemprop="description" content="Hi! I am Ankit and I’ve spend my summer 2023 at the CRL developing a learning kit for Tendon Driven Continuum Robots together with Reinhard Grassmann. The learning kit uses CRL’s latest design papers1 2 and builds on the open actuation module. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots.            Reinhard M. Grassmann, Priyanka Rao, Quentin Peyron, Jessica Burgner-Kahrs: FAS — A Fully Actuated Segment for Tendon-Driven Continuum Robots. Front. Robot. AI 9:873446, 2022. doi: 10.3389/frobt.2022.873446 &#8617;              Reinhard M. Grassmann, Chengnan Shentu, Taqi Hamoda, Puspita Triana Dewi, Jessica Burgner-Kahrs. “Open Continuum Robotics – One Actuation Module to Create them All,” 2023, arXiv: 2304.11850 &#8617;      ">
+    <meta itemprop="datePublished" content="2023-10-11T00:00:00-07:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Learning Kit for Tendon-driven Continuum Robots
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-10-11T00:00:00-07:00">2023-10-11</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#components">Components</a><ul><li><a href="#manipulator">Manipulator</a></li><li><a href="#actuators">Actuators</a></li><li><a href="#housing">Housing</a></li></ul></li><li><a href="#assembly-guide">Assembly Guide</a></li><li><a href="#epilogue">Epilogue</a></li><li><a href="#references">References</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Hi! I am Ankit and I’ve spend my summer 2023 at the <a href="https://crl.utm.utoronto.ca/">CRL</a> developing a learning kit for Tendon Driven Continuum Robots together with <a href="https://reinhardgrassmann.github.io/">Reinhard Grassmann</a>. The learning kit uses CRL’s latest design papers<sup id="fnref:fas" role="doc-noteref"><a href="#fn:fas" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:arXiv2023" role="doc-noteref"><a href="#fn:arXiv2023" class="footnote" rel="footnote">2</a></sup> and builds on the <a href="/hands-on/2023/04/28/one-actuation-module.html">open actuation module</a>. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots.</p>
+
+<p>The idea is something I can relate to largely. Robotics Education is only just taking off in most parts of the world. With this project, I designed something that students at my home university, Manipal Institute of Technology in India, would be able to build. For the design, we considered various constraints such as component availability, 3D printer access, and skill level.</p>
+
+<h2 id="components">Components</h2>
+<p>The kit comprises a Tendon Driven Continuum Robot (TDCR), four actuators, two TI Launchpads, various complementary electronic components, and a custom casing to enclose the entire system. For the sake of brevity, I have omitted details thoroughly explained on our <a href="https://github.com/ContinuumRoboticsLab/OpenCR-Hardware">GitHub</a>.</p>
+
+<h3 id="manipulator">Manipulator</h3>
+<p>The manipulator of the TDCR consists of 10 <a href="/101/2023/02/24/tendon-routing-disks.html">Type-II spacer disks</a> equally distributed along a Nitinol Backbone with a diameter of 1.4 mm. The robot is capable of 3 DOFs, namely bending across two planes and rotation about its axis. I used three independently actuated tendons made of Spectra Fiber and an actuator to rotate the backbone, enabling these degrees of freedom.</p>
+
+<p>The body of the spacer disk is fixed to the backbone axially, while a bearing in the middle enables the rotational DOF. It is split into two parts to allow for the insertion of the bearing in the middle. I changed the regular ball bearing to a pulley to reduce the number of unique components. The profile of the two parts allows for easy assembly while ensuring that the actuation through the tendons is optimal. The grooves ensure the adhesive stays inside the segment and does not spill out. A small part, functioning as a spacer to make the pulley bore smaller, is designed with a unique profile that balances the required friction to grip the backbone and the need for a constant curvature.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="https://www.opencontinuumrobotics.com/assets/images/posts/hands-on/learning_kit_sliced_FSD_assembly.gif" alt="" /></td>
+      <td><img src="https://www.opencontinuumrobotics.com/assets/images/posts/hands-on/learning_kit_cad_manipulator.png" alt="" /></td>
+      <td><img src="https://www.opencontinuumrobotics.com/assets/images/posts/hands-on/learning_kit_cad.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="actuators">Actuators</h3>
+<p>Our actuation module was modified to suit this kit’s requirements. I replaced the multi-part casing with a single unit, such that the new case is easier to manufacture while maintaining adequate performance. The assembly process is simplified as the singular casing eliminates input and output shaft misalignment. The motor and the gears can easily fit into designated spaces using dedicated slots. Since the actuator will only actuate tendons, I introduced an extra bearing at the output shaft to handle the increased radial tension and eliminate shaft eccentricity.</p>
+
+<p>I used the Launchpad TI LAUNCHXL-F28069M, a microcontroller development board, to control the motors with two motor Drivers, BOOSTXL-DRV8305EVM. Since four motors and each motor driver can control one motor, two Launchpads and four motor drivers are required to actuate the continuum robot.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="https://www.opencontinuumrobotics.com/assets/images/posts/hands-on/learning_kit_single_unit_actuation_module.png" alt="" /></td>
+      <td><img src="https://www.opencontinuumrobotics.com/assets/images/posts/hands-on/learning_kit_cad_casing.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="housing">Housing</h3>
+<p>All components are placed inside a hexagonal casing with windows made of transparent acrylic sheets to view the system’s working. The three tendon actuators are fixed horizontally to reduce tendon routing. Six pulleys are placed inside to help reduce the tendon offset and increase the efficiency of tendon control. One actuation module is placed at the bottom and controls backbone rotation. To secure the electric components in the case, I designed custom 3D-printed mounts. All components are visible from the windows to allow the user to see the robot’s functioning, allowing better understanding and enabling intuition development.</p>
+
+<p>I used several techniques to adapt the design for manufacturing with an FDM 3D Printer:</p>
+<ul>
+  <li>teardrop method to ensure optimal vertical holes</li>
+  <li>eliminated 90° overhangs using arcs</li>
+  <li>used chamfers to reduce support material.</li>
+  <li>counterbores for all bolt heads ensure a flush surface finish on all casing sides</li>
+  <li>included partial slots for nuts to make assembly easier</li>
+</ul>
+
+<h2 id="assembly-guide">Assembly Guide</h2>
+<p>Find a detailed assembly guide, printable STL Files and mechanical drawings on GitHub and watch the assembly video on YouTube:
+<a href="https://github.com/ContinuumRoboticsLab/OpenCR-Hardware" class="btn btn--danger">GitHub</a> 
+<a href="https://youtu.be/REcu881jMmQ" class="btn btn--success">Video</a></p>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/REcu881jMmQ" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<p>I encourage you to try and fabricate this learning kit and contact us regarding any queries or further developments you make! We would love to hear about your experience and see your prototypes!</p>
+
+<h2 id="epilogue">Epilogue</h2>
+<p>I took the design home and encouraged robotics enthusiasts at my home university to build and use OpenCR’s Learning Kit. The learning kit allows students to easily understand concepts, design, and implement various algorithms. I hope this kit or its successor will find its way into classrooms at different schools! Stay tuned for updates.</p>
+
+<h2 id="references">References</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:fas" role="doc-endnote">
+      <p>Reinhard M. Grassmann, Priyanka Rao, Quentin Peyron, Jessica Burgner-Kahrs: FAS — A Fully Actuated Segment for Tendon-Driven Continuum Robots. Front. Robot. AI 9:873446, 2022. doi: <a href="https://doi.org/10.3389/frobt.2022.873446">10.3389/frobt.2022.873446</a> <a href="#fnref:fas" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:arXiv2023" role="doc-endnote">
+      <p>Reinhard M. Grassmann, Chengnan Shentu, Taqi Hamoda, Puspita Triana Dewi, Jessica Burgner-Kahrs. “Open Continuum Robotics – One Actuation Module to Create them All,” 2023, arXiv: <a href="https://arxiv.org/abs/2304.11850">2304.11850</a> <a href="#fnref:arXiv2023" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#hands-on" class="page__taxonomy-item" rel="tag">hands-on</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-10-11T00:00:00-07:00">2023-10-11</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Learning+Kit+for+Tendon-driven+Continuum+Robots%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fhands-on%2F2023%2F10%2F11%2Flearning-kit.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fhands-on%2F2023%2F10%2F11%2Flearning-kit.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fhands-on%2F2023%2F10%2F11%2Flearning-kit.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/101/2023/06/28/intro-mp-part2.html" class="pagination--pager" title="Introduction to Motion Planning for Continuum Robots - Part 2
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/OpenCRProject1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  </body>
+</html>
