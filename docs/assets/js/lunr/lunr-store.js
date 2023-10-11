@@ -207,5 +207,5 @@ var store = [{
         "excerpt":"Hi! I am Ankit and I’ve spend my summer 2023 at the CRL developing a learning kit for Tendon Driven Continuum Robots together with Reinhard Grassmann. The learning kit uses CRL’s latest design papers1 2 and builds on the open actuation module. The motivation for the learning kit stems from...","categories": ["hands-on"],
         "tags": [],
         "url": "/hands-on/2023/10/11/learning-kit.html",
-        "teaser": "/assets/images/posts/hands-on/one-module-teaser.jpeg"
+        "teaser": "/assets/images/posts/hands-on/learning_kit_teaser.jpg"
       }]
