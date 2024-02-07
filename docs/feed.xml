@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.opencontinuumrobotics.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.opencontinuumrobotics.com/" rel="alternate" type="text/html" /><updated>2024-02-07T09:40:23-05:00</updated><id>https://www.opencontinuumrobotics.com/feed.xml</id><title type="html">Open Continuum Robotics Project</title><subtitle>Open Continuum Robotics Project by the Continuum Robotics Laboratory, University of Toronto
 Empowering everyone to build their own continuum robot and start their research.</subtitle><entry><title type="html">Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery</title><link href="https://www.opencontinuumrobotics.com/research/2024/01/07/needlesteering-mp.html" rel="alternate" type="text/html" title="Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery" /><published>2024-01-07T00:00:00-05:00</published><updated>2024-01-07T00:00:00-05:00</updated><id>https://www.opencontinuumrobotics.com/research/2024/01/07/needlesteering-mp</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/research/2024/01/07/needlesteering-mp.html"><![CDATA[<h1 id="a-case-study-of-steerable-needles">A Case Study of Steerable Needles</h1>
 <p>Steerable needles are a type of continuum robot, distinguished by their flexibility and capability to navigate through complex anatomical pathways. These robots are highly under-actuated, relying on interaction with the environment for movement and direction. The steering mechanism of steerable needles utilizes the asymmetric tip’s interaction with tissue forces during insertion. By externally rotating the needle shaft, the tip’s orientation is adjusted, allowing for controlled deflection towards desired directions upon further insertion. This method enables the needle to maneuver around obstacles such as bones, vessels, and nerves, accessing multiple targets without complete withdrawal. The reliance on environmental interaction for actuation not only enhances the safety and efficacy of medical interventions but also presents challenges and opportunities in motion planning and control within robotics, emphasizing navigation in environments with complex constraints and precision requirements.</p>
@@ -73,6 +74,10 @@ In the setting of lung biopsy, where the needle is deployed through a bronchosco
     </li>
   </ol>
 </div>]]></content><author><name>Oren Salzman</name></author><category term="research" /><summary type="html"><![CDATA[A Case Study of Steerable Needles Steerable needles are a type of continuum robot, distinguished by their flexibility and capability to navigate through complex anatomical pathways. These robots are highly under-actuated, relying on interaction with the environment for movement and direction. The steering mechanism of steerable needles utilizes the asymmetric tip’s interaction with tissue forces during insertion. By externally rotating the needle shaft, the tip’s orientation is adjusted, allowing for controlled deflection towards desired directions upon further insertion. This method enables the needle to maneuver around obstacles such as bones, vessels, and nerves, accessing multiple targets without complete withdrawal. The reliance on environmental interaction for actuation not only enhances the safety and efficacy of medical interventions but also presents challenges and opportunities in motion planning and control within robotics, emphasizing navigation in environments with complex constraints and precision requirements.]]></summary></entry><entry><title type="html">Learning Kit for Tendon-driven Continuum Robots</title><link href="https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit.html" rel="alternate" type="text/html" title="Learning Kit for Tendon-driven Continuum Robots" /><published>2023-10-11T00:00:00-04:00</published><updated>2023-10-11T00:00:00-04:00</updated><id>https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit.html"><![CDATA[<p>Hi! I am Ankit and I’ve spend my summer 2023 at the <a href="https://crl.utm.utoronto.ca/">CRL</a> developing a learning kit for Tendon Driven Continuum Robots together with <a href="https://reinhardgrassmann.github.io/">Reinhard Grassmann</a>. The learning kit uses CRL’s latest design papers<sup id="fnref:fas" role="doc-noteref"><a href="#fn:fas" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:arXiv2023" role="doc-noteref"><a href="#fn:arXiv2023" class="footnote" rel="footnote">2</a></sup> and builds on the <a href="/hands-on/2023/04/28/one-actuation-module.html">open actuation module</a>. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots.</p>
+=======
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.opencontinuumrobotics.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.opencontinuumrobotics.com/" rel="alternate" type="text/html" /><updated>2023-10-17T15:05:16-04:00</updated><id>https://www.opencontinuumrobotics.com/feed.xml</id><title type="html">Open Continuum Robotics Project</title><subtitle>Open Continuum Robotics Project by the Continuum Robotics Laboratory, University of Toronto
+Empowering everyone to build their own continuum robot and start their research.</subtitle><entry><title type="html">Learning Kit for Tendon-driven Continuum Robots</title><link href="https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit.html" rel="alternate" type="text/html" title="Learning Kit for Tendon-driven Continuum Robots" /><published>2023-10-11T00:00:00-04:00</published><updated>2023-10-11T00:00:00-04:00</updated><id>https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit.html"><![CDATA[<p>Hi! I am Ankit and I’ve spent my summer 2023 at the <a href="https://crl.utm.utoronto.ca/">CRL</a> developing a learning kit for Tendon Driven Continuum Robots together with <a href="https://reinhardgrassmann.github.io/">Reinhard Grassmann</a>. The learning kit uses CRL’s latest design papers<sup id="fnref:fas" role="doc-noteref"><a href="#fn:fas" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:arXiv2023" role="doc-noteref"><a href="#fn:arXiv2023" class="footnote" rel="footnote">2</a></sup> and builds on the <a href="/hands-on/2023/04/28/one-actuation-module.html">open actuation module</a>. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots.</p>
+>>>>>>> ead9e8603c53c61a546a790702e2ed0f74215548
 
 <p>The idea is something I can relate to largely. Robotics Education is only just taking off in most parts of the world. With this project, I designed something that students at my home university, Manipal Institute of Technology in India, would be able to build. For the design, we considered various constraints such as component availability, 3D printer access, and skill level.</p>
 
@@ -147,7 +152,11 @@ In the setting of lung biopsy, where the needle is deployed through a bronchosco
       <p>Reinhard M. Grassmann, Chengnan Shentu, Taqi Hamoda, Puspita Triana Dewi, Jessica Burgner-Kahrs. “Open Continuum Robotics – One Actuation Module to Create them All,” 2023, arXiv: <a href="https://arxiv.org/abs/2304.11850">2304.11850</a> <a href="#fnref:arXiv2023" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
+<<<<<<< HEAD
 </div>]]></content><author><name>Ankit Aggarwal</name></author><category term="hands-on" /><summary type="html"><![CDATA[Hi! I am Ankit and I’ve spend my summer 2023 at the CRL developing a learning kit for Tendon Driven Continuum Robots together with Reinhard Grassmann. The learning kit uses CRL’s latest design papers1 2 and builds on the open actuation module. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots. Reinhard M. Grassmann, Priyanka Rao, Quentin Peyron, Jessica Burgner-Kahrs: FAS — A Fully Actuated Segment for Tendon-Driven Continuum Robots. Front. Robot. AI 9:873446, 2022. doi: 10.3389/frobt.2022.873446 &#8617; Reinhard M. Grassmann, Chengnan Shentu, Taqi Hamoda, Puspita Triana Dewi, Jessica Burgner-Kahrs. “Open Continuum Robotics – One Actuation Module to Create them All,” 2023, arXiv: 2304.11850 &#8617;]]></summary></entry><entry><title type="html">Introduction to Motion Planning for Continuum Robots - Part 2</title><link href="https://www.opencontinuumrobotics.com/101/2023/06/28/intro-mp-part2.html" rel="alternate" type="text/html" title="Introduction to Motion Planning for Continuum Robots - Part 2" /><published>2023-06-28T00:00:00-04:00</published><updated>2023-06-28T00:00:00-04:00</updated><id>https://www.opencontinuumrobotics.com/101/2023/06/28/intro-mp-part2</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/101/2023/06/28/intro-mp-part2.html"><![CDATA[<p>Today, we continue our introduction to motion planning for continuum robots. If you have missed Part 1 of the intro, look at <a href="/101/2023/06/23/intro-mp-part1.html">last week’s blog post</a> before you continue here!</p>
+=======
+</div>]]></content><author><name>Ankit Aggarwal</name></author><category term="hands-on" /><summary type="html"><![CDATA[Hi! I am Ankit and I’ve spent my summer 2023 at the CRL developing a learning kit for Tendon Driven Continuum Robots together with Reinhard Grassmann. The learning kit uses CRL’s latest design papers1 2 and builds on the open actuation module. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots. Reinhard M. Grassmann, Priyanka Rao, Quentin Peyron, Jessica Burgner-Kahrs: FAS — A Fully Actuated Segment for Tendon-Driven Continuum Robots. Front. Robot. AI 9:873446, 2022. doi: 10.3389/frobt.2022.873446 &#8617; Reinhard M. Grassmann, Chengnan Shentu, Taqi Hamoda, Puspita Triana Dewi, Jessica Burgner-Kahrs. “Open Continuum Robotics – One Actuation Module to Create them All,” 2023, arXiv: 2304.11850 &#8617;]]></summary></entry><entry><title type="html">Introduction to Motion Planning for Continuum Robots - Part 2</title><link href="https://www.opencontinuumrobotics.com/101/2023/06/28/intro-mp-part2.html" rel="alternate" type="text/html" title="Introduction to Motion Planning for Continuum Robots - Part 2" /><published>2023-06-28T00:00:00-04:00</published><updated>2023-06-28T00:00:00-04:00</updated><id>https://www.opencontinuumrobotics.com/101/2023/06/28/intro-mp-part2</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/101/2023/06/28/intro-mp-part2.html"><![CDATA[<p>Today, we continue our introduction to motion planning for continuum robots. If you have missed Part 1 of the intro, look at <a href="/101/2023/06/23/intro-mp-part1.html">last week’s blog post</a> before you continue here!</p>
+>>>>>>> ead9e8603c53c61a546a790702e2ed0f74215548
 
 <h2 id="what-makes-motion-planning-particularly-challenging-for-continuum-robots">What makes motion planning particularly challenging for continuum robots?</h2>
 <p>First, let’s discuss one of the primary differences between continuum robots and more “traditional” robots (for lack of a better term)—modeling.</p>
@@ -909,4 +918,255 @@ In fact, non-medical applications for continuum robots are characterized by simi
       <p>H.B. Gilbert, D.C. Rucker,  R.J. Webster III: Concentric Tube Robots: The State of the Art and Future Directions. International Symposium on Robotics Research, pp. 253–269, 2016. <a href="https://doi.org/10.1007/978-3-319-28872-7_15">https://doi.org/10.1007/978-3-319-28872-7_15</a>. <a href="#fnref:Gilbert" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
+<<<<<<< HEAD
 </div>]]></content><author><name>Jessica Burgner-Kahrs</name></author><category term="history" /><summary type="html"><![CDATA[The first concentric tube continuum robot was published in 2005! And yet, the community usually refers to two papers from 2006 as the first. Why?]]></summary></entry></feed>
+=======
+</div>]]></content><author><name>Jessica Burgner-Kahrs</name></author><category term="history" /><summary type="html"><![CDATA[The first concentric tube continuum robot was published in 2005! And yet, the community usually refers to two papers from 2006 as the first. Why?]]></summary></entry><entry><title type="html">Constant-Curvature Modeling of Concentric Tube Continuum Robots</title><link href="https://www.opencontinuumrobotics.com/101/2023/01/27/ctcr-cc-model.html" rel="alternate" type="text/html" title="Constant-Curvature Modeling of Concentric Tube Continuum Robots" /><published>2023-01-27T00:00:00-05:00</published><updated>2023-01-27T00:00:00-05:00</updated><id>https://www.opencontinuumrobotics.com/101/2023/01/27/ctcr-cc-model</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/101/2023/01/27/ctcr-cc-model.html"><![CDATA[<p>Today, we are looking at how <a href="/101/2022/11/18/ctcr-intro.html">concentric tube continuum robots</a> (CTCR) are modelled using the <a href="/101/2022/12/02/cc-kinematics.html">constant curvature kinematics framework</a>.
+We derive the mapping for general CTCR composed of multiple tubes and then discuss the
+limitations.</p>
+
+<p>Under the assumption that the robot’s shape is composed of
+constant curvature segments, it can be expressed as a concatenation of
+multiple circular arcs. Each circular arc corresponds to one segment \(i\)
+and each segment is described by its length \(\ell_{i}\), curvature
+\(\kappa_{i}\), and bending plane angle \(\phi_{i}\). To determine the robot
+dependent mapping for a CTCR, we need to identify the number \(m\) of
+segments present. As a segment is characterized by constant curvature,
+we have to locate transitions points along the robot where the curvature
+changes.</p>
+
+<h2 id="robot-parameters">Robot Parameters</h2>
+
+<p>We identify a tube within the CTCR with index
+\(j \in \lbrack 1,N_{t}\rbrack\) where \(N_{t}\) is the number of tubes,
+\(j = 1\) is the innermost tube, and \(j = N_{t}\) is the outermost tube.
+Each tube is characterized by it length \(L_{j} = L_{j}^{s} + L_{j}^{c}\)
+where \(L_{j}^{s}\) is the length of the straight section and \(L_{j}^{c}\)
+is the length of the curved section (see Figure 5 left). We assume that
+the curved section has constant curvature \(\kappa_{j}^{*}\). The
+precurvature of a tube is deﬁned in the xz-plane, where the z axis is
+tangential to the tube’s straight section pointing to the tip.
+Furthermore, each tube’s outer \(\text{OD}_{j}\) and inner \(\text{ID}_{j}\)
+diameter are specified. Lastly, the modulus of elasticity \(E_{j}\)
+(Young’s modulus) is determined by
+the tube’s material. Superelastic NiTi tubes
+typically come with elastic modulus of \(28 - 83\) GPa.</p>
+
+<p>The CTCR joint space is given as
+\(\mathbf{q} = \lbrack\alpha_{1},\ldots,\alpha_{N_{t}},\beta_{1},\ldots,\beta_{N_{t}}\rbrack\)
+where \(\alpha_{j} \in \lbrack - \pi,\pi)\) is the rotation angle about
+the z-axis and \(\beta_{j} \in \lbrack - L_{j},0\rbrack\) is the
+translation along the z-axis of tube \(j\). If all \(\alpha_{j} = 0\), the
+centreline stays in the x-z-plane and curves toward the positive x axis.
+The translational joint variables are subject to the following
+constraints</p>
+
+\[\beta_{1} \leq \ldots \leq \beta_{N_{t}} \leq 0\]
+
+<p>and</p>
+
+\[L_{N_{t}} + \beta_{N_{t}} \leq \ldots \leq L_{1} + \beta_{1}\]
+
+<p>These arise from the telescoping nature of the tube assembly and the
+actuation principle, i.e., each tube can be retracted at maximum by its
+own length. Furthermore, we require the tubes to extend one another
+outside the actuation unit and to not be fully retracted within any more
+outer tube. In the robot’s zero position, all tubes are fully retracted
+and align with the front plate of the actuation unit. Below, we illustrate the joint space of a CTCR with \(N_{t} = 3\) and the base
+coordinate frame.</p>
+
+<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_ctcr_model_parameter.png" alt="image" /></p>
+
+<p>The robot dependent mapping is based on the principles of beam mechanics
+to solve the forward kinematic problem. We assume the tubes to deform
+only in bending and not in twisting, such that the resulting centerline
+curvature can be computed in closed-form based on a moment equilibrium
+by applying Bernoulli–Euler beam mechanics.</p>
+
+<h2 id="resultant-curvature-of-concentric-tubes">Resultant Curvature of Concentric Tubes</h2>
+
+<p>To describe the complete shape of a CTCR, we will ﬁrst develop a model
+for the shape of a single segment composed of several fully overlapping
+concentric curved tubes. Let’s first consider the example depicted here.</p>
+
+<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_ctcr_cc_model_equilibrium.png" alt="image" style="float: center" /></p>
+
+<p>For a collection of two tubes with circular precurvatures
+\(\kappa_{1}^{*}\) and \(\kappa_{2}^{*}\), once inserted into each other,
+the resultant constant curvature \(\kappa\) is common to both tubes. Here,
+the tubes have not been axially rotated with respect to one another and
+their natural curvature planes are aligned. The bending moments \(M_{j}\)
+(in Nm) will be constant along the length of each tube and can be
+described by</p>
+
+\[M_{1} = (\kappa - \kappa_{1}^{*})EI_{1}\]
+
+<p>and</p>
+
+\[M_{2} = (\kappa - \kappa_{2}^{*})EI_{2}\]
+
+<p>where \(E\) is the Young’s modulus (in Pa), and \(I_{1}\) and \(I_{2}\) are
+the second area moment (in \(m^{4}\)) of the symmetric cross section of
+the respective tube. The second area moment \(I\) is a geometrical
+property of the tube’s cross section area which reflects how its points
+are distributed with regard to the central axis. As a
+tube’s <img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_ctcr_tube_cross_section.png" alt="image" style="float: right" /> 
+cross section is an annulus, the second
+area moment can be determined from the inner and outer diameter as</p>
+
+\[I_{j} = \frac{\pi}{64}(\text{OD}_{j}^{4} - \text{ID}_{j}^{4})\]
+
+<p>We can describe the resultant curvature of these two overlapping tubes
+by evaluating the moment equilibrium</p>
+
+\[M_{1} + M_{2} = 0\]
+
+<p>and resolving for</p>
+
+\[\kappa = \frac{EI_{1}\kappa_{1}^{*} + EI_{2}\kappa_{2}^{*}}{EI_{1} + EI_{2}}\]
+
+<p>This can be generalized to collections of \(N_{t}\) axially aligned tubes</p>
+
+\[\kappa = \frac{\sum_{j = 1}^{N_{t}}EI_{j}\kappa_{j}^{*}}{\sum_{j = 1}^{N_{t}}EI_{j}}\]
+
+<p>Let’s now consider the example depicted here.<img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_ctcr_cc_bending_plane.png" alt="image" style="float: right" /> When precurved
+tubes are rotated axially, their natural planes of curvature are no
+longer aligned and the direction of the bending moments they apply
+changes. The tubes exert a moment on one another about their respective
+y-axes, which is caused by their initial precurvature about this
+direction. The tubes are rotated by angles \(\alpha_{1}\) and
+\(\alpha_{2}\), and the equilibrium plane angle is \(\phi\). As before, each
+tube experiences a constant bending moment
+\(M_{1} = (\kappa - \kappa_{1}^{*})EI_{1}\) and
+\(M_{2} = (\kappa - \kappa_{2}^{*})EI_{2}\), but now these bending moments
+have two component projections on the base frame x and y axes. The
+equilibrium state \(M_{1} + M_{2} = 0\) yields</p>
+
+<p>\(\begin{bmatrix}
+\kappa_{x} \\
+\kappa_{y} \\
+\end{bmatrix} = \frac{1}{EI_{1} + EI_{2}}\begin{pmatrix}
+EI_{1}\kappa_{1}^{*}\lbrack\begin{matrix}
+\cos\alpha_{1} \\
+\sin\alpha_{1} \\
+\end{matrix}\rbrack + EI_{2}\kappa_{2}^{*}\lbrack\begin{matrix}
+\cos\alpha_{2} \\
+\sin\alpha_{2} \\
+\end{matrix}\rbrack \\
+\end{pmatrix}\).</p>
+
+<p>For general number of concentric tubes, this can be generalized to</p>
+
+\[\begin{bmatrix}
+\kappa_{x} \\
+\kappa_{y} \\
+\end{bmatrix} = \frac{1}{\sum_{j = 1}^{N_{t}}EI_{j}}\overset{N_{t}}{\sum_{j = 1}}EI_{j}\kappa_{j}^{*}\begin{bmatrix}
+\cos\alpha_{j} \\
+\sin\alpha_{j} \\
+\end{bmatrix}(Eq. 1)\]
+
+<p>Given the components of the resultant curvature, we can determine the
+bending plane angle \(\phi = \text{atan2}(\kappa_{y},\kappa_{x})\) and
+curvature \(\kappa = \sqrt{\kappa_{x}^{2} + \kappa_{y}^{2}}\). Note, that
+\(\phi\) is undefined for straight segments, i.e., for zero curvature as
+\(\text{atan}2(0,0) = \text{nan}\). In this special case, the rotation
+angle \(\alpha\) of the outermost present tube in the segment is used as
+\(\phi\).</p>
+
+<h2 id="determining-the-arc-parameters-of-a-ctcr">Determining the Arc Parameters of a CTCR</h2>
+
+<p>The first step in determining the robot dependent mapping of a CTCR is
+determining the number of segments \(m\) and their lengths \(\ell_{i}\) for
+\(i \in \lbrack 1,m\rbrack\). These are deﬁned by transition point
+locations, where the component tubes either end or transition from their
+straight to curved section. The set \(T\) of transition points can be
+determined as algebraic functions of the tube geometry and the
+translational joint positions \(\beta_{j}\)</p>
+
+\[T = \text{sort}_{\text{asc}}\{ 0,\beta_{n} + L_{n}^{s},\beta_{n} + L_{n},\ldots\beta_{1} + L_{1}^{s},\beta_{1} + L_{1}\}\]
+
+<p>From the resulting values of the set T, all duplicate elements are
+omitted, i.e., tube sections terminate at the same location, as well as
+all elements \(&lt; 0\), i.e., the respective tube section is located within
+the actuation unit. While the maximum number of segments is \(2N_{t}\),
+the number of actual segments is dependent on the current joint values
+\(\mathbf{q}\) as some segments might be located within the actuation
+unit. Here, we show an example of a CTCR composed of three tubes and
+its transition points.</p>
+
+<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_ctcr_cc_tube_transitions.png" alt="image" /></p>
+
+<p>Using the transition points T, the length of the constant curvature
+segments of the CTCR can be determined as</p>
+
+\[\begin{matrix}
+\ell_{1} &amp; = T_{1} - T_{0} \\
+\ell_{2} &amp; = T_{2} - T_{1} \\
+\ldots &amp; \\
+\ell_{m} &amp; = T_{m} - T_{m - 1} \\
+\end{matrix}\]
+
+<p>In a second step, we can determine \(\kappa_{x}\) and \(\kappa_{z}\) for
+each segment \(i \in \lbrack 1,m\rbrack\) enclosed by the transition
+points \(\lbrack T_{i - 1},T_{i}\rbrack\) using Equation (\(1\)), and then
+\(\kappa_{i}\) and \(\phi_{i}\). Note, that not all tubes are present in
+each segment, such that only the present ones with their respective
+parameters have to be considered (either zero curvature in straight tube
+sections or the respective precurvature in curved sections, alongside ID
+and OD, as well as \(E\)).</p>
+
+<p>The <a href="/101/2022/12/02/cc-kinematics.html">constant curvature kinematics franmework</a> assumes that \(\phi\) is
+expressed locally, i.e., w.r.t. the previous segment for
+the robot independent mapping. Consequently, after determining
+\(\phi_{i}\) expressed in the base frame for each segment using Equation
+(\(1\)), we will need to apply a final correction step</p>
+
+<p>\(\phi_{i} = \phi_{i} - \phi_{i - 1}\).</p>
+
+<h2 id="remarks">Remarks</h2>
+
+<p>The model introduced today makes multiple simplifying
+assumptions, i.e., pure bending, no torsional deformation, no friction,
+no effect of gravitation and external forces. The assumption of infinite
+torsional rigidity in the tubes is only reasonable as long as the
+relative rotation angles between the tubes are small and the straight
+sections of each tube are short. Considering torsional deformation is
+particularly important in the straight transmission sections of the
+tubes that lie between the actuators and the first curved link, since
+these transmissions are long relative to the curved sections. In fact,
+despite the simple actuation of component tubes, the resulting motion of
+CTCR is characterized by a highly non-linear behaviour due to the
+elastic interactions between the tubes.</p>
+
+<p>An advanced modelling approach is to leverage the elasticity theory, in
+particular the Cosserat theory of elastic rods. This involves writing
+rod equation for each tube, and then enforce concentricity by requiring
+all tubes to conform to the same curvature as a function of arc-length,
+leaving them free to rotate axially with respect to each other. This
+results in a system of differential equations with mixed boundary
+conditions. The boundary conditions at the base of the robot are the
+axial angles of the tubes, and the boundary conditions at the tip are
+internal moments that vanish because there is no material beyond the tip
+to support them. Note that after this mechanics problem is solved, to
+determine the axial tube angles, one must still integrate along the
+robot to determine the space curve of the robot itself. Experimental
+testing of the model has shown that with calibration, mean error in the
+prediction of tip position can be as low as 1% to 3% of overall robot
+length. With typical CTCR length of 200-300mm, this means that we can
+estimate the pose of the tip with an error of about 2-9 mm. This is the
+most accurate model existing for CTCR to date. As this 101 category of the OpenContinuumRobotics Blog is an
+introduction to continuum robotics, we do not cover advanced modelling approaches for CTCR (yet!).</p>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<p>Webster, R.J. &amp; Jones, B.A., 2010. Design and Kinematic Modeling of
+Constant Curvature Continuum Robots: A Review. The International Journal
+of Robotics Research, 29(13), pp. 1661–1683.
+<a href="https://doi.org/10.1177%2F0278364910368147">https://doi.org/10.1177/0278364910368147</a><br />
+Section 3.2.3</p>
+
+<p>Mahoney, A.W., Gilbert, H.B., Webster, R.J., 2018. A Review of
+Concentric Tube Robots: Modeling, Control, Design, Planning, and
+Sensing. The Encyclopedia of Medical Robotics, Chapter 7, pp. 181-202.
+<a href="https://doi.org/10.1142/9789813232266_0007">https://doi.org/10.1142/9789813232266_0007</a></p>]]></content><author><name>Jessica Burgner-Kahrs</name></author><category term="101" /><summary type="html"><![CDATA[A simple free-space model for CTCR.]]></summary></entry></feed>
+>>>>>>> ead9e8603c53c61a546a790702e2ed0f74215548

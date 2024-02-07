@@ -7,7 +7,7 @@ excerpt:
 header:
   teaser: /assets/images/posts/hands-on/learning_kit_teaser.jpg
 ---
-Hi! I am Ankit and I've spend my summer 2023 at the [CRL](https://crl.utm.utoronto.ca/) developing a learning kit for Tendon Driven Continuum Robots together with [Reinhard Grassmann](https://reinhardgrassmann.github.io/). The learning kit uses CRL's latest design papers[^fas] [^arXiv2023] and builds on the [open actuation module]({% post_url /2023-04-28-one-actuation-module %}). The motivation for the learning kit stems from the Open Continuum Robotics Project's fundamental objective of empowering the world with open hardware and open software to create their continuum robots. 
+Hi! I am Ankit and I've spent my summer 2023 at the [CRL](https://crl.utm.utoronto.ca/) developing a learning kit for Tendon Driven Continuum Robots together with [Reinhard Grassmann](https://reinhardgrassmann.github.io/). The learning kit uses CRL's latest design papers[^fas] [^arXiv2023] and builds on the [open actuation module]({% post_url /2023-04-28-one-actuation-module %}). The motivation for the learning kit stems from the Open Continuum Robotics Project's fundamental objective of empowering the world with open hardware and open software to create their continuum robots. 
 
 The idea is something I can relate to largely. Robotics Education is only just taking off in most parts of the world. With this project, I designed something that students at my home university, Manipal Institute of Technology in India, would be able to build. For the design, we considered various constraints such as component availability, 3D printer access, and skill level.  
 
