@@ -65,6 +65,19 @@ ak:
     icon      : "fas fa-fw fa-link"
     url       : "https://users.cs.utah.edu/~adk/"
 
+os:
+  name        : "Oren Salzman"
+  bio         : "Assistant Professor."
+  avatar      : "/assets/images/OS_author.jpeg"
+  location    : "Technion, Israel"
+  links:
+  - label     : "Email"
+    icon      : "fas fa-fw fa-envelope-square"
+    url       : "mailto:osalzman@cs.technion.ac.il"
+  - label     : "Website"
+    icon      : "fas fa-fw fa-link"
+    url       : "https://orensalzman.com"
+
 aa:
   name        : "Ankit Aggarwal"
   bio         : "Mechatronics Engineering Student"

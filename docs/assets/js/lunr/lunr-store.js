@@ -12,7 +12,7 @@ var store = [{
         "teaser": "/assets/images/posts/research/iros_2022_teaser.jpg"
       },{
         "title": "Continuum Robotics 101",
-        "excerpt":"We are starting our 101 blog post series. In this category, we will present introductory concepts in continuum robotics targeted at novices who have prior knowledge in fundemantal robotics and in serial manipulators. The material is based off the Continuum Robotics course I taught at Leibniz University Hannover in 2017...","categories": ["101"],
+        "excerpt":"We are starting our 101 blog post series. In this category, we will present introductory concepts in continuum robotics targeted at novices who have prior knowledge in fundamental robotics and in serial manipulators. The material is based off the Continuum Robotics course I taught at Leibniz University Hannover in 2017...","categories": ["101"],
         "tags": [],
         "url": "/101/2022/10/21/cr-intro.html",
         "teaser": "/assets/images/posts/cr_101_redundant_continuous_teaser.png"
@@ -208,4 +208,10 @@ var store = [{
         "tags": [],
         "url": "/hands-on/2023/10/11/learning-kit.html",
         "teaser": "/assets/images/posts/hands-on/learning_kit_teaser.jpg"
+      },{
+        "title": "Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery",
+        "excerpt":"A Case Study of Steerable Needles Steerable needles are a type of continuum robot, distinguished by their flexibility and capability to navigate through complex anatomical pathways. These robots are highly under-actuated, relying on interaction with the environment for movement and direction. The steering mechanism of steerable needles utilizes the asymmetric...","categories": ["research"],
+        "tags": [],
+        "url": "/research/2024/01/07/needlesteering-mp.html",
+        "teaser": "/assets/images/posts/101-needle-steering.jpg"
       }]
