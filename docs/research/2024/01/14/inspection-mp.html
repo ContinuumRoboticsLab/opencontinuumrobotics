@@ -1,0 +1,514 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery - Part 2 -</title>
+<meta name="description" content="A Case Study of Inspection Using the CRISP Robot In certain medical applications, physicians may want to inspect some region of interest for diagnostic purposes completing the procedure as fast as is safely possible to reduce costs and improve patient outcomes, especially if the patient is under anesthesia during the procedure. For example, the needle-diameter Continuum Reconfigurable Incisionless Surgical Parallel (CRISP) robot 1 2 was suggested to assist in the diagnosis of the cause of a pleural effusion (a serious medical condition that can cause the collapse of a patient’s lung) by visually inspecting the surface of the collapsed lung and chest wall inside the body3 (see Figure below).                 Arthur W Mahoney, Patrick L Anderson, Philip J Swaney, Fabien Maldonado, and Robert J Webster III. Reconfigurable parallel continuum robots for incisionless surgery. IEEE IROS, pp 4330–4336, 2016. doi: 10.1109/IROS.2016.7759637 &#8617;                 Patrick L Anderson, Arthur W Mahoney, and Robert J Webster III. Continuum reconfigurable parallel robots for surgery: Shape sensing and state estimation with uncertainty. IEEE Robot. Autom. Lett., 2(3):1617–1624, 2017. doi: 10.1109/LRA.2017.2678606 &#8617;                 Alan Kuntz, Chris Bowen, Cenk Baykal, Arthur W Mahoney, Patrick L Anderson, Fabien Maldonado, Robert J Webster III, and Ron Alterovitz. Kinematic design optimization of a parallel surgical robot to maximize anatomical visibility via motion planning. IEEE ICRA, pp 926–933, 2018. doi: 10.1109/ICRA.2018.8461135 &#8617;">
+
+
+  <meta name="author" content="Oren Salzman">
+  
+  <meta property="article:author" content="Oren Salzman">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery - Part 2">
+<meta property="og:url" content="https://www.opencontinuumrobotics.com/research/2024/01/14/inspection-mp.html">
+
+
+  <meta property="og:description" content="A Case Study of Inspection Using the CRISP Robot In certain medical applications, physicians may want to inspect some region of interest for diagnostic purposes completing the procedure as fast as is safely possible to reduce costs and improve patient outcomes, especially if the patient is under anesthesia during the procedure. For example, the needle-diameter Continuum Reconfigurable Incisionless Surgical Parallel (CRISP) robot 1 2 was suggested to assist in the diagnosis of the cause of a pleural effusion (a serious medical condition that can cause the collapse of a patient’s lung) by visually inspecting the surface of the collapsed lung and chest wall inside the body3 (see Figure below).                 Arthur W Mahoney, Patrick L Anderson, Philip J Swaney, Fabien Maldonado, and Robert J Webster III. Reconfigurable parallel continuum robots for incisionless surgery. IEEE IROS, pp 4330–4336, 2016. doi: 10.1109/IROS.2016.7759637 &#8617;                 Patrick L Anderson, Arthur W Mahoney, and Robert J Webster III. Continuum reconfigurable parallel robots for surgery: Shape sensing and state estimation with uncertainty. IEEE Robot. Autom. Lett., 2(3):1617–1624, 2017. doi: 10.1109/LRA.2017.2678606 &#8617;                 Alan Kuntz, Chris Bowen, Cenk Baykal, Arthur W Mahoney, Patrick L Anderson, Fabien Maldonado, Robert J Webster III, and Ron Alterovitz. Kinematic design optimization of a parallel surgical robot to maximize anatomical visibility via motion planning. IEEE ICRA, pp 926–933, 2018. doi: 10.1109/ICRA.2018.8461135 &#8617;">
+
+
+
+  <meta property="og:image" content="https://www.opencontinuumrobotics.com/assets/images/posts/research/inspection-mp.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-14T00:00:00-05:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.opencontinuumrobotics.com/research/2024/01/14/inspection-mp.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Open Continuum Robotics Project",
+      "url": "https://www.opencontinuumrobotics.com/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.opencontinuumrobotics.com/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.opencontinuumrobotics.com/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.opencontinuumrobotics.com/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://www.opencontinuumrobotics.com/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://www.opencontinuumrobotics.com/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://www.opencontinuumrobotics.com/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/software/">Software</a>
+            </li><li class="masthead__menu-item">
+              <a href="/hardware/">Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/">Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/OS_author.jpeg" alt="Oren Salzman" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Oren Salzman</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Assistant Professor.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Technion, Israel</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:osalzman@cs.technion.ac.il" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://orensalzman.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery - Part 2">
+    <meta itemprop="description" content="A Case Study of Inspection Using the CRISP RobotIn certain medical applications, physicians may want to inspect some region of interest for diagnostic purposes completing the procedure as fast as is safely possible to reduce costs and improve patient outcomes, especially if the patient is under anesthesia during the procedure.For example, the needle-diameter Continuum Reconfigurable Incisionless Surgical Parallel (CRISP) robot 1 2 was suggested to assist in the diagnosis of the cause of a pleural effusion (a serious medical condition that can cause the collapse of a patient’s lung) by visually inspecting the surface of the collapsed lung and chest wall inside the body3 (see Figure below).            Arthur W Mahoney, Patrick L Anderson, Philip J Swaney, Fabien Maldonado, and Robert J Webster III. Reconfigurable parallel continuum robots for incisionless surgery. IEEE IROS, pp 4330–4336, 2016. doi: 10.1109/IROS.2016.7759637 &#8617;              Patrick L Anderson, Arthur W Mahoney, and Robert J Webster III. Continuum reconfigurable parallel robots for surgery: Shape sensing and state estimation with uncertainty. IEEE Robot. Autom. Lett., 2(3):1617–1624, 2017. doi: 10.1109/LRA.2017.2678606 &#8617;              Alan Kuntz, Chris Bowen, Cenk Baykal, Arthur W Mahoney, Patrick L Anderson, Fabien Maldonado, Robert J Webster III, and Ron Alterovitz. Kinematic design optimization of a parallel surgical robot to maximize anatomical visibility via motion planning. IEEE ICRA, pp 926–933, 2018. doi: 10.1109/ICRA.2018.8461135 &#8617;      ">
+    <meta itemprop="datePublished" content="2024-01-14T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery - Part 2
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-01-14T00:00:00-05:00">2024-01-14</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#a-case-study-of-inspection-using-the-crisp-robot">A Case Study of Inspection Using the CRISP Robot</a><ul><li><a href="#inspection-planning">Inspection Planning</a></li><li><a href="#what-makes-it-challenging">What makes it challenging</a></li><li><a href="#iris---incremental-random-inspection-roadmap-search">IRIS - Incremental Random Inspection-roadmap Search</a></li><li><a href="#references">References</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="a-case-study-of-inspection-using-the-crisp-robot">A Case Study of Inspection Using the CRISP Robot</h1>
+<p>In certain medical applications, physicians may want to inspect some region of interest for diagnostic purposes completing the procedure as fast as is safely possible to reduce costs and improve patient outcomes, especially if the patient is under anesthesia during the procedure.
+For example, the needle-diameter Continuum Reconfigurable Incisionless Surgical Parallel (CRISP) robot <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> was suggested to assist in the diagnosis of the cause of a pleural effusion (a serious medical condition that can cause the collapse of a patient’s lung) by visually inspecting the surface of the collapsed lung and chest wall inside the body<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> (see Figure below).</p>
+
+<h2 id="inspection-planning">Inspection Planning</h2>
+<p>This can modeled as an <strong>inspection-planning problem</strong> where we are given a robot equipped with a sensor and a set of points of interest (POI) in the environment to be inspected by the sensor. The problem calls for computing a minimal-length motion plan for the robot that maximizes the number of POI inspected.</p>
+
+<figure class="">
+  <img src="/assets/images/posts/research/inspection-mp.png" alt="" /><figcaption>
+      Example of Human anatomy inspection. Left: The CRISP robot is composed of needle-diameter tubes assembled into a parallel structure inside the patient’s body (in which a tube uses a snare system to grip a tube with a camera affixed to its tip) and then manipulated outside the body, allowing for smaller incisions and faster recovery times compared to traditional endoscopic tools (which have larger diameters). Middle: The CRISP robot in simulation inspecting a collapsed lung, a scenario segmented from a CT scan of a real patient with this condition. Visualization shows the robot (orange), the lungs (pink), and the pleural surface visible (green) and not visible (blue) by the robot’s camera sensor in its current configuration. Right: Two example configurations with inspected POI. The CRISP robot (orange) inspects POI (blue) on the organ surface with visible points covered by the cone shape (yellow).
+
+    </figcaption></figure>
+
+<p>Naively computed inspection plans may enable inspection of only a subset of the POI and may require motion plans significantly longer than an optimal plan, and hence may be undesirable or infeasible due to time constraints. Our goal is to compute kinematically feasible collision-free inspection plans that maximize the number of POI inspected, and of the plans that inspect those POI we compute a shortest one.</p>
+
+<h2 id="what-makes-it-challenging">What makes it challenging</h2>
+<p>Inspection planning is computationally challenging because we need to simultaneously reason  both about motion planning in a high-dimensional configuration space 
+(the space of all parameters that determine the shape of the robot) as well as about maximizing the number of POI inspected.</p>
+
+<p>There are multiple approaches to computing inspection plans, but here we focus on those that provide some formal guarantee on the quality of the solution. Generally speaking these methods (see, e.g., <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>) exhaustively search over the space of all motion plans thus guaranteeing asymptotic optimality.
+Roughly speaking, asymptotic optimality for inspection planning means these methods produce inspection plans whose length and the number of points inspected will asymptotically converge to those of an optimal inspection plan, given enough planning time.</p>
+
+<p>Let’s dive deeper into the term we used earlier “exhaustively search over the space of all motion plans”. To do so, let’s go back to basics and consider shortest-path computation for a while (it may be worthwhile to visit previous posts on motion planning <a href="/101/2023/06/23/intro-mp-part1.html">Part 1</a>, <a href="/101/2023/06/28/intro-mp-part2.html">Part 2</a>). When we want to compute the shortest path to some point we can use the fact that any sub-path of a shortest path is also a shortest path. Namely, if we know that the shortest path between <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">c</code> passes through intermediate point <code class="language-plaintext highlighter-rouge">b</code> and we need to consider two paths connecting <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>, then the shorter one will always be better and we can discard the longer one. This is because if we take the shortest path connecting <code class="language-plaintext highlighter-rouge">b</code> and <code class="language-plaintext highlighter-rouge">c</code> it will always be preferable to append it to the shortest path connecting <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>. This is referred to as <em>Bellman’s principle of optimality</em>.</p>
+
+<p>Going back to our problem of inspection planning this is not necessarily the case. To understand this, assume that we have two POIs and recall our two paths connecting <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>. Assume that the shorter one sees no POI while the longer one sees the first POI. Which one is better? We actually don’t know because it depends on the future: if we consider the first path, then we need to find a path between <code class="language-plaintext highlighter-rouge">b</code> and <code class="language-plaintext highlighter-rouge">c</code> that sees both POIs while if we consider the second path then we only need to find a path between <code class="language-plaintext highlighter-rouge">b</code> and <code class="language-plaintext highlighter-rouge">c</code> that sees the second POI.</p>
+
+<p>To summarize, for each intermediate point, we need to consider the trade-off between short paths that see less POI and long paths that see more POI. This set has a name, “The Pareto-optimal frontier”. The set of Pareto-optimal inspection plans is the minimal set of inspection plans such that each plan is either shorter or has better coverage of the POI than any other inspection plan.
+Unfortunately, computing this set comes at the price of very long computation times as the size of the search space is exponential in the number of POI.</p>
+
+<h2 id="iris---incremental-random-inspection-roadmap-search">IRIS - Incremental Random Inspection-roadmap Search</h2>
+<p>To solve the slow running times of existing algorithms, we introduced a new algorithm which we called Incremental Random Inspection-roadmap Search, or IRIS, which is an asymptotically optimal inspection-planning algorithm <sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">6</a></sup> <sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">7</a></sup>. Similar to sampling-based planners<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, IRIS incrementally constructs a sequence of increasingly dense roadmaps (graphs embedded in the configuration space) wherein each vertex represents a collision-free configuration and each edge a collision-free transition between configurations - and computes an inspection plan on the roadmaps as they are constructed.</p>
+
+<p>Unfortunately, even the problem of computing an optimal inspection plan on a graph (and not in the configuration space) is computationally hard (see discussion above on computing the Pareto-optimal frontier). To circumvent this, we compute a near-optimal inspection plan on each roadmap. Basically, we use the fact that if two paths are “almost the same length” and see “almost the same set of POI”, essentially they are the same for all practical purposes and we can store only one (we have formal definitions for the “almost”s and the “essentially” but theses are out of the scope of this post).</p>
+
+<p>This additional flexibility allows us to improve the quality of our inspection plan in an anytime manner, i.e., the algorithm can be stopped at any time and return the best inspection plan found up until that point.
+We achieve this by incrementally densifying the roadmap and then searching over the densified roadmap for a near-optimal inspection plan—a process that is repeated as time allows.
+By reducing the approximation factor (the mathematical tool we use to dictate which paths we consider paths as essentially the same) between iterations, we ensure  that our method is asymptotically optimal.</p>
+
+<p>This allowed us to demonstrate the efficacy of our approach in simulation for several complex robotic systems as demonstrated in the Figure above.</p>
+
+<p>For additional details on algorithmic motion planning for continuum robots, see <sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">8</a></sup> and references within.</p>
+
+<p><a href="https://doi.org/10.1177/02783649231171646" class="btn btn--info">Paper</a> 
+<a href="https://github.com/UNC-Robotics/IRIS" class="btn btn--danger">GitHub</a></p>
+
+<h2 id="references">References</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Arthur W Mahoney, Patrick L Anderson, Philip J Swaney, Fabien Maldonado, and Robert J Webster III. Reconfigurable parallel continuum robots for incisionless surgery. IEEE IROS, pp 4330–4336, 2016. doi: <a href="https://doi.org/10.1109/IROS.2016.7759637">10.1109/IROS.2016.7759637</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Patrick L Anderson, Arthur W Mahoney, and Robert J Webster III. Continuum reconfigurable parallel robots for surgery: Shape sensing and state estimation with uncertainty. IEEE Robot. Autom. Lett., 2(3):1617–1624, 2017. doi: <a href="https://doi.org/10.1109/LRA.2017.2678606">10.1109/LRA.2017.2678606</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Alan Kuntz, Chris Bowen, Cenk Baykal, Arthur W Mahoney, Patrick L Anderson, Fabien Maldonado, Robert J Webster III, and Ron Alterovitz. Kinematic design optimization of a parallel surgical robot to maximize anatomical visibility via motion planning. IEEE ICRA, pp 926–933, 2018. doi: <a href="https://doi.org/10.1109/ICRA.2018.8461135">10.1109/ICRA.2018.8461135</a> <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>Andreas Bircher, Kostas Alexis, Ulrich Schwesinger, Sammy Omari, Michael Burri, and Roland Siegwart. An incremental sampling–based approach to inspection planning: The rapidly–exploring random tree of trees. Robotica, 35(6):1327–1340, 2017. doi: <a href="https://doi.org/10.1017/S0263574716000084">10.1017/S0263574716000084</a> <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>Premysl Kafka, Jan Faigl, and Petr Vana. Random inspection tree algorithm in visual inspection with a realistic sensing model and differential constraints. IEEE ICRA, pp 2782–2787, 2016. doi: <a href="https://doi.org/10.1109/ICRA.2016.7487440">10.1109/ICRA.2016.7487440</a> <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8" role="doc-endnote">
+      <p>Mengyu Fu, Alan Kuntz, Oren Salzman, and Ron Alterovitz. Toward asymptotically-optimal inspection planning via efficient near-optimal graph search. In RSS, 2019. doi: <a href="https://doi.org/10.15607/RSS.2019.XV.057">10.15607/RSS.2019.XV.057</a> <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:9" role="doc-endnote">
+      <p>Mengyu Fu, Alan Kuntz, Oren Salzman, Ron Alterovitz. Asymptotically optimal inspection planning via efficient near-optimal search on sampled roadmaps. The International Journal of Robotics Research, 42(4-5):150-175, 2023.  doi: <a href="https://doi.org/10.1177/02783649231171646">10.1177/02783649231171646</a> <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:10" role="doc-endnote">
+      <p>Oren Salzman. Algorithmic Motion Planning Meets Minimially-Invasive Robotic Surgery. IJCAI,pp 7039-7044, 2023. doi: <a href="https://doi.org/10.24963/ijcai.2023/804">10.24963/ijcai.2023/804</a> <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#research" class="page__taxonomy-item" rel="tag">research</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-01-14T00:00:00-05:00">2024-01-14</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Algorithmic+Motion+Planning+Meets+Minimally-Invasive+Robotic+Surgery+-+Part+2%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2024%2F01%2F14%2Finspection-mp.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2024%2F01%2F14%2Finspection-mp.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2024%2F01%2F14%2Finspection-mp.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/research/2024/01/07/needlesteering-mp-copy.html" class="pagination--pager" title="Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/OpenCRProject1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  </body>
+</html>

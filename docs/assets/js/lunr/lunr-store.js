@@ -212,6 +212,12 @@ var store = [{
         "title": "Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery",
         "excerpt":"A Case Study of Steerable Needles Steerable needles are a type of continuum robot, distinguished by their flexibility and capability to navigate through complex anatomical pathways. These robots are highly under-actuated, relying on interaction with the environment for movement and direction. The steering mechanism of steerable needles utilizes the asymmetric...","categories": ["research"],
         "tags": [],
-        "url": "/research/2024/01/07/needlesteering-mp.html",
+        "url": "/research/2024/01/07/needlesteering-mp-copy.html",
         "teaser": "/assets/images/posts/101-needle-steering.jpg"
+      },{
+        "title": "Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery - Part 2",
+        "excerpt":"A Case Study of Inspection Using the CRISP Robot In certain medical applications, physicians may want to inspect some region of interest for diagnostic purposes completing the procedure as fast as is safely possible to reduce costs and improve patient outcomes, especially if the patient is under anesthesia during the...","categories": ["research"],
+        "tags": [],
+        "url": "/research/2024/01/14/inspection-mp.html",
+        "teaser": "/assets/images/posts/research/inspection-mp.png"
       }]

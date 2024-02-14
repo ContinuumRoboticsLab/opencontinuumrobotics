@@ -1,6 +1,79 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.opencontinuumrobotics.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.opencontinuumrobotics.com/" rel="alternate" type="text/html" /><updated>2024-02-07T09:40:23-05:00</updated><id>https://www.opencontinuumrobotics.com/feed.xml</id><title type="html">Open Continuum Robotics Project</title><subtitle>Open Continuum Robotics Project by the Continuum Robotics Laboratory, University of Toronto
-Empowering everyone to build their own continuum robot and start their research.</subtitle><entry><title type="html">Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery</title><link href="https://www.opencontinuumrobotics.com/research/2024/01/07/needlesteering-mp.html" rel="alternate" type="text/html" title="Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery" /><published>2024-01-07T00:00:00-05:00</published><updated>2024-01-07T00:00:00-05:00</updated><id>https://www.opencontinuumrobotics.com/research/2024/01/07/needlesteering-mp</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/research/2024/01/07/needlesteering-mp.html"><![CDATA[<h1 id="a-case-study-of-steerable-needles">A Case Study of Steerable Needles</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.opencontinuumrobotics.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.opencontinuumrobotics.com/" rel="alternate" type="text/html" /><updated>2024-02-14T16:26:20-05:00</updated><id>https://www.opencontinuumrobotics.com/feed.xml</id><title type="html">Open Continuum Robotics Project</title><subtitle>Open Continuum Robotics Project by the Continuum Robotics Laboratory, University of Toronto
+Empowering everyone to build their own continuum robot and start their research.</subtitle><entry><title type="html">Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery - Part 2</title><link href="https://www.opencontinuumrobotics.com/research/2024/01/14/inspection-mp.html" rel="alternate" type="text/html" title="Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery - Part 2" /><published>2024-01-14T00:00:00-05:00</published><updated>2024-01-14T00:00:00-05:00</updated><id>https://www.opencontinuumrobotics.com/research/2024/01/14/inspection-mp</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/research/2024/01/14/inspection-mp.html"><![CDATA[<h1 id="a-case-study-of-inspection-using-the-crisp-robot">A Case Study of Inspection Using the CRISP Robot</h1>
+<p>In certain medical applications, physicians may want to inspect some region of interest for diagnostic purposes completing the procedure as fast as is safely possible to reduce costs and improve patient outcomes, especially if the patient is under anesthesia during the procedure.
+For example, the needle-diameter Continuum Reconfigurable Incisionless Surgical Parallel (CRISP) robot <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> was suggested to assist in the diagnosis of the cause of a pleural effusion (a serious medical condition that can cause the collapse of a patient’s lung) by visually inspecting the surface of the collapsed lung and chest wall inside the body<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> (see Figure below).</p>
+
+<h2 id="inspection-planning">Inspection Planning</h2>
+<p>This can modeled as an <strong>inspection-planning problem</strong> where we are given a robot equipped with a sensor and a set of points of interest (POI) in the environment to be inspected by the sensor. The problem calls for computing a minimal-length motion plan for the robot that maximizes the number of POI inspected.</p>
+
+<figure class="">
+  <img src="/assets/images/posts/research/inspection-mp.png" alt="" /><figcaption>
+      Example of Human anatomy inspection. Left: The CRISP robot is composed of needle-diameter tubes assembled into a parallel structure inside the patient’s body (in which a tube uses a snare system to grip a tube with a camera affixed to its tip) and then manipulated outside the body, allowing for smaller incisions and faster recovery times compared to traditional endoscopic tools (which have larger diameters). Middle: The CRISP robot in simulation inspecting a collapsed lung, a scenario segmented from a CT scan of a real patient with this condition. Visualization shows the robot (orange), the lungs (pink), and the pleural surface visible (green) and not visible (blue) by the robot’s camera sensor in its current configuration. Right: Two example configurations with inspected POI. The CRISP robot (orange) inspects POI (blue) on the organ surface with visible points covered by the cone shape (yellow).
+
+    </figcaption></figure>
+
+<p>Naively computed inspection plans may enable inspection of only a subset of the POI and may require motion plans significantly longer than an optimal plan, and hence may be undesirable or infeasible due to time constraints. Our goal is to compute kinematically feasible collision-free inspection plans that maximize the number of POI inspected, and of the plans that inspect those POI we compute a shortest one.</p>
+
+<h2 id="what-makes-it-challenging">What makes it challenging</h2>
+<p>Inspection planning is computationally challenging because we need to simultaneously reason  both about motion planning in a high-dimensional configuration space 
+(the space of all parameters that determine the shape of the robot) as well as about maximizing the number of POI inspected.</p>
+
+<p>There are multiple approaches to computing inspection plans, but here we focus on those that provide some formal guarantee on the quality of the solution. Generally speaking these methods (see, e.g., <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>) exhaustively search over the space of all motion plans thus guaranteeing asymptotic optimality.
+Roughly speaking, asymptotic optimality for inspection planning means these methods produce inspection plans whose length and the number of points inspected will asymptotically converge to those of an optimal inspection plan, given enough planning time.</p>
+
+<p>Let’s dive deeper into the term we used earlier “exhaustively search over the space of all motion plans”. To do so, let’s go back to basics and consider shortest-path computation for a while (it may be worthwhile to visit previous posts on motion planning <a href="/101/2023/06/23/intro-mp-part1.html">Part 1</a>, <a href="/101/2023/06/28/intro-mp-part2.html">Part 2</a>). When we want to compute the shortest path to some point we can use the fact that any sub-path of a shortest path is also a shortest path. Namely, if we know that the shortest path between <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">c</code> passes through intermediate point <code class="language-plaintext highlighter-rouge">b</code> and we need to consider two paths connecting <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>, then the shorter one will always be better and we can discard the longer one. This is because if we take the shortest path connecting <code class="language-plaintext highlighter-rouge">b</code> and <code class="language-plaintext highlighter-rouge">c</code> it will always be preferable to append it to the shortest path connecting <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>. This is referred to as <em>Bellman’s principle of optimality</em>.</p>
+
+<p>Going back to our problem of inspection planning this is not necessarily the case. To understand this, assume that we have two POIs and recall our two paths connecting <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>. Assume that the shorter one sees no POI while the longer one sees the first POI. Which one is better? We actually don’t know because it depends on the future: if we consider the first path, then we need to find a path between <code class="language-plaintext highlighter-rouge">b</code> and <code class="language-plaintext highlighter-rouge">c</code> that sees both POIs while if we consider the second path then we only need to find a path between <code class="language-plaintext highlighter-rouge">b</code> and <code class="language-plaintext highlighter-rouge">c</code> that sees the second POI.</p>
+
+<p>To summarize, for each intermediate point, we need to consider the trade-off between short paths that see less POI and long paths that see more POI. This set has a name, “The Pareto-optimal frontier”. The set of Pareto-optimal inspection plans is the minimal set of inspection plans such that each plan is either shorter or has better coverage of the POI than any other inspection plan.
+Unfortunately, computing this set comes at the price of very long computation times as the size of the search space is exponential in the number of POI.</p>
+
+<h2 id="iris---incremental-random-inspection-roadmap-search">IRIS - Incremental Random Inspection-roadmap Search</h2>
+<p>To solve the slow running times of existing algorithms, we introduced a new algorithm which we called Incremental Random Inspection-roadmap Search, or IRIS, which is an asymptotically optimal inspection-planning algorithm <sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">6</a></sup> <sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">7</a></sup>. Similar to sampling-based planners<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, IRIS incrementally constructs a sequence of increasingly dense roadmaps (graphs embedded in the configuration space) wherein each vertex represents a collision-free configuration and each edge a collision-free transition between configurations - and computes an inspection plan on the roadmaps as they are constructed.</p>
+
+<p>Unfortunately, even the problem of computing an optimal inspection plan on a graph (and not in the configuration space) is computationally hard (see discussion above on computing the Pareto-optimal frontier). To circumvent this, we compute a near-optimal inspection plan on each roadmap. Basically, we use the fact that if two paths are “almost the same length” and see “almost the same set of POI”, essentially they are the same for all practical purposes and we can store only one (we have formal definitions for the “almost”s and the “essentially” but theses are out of the scope of this post).</p>
+
+<p>This additional flexibility allows us to improve the quality of our inspection plan in an anytime manner, i.e., the algorithm can be stopped at any time and return the best inspection plan found up until that point.
+We achieve this by incrementally densifying the roadmap and then searching over the densified roadmap for a near-optimal inspection plan—a process that is repeated as time allows.
+By reducing the approximation factor (the mathematical tool we use to dictate which paths we consider paths as essentially the same) between iterations, we ensure  that our method is asymptotically optimal.</p>
+
+<p>This allowed us to demonstrate the efficacy of our approach in simulation for several complex robotic systems as demonstrated in the Figure above.</p>
+
+<p>For additional details on algorithmic motion planning for continuum robots, see <sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">8</a></sup> and references within.</p>
+
+<p><a href="https://doi.org/10.1177/02783649231171646" class="btn btn--info">Paper</a> 
+<a href="https://github.com/UNC-Robotics/IRIS" class="btn btn--danger">GitHub</a></p>
+
+<h2 id="references">References</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Arthur W Mahoney, Patrick L Anderson, Philip J Swaney, Fabien Maldonado, and Robert J Webster III. Reconfigurable parallel continuum robots for incisionless surgery. IEEE IROS, pp 4330–4336, 2016. doi: <a href="https://doi.org/10.1109/IROS.2016.7759637">10.1109/IROS.2016.7759637</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Patrick L Anderson, Arthur W Mahoney, and Robert J Webster III. Continuum reconfigurable parallel robots for surgery: Shape sensing and state estimation with uncertainty. IEEE Robot. Autom. Lett., 2(3):1617–1624, 2017. doi: <a href="https://doi.org/10.1109/LRA.2017.2678606">10.1109/LRA.2017.2678606</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Alan Kuntz, Chris Bowen, Cenk Baykal, Arthur W Mahoney, Patrick L Anderson, Fabien Maldonado, Robert J Webster III, and Ron Alterovitz. Kinematic design optimization of a parallel surgical robot to maximize anatomical visibility via motion planning. IEEE ICRA, pp 926–933, 2018. doi: <a href="https://doi.org/10.1109/ICRA.2018.8461135">10.1109/ICRA.2018.8461135</a> <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>Andreas Bircher, Kostas Alexis, Ulrich Schwesinger, Sammy Omari, Michael Burri, and Roland Siegwart. An incremental sampling–based approach to inspection planning: The rapidly–exploring random tree of trees. Robotica, 35(6):1327–1340, 2017. doi: <a href="https://doi.org/10.1017/S0263574716000084">10.1017/S0263574716000084</a> <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>Premysl Kafka, Jan Faigl, and Petr Vana. Random inspection tree algorithm in visual inspection with a realistic sensing model and differential constraints. IEEE ICRA, pp 2782–2787, 2016. doi: <a href="https://doi.org/10.1109/ICRA.2016.7487440">10.1109/ICRA.2016.7487440</a> <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8" role="doc-endnote">
+      <p>Mengyu Fu, Alan Kuntz, Oren Salzman, and Ron Alterovitz. Toward asymptotically-optimal inspection planning via efficient near-optimal graph search. In RSS, 2019. doi: <a href="https://doi.org/10.15607/RSS.2019.XV.057">10.15607/RSS.2019.XV.057</a> <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:9" role="doc-endnote">
+      <p>Mengyu Fu, Alan Kuntz, Oren Salzman, Ron Alterovitz. Asymptotically optimal inspection planning via efficient near-optimal search on sampled roadmaps. The International Journal of Robotics Research, 42(4-5):150-175, 2023.  doi: <a href="https://doi.org/10.1177/02783649231171646">10.1177/02783649231171646</a> <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:10" role="doc-endnote">
+      <p>Oren Salzman. Algorithmic Motion Planning Meets Minimially-Invasive Robotic Surgery. IJCAI,pp 7039-7044, 2023. doi: <a href="https://doi.org/10.24963/ijcai.2023/804">10.24963/ijcai.2023/804</a> <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Oren Salzman</name></author><category term="research" /><summary type="html"><![CDATA[A Case Study of Inspection Using the CRISP Robot In certain medical applications, physicians may want to inspect some region of interest for diagnostic purposes completing the procedure as fast as is safely possible to reduce costs and improve patient outcomes, especially if the patient is under anesthesia during the procedure. For example, the needle-diameter Continuum Reconfigurable Incisionless Surgical Parallel (CRISP) robot 1 2 was suggested to assist in the diagnosis of the cause of a pleural effusion (a serious medical condition that can cause the collapse of a patient’s lung) by visually inspecting the surface of the collapsed lung and chest wall inside the body3 (see Figure below). Arthur W Mahoney, Patrick L Anderson, Philip J Swaney, Fabien Maldonado, and Robert J Webster III. Reconfigurable parallel continuum robots for incisionless surgery. IEEE IROS, pp 4330–4336, 2016. doi: 10.1109/IROS.2016.7759637 &#8617; Patrick L Anderson, Arthur W Mahoney, and Robert J Webster III. Continuum reconfigurable parallel robots for surgery: Shape sensing and state estimation with uncertainty. IEEE Robot. Autom. Lett., 2(3):1617–1624, 2017. doi: 10.1109/LRA.2017.2678606 &#8617; Alan Kuntz, Chris Bowen, Cenk Baykal, Arthur W Mahoney, Patrick L Anderson, Fabien Maldonado, Robert J Webster III, and Ron Alterovitz. Kinematic design optimization of a parallel surgical robot to maximize anatomical visibility via motion planning. IEEE ICRA, pp 926–933, 2018. doi: 10.1109/ICRA.2018.8461135 &#8617;]]></summary></entry><entry><title type="html">Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery</title><link href="https://www.opencontinuumrobotics.com/research/2024/01/07/needlesteering-mp-copy.html" rel="alternate" type="text/html" title="Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery" /><published>2024-01-07T00:00:00-05:00</published><updated>2024-01-07T00:00:00-05:00</updated><id>https://www.opencontinuumrobotics.com/research/2024/01/07/needlesteering-mp%20copy</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/research/2024/01/07/needlesteering-mp-copy.html"><![CDATA[<h1 id="a-case-study-of-steerable-needles">A Case Study of Steerable Needles</h1>
 <p>Steerable needles are a type of continuum robot, distinguished by their flexibility and capability to navigate through complex anatomical pathways. These robots are highly under-actuated, relying on interaction with the environment for movement and direction. The steering mechanism of steerable needles utilizes the asymmetric tip’s interaction with tissue forces during insertion. By externally rotating the needle shaft, the tip’s orientation is adjusted, allowing for controlled deflection towards desired directions upon further insertion. This method enables the needle to maneuver around obstacles such as bones, vessels, and nerves, accessing multiple targets without complete withdrawal. The reliance on environmental interaction for actuation not only enhances the safety and efficacy of medical interventions but also presents challenges and opportunities in motion planning and control within robotics, emphasizing navigation in environments with complex constraints and precision requirements.</p>
 
 <h2 id="motion-planning-for-steerable-needles">Motion Planning for Steerable Needles</h2>
@@ -73,11 +146,7 @@ In the setting of lung biopsy, where the needle is deployed through a bronchosco
       <p>Oren Salzman. Algorithmic Motion Planning Meets Minimially-Invasive Robotic Surgery. IJCAI,pp 7039-7044, 2023. doi: <a href="https://doi.org/10.24963/ijcai.2023/804">10.24963/ijcai.2023/804</a> <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>Oren Salzman</name></author><category term="research" /><summary type="html"><![CDATA[A Case Study of Steerable Needles Steerable needles are a type of continuum robot, distinguished by their flexibility and capability to navigate through complex anatomical pathways. These robots are highly under-actuated, relying on interaction with the environment for movement and direction. The steering mechanism of steerable needles utilizes the asymmetric tip’s interaction with tissue forces during insertion. By externally rotating the needle shaft, the tip’s orientation is adjusted, allowing for controlled deflection towards desired directions upon further insertion. This method enables the needle to maneuver around obstacles such as bones, vessels, and nerves, accessing multiple targets without complete withdrawal. The reliance on environmental interaction for actuation not only enhances the safety and efficacy of medical interventions but also presents challenges and opportunities in motion planning and control within robotics, emphasizing navigation in environments with complex constraints and precision requirements.]]></summary></entry><entry><title type="html">Learning Kit for Tendon-driven Continuum Robots</title><link href="https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit.html" rel="alternate" type="text/html" title="Learning Kit for Tendon-driven Continuum Robots" /><published>2023-10-11T00:00:00-04:00</published><updated>2023-10-11T00:00:00-04:00</updated><id>https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit.html"><![CDATA[<p>Hi! I am Ankit and I’ve spend my summer 2023 at the <a href="https://crl.utm.utoronto.ca/">CRL</a> developing a learning kit for Tendon Driven Continuum Robots together with <a href="https://reinhardgrassmann.github.io/">Reinhard Grassmann</a>. The learning kit uses CRL’s latest design papers<sup id="fnref:fas" role="doc-noteref"><a href="#fn:fas" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:arXiv2023" role="doc-noteref"><a href="#fn:arXiv2023" class="footnote" rel="footnote">2</a></sup> and builds on the <a href="/hands-on/2023/04/28/one-actuation-module.html">open actuation module</a>. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots.</p>
-=======
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.opencontinuumrobotics.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.opencontinuumrobotics.com/" rel="alternate" type="text/html" /><updated>2023-10-17T15:05:16-04:00</updated><id>https://www.opencontinuumrobotics.com/feed.xml</id><title type="html">Open Continuum Robotics Project</title><subtitle>Open Continuum Robotics Project by the Continuum Robotics Laboratory, University of Toronto
-Empowering everyone to build their own continuum robot and start their research.</subtitle><entry><title type="html">Learning Kit for Tendon-driven Continuum Robots</title><link href="https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit.html" rel="alternate" type="text/html" title="Learning Kit for Tendon-driven Continuum Robots" /><published>2023-10-11T00:00:00-04:00</published><updated>2023-10-11T00:00:00-04:00</updated><id>https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit.html"><![CDATA[<p>Hi! I am Ankit and I’ve spent my summer 2023 at the <a href="https://crl.utm.utoronto.ca/">CRL</a> developing a learning kit for Tendon Driven Continuum Robots together with <a href="https://reinhardgrassmann.github.io/">Reinhard Grassmann</a>. The learning kit uses CRL’s latest design papers<sup id="fnref:fas" role="doc-noteref"><a href="#fn:fas" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:arXiv2023" role="doc-noteref"><a href="#fn:arXiv2023" class="footnote" rel="footnote">2</a></sup> and builds on the <a href="/hands-on/2023/04/28/one-actuation-module.html">open actuation module</a>. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots.</p>
->>>>>>> ead9e8603c53c61a546a790702e2ed0f74215548
+</div>]]></content><author><name>Oren Salzman</name></author><category term="research" /><summary type="html"><![CDATA[A Case Study of Steerable Needles Steerable needles are a type of continuum robot, distinguished by their flexibility and capability to navigate through complex anatomical pathways. These robots are highly under-actuated, relying on interaction with the environment for movement and direction. The steering mechanism of steerable needles utilizes the asymmetric tip’s interaction with tissue forces during insertion. By externally rotating the needle shaft, the tip’s orientation is adjusted, allowing for controlled deflection towards desired directions upon further insertion. This method enables the needle to maneuver around obstacles such as bones, vessels, and nerves, accessing multiple targets without complete withdrawal. The reliance on environmental interaction for actuation not only enhances the safety and efficacy of medical interventions but also presents challenges and opportunities in motion planning and control within robotics, emphasizing navigation in environments with complex constraints and precision requirements.]]></summary></entry><entry><title type="html">Learning Kit for Tendon-driven Continuum Robots</title><link href="https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit.html" rel="alternate" type="text/html" title="Learning Kit for Tendon-driven Continuum Robots" /><published>2023-10-11T00:00:00-04:00</published><updated>2023-10-11T00:00:00-04:00</updated><id>https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/hands-on/2023/10/11/learning-kit.html"><![CDATA[<p>Hi! I am Ankit and I’ve spent my summer 2023 at the <a href="https://crl.utm.utoronto.ca/">CRL</a> developing a learning kit for Tendon Driven Continuum Robots together with <a href="https://reinhardgrassmann.github.io/">Reinhard Grassmann</a>. The learning kit uses CRL’s latest design papers<sup id="fnref:fas" role="doc-noteref"><a href="#fn:fas" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:arXiv2023" role="doc-noteref"><a href="#fn:arXiv2023" class="footnote" rel="footnote">2</a></sup> and builds on the <a href="/hands-on/2023/04/28/one-actuation-module.html">open actuation module</a>. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots.</p>
 
 <p>The idea is something I can relate to largely. Robotics Education is only just taking off in most parts of the world. With this project, I designed something that students at my home university, Manipal Institute of Technology in India, would be able to build. For the design, we considered various constraints such as component availability, 3D printer access, and skill level.</p>
 
@@ -152,11 +221,7 @@ Empowering everyone to build their own continuum robot and start their research.
       <p>Reinhard M. Grassmann, Chengnan Shentu, Taqi Hamoda, Puspita Triana Dewi, Jessica Burgner-Kahrs. “Open Continuum Robotics – One Actuation Module to Create them All,” 2023, arXiv: <a href="https://arxiv.org/abs/2304.11850">2304.11850</a> <a href="#fnref:arXiv2023" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-<<<<<<< HEAD
-</div>]]></content><author><name>Ankit Aggarwal</name></author><category term="hands-on" /><summary type="html"><![CDATA[Hi! I am Ankit and I’ve spend my summer 2023 at the CRL developing a learning kit for Tendon Driven Continuum Robots together with Reinhard Grassmann. The learning kit uses CRL’s latest design papers1 2 and builds on the open actuation module. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots. Reinhard M. Grassmann, Priyanka Rao, Quentin Peyron, Jessica Burgner-Kahrs: FAS — A Fully Actuated Segment for Tendon-Driven Continuum Robots. Front. Robot. AI 9:873446, 2022. doi: 10.3389/frobt.2022.873446 &#8617; Reinhard M. Grassmann, Chengnan Shentu, Taqi Hamoda, Puspita Triana Dewi, Jessica Burgner-Kahrs. “Open Continuum Robotics – One Actuation Module to Create them All,” 2023, arXiv: 2304.11850 &#8617;]]></summary></entry><entry><title type="html">Introduction to Motion Planning for Continuum Robots - Part 2</title><link href="https://www.opencontinuumrobotics.com/101/2023/06/28/intro-mp-part2.html" rel="alternate" type="text/html" title="Introduction to Motion Planning for Continuum Robots - Part 2" /><published>2023-06-28T00:00:00-04:00</published><updated>2023-06-28T00:00:00-04:00</updated><id>https://www.opencontinuumrobotics.com/101/2023/06/28/intro-mp-part2</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/101/2023/06/28/intro-mp-part2.html"><![CDATA[<p>Today, we continue our introduction to motion planning for continuum robots. If you have missed Part 1 of the intro, look at <a href="/101/2023/06/23/intro-mp-part1.html">last week’s blog post</a> before you continue here!</p>
-=======
 </div>]]></content><author><name>Ankit Aggarwal</name></author><category term="hands-on" /><summary type="html"><![CDATA[Hi! I am Ankit and I’ve spent my summer 2023 at the CRL developing a learning kit for Tendon Driven Continuum Robots together with Reinhard Grassmann. The learning kit uses CRL’s latest design papers1 2 and builds on the open actuation module. The motivation for the learning kit stems from the Open Continuum Robotics Project’s fundamental objective of empowering the world with open hardware and open software to create their continuum robots. Reinhard M. Grassmann, Priyanka Rao, Quentin Peyron, Jessica Burgner-Kahrs: FAS — A Fully Actuated Segment for Tendon-Driven Continuum Robots. Front. Robot. AI 9:873446, 2022. doi: 10.3389/frobt.2022.873446 &#8617; Reinhard M. Grassmann, Chengnan Shentu, Taqi Hamoda, Puspita Triana Dewi, Jessica Burgner-Kahrs. “Open Continuum Robotics – One Actuation Module to Create them All,” 2023, arXiv: 2304.11850 &#8617;]]></summary></entry><entry><title type="html">Introduction to Motion Planning for Continuum Robots - Part 2</title><link href="https://www.opencontinuumrobotics.com/101/2023/06/28/intro-mp-part2.html" rel="alternate" type="text/html" title="Introduction to Motion Planning for Continuum Robots - Part 2" /><published>2023-06-28T00:00:00-04:00</published><updated>2023-06-28T00:00:00-04:00</updated><id>https://www.opencontinuumrobotics.com/101/2023/06/28/intro-mp-part2</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/101/2023/06/28/intro-mp-part2.html"><![CDATA[<p>Today, we continue our introduction to motion planning for continuum robots. If you have missed Part 1 of the intro, look at <a href="/101/2023/06/23/intro-mp-part1.html">last week’s blog post</a> before you continue here!</p>
->>>>>>> ead9e8603c53c61a546a790702e2ed0f74215548
 
 <h2 id="what-makes-motion-planning-particularly-challenging-for-continuum-robots">What makes motion planning particularly challenging for continuum robots?</h2>
 <p>First, let’s discuss one of the primary differences between continuum robots and more “traditional” robots (for lack of a better term)—modeling.</p>
@@ -876,297 +941,4 @@ In fact, non-medical applications for continuum robots are characterized by simi
 
 <p>Happy continuum robot visualization!</p>
 
-<p class="notice--info">The CRVisToolkit stems from the <a href="https://crl.utm.utoronto.ca">Continuum Robotics Laboratory</a> MATLAB codebase that grew over the past decade of our research activities. Numerous students contributed in one way or the other to the CTCR visualization and are acknowledged here in no particular order: Josephine Granna, Sven Lilge, and Malte Bormann.</p>]]></content><author><name>Jessica Burgner-Kahrs</name></author><category term="hands-on" /><summary type="html"><![CDATA[CRVisToolkit now provides utilities to create professional looking plots of concentric tube continuum robots using MATLAB.]]></summary></entry><entry><title type="html">A Short History on Concentric Tube Continuum Robots</title><link href="https://www.opencontinuumrobotics.com/history/2023/02/07/ctcr-history.html" rel="alternate" type="text/html" title="A Short History on Concentric Tube Continuum Robots" /><published>2023-02-07T00:00:00-05:00</published><updated>2023-02-07T00:00:00-05:00</updated><id>https://www.opencontinuumrobotics.com/history/2023/02/07/ctcr-history</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/history/2023/02/07/ctcr-history.html"><![CDATA[<p>The continuum robotics community usually refers to two papers when it comes to acknowledging the first appearance of concentric tube continuum robots. They both appeared at the same conference, IEEE International Conference on Intelligent Robots and Systems (IROS), the same year (2006), presented in the same session, one after the other, from two different author groups: (1) P. Sears and P. Dupont<sup id="fnref:Dupont" role="doc-noteref"><a href="#fn:Dupont" class="footnote" rel="footnote">1</a></sup> and (2) R.J. Webster III, A. Okamura, and N.J. Cowan<sup id="fnref:Webster" role="doc-noteref"><a href="#fn:Webster" class="footnote" rel="footnote">2</a></sup>. <em>(Note: ordered alhpabetically by first author)</em></p>
-
-<p>Sears &amp; Dupont refer to the idea as</p>
-<blockquote>
-  <p>a steerable needle technology using curved concentric tubes<sup id="fnref:Dupont:1" role="doc-noteref"><a href="#fn:Dupont" class="footnote" rel="footnote">1</a></sup></p>
-</blockquote>
-
-<p>and Webster, Okamura &amp; Cowan refer to the idea as</p>
-<blockquote>
-  <p>continuously ﬂexible snake-like robots, called active cannulas, that consist of several telescoping pre-curved superelastic tubes<sup id="fnref:Webster:1" role="doc-noteref"><a href="#fn:Webster" class="footnote" rel="footnote">2</a></sup></p>
-</blockquote>
-
-<p>What is less known, is the fact that the concept of a robotic device using concentric precurved tubes was already introduced one year earlier, in 2005, by Furusho et al.<sup id="fnref:Furusho" role="doc-noteref"><a href="#fn:Furusho" class="footnote" rel="footnote">3</a></sup> at the IEEE International Conference on Mechatronics &amp; Automation. They provide a conceptual drawing of what they call a</p>
-<blockquote>
-  <p>curved multi-tube catheter<sup id="fnref:Furusho:1" role="doc-noteref"><a href="#fn:Furusho" class="footnote" rel="footnote">3</a></sup></p>
-</blockquote>
-
-<p>consisting of an outer and inner guide, both precurved elastic tubes, and a third innermost tube/needle. Furusho et al. state the kinematics of this robotic device and present a motorized prototype that they teleoperated.</p>
-
-<p>This is not to say that Furusho et al. was not recognized. Their work has been acknowledged, but just not as much. The number of citations (obtained from Google Scholar on Jan 27, 2023) show a quite drastic difference. It is hard to tell, and would be pure speculation, why the two papers from IROS 2006 are more often cited than Furusho et al. <strong>And yet, as we are all standing on the shoulders of giants in academia, we should not forget those who paved the way and published innovative ideas first.</strong></p>
-
-<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/history/ctcr_first_citations.jpg" alt="image" style="float: center" /></p>
-
-<p class="notice">In his PhD thesis, available open-access <a href="https://ir.vanderbilt.edu/handle/1803/13344?show=full">here</a>, Hunter Gilbert provides a thorough comprehensive historical perspective on the origin of curved mutli-tube medical tools and how those relate to concentric tube continuum robots in Section 1.1. This section is also part of Gilbert, Rucker &amp; Webster<sup id="fnref:Gilbert" role="doc-noteref"><a href="#fn:Gilbert" class="footnote" rel="footnote">4</a></sup> review paper on concentric tube continuum robots.</p>
-
-<h2 id="references">References</h2>
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:Dupont" role="doc-endnote">
-      <p>P. Sears &amp; P. Dupont: A Steerable Needle Technology Using Curved Concentric Tubes. IEEE/RSJ International Conference on Intelligent Robots and Systems, pp. 2850-2856, 2006. doi: <a href="https://doi.org/10.1109/IROS.2006.282072">10.1109/IROS.2006.282072</a> <a href="#fnref:Dupont" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:Dupont:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
-    </li>
-    <li id="fn:Webster" role="doc-endnote">
-      <p>R. J. Webster, A. M. Okamura, N. J. Cowan: Toward Active Cannulas: Miniature Snake-Like Surgical Robots. IEEE/RSJ International Conference on Intelligent Robots and Systems, pp. 2857-2863, 2006. doi: <a href="https://doi.org/10.1109/IROS.2006.282073">10.1109/IROS.2006.282073</a>. <a href="#fnref:Webster" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:Webster:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
-    </li>
-    <li id="fn:Furusho" role="doc-endnote">
-      <p>J. Furusho, T. Ono, R. Murai, T. Fujimoto, Y. Chiba, H. Horio: Development of a curved multi-tube (CMT) catheter for percutaneous umbilical blood sampling and control methods of CMT catheters for solid organs. IEEE International Conference Mechatronics and Automation, pp. 410-415, 2005. doi: <a href="https://doi.org/10.1109/ICMA.2005.1626582">10.1109/ICMA.2005.1626582</a> <a href="#fnref:Furusho" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:Furusho:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
-    </li>
-    <li id="fn:Gilbert" role="doc-endnote">
-      <p>H.B. Gilbert, D.C. Rucker,  R.J. Webster III: Concentric Tube Robots: The State of the Art and Future Directions. International Symposium on Robotics Research, pp. 253–269, 2016. <a href="https://doi.org/10.1007/978-3-319-28872-7_15">https://doi.org/10.1007/978-3-319-28872-7_15</a>. <a href="#fnref:Gilbert" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-<<<<<<< HEAD
-</div>]]></content><author><name>Jessica Burgner-Kahrs</name></author><category term="history" /><summary type="html"><![CDATA[The first concentric tube continuum robot was published in 2005! And yet, the community usually refers to two papers from 2006 as the first. Why?]]></summary></entry></feed>
-=======
-</div>]]></content><author><name>Jessica Burgner-Kahrs</name></author><category term="history" /><summary type="html"><![CDATA[The first concentric tube continuum robot was published in 2005! And yet, the community usually refers to two papers from 2006 as the first. Why?]]></summary></entry><entry><title type="html">Constant-Curvature Modeling of Concentric Tube Continuum Robots</title><link href="https://www.opencontinuumrobotics.com/101/2023/01/27/ctcr-cc-model.html" rel="alternate" type="text/html" title="Constant-Curvature Modeling of Concentric Tube Continuum Robots" /><published>2023-01-27T00:00:00-05:00</published><updated>2023-01-27T00:00:00-05:00</updated><id>https://www.opencontinuumrobotics.com/101/2023/01/27/ctcr-cc-model</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/101/2023/01/27/ctcr-cc-model.html"><![CDATA[<p>Today, we are looking at how <a href="/101/2022/11/18/ctcr-intro.html">concentric tube continuum robots</a> (CTCR) are modelled using the <a href="/101/2022/12/02/cc-kinematics.html">constant curvature kinematics framework</a>.
-We derive the mapping for general CTCR composed of multiple tubes and then discuss the
-limitations.</p>
-
-<p>Under the assumption that the robot’s shape is composed of
-constant curvature segments, it can be expressed as a concatenation of
-multiple circular arcs. Each circular arc corresponds to one segment \(i\)
-and each segment is described by its length \(\ell_{i}\), curvature
-\(\kappa_{i}\), and bending plane angle \(\phi_{i}\). To determine the robot
-dependent mapping for a CTCR, we need to identify the number \(m\) of
-segments present. As a segment is characterized by constant curvature,
-we have to locate transitions points along the robot where the curvature
-changes.</p>
-
-<h2 id="robot-parameters">Robot Parameters</h2>
-
-<p>We identify a tube within the CTCR with index
-\(j \in \lbrack 1,N_{t}\rbrack\) where \(N_{t}\) is the number of tubes,
-\(j = 1\) is the innermost tube, and \(j = N_{t}\) is the outermost tube.
-Each tube is characterized by it length \(L_{j} = L_{j}^{s} + L_{j}^{c}\)
-where \(L_{j}^{s}\) is the length of the straight section and \(L_{j}^{c}\)
-is the length of the curved section (see Figure 5 left). We assume that
-the curved section has constant curvature \(\kappa_{j}^{*}\). The
-precurvature of a tube is deﬁned in the xz-plane, where the z axis is
-tangential to the tube’s straight section pointing to the tip.
-Furthermore, each tube’s outer \(\text{OD}_{j}\) and inner \(\text{ID}_{j}\)
-diameter are specified. Lastly, the modulus of elasticity \(E_{j}\)
-(Young’s modulus) is determined by
-the tube’s material. Superelastic NiTi tubes
-typically come with elastic modulus of \(28 - 83\) GPa.</p>
-
-<p>The CTCR joint space is given as
-\(\mathbf{q} = \lbrack\alpha_{1},\ldots,\alpha_{N_{t}},\beta_{1},\ldots,\beta_{N_{t}}\rbrack\)
-where \(\alpha_{j} \in \lbrack - \pi,\pi)\) is the rotation angle about
-the z-axis and \(\beta_{j} \in \lbrack - L_{j},0\rbrack\) is the
-translation along the z-axis of tube \(j\). If all \(\alpha_{j} = 0\), the
-centreline stays in the x-z-plane and curves toward the positive x axis.
-The translational joint variables are subject to the following
-constraints</p>
-
-\[\beta_{1} \leq \ldots \leq \beta_{N_{t}} \leq 0\]
-
-<p>and</p>
-
-\[L_{N_{t}} + \beta_{N_{t}} \leq \ldots \leq L_{1} + \beta_{1}\]
-
-<p>These arise from the telescoping nature of the tube assembly and the
-actuation principle, i.e., each tube can be retracted at maximum by its
-own length. Furthermore, we require the tubes to extend one another
-outside the actuation unit and to not be fully retracted within any more
-outer tube. In the robot’s zero position, all tubes are fully retracted
-and align with the front plate of the actuation unit. Below, we illustrate the joint space of a CTCR with \(N_{t} = 3\) and the base
-coordinate frame.</p>
-
-<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_ctcr_model_parameter.png" alt="image" /></p>
-
-<p>The robot dependent mapping is based on the principles of beam mechanics
-to solve the forward kinematic problem. We assume the tubes to deform
-only in bending and not in twisting, such that the resulting centerline
-curvature can be computed in closed-form based on a moment equilibrium
-by applying Bernoulli–Euler beam mechanics.</p>
-
-<h2 id="resultant-curvature-of-concentric-tubes">Resultant Curvature of Concentric Tubes</h2>
-
-<p>To describe the complete shape of a CTCR, we will ﬁrst develop a model
-for the shape of a single segment composed of several fully overlapping
-concentric curved tubes. Let’s first consider the example depicted here.</p>
-
-<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_ctcr_cc_model_equilibrium.png" alt="image" style="float: center" /></p>
-
-<p>For a collection of two tubes with circular precurvatures
-\(\kappa_{1}^{*}\) and \(\kappa_{2}^{*}\), once inserted into each other,
-the resultant constant curvature \(\kappa\) is common to both tubes. Here,
-the tubes have not been axially rotated with respect to one another and
-their natural curvature planes are aligned. The bending moments \(M_{j}\)
-(in Nm) will be constant along the length of each tube and can be
-described by</p>
-
-\[M_{1} = (\kappa - \kappa_{1}^{*})EI_{1}\]
-
-<p>and</p>
-
-\[M_{2} = (\kappa - \kappa_{2}^{*})EI_{2}\]
-
-<p>where \(E\) is the Young’s modulus (in Pa), and \(I_{1}\) and \(I_{2}\) are
-the second area moment (in \(m^{4}\)) of the symmetric cross section of
-the respective tube. The second area moment \(I\) is a geometrical
-property of the tube’s cross section area which reflects how its points
-are distributed with regard to the central axis. As a
-tube’s <img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_ctcr_tube_cross_section.png" alt="image" style="float: right" /> 
-cross section is an annulus, the second
-area moment can be determined from the inner and outer diameter as</p>
-
-\[I_{j} = \frac{\pi}{64}(\text{OD}_{j}^{4} - \text{ID}_{j}^{4})\]
-
-<p>We can describe the resultant curvature of these two overlapping tubes
-by evaluating the moment equilibrium</p>
-
-\[M_{1} + M_{2} = 0\]
-
-<p>and resolving for</p>
-
-\[\kappa = \frac{EI_{1}\kappa_{1}^{*} + EI_{2}\kappa_{2}^{*}}{EI_{1} + EI_{2}}\]
-
-<p>This can be generalized to collections of \(N_{t}\) axially aligned tubes</p>
-
-\[\kappa = \frac{\sum_{j = 1}^{N_{t}}EI_{j}\kappa_{j}^{*}}{\sum_{j = 1}^{N_{t}}EI_{j}}\]
-
-<p>Let’s now consider the example depicted here.<img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_ctcr_cc_bending_plane.png" alt="image" style="float: right" /> When precurved
-tubes are rotated axially, their natural planes of curvature are no
-longer aligned and the direction of the bending moments they apply
-changes. The tubes exert a moment on one another about their respective
-y-axes, which is caused by their initial precurvature about this
-direction. The tubes are rotated by angles \(\alpha_{1}\) and
-\(\alpha_{2}\), and the equilibrium plane angle is \(\phi\). As before, each
-tube experiences a constant bending moment
-\(M_{1} = (\kappa - \kappa_{1}^{*})EI_{1}\) and
-\(M_{2} = (\kappa - \kappa_{2}^{*})EI_{2}\), but now these bending moments
-have two component projections on the base frame x and y axes. The
-equilibrium state \(M_{1} + M_{2} = 0\) yields</p>
-
-<p>\(\begin{bmatrix}
-\kappa_{x} \\
-\kappa_{y} \\
-\end{bmatrix} = \frac{1}{EI_{1} + EI_{2}}\begin{pmatrix}
-EI_{1}\kappa_{1}^{*}\lbrack\begin{matrix}
-\cos\alpha_{1} \\
-\sin\alpha_{1} \\
-\end{matrix}\rbrack + EI_{2}\kappa_{2}^{*}\lbrack\begin{matrix}
-\cos\alpha_{2} \\
-\sin\alpha_{2} \\
-\end{matrix}\rbrack \\
-\end{pmatrix}\).</p>
-
-<p>For general number of concentric tubes, this can be generalized to</p>
-
-\[\begin{bmatrix}
-\kappa_{x} \\
-\kappa_{y} \\
-\end{bmatrix} = \frac{1}{\sum_{j = 1}^{N_{t}}EI_{j}}\overset{N_{t}}{\sum_{j = 1}}EI_{j}\kappa_{j}^{*}\begin{bmatrix}
-\cos\alpha_{j} \\
-\sin\alpha_{j} \\
-\end{bmatrix}(Eq. 1)\]
-
-<p>Given the components of the resultant curvature, we can determine the
-bending plane angle \(\phi = \text{atan2}(\kappa_{y},\kappa_{x})\) and
-curvature \(\kappa = \sqrt{\kappa_{x}^{2} + \kappa_{y}^{2}}\). Note, that
-\(\phi\) is undefined for straight segments, i.e., for zero curvature as
-\(\text{atan}2(0,0) = \text{nan}\). In this special case, the rotation
-angle \(\alpha\) of the outermost present tube in the segment is used as
-\(\phi\).</p>
-
-<h2 id="determining-the-arc-parameters-of-a-ctcr">Determining the Arc Parameters of a CTCR</h2>
-
-<p>The first step in determining the robot dependent mapping of a CTCR is
-determining the number of segments \(m\) and their lengths \(\ell_{i}\) for
-\(i \in \lbrack 1,m\rbrack\). These are deﬁned by transition point
-locations, where the component tubes either end or transition from their
-straight to curved section. The set \(T\) of transition points can be
-determined as algebraic functions of the tube geometry and the
-translational joint positions \(\beta_{j}\)</p>
-
-\[T = \text{sort}_{\text{asc}}\{ 0,\beta_{n} + L_{n}^{s},\beta_{n} + L_{n},\ldots\beta_{1} + L_{1}^{s},\beta_{1} + L_{1}\}\]
-
-<p>From the resulting values of the set T, all duplicate elements are
-omitted, i.e., tube sections terminate at the same location, as well as
-all elements \(&lt; 0\), i.e., the respective tube section is located within
-the actuation unit. While the maximum number of segments is \(2N_{t}\),
-the number of actual segments is dependent on the current joint values
-\(\mathbf{q}\) as some segments might be located within the actuation
-unit. Here, we show an example of a CTCR composed of three tubes and
-its transition points.</p>
-
-<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_ctcr_cc_tube_transitions.png" alt="image" /></p>
-
-<p>Using the transition points T, the length of the constant curvature
-segments of the CTCR can be determined as</p>
-
-\[\begin{matrix}
-\ell_{1} &amp; = T_{1} - T_{0} \\
-\ell_{2} &amp; = T_{2} - T_{1} \\
-\ldots &amp; \\
-\ell_{m} &amp; = T_{m} - T_{m - 1} \\
-\end{matrix}\]
-
-<p>In a second step, we can determine \(\kappa_{x}\) and \(\kappa_{z}\) for
-each segment \(i \in \lbrack 1,m\rbrack\) enclosed by the transition
-points \(\lbrack T_{i - 1},T_{i}\rbrack\) using Equation (\(1\)), and then
-\(\kappa_{i}\) and \(\phi_{i}\). Note, that not all tubes are present in
-each segment, such that only the present ones with their respective
-parameters have to be considered (either zero curvature in straight tube
-sections or the respective precurvature in curved sections, alongside ID
-and OD, as well as \(E\)).</p>
-
-<p>The <a href="/101/2022/12/02/cc-kinematics.html">constant curvature kinematics franmework</a> assumes that \(\phi\) is
-expressed locally, i.e., w.r.t. the previous segment for
-the robot independent mapping. Consequently, after determining
-\(\phi_{i}\) expressed in the base frame for each segment using Equation
-(\(1\)), we will need to apply a final correction step</p>
-
-<p>\(\phi_{i} = \phi_{i} - \phi_{i - 1}\).</p>
-
-<h2 id="remarks">Remarks</h2>
-
-<p>The model introduced today makes multiple simplifying
-assumptions, i.e., pure bending, no torsional deformation, no friction,
-no effect of gravitation and external forces. The assumption of infinite
-torsional rigidity in the tubes is only reasonable as long as the
-relative rotation angles between the tubes are small and the straight
-sections of each tube are short. Considering torsional deformation is
-particularly important in the straight transmission sections of the
-tubes that lie between the actuators and the first curved link, since
-these transmissions are long relative to the curved sections. In fact,
-despite the simple actuation of component tubes, the resulting motion of
-CTCR is characterized by a highly non-linear behaviour due to the
-elastic interactions between the tubes.</p>
-
-<p>An advanced modelling approach is to leverage the elasticity theory, in
-particular the Cosserat theory of elastic rods. This involves writing
-rod equation for each tube, and then enforce concentricity by requiring
-all tubes to conform to the same curvature as a function of arc-length,
-leaving them free to rotate axially with respect to each other. This
-results in a system of differential equations with mixed boundary
-conditions. The boundary conditions at the base of the robot are the
-axial angles of the tubes, and the boundary conditions at the tip are
-internal moments that vanish because there is no material beyond the tip
-to support them. Note that after this mechanics problem is solved, to
-determine the axial tube angles, one must still integrate along the
-robot to determine the space curve of the robot itself. Experimental
-testing of the model has shown that with calibration, mean error in the
-prediction of tip position can be as low as 1% to 3% of overall robot
-length. With typical CTCR length of 200-300mm, this means that we can
-estimate the pose of the tip with an error of about 2-9 mm. This is the
-most accurate model existing for CTCR to date. As this 101 category of the OpenContinuumRobotics Blog is an
-introduction to continuum robotics, we do not cover advanced modelling approaches for CTCR (yet!).</p>
-
-<h2 id="further-reading">Further Reading</h2>
-
-<p>Webster, R.J. &amp; Jones, B.A., 2010. Design and Kinematic Modeling of
-Constant Curvature Continuum Robots: A Review. The International Journal
-of Robotics Research, 29(13), pp. 1661–1683.
-<a href="https://doi.org/10.1177%2F0278364910368147">https://doi.org/10.1177/0278364910368147</a><br />
-Section 3.2.3</p>
-
-<p>Mahoney, A.W., Gilbert, H.B., Webster, R.J., 2018. A Review of
-Concentric Tube Robots: Modeling, Control, Design, Planning, and
-Sensing. The Encyclopedia of Medical Robotics, Chapter 7, pp. 181-202.
-<a href="https://doi.org/10.1142/9789813232266_0007">https://doi.org/10.1142/9789813232266_0007</a></p>]]></content><author><name>Jessica Burgner-Kahrs</name></author><category term="101" /><summary type="html"><![CDATA[A simple free-space model for CTCR.]]></summary></entry></feed>
->>>>>>> ead9e8603c53c61a546a790702e2ed0f74215548
+<p class="notice--info">The CRVisToolkit stems from the <a href="https://crl.utm.utoronto.ca">Continuum Robotics Laboratory</a> MATLAB codebase that grew over the past decade of our research activities. Numerous students contributed in one way or the other to the CTCR visualization and are acknowledged here in no particular order: Josephine Granna, Sven Lilge, and Malte Bormann.</p>]]></content><author><name>Jessica Burgner-Kahrs</name></author><category term="hands-on" /><summary type="html"><![CDATA[CRVisToolkit now provides utilities to create professional looking plots of concentric tube continuum robots using MATLAB.]]></summary></entry></feed>
