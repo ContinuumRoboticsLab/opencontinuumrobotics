@@ -22,6 +22,9 @@ pr:
   - label     : "Email"
     icon      : "fas fa-fw fa-envelope-square"
     url       : "mailto:priyankaprakash.rao@mail.utoronto.ca"
+  - label     : "Website"
+    icon      : "fas fa-fw fa-link"
+    url       : "https://priyankarao257.github.io/"
 
 sl:
   name        : "Sven Lilge"
