@@ -220,4 +220,10 @@ var store = [{
         "tags": [],
         "url": "/research/2024/01/14/inspection-mp.html",
         "teaser": "/assets/images/posts/research/inspection-mp.png"
+      },{
+        "title": "Contact-Aided Navigation of Tendon-driven Continuum Robots",
+        "excerpt":"One of the most predominant features of tendon-driven continuum robots is their compliance. These ‘bendy’ flexible robots are widely used for their ability to conform to curvilinear shapes in response to forces applied by varied actuation. The most common actuation is the straight tendon routing (where the tendons run in...","categories": ["research"],
+        "tags": [],
+        "url": "/research/2024/04/05/tdcr-can.html",
+        "teaser": "/assets/images/posts/research/can_teaser.png"
       }]

@@ -1,5 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.opencontinuumrobotics.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.opencontinuumrobotics.com/" rel="alternate" type="text/html" /><updated>2024-04-03T10:48:09-04:00</updated><id>https://www.opencontinuumrobotics.com/feed.xml</id><title type="html">Open Continuum Robotics Project</title><subtitle>Open Continuum Robotics Project by the Continuum Robotics Laboratory, University of Toronto
-Empowering everyone to build their own continuum robot and start their research.</subtitle><entry><title type="html">Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery - Part 2</title><link href="https://www.opencontinuumrobotics.com/research/2024/01/14/inspection-mp.html" rel="alternate" type="text/html" title="Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery - Part 2" /><published>2024-01-14T00:00:00-05:00</published><updated>2024-01-14T00:00:00-05:00</updated><id>https://www.opencontinuumrobotics.com/research/2024/01/14/inspection-mp</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/research/2024/01/14/inspection-mp.html"><![CDATA[<h1 id="a-case-study-of-inspection-using-the-crisp-robot">A Case Study of Inspection Using the CRISP Robot</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.opencontinuumrobotics.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.opencontinuumrobotics.com/" rel="alternate" type="text/html" /><updated>2024-04-05T20:54:55-04:00</updated><id>https://www.opencontinuumrobotics.com/feed.xml</id><title type="html">Open Continuum Robotics Project</title><subtitle>Open Continuum Robotics Project by the Continuum Robotics Laboratory, University of Toronto
+Empowering everyone to build their own continuum robot and start their research.</subtitle><entry><title type="html">Contact-Aided Navigation of Tendon-driven Continuum Robots</title><link href="https://www.opencontinuumrobotics.com/research/2024/04/05/tdcr-can.html" rel="alternate" type="text/html" title="Contact-Aided Navigation of Tendon-driven Continuum Robots" /><published>2024-04-05T00:00:00-04:00</published><updated>2024-04-05T00:00:00-04:00</updated><id>https://www.opencontinuumrobotics.com/research/2024/04/05/tdcr-can</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/research/2024/04/05/tdcr-can.html"><![CDATA[<p>One of the most predominant features of tendon-driven continuum robots is their compliance. These ‘bendy’ flexible robots are widely used for their ability to conform to curvilinear shapes in response to forces applied by varied actuation. The most common actuation is the straight tendon routing (where the tendons run in a straight path, parallel to the backbone). In a hand-wavy approximation, this actuation can be assumed to apply a constant moment throughout the backbone, resulting in a constant curvature (also explained in a previous <a href="/101/2022/12/09/tdcr-cc-model.html">blogpost</a>. Introducing changes in the routing patterns<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> or adding mechanisms<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> results in additional forces/moments in the system, resulting in non-constant curvature along a single segment.</p>
+
+<figure class="">
+  <img src="/assets/images/posts/research/tdcr.gif" alt="" /></figure>
+
+<p>While changing the robot design mechanically is viable, we asked ourselves whether we can harness more from the traditional single segment straight routing design to achieve more variation than just a constant-curvature. What if these additional forces/moments came from the environment instead of mechanical additions - which would be possible if the robot now leveraged the obstacles to change its curvature? This idea inspired our research on contact-aided navigation for these robots.</p>
+
+<h2 id="reaching-a-target">Reaching a target</h2>
+
+<p>Let’s consider a single segment TDCR in a planar workspace, cluttered with obstacles marked in blue. If the robot tip needs to reach the target position (red dot in the animation below), it is a fairly simple task. You basically need to select actutation values that minimize the distance between the tip and the target. We can set up a simple joint space search for this - where we consider three possible actions:</p>
+<ol>
+  <li>segment length increase (as its inserted into the workspace),</li>
+  <li>tendon length decrease, and</li>
+  <li>tendon length increase.</li>
+</ol>
+
+<p>Starting from an initial joint value, these three actions can be sequentially applied to build a lattice-based representation of the configuration space.</p>
+
+<p class="notice">A lattice is a discretization of the configuration space into a set of states, and connections between these states, where every connection represents a feasible path.<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup></p>
+
+<figure class="">
+  <img src="/assets/images/posts/research/can.gif" alt="" /></figure>
+
+<p>For now, lets keep optimality aside and focus on finding a solution by performing a greedy search. The greedy search is guided by a heuristic - for our case, we can set this heuristic to simply be the Euclidean distance between the robot tip and the target. This simple heuristic works quite well! There some additional changes you can make to prevent it from getting stuck in minimas but we will leave that discussion for another day.</p>
+
+<h2 id="reaching-a-target-pose">Reaching a target pose</h2>
+<p>Now that we have a solution to reach a target position, we can add an additional layer of challenge to our problem - How can we reach a target, with not just the desired position, but a desired orientation as well? We can retain all the machinery from the previous section, of building a lattice in the configuration space by sequentially applying joint space actions. But the more important question we need to answer is:</p>
+
+<p><strong>What would the heuristic look like to reach a target pose?</strong></p>
+
+<p>To reach a desired pose, we need to control x, y, and theta of the tip. However, we only have two controllable degrees-of-freedom where we can either change the length of the segment or bend it. The single segment is essentially underactuated for this task - leveraging contact-aided navigation allows the segment to use the obstacle as a kind-of passive degree of freedom to control the tip.</p>
+
+<p>Our work, recently published in the IEEE Robotics &amp; Automation Letters<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>, seeks to solve this problem. The heuristic basically assumes that the end-effector’s motion can be modeled as a series of constant-curvature arcs - arcs whose end-points can only lie on the surface of obstacles. This condition ensures that the use of obstacles as a degree of freeodm is captured by the heuristic.</p>
+
+<p>You can watch some of the solutions found by our method in the video below :</p>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/da3eYGwzxts" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<h2 id="open-source-materials">Open-Source materials</h2>
+<p>For now, we are releasing a preliminary version of the TDCR that can account for contacts on GitHub (link below). It is based on the kinematic model proposed by Ashwin et al. <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>.</p>
+
+<p>Please watch this space for more details and tutorials!</p>
+
+<p><a href="https://arxiv.org/pdf/2402.14175" class="btn btn--info">Paper</a> 
+<a href="https://github.com/ContinuumRoboticsLab/OpenTDCRContactModel" class="btn btn--danger">GitHub</a> 
+<a href="https://youtu.be/da3eYGwzxts" class="btn btn--success">Video</a></p>
+
+<h2 id="references">References</h2>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>R.M. Grassmann, P. Rao, Q. Peyron, J. Burgner-Kahrs: FAS—A Fully Actuated Segment for Tendon-Driven Continuum Robots. Frontiers in Robotocs and AI, 9:873446, 2022. doi: <a href="https://doi.org/10.3389/frobt.2022.873446">10.3389/frobt.2022.873446</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>P. Rao, C. Pogue, Q. Peyron, E. Diller, J. Burgner-Kahrs: Modeling and Analysis of Tendon-Driven Continuum Robots for Rod-Based Locking. IEEE Robotics &amp; Automation Letters, 8(6):3126 - 3133, 2023. doi: <a href="https://doi.org/10.1109/LRA.2023.3264869">10.1109/LRA.2023.3264869</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>B. J. Cohen, G. Subramania, S. Chitta, M. Likhachev: Planning for Manipulation with Adaptive Motion Primitives.  IEEE International Conference on Robotics and Automation, pp. 5478-5485, 2011. doi: <a href="https://doi.org/10.1109/ICRA.2011.5980550">10.1109/ICRA.2011.5980550</a> <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>P. Rao, O. Salzmann, J. Burgner-Kahrs: Towards Contact-Aided Motion Planning for Tendon-Driven Continuum Robots. IEEE Robotics &amp; Automation Letters, 2024. doi: <a href="https://doi.org/10.1109/LRA.2024.3383211">10.1109/LRA.2024.3383211</a> <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>K.P. Ashwin, Soumya Kanti Mahapatra, Ashitava Ghosal: Profile and contact force estimation of cable-driven continuum robots in presence of obstacles. Mechanism and Machine Theory, 164:104404, 2021. doi: <a href="https://doi.org/10.1016/j.mechmachtheory.2021.104404">10.1016/j.mechmachtheory.2021.104404</a> <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Priyanka Rao</name></author><category term="research" /><summary type="html"><![CDATA[What if we moved away from the classical obstacle avoidance paradigm in robotics and allowed continuum robots to leverage contact with the environments?]]></summary></entry><entry><title type="html">Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery - Part 2</title><link href="https://www.opencontinuumrobotics.com/research/2024/01/14/inspection-mp.html" rel="alternate" type="text/html" title="Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery - Part 2" /><published>2024-01-14T00:00:00-05:00</published><updated>2024-01-14T00:00:00-05:00</updated><id>https://www.opencontinuumrobotics.com/research/2024/01/14/inspection-mp</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/research/2024/01/14/inspection-mp.html"><![CDATA[<h1 id="a-case-study-of-inspection-using-the-crisp-robot">A Case Study of Inspection Using the CRISP Robot</h1>
 <p>In certain medical applications, physicians may want to inspect some region of interest for diagnostic purposes completing the procedure as fast as is safely possible to reduce costs and improve patient outcomes, especially if the patient is under anesthesia during the procedure.
 For example, the needle-diameter Continuum Reconfigurable Incisionless Surgical Parallel (CRISP) robot <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> was suggested to assist in the diagnosis of the cause of a pleural effusion (a serious medical condition that can cause the collapse of a patient’s lung) by visually inspecting the surface of the collapsed lung and chest wall inside the body<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> (see Figure below).</p>
 
@@ -890,55 +960,4 @@ In fact, non-medical applications for continuum robots are characterized by simi
       <p>R.M. Grassmann, P. Rao, Q. Peyron, J. Burgner-Kahrs: FAS—A Fully Actuated Segment for Tendon-Driven Continuum Robots. Frontiers in Robotocs and AI, 9:873446, 2022. doi: <a href="https://doi.org/10.3389/frobt.2022.873446">10.3389/frobt.2022.873446</a> <a href="#fnref:Grassmann" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>Jessica Burgner-Kahrs</name></author><category term="101" /><summary type="html"><![CDATA[Let's conceptually think about tendon routing disks. They provide channels to route the tendon actuating a continuum robot.]]></summary></entry><entry><title type="html">CRVisToolkit: Visualizing Concentric Tube Continuum Robots</title><link href="https://www.opencontinuumrobotics.com/hands-on/2023/02/17/CRVis-ctcr.html" rel="alternate" type="text/html" title="CRVisToolkit: Visualizing Concentric Tube Continuum Robots" /><published>2023-02-17T00:00:00-05:00</published><updated>2023-02-17T00:00:00-05:00</updated><id>https://www.opencontinuumrobotics.com/hands-on/2023/02/17/CRVis-ctcr</id><content type="html" xml:base="https://www.opencontinuumrobotics.com/hands-on/2023/02/17/CRVis-ctcr.html"><![CDATA[<p>In our second release of the Continuum Robot Visualization Toolkit (<a href="https://github.com/ContinuumRoboticsLab/CRVisToolkit">CRVisToolkit</a>), you will find a new set of MATLAB functions for visualization and plotting of concentric tube continuum robots (CTCR). With a framed curve represented by a series $n$ of 4x4 homogeneous transformation matrices (reshaped columnwise into a $n$x16 vector), indices of the tube end points, as well as the tube radii as input, you to create a MATLAB figure. In addition, we provide a utility function <code class="language-plaintext highlighter-rouge">robotindependentmapping(kappa, phi, ell, ptsperseg)</code> which generates a framed backbone curve using constant curvature arc parameters and the desired number of points (per segment) as input.</p>
-
-<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/hands-on/ctcr_vis_MATLAB.jpg" alt="image" /></p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="p">[</span><span class="n">fig</span><span class="p">]</span> <span class="o">=</span> <span class="n">draw_ctcr</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">tube_end</span><span class="p">,</span><span class="n">r_tube</span><span class="p">,</span><span class="n">options</span><span class="p">)</span>
-<span class="c1">% DRAW_CTCR Creates a figure of a concentric tube continuum robot (ctcr)</span>
-<span class="c1">%</span>
-<span class="c1">%   Takes a matrix with nx16 entries, where n is the number</span>
-<span class="c1">%   of points on the backbone curve. For each point on the curve, the 4x4</span>
-<span class="c1">%   transformation matrix is stored columnwise (16 entries). The x- and</span>
-<span class="c1">%   y-axis span the material orientation and the z-axis is tangent to the</span>
-<span class="c1">%   curve.</span>
-<span class="c1">%</span>
-<span class="c1">%   INPUT</span>
-<span class="c1">%   g(n,16): backbone curve with n 4x4 transformation matrices reshaped into 1x16 vector (columnwise)</span>
-<span class="c1">%   tube_end(1,m): indices of g where ctcr tubes terminate</span>
-<span class="c1">%   r_tube(1,m): radii of tubes</span>
-<span class="c1">%   options:</span>
-<span class="c1">%       tipframe (shows tip frame, default true/1)</span>
-<span class="c1">%       baseframe (shows robot base frame, default false/0)</span>
-<span class="c1">%       projections (shows projections of backbone curve onto</span>
-<span class="c1">%                    coordinate axes, default false/0)</span>
-<span class="c1">%       baseplate (shows robot base plate, default false/0)</span>
-<span class="c1">%</span>
-</code></pre></div></div>
-
-<p>We provide an example file <code class="language-plaintext highlighter-rouge">ctcr_draw_example.m</code> to create a figure of a CTCR with three tubes. The example also makes use of the new utility function <code class="language-plaintext highlighter-rouge">robotindependentmapping(kappa, phi, ell, ptsperseg)</code>. This function takes <a href="/101/2022/12/02/cc-kinematics.html">constant curvature parameters</a> and generates a backbone curve. This backbone curve $g$ is in the format required by <code class="language-plaintext highlighter-rouge">draw_ctcr(g,tube_end,r_tube,options)</code> and <code class="language-plaintext highlighter-rouge">draw_tdcr(g,seg_end,r_disk,r_height,options)</code>.</p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">g</span> <span class="o">=</span> <span class="n">robotindependentmapping</span><span class="p">(</span><span class="n">kappa</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">ptsperseg</span><span class="p">)</span>
-<span class="c1">% ROBOTINDEPENDENTMAPPING creates a framed curve for given configuration parameters</span>
-<span class="c1">%</span>
-<span class="c1">%   EXAMPLE</span>
-<span class="c1">%       g = robotindependentmapping([1/40e-3;1/10e-3],[0,pi],[25e-3,20e-3],10)</span>
-<span class="c1">%       creates a 2-segment curve with radius of curvatures 1/40 and 1/10</span>
-<span class="c1">%       and segment lengths 25 and 20, where the second segment is rotated by pi rad.</span>
-<span class="c1">%</span>
-<span class="c1">%   INPUT: configuration parameters</span>
-<span class="c1">%       kappa (nx1): segment curvatures</span>
-<span class="c1">%       phi (nx1): segment bending plane angles</span>
-<span class="c1">%       l (nx1): segment lengths</span>
-<span class="c1">%       ptsperseg (nx1): number of points per segment</span>
-<span class="c1">%                        if n=1 all segments with equal number of points</span>
-<span class="c1">%   OUTPUT: backbone curve</span>
-<span class="c1">%       g (n,16): backbone curve with n 4x4 transformation matrices reshaped into 1x16 vector (columnwise)</span>
-<span class="c1">%</span>
-</code></pre></div></div>
-
-<p>Find out more and test CRVisToolkit on <a href="https://github.com/ContinuumRoboticsLab/CRVisToolkit" class="btn btn--success">GitHub</a></p>
-
-<p>Happy continuum robot visualization!</p>
-
-<p class="notice--info">The CRVisToolkit stems from the <a href="https://crl.utm.utoronto.ca">Continuum Robotics Laboratory</a> MATLAB codebase that grew over the past decade of our research activities. Numerous students contributed in one way or the other to the CTCR visualization and are acknowledged here in no particular order: Josephine Granna, Sven Lilge, and Malte Bormann.</p>]]></content><author><name>Jessica Burgner-Kahrs</name></author><category term="hands-on" /><summary type="html"><![CDATA[CRVisToolkit now provides utilities to create professional looking plots of concentric tube continuum robots using MATLAB.]]></summary></entry></feed>
+</div>]]></content><author><name>Jessica Burgner-Kahrs</name></author><category term="101" /><summary type="html"><![CDATA[Let's conceptually think about tendon routing disks. They provide channels to route the tendon actuating a continuum robot.]]></summary></entry></feed>
