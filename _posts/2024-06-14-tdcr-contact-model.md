@@ -9,11 +9,7 @@ header:
 ---
 In a previous [blogpost](https://www.opencontinuumrobotics.com/research/2024/04/05/tdcr-can.html), we explained a new approach for contact aided motion planning. As part of our OpenCR project, we have open sourced the model we use for simulation[^Ashwin]. Additional implementation details and examples can be found in our paper[^Rao].
 
-In this blog we present a tutorial on how to use our open source OpenTDCRContactModel:
-
-[![GitHub]({{ site.url }}{{ site.baseurl }}/assets/images/posts/research/github_contactModel_link_image.png)](https://github.com/ContinuumRoboticsLab/OpenTDCRContactModel)
-
-With our code, you can build custom taskspaces with circular obstacles and apply our contact-aided search to tendon driven continuum robots to reach a target position in a 2D taskspace. The model is implemented in C++ and Matlab. We also provide an easy to use interface written in Python. For a quickstart, have a look to our [Google collab demo notebook](https://colab.research.google.com/drive/12blCye60rOwlRdw1ya80a9P254LK0z9w?usp=sharing#scrollTo=YBk1qHRE2Iwe).
+In this blog we present a tutorial on how to use our open source [OpenTDCRContactModel](https://github.com/ContinuumRoboticsLab/OpenTDCRContactModel). With our code, you can build custom taskspaces with circular obstacles and apply our contact-aided search to tendon driven continuum robots to reach a target position in a 2D taskspace. The model is implemented in C++ and Matlab. We also provide an easy to use interface written in Python. For a quickstart, have a look to our [Google collab demo notebook](https://colab.research.google.com/drive/12blCye60rOwlRdw1ya80a9P254LK0z9w?usp=sharing#scrollTo=YBk1qHRE2Iwe).
 
 {% include figure image_path="/assets/images/posts/research/contactmodel_still_figure.png" %}
 
