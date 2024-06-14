@@ -212,7 +212,7 @@ var store = [{
         "title": "Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery",
         "excerpt":"A Case Study of Steerable Needles Steerable needles are a type of continuum robot, distinguished by their flexibility and capability to navigate through complex anatomical pathways. These robots are highly under-actuated, relying on interaction with the environment for movement and direction. The steering mechanism of steerable needles utilizes the asymmetric...","categories": ["research"],
         "tags": [],
-        "url": "/research/2024/01/07/needlesteering-mp-copy.html",
+        "url": "/research/2024/01/07/needlesteering-mp.html",
         "teaser": "/assets/images/posts/101-needle-steering.jpg"
       },{
         "title": "Algorithmic Motion Planning Meets Minimally-Invasive Robotic Surgery - Part 2",
@@ -226,4 +226,10 @@ var store = [{
         "tags": [],
         "url": "/research/2024/04/05/tdcr-can.html",
         "teaser": "/assets/images/posts/research/can_teaser.png"
+      },{
+        "title": "Open Source TDCR Contact Model",
+        "excerpt":"In a previous blogpost, we explained a new approach for contact aided motion planning. As part of our OpenCR project, we have open sourced the model we use for simulation1. Additional implementation details and examples can be found in our paper2. In this blog we present a tutorial on how...","categories": ["research"],
+        "tags": [],
+        "url": "/research/2024/06/14/tdcr-contact-model.html",
+        "teaser": "/assets/images/posts/research/contactmodel_still_figure.png"
       }]

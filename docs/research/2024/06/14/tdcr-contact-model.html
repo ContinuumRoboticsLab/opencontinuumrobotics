@@ -1,0 +1,567 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Open Source TDCR Contact Model -</title>
+<meta name="description" content="In this post we present a tutorial on how to use our open source TDCR contact model (C++, MATLAB, Python interface). This model is capable of building custom taskspaces with circular obstacles and applying contact-aided search to tendon driven continuum robots to reach a target position in a 2D taskspace.">
+
+
+  <meta name="author" content="Nicholas Baldassini">
+  
+  <meta property="article:author" content="Nicholas Baldassini">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Open Source TDCR Contact Model">
+<meta property="og:url" content="http://localhost:4000/research/2024/06/14/tdcr-contact-model.html">
+
+
+  <meta property="og:description" content="In this post we present a tutorial on how to use our open source TDCR contact model (C++, MATLAB, Python interface). This model is capable of building custom taskspaces with circular obstacles and applying contact-aided search to tendon driven continuum robots to reach a target position in a 2D taskspace.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/research/contactmodel_still_figure.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2024-06-14T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/research/2024/06/14/tdcr-contact-model.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Open Continuum Robotics Project",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:4000/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:4000/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="http://localhost:4000/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="http://localhost:4000/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/software/">Software</a>
+            </li><li class="masthead__menu-item">
+              <a href="/hardware/">Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/">Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/nb_author.png" alt="Nicholas Baldassini" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Nicholas Baldassini</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Computer Science Student</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:nicholas.baldassini@mail.utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/nicholas-baldassini-6584821b6" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Open Source TDCR Contact Model">
+    <meta itemprop="description" content="In this post we present a tutorial on how to use our open source TDCR contact model (C++, MATLAB, Python interface). This model is capable of building custom taskspaces with circular obstacles and applying contact-aided search to tendon driven continuum robots to reach a target position in a 2D taskspace.">
+    <meta itemprop="datePublished" content="2024-06-14T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Open Source TDCR Contact Model
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-06-14T00:00:00-04:00">2024-06-14</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#model-defintion">Model Defintion</a></li><li><a href="#code-organization">Code Organization</a></li><li><a href="#code-walkthrough">Code Walkthrough</a><ul><li><a href="#taskspace">Taskspace</a></li><li><a href="#robot">Robot</a></li><li><a href="#motion-planning">Motion Planning</a></li><li><a href="#forward-kinematics">Forward kinematics</a></li><li><a href="#visualizing-a-configuration">Visualizing a Configuration</a></li><li><a href="#visualizing-a-motion-plan">Visualizing a Motion Plan</a></li></ul></li><li><a href="#references">References</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>In a previous <a href="https://www.opencontinuumrobotics.com/research/2024/04/05/tdcr-can.html">blogpost</a>, we explained a new approach for contact aided motion planning. As part of our OpenCR project, we have open sourced the model we use for simulation<sup id="fnref:Ashwin" role="doc-noteref"><a href="#fn:Ashwin" class="footnote" rel="footnote">1</a></sup>. Additional implementation details and examples can be found in our paper<sup id="fnref:Rao" role="doc-noteref"><a href="#fn:Rao" class="footnote" rel="footnote">2</a></sup>.</p>
+
+<p>In this blog we present a tutorial on how to use our open source OpenTDCRContactModel:</p>
+
+<p><a href="https://github.com/ContinuumRoboticsLab/OpenTDCRContactModel"><img src="http://localhost:4000/assets/images/posts/research/github_contactModel_link_image.png" alt="GitHub" /></a></p>
+
+<p>With our code, you can build custom taskspaces with circular obstacles and apply our contact-aided search to tendon driven continuum robots to reach a target position in a 2D taskspace. The model is implemented in C++ and Matlab. We also provide an easy to use interface written in Python. For a quickstart, have a look to our <a href="https://colab.research.google.com/drive/12blCye60rOwlRdw1ya80a9P254LK0z9w?usp=sharing#scrollTo=YBk1qHRE2Iwe">Google collab demo notebook</a>.</p>
+
+<figure class="">
+  <img src="/assets/images/posts/research/contactmodel_still_figure.png" alt="" /></figure>
+
+<h2 id="model-defintion">Model Defintion</h2>
+<p>The model is posed as a nonlinear optimisation problem. The robot is said to be defined by ‘m’  piecewise constant curvature arcs. The objective of this problem is to find a set of m curvatures that minimize the robots potential energy. The nonlinear equality constraint makes sure that the input  tendon length is equal to the calculated tendon length. The nonlinear inequality constraint ensures that points on the robot lie outside all the obstacles.</p>
+
+<h2 id="code-organization">Code Organization</h2>
+<p>Installation instructions along with the source can be found <a href="https://github.com/ContinuumRoboticsLab/OpenTDCRContactModel#installation-instructions">here</a>. The two important classes to know for this implementation is the <code class="language-plaintext highlighter-rouge">Robot(radius, disk_num)</code> class and <code class="language-plaintext highlighter-rouge">Node(Robot, length, actuation)</code> class. <code class="language-plaintext highlighter-rouge">Node</code> is used to describe the robot at some point in joint space. <code class="language-plaintext highlighter-rouge">Node</code> also has a method <code class="language-plaintext highlighter-rouge">run_forward_model(taskspace, bool_reduced, model_type)</code> which calculates the forward kinematics of the robot given its current joint space configuration. Two options are avaliable for model_type, <code class="language-plaintext highlighter-rouge">model_type="KINEMATIC_MATLAB"</code> or <code class="language-plaintext highlighter-rouge">model_type="KINEMATIC_CPP"</code>. You can access the Node’s cartesian coordinates with <code class="language-plaintext highlighter-rouge">Node.ee</code> after calling <code class="language-plaintext highlighter-rouge">run_forward_model</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">Robot</code> class stores general configuration parameters of the robot like tendons, length and radius. Since the model uses a piece-wise constant curvature arc representation, the number of disks is used to discretize the backbone into that many subsegments. The robot object is then fed into each node object as a parameter.</p>
+
+<p class="notice"><strong><em>Note:</em></strong> The robot lies in the xz plane and the model currently supports circular obstacles and 2d contact interactions.</p>
+
+<h2 id="code-walkthrough">Code Walkthrough</h2>
+
+<h3 id="taskspace">Taskspace</h3>
+<p>Obstacles in the taskspace are defined by the <code class="language-plaintext highlighter-rouge">Circle(radius, (x, y, z))</code> class. More complex shapes can be formed by superimposing multiple circles.</p>
+
+<p>Defining a taskspace is easy, just initialize a taskspace object then set each obstacle you want in your taskspace. Or alternatively, a default taskspace in <code class="language-plaintext highlighter-rouge">/workspaces</code> can be used.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>workspace = TaskspaceCircle()
+radius = 0.01
+obstacle_1 = Circle(radius, (0.02, 0.0, 0.03))
+obstacle_2 = Circle(radius, (-0.04, 0.0, 0.03))
+obstacle_3 = Circle(radius, (0.08, 0.0, 0.03))
+workspace.set_obstacles(obstacle_1, 1, 1)
+workspace.set_obstacles(obstacle_2, 1, 1)
+workspace.set_obstacles(obstacle_3, 1, 1)
+</code></pre></div></div>
+<p>The parameters for <code class="language-plaintext highlighter-rouge">set_obstacles</code> are,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># workspace.set_obstacles(Circle, n, z_delta)
+#     Circle: new obstacle to add to the taskspace
+#     n: add n copies offset by z_delta
+#     z_delta: distance to offset the n copies
+</code></pre></div></div>
+
+<h3 id="robot">Robot</h3>
+<p>Once the taskspace is created, a TDCR <code class="language-plaintext highlighter-rouge">Robot</code> object is also created by specifying the radius and number of discrete disks composing the robot. A <code class="language-plaintext highlighter-rouge">Node</code> object is also created representing the robot at some configuration in time. In the starting position, the Node will be set to have 0.001 length and 0.001 actuation.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      # mod_cr.Robot(radius, disks)
+robot = mod_cr.Robot(6e-3, 30)
+
+            # Node(Robot, length, actuation)
+config_init = Node(robot, 0.001, 0.001)
+config_init.set_init_guess(np.array([1]*robot1.nd))
+config_init.T = np.eye(4)
+
+# Run First forward kinematic iteration
+config_init.run_forward_model(workspace, True, "KINEMATIC_CPP")
+</code></pre></div></div>
+
+<h3 id="motion-planning">Motion Planning</h3>
+<p>Next a motion plan must be created. A target location can be specified and the following method will generate a sequence of joint space values (tendon actuation and tendon length). This sequence will then be applied to the robot with forward kinematics to traverse it through the taskspace. Paths can be created using the following <code class="language-plaintext highlighter-rouge">taskspace</code> method. This method will save a generated path to a <code class="language-plaintext highlighter-rouge">Nx2</code> csv file with each row being formatted as <code class="language-plaintext highlighter-rouge">segment_length, tendon_length</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>taskspace.generate_path(initial_Node, target=[x, y, z], filename='filename')
+</code></pre></div></div>
+
+<p>This method performs a greedy heuristic search through joint space sequences using Euclidean distance as a metric. More details can be found in Rao et al.<sup id="fnref:Rao:1" role="doc-noteref"><a href="#fn:Rao" class="footnote" rel="footnote">2</a></sup>  The heuristic can be replaced with a custom heuristic you wish to investigate. Feel free to play around with it. The heuristic is defined in <code class="language-plaintext highlighter-rouge">/utils/taskspace.py</code>. Alternatively, you may load one of the premade path located in <code class="language-plaintext highlighter-rouge">/sample_paths</code>.</p>
+
+<h3 id="forward-kinematics">Forward kinematics</h3>
+<p>After the path is created, we then iterate over each position in the joint space csv file previously created. The forward kinematics of each value is calculated and saved to a list <code class="language-plaintext highlighter-rouge">traced_path</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>prev_guess = config_init.var[0,::3]
+sample_path = load_and_extract('sample_path.csv')
+traced_path = [config_init]*len(sample_path)
+for idx, iter in enumerate(sample_path):
+    curr_node = Node(robot1, iter[0], iter[1])
+    curr_node.set_init_guess(prev_guess)
+    model_exitflag = curr_node.run_forward_model(workspace, True, "KINEMATIC_CPP")
+    if model_exitflag:
+        prev_guess = curr_node.var[0,::3]
+        traced_path[idx] = curr_node
+    else:
+        print("Model did not converge")
+        break
+</code></pre></div></div>
+
+<p class="notice--success"><strong><em>Selecting an Initial Guess</em></strong>:
+The step on setting an initial guess with <code class="language-plaintext highlighter-rouge">config_init.set_init_guess</code> is important! As explained in the <strong>Model</strong> <strong>Definition</strong> section, the model used in our simulation environment is a complex nonlinear optimization problem. Additionally, the mapping between joint space and task space is not a one-to-one mapping during implicit contact motion. Setting a correct initial guess is crucial for model convergence. A rule of thumb that has worked well for us is to run the forward kinematics solver sequentially. This is done by setting the initial segment length and tendon length of the robot to be <code class="language-plaintext highlighter-rouge">(0.001, 0.001)</code> or as <code class="language-plaintext highlighter-rouge">1mm</code> in units for each. Then the model slowly progresses in <code class="language-plaintext highlighter-rouge">1mm</code> increments to remain stable. In each time step, the curvature values of the previous time frame is used as an initial guess for the next.</p>
+
+<h3 id="visualizing-a-configuration">Visualizing a Configuration</h3>
+<p>After the model has been run, and the nodes curvature values are determined, we can visualize the robot and taskspace by plotting it. The red dot is our target position.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config_init.plot_configuration(workspace)
+helpers.saveFigure()
+# plt.show()
+</code></pre></div></div>
+
+<figure class="">
+  <img src="/assets/images/posts/research/contactmodel_init.png" alt="" /></figure>
+
+<h3 id="visualizing-a-motion-plan">Visualizing a Motion Plan</h3>
+<p>For every motion plan that is generated and simulated, it can be visualized as a mp4 video.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>helpers.visualizing(traced_path, workspace, "filename")
+</code></pre></div></div>
+<p>Using the default taskspace and <code class="language-plaintext highlighter-rouge">3_sample_path.csv</code>, the resulting video is:</p>
+<figure class="">
+  <img src="/assets/images/posts/research/contactmodel_pathing.gif" alt="" /></figure>
+
+<p>Happy tendon driven continuum robotic simulating!</p>
+
+<p><a href="https://crl.utm.utoronto.ca/assets/paper/2024_ROBOSOFT_Lookahead.pdf" class="btn btn--info">Paper</a> 
+<a href="https://github.com/ContinuumRoboticsLab/OpenTDCRContactModel" class="btn btn--danger">GitHub</a> 
+<a href="https://colab.research.google.com/drive/12blCye60rOwlRdw1ya80a9P254LK0z9w?usp=sharing#scrollTo=YBk1qHRE2Iwe" class="btn btn--success">Google Collab</a></p>
+
+<h2 id="references">References</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:Ashwin" role="doc-endnote">
+      <p>K.P. Ashwin, Soumya Kanti Mahapatra, Ashitava Ghosal: Profile and contact force estimation of cable-driven continuum robots in presence of obstacles. Mechanism and Machine Theory, 164:104404, 2021. doi: <a href="https://doi.org/10.1016/j.mechmachtheory.2021.104404">10.1016/j.mechmachtheory.2021.104404</a> <a href="#fnref:Ashwin" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:Rao" role="doc-endnote">
+      <p>Priyanka Rao, Itai Spigelman, Oren Salzman, Jessica Burgner-Kahrs: Computationally Efficient Lookahead Search for Contact-aided Navigation for Tendon-driven Continuum Robots. CRL, 164:104404, 2024. <a href="https://crl.utm.utoronto.ca/assets/paper/2024_ROBOSOFT_Lookahead.pdf">pdf</a> <a href="#fnref:Rao" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:Rao:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#research" class="page__taxonomy-item" rel="tag">research</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-06-14T00:00:00-04:00">2024-06-14</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Open+Source+TDCR+Contact+Model%20http%3A%2F%2Flocalhost%3A4000%2Fresearch%2F2024%2F06%2F14%2Ftdcr-contact-model.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fresearch%2F2024%2F06%2F14%2Ftdcr-contact-model.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fresearch%2F2024%2F06%2F14%2Ftdcr-contact-model.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/research/2024/04/05/tdcr-can.html" class="pagination--pager" title="Contact-Aided Navigation of Tendon-driven Continuum Robots
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/OpenCRProject1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  </body>
+</html>

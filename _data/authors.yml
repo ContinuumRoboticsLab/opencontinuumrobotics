@@ -91,3 +91,14 @@ aa:
   - label     : "Email"
     icon      : "fas fa-fw fa-envelope-square"
     url       : "mailto:ankit.aggarwal2@learner.manipal.edu"
+
+nb: 
+  name        : "Nicholas Baldassini"
+  bio         : "Computer Science Student"
+  avatar      : "/assets/images/nb_author.png"
+  location    : "University of Toronto, Canada"
+  linkedin    : "nicholas-baldassini-6584821b6"
+  links:
+  - label     : "Email"
+    icon      : "fas fa-fw fa-envelope-square"
+    url       : "mailto:nicholas.baldassini@mail.utoronto.ca"
