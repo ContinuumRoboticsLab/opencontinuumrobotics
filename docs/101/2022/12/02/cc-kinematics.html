@@ -23,14 +23,14 @@
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="">
 <meta property="og:title" content="Constant Curvature Kinematics Framework">
-<meta property="og:url" content="http://localhost:4000/101/2022/12/02/cc-kinematics.html">
+<meta property="og:url" content="https://www.opencontinuumrobotics.com/101/2022/12/02/cc-kinematics.html">
 
 
   <meta property="og:description" content="This kinematics framework is widely used for continuum robots.">
 
 
 
-  <meta property="og:image" content="http://localhost:4000/assets/images/posts/cr_101_cc_teaser.png">
+  <meta property="og:image" content="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_cc_teaser.png">
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/101/2022/12/02/cc-kinematics.html">
+<link rel="canonical" href="https://www.opencontinuumrobotics.com/101/2022/12/02/cc-kinematics.html">
 
 
 
@@ -54,7 +54,7 @@
     
       "@type": "Person",
       "name": "Open Continuum Robotics Project",
-      "url": "http://localhost:4000/"
+      "url": "https://www.opencontinuumrobotics.com/"
     
   }
 </script>
@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:4000/assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:4000/assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="http://localhost:4000/assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="http://localhost:4000/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.opencontinuumrobotics.com/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.opencontinuumrobotics.com/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.opencontinuumrobotics.com/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://www.opencontinuumrobotics.com/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://www.opencontinuumrobotics.com/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://www.opencontinuumrobotics.com/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -314,7 +314,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          8 minute read
+          7 minute read
         
       </span>
     
@@ -336,11 +336,11 @@
         
         <p>Today, we dive deeper into the common constant curvature kinematics framework. We look at the mappings between joint and configuration space, i.e. the <strong>robot dependent mapping</strong>, and between configuration and task space, i.e. the <strong>robot independent mapping</strong>.</p>
 
-<p><img src="http://localhost:4000/assets/images/posts/cr_101_modelingIntro_mappings.png" alt="image" /></p>
+<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_modelingIntro_mappings.png" alt="image" /></p>
 
 <h1 id="robot-dependent-mapping">Robot Dependent Mapping</h1>
 
-<p><img src="http://localhost:4000/assets/images/posts/cr_101_cc_arcParameter.png" alt="image" style="float: right" />
+<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_cc_arcParameter.png" alt="image" style="float: right" />
 The robot dependent mapping relates the robot’s joint space
 \(q \in \mathbb{R}^{n}\) (\(n\) is the number of “joints” or actuators) to
 configuration space in terms of circular arc parameters. Arc parameters
@@ -380,7 +380,7 @@ The other axes of the moving frame must be normal to the curve, but are
 otherwise allowed to rotate freely about the curve. The curve is
 parameterized by arc length s.</p>
 
-<p><img src="http://localhost:4000/assets/images/posts/cr_101_cc_frames.png" alt="image" /></p>
+<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_cc_frames.png" alt="image" /></p>
 
 <p>A common assignment of the base frame \(\{ 0\}\) of a continuum robot in
 its zero configuration is:</p>
@@ -413,7 +413,7 @@ by \(\theta\).</p>
 <table>
   <tbody>
     <tr>
-      <td><img src="http://localhost:4000/assets/images/posts/cr_101_cc_circularArc.png" alt="image" /></td>
+      <td><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_cc_circularArc.png" alt="image" /></td>
     </tr>
     <tr>
       <td>For \(\phi = 0\), the arc lies within the \(\widehat{x}\widehat{z}\)-plane. Here, the local frame at $s+\ell$ is depicted and a point $p$ on the curve.</td>
@@ -425,22 +425,16 @@ by \(\theta\).</p>
 \(\phi\), the homogeneous transformation from the base to a local point
 \(\mathbf{p}\) at arc length \(s\) can be described as</p>
 
-<p>\(T(s) = \begin{bmatrix}
+\[T(s) = \begin{bmatrix}
 \text{Rot}(\widehat{z},\phi) &amp; \mathbf{0} \\
 0\;0\;0 &amp; 1 \\
 \end{bmatrix}\begin{bmatrix}
 \text{Rot}(\widehat{y},\theta) &amp; \mathbf{p}(s) \\
 0\;0\;0 &amp; 1 \\
-\end{bmatrix}\).</p>
-
-<p>This transformation can be written in terms of arc parameters as</p>
-
-<p>\(T(s) = \begin{bmatrix}
-\cos\phi\cos\kappa s &amp; -\sin\phi &amp; \cos\phi\sin\kappa s &amp; \frac{\cos\phi(1 - \cos\kappa s)}{\kappa} \\
-\sin\phi\cos\kappa s &amp; \cos\phi &amp; \sin\phi\sin\kappa s &amp; \frac{\sin\phi(1 - \cos\kappa s)}{\kappa} \\
--\sin\kappa s &amp; 0 &amp; \cos\kappa s &amp; \frac{\sin\kappa s}{\kappa} \\
-0 &amp; 0 &amp; 0 &amp; 1\\
-\end{bmatrix}\).</p>
+\end{bmatrix}\begin{bmatrix}
+\text{Rot}(\widehat{z},-\phi) &amp; \mathbf{0} \\
+0\;0\;0 &amp; 1 \\
+\end{bmatrix}\]
 
 <p>Note, the special case of \(\kappa = 0\), i.e., the segment of the robot
 is straight. In this case, the definition of \(\mathbf{p}(s)\) as stated
@@ -453,7 +447,7 @@ above does not hold. Instead, it becomes
 \(\kappa\) and torsion \(\tau\) of an arc-length parameterized
 space curve, we can recover the curve itself.</p>
 
-<p><img src="http://localhost:4000/assets/images/posts/cr_101_cc_frenetframes.png" alt="image" style="float: right" />
+<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_cc_frenetframes.png" alt="image" style="float: right" />
 Frenet-Serret frames are defined according to this theorem: One axis is
 tangent to the curve, such that we can look at the change in <strong>tangent</strong>
 direction \(\widehat{t}\) as we move along the curve. Since \(\widehat{t}\)
@@ -565,7 +559,7 @@ and integrate the tangent to obtain the curve.</p>
 <p>Under the constant curvature framework, the shape of a continuum robot becomes a concatenation of constant curvature
 arcs.</p>
 
-<p><img src="http://localhost:4000/assets/images/posts/cr_101_cc_concatenation_of_arcs.jpg" alt="" /></p>
+<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_cc_concatenation_of_arcs.jpg" alt="" /></p>
 
 <p>Above, we saw how we can obtain the moving frame along a single constant
 curvature arc. As the robot dependent mapping usually results in \(m\)
@@ -575,7 +569,7 @@ end frame. Consequently, \(T_{m - 1}(\ell_{m - 1})\) has to
 be pre-multiplied to the local frame of arc \(m\):
 \(T_{m}(s) = T_{m - 1}(\ell_{m - 1})T(s)\).</p>
 
-<p><img src="http://localhost:4000/assets/images/posts/cr_101_cc_arcConcatenation.png" alt="image" /></p>
+<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_cc_arcConcatenation.png" alt="image" /></p>
 
 <p>Note, that there may be cases, where the local frame is required to span
 the cross section of the robot and to express the material orientation.</p>
@@ -625,11 +619,11 @@ the cross section of the robot and to express the material orientation.</p>
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Constant+Curvature+Kinematics+Framework%20http%3A%2F%2Flocalhost%3A4000%2F101%2F2022%2F12%2F02%2Fcc-kinematics.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Constant+Curvature+Kinematics+Framework%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2F101%2F2022%2F12%2F02%2Fcc-kinematics.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F101%2F2022%2F12%2F02%2Fcc-kinematics.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2F101%2F2022%2F12%2F02%2Fcc-kinematics.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F101%2F2022%2F12%2F02%2Fcc-kinematics.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.opencontinuumrobotics.com%2F101%2F2022%2F12%2F02%2Fcc-kinematics.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 

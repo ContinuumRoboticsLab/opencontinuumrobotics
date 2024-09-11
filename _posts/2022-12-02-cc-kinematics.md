@@ -95,16 +95,10 @@ $$T(s) = \begin{bmatrix}
 \end{bmatrix}\begin{bmatrix}
 \text{Rot}(\widehat{y},\theta) & \mathbf{p}(s) \\
 0\;0\;0 & 1 \\
-\end{bmatrix}$$.
-
-This transformation can be written in terms of arc parameters as
-
-$$T(s) = \begin{bmatrix}
-\cos\phi\cos\kappa s & -\sin\phi & \cos\phi\sin\kappa s & \frac{\cos\phi(1 - \cos\kappa s)}{\kappa} \\
-\sin\phi\cos\kappa s & \cos\phi & \sin\phi\sin\kappa s & \frac{\sin\phi(1 - \cos\kappa s)}{\kappa} \\
--\sin\kappa s & 0 & \cos\kappa s & \frac{\sin\kappa s}{\kappa} \\
-0 & 0 & 0 & 1\\
-\end{bmatrix}$$.
+\end{bmatrix}\begin{bmatrix}
+\text{Rot}(\widehat{z},-\phi) & \mathbf{0} \\
+0\;0\;0 & 1 \\
+\end{bmatrix}$$
 
 Note, the special case of $$\kappa = 0$$, i.e., the segment of the robot
 is straight. In this case, the definition of $$\mathbf{p}(s)$$ as stated

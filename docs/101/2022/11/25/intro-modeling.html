@@ -23,14 +23,14 @@
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="">
 <meta property="og:title" content="Introduction to Modeling">
-<meta property="og:url" content="http://localhost:4000/101/2022/11/25/intro-modeling.html">
+<meta property="og:url" content="https://www.opencontinuumrobotics.com/101/2022/11/25/intro-modeling.html">
 
 
   <meta property="og:description" content="The slender structure of continuously bending robots can be represented by a space curve.">
 
 
 
-  <meta property="og:image" content="http://localhost:4000/assets/images/posts/cr_101_modelingIntro_teaser.png">
+  <meta property="og:image" content="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_modelingIntro_teaser.png">
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/101/2022/11/25/intro-modeling.html">
+<link rel="canonical" href="https://www.opencontinuumrobotics.com/101/2022/11/25/intro-modeling.html">
 
 
 
@@ -54,7 +54,7 @@
     
       "@type": "Person",
       "name": "Open Continuum Robotics Project",
-      "url": "http://localhost:4000/"
+      "url": "https://www.opencontinuumrobotics.com/"
     
   }
 </script>
@@ -87,12 +87,12 @@
 
 
     
-<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:4000/assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:4000/assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="http://localhost:4000/assets/images/favicons/site.webmanifest">
-<link rel="mask-icon" href="http://localhost:4000/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.opencontinuumrobotics.com/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.opencontinuumrobotics.com/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.opencontinuumrobotics.com/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://www.opencontinuumrobotics.com/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://www.opencontinuumrobotics.com/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://www.opencontinuumrobotics.com/favicon.ico">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
@@ -337,7 +337,7 @@
         <p>Continuum robots are joint-less and composed of flexible, elastic, or soft materials. As such, they are continuously bending, eventually twisting and extending. In order to have a continuum robot do meaningful things, i.e. move along a predefined path, deploy into a cluttered environment, be teleoperated by a physician to help with brain surgery, we need to describe the
 relationship between joint space and task space. This kinematic mapping is essential for motion planning and control of any robot.</p>
 
-<p><img src="http://localhost:4000/assets/images/posts/cr_101_modelingIntro_jointspace.png" alt="image" style="float: center" /></p>
+<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_modelingIntro_jointspace.png" alt="image" style="float: center" /></p>
 
 <h2 id="mapping-between-joint-and-task-space">Mapping between Joint and Task Space</h2>
 <p>The term joint space may be confusing for continuum robots as we commonly think of revolute or prismatic joints. Those are not necessarily present in a continuum robot as actuation may be achieved by pulling on tendons or changing pressure in pneumatic components. Yet, we commonly refer to those actuator parameters as the robot’s joint space and we are interested in determining the relationship between joint space parameters and the resulting appearance of the robot in task space, i.e. its position and orientation at the tip or its shape.</p>
@@ -349,7 +349,7 @@ relationship between joint space and task space. This kinematic mapping is essen
 <table>
   <tbody>
     <tr>
-      <td><img src="http://localhost:4000/assets/images/posts/cr_101_modeling_spacecurve.png" alt="image" /></td>
+      <td><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_modeling_spacecurve.png" alt="image" /></td>
     </tr>
     <tr>
       <td>(Images adapted, from left to right © OC Robotics Ltd, © FESTO, © Titan Medical Inc.)</td>
@@ -376,7 +376,7 @@ relationship between joint space and task space. This kinematic mapping is essen
 <p>Constant curvature kinematic frameworks represent the continuum robot’s configuration space as a ﬁnite number of mutually tangent curved segments each having a constant curvature along its length. Note that <em>constant</em> here refers to invariance with respect to arc length, not time. In this framework, the curvature, length, and angle of the curve’s bending plane - known as the arc parameters - of each segment form a set of configuration coordinates that completely describes the shape of the robot. The position and orientation at any point on the robot, can be written as a function of the arc parameters and the arc length along the backbone to that point. Similar to D-H
 parameters, an arc parameter could be a constant or vary with actuation, depending on the robot design. Usually, a single constant-curvature segment is employed for each actuatable segment of the robot.</p>
 
-<p><img src="http://localhost:4000/assets/images/posts/cr_101_modelingIntro_mappings.png" alt="image" /></p>
+<p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/cr_101_modelingIntro_mappings.png" alt="image" /></p>
 
 <p>The forward kinematics of a continuum robot refers to the calculation of the position and orientation of its tip from its joint coordinates. The arc parameters are determined as an intermediate step in this calculation, which is the robot dependent mapping from joint space to
 configuration space as it depends on the robot’s mechanical structure and actuation principle employed. Using these configuration space parameters, the robot independent mapping determines the task space parameters.</p>
@@ -437,11 +437,11 @@ mechanical principles when certain robot designs and assumptions are considered 
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Introduction+to+Modeling%20http%3A%2F%2Flocalhost%3A4000%2F101%2F2022%2F11%2F25%2Fintro-modeling.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Introduction+to+Modeling%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2F101%2F2022%2F11%2F25%2Fintro-modeling.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F101%2F2022%2F11%2F25%2Fintro-modeling.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2F101%2F2022%2F11%2F25%2Fintro-modeling.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F101%2F2022%2F11%2F25%2Fintro-modeling.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.opencontinuumrobotics.com%2F101%2F2022%2F11%2F25%2Fintro-modeling.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
