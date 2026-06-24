@@ -232,4 +232,10 @@ var store = [{
         "tags": [],
         "url": "/research/2024/06/14/tdcr-contact-model.html",
         "teaser": "/assets/images/posts/research/contactmodel_still_figure.png"
+      },{
+        "title": "Open Source FTL Motion Planner",
+        "excerpt":"Follow-the-leader (FTL) motion exploits the unique morphology of continuum robots to navigate confined spaces by having the body retrace the path of the tip. We have developed a new approach to achieve FTL motion with a sampling-based motion planner that jointly considers robot configuration and base pose. The key idea...","categories": ["research"],
+        "tags": [],
+        "url": "/research/2026/05/28/sb-ftl-cr-planner.html",
+        "teaser": "/assets/images/posts/research/FTLteaser.png"
       }]

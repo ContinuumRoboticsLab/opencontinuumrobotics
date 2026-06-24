@@ -1,11 +1,12 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
-<html lang="en" class="no-js">
+
+<html lang="en-GB" class="no-js">
   <head>
     <meta charset="utf-8">
 
@@ -48,16 +49,7 @@
 
 
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Open Continuum Robotics Project",
-      "url": "https://www.opencontinuumrobotics.com/"
-    
-  }
-</script>
+
 
 
 
@@ -70,19 +62,17 @@
 
 
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
+<script type="text/javascript">
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
 </script>
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 
 
 
@@ -116,10 +106,6 @@
   </ul>
 </nav>
 
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
     
 
 <div class="masthead">
@@ -134,11 +120,23 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/software/">Software</a>
+              <a
+                href="/software/"
+                
+                
+              >Software</a>
             </li><li class="masthead__menu-item">
-              <a href="/hardware/">Hardware</a>
+              <a
+                href="/hardware/"
+                
+                
+              >Hardware</a>
             </li><li class="masthead__menu-item">
-              <a href="/blog/">Blog</a>
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -157,28 +155,30 @@
 
 
 
+
+
 <div id="main" role="main">
   
   <div class="sidebar sticky">
   
 
 
-<div itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   
     <div class="author__avatar">
-      
-        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image">
-      
+      <a href="https://www.opencontinuumrobotics.com/">
+        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image" class="u-photo">
+      </a>
     </div>
   
 
   <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://www.opencontinuumrobotics.com/" itemprop="url">Jessica Burgner-Kahrs</a>
+    </h3>
     
-      <h3 class="author__name" itemprop="name">Jessica Burgner-Kahrs</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
+      <div class="author__bio p-note" itemprop="description">
         <p>Professor. Roboticist.</p>
 
       </div>
@@ -190,18 +190,18 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">University of Toronto, Canada</span>
         </li>
       
 
       
         
           
-            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
           
         
           
-            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
           
         
       
@@ -214,7 +214,7 @@
 
       
         <li>
-          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
           </a>
         </li>
@@ -224,7 +224,7 @@
 
       
         <li>
-          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
           </a>
         </li>
@@ -268,7 +268,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -291,8 +291,10 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Continuum Robots @ICRA23
-</h1>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://www.opencontinuumrobotics.com/research/2023/05/12/icra2023-cr-highlights.html" itemprop="url">Continuum Robots @ICRA23
+</a>
+          </h1>
           
 
   <p class="page__meta">
@@ -330,7 +332,6 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
               <ul class="toc__menu"><li><a href="#keynotes">Keynotes</a><ul><li><a href="#accelerating-medical-robotics-innovation-with-the-open-continuum-robotics-project">Accelerating Medical Robotics Innovation with the Open Continuum Robotics Project</a></li></ul></li><li><a href="#workshop-and-tutorials">Workshop and Tutorials</a><ul><li><a href="#monday">Monday</a></li><li><a href="#friday">Friday</a></li></ul></li><li><a href="#talks">Talks</a><ul><li><a href="#fea-based-soft-robotic-modeling-simulating-a-soft-actuator-in-sofa-i">FEA-Based Soft Robotic Modeling: Simulating a Soft-Actuator in SOFA (I)</a></li><li><a href="#sorosim-a-matlab-toolbox-for-hybrid-rigid-soft-robots-based-on-the-geometric-variable-strain-approach-i">SoRoSim: A MATLAB Toolbox for Hybrid Rigid-Soft Robots Based on the Geometric Variable-Strain Approach (I)</a></li><li><a href="#a-geometrically-exact-assumed-strain-modes-approach-for-the-geometrico-and-kinemato-static-modellings-of-continuum-parallel-robots-i">A Geometrically-Exact Assumed Strain Modes Approach for the Geometrico and Kinemato-Static Modellings of Continuum Parallel Robots (I)</a></li><li><a href="#towards-a-physics-based-model-for-steerable-eversion-growing-robots">Towards a Physics-Based Model for Steerable Eversion Growing Robots</a></li><li><a href="#statics-and-dynamics-of-continuum-robots-based-on-cosserat-rods-and-optimal-control-theories-i">Statics and Dynamics of Continuum Robots Based on Cosserat Rods and Optimal Control Theories (I)</a></li><li><a href="#cobra-from-industrial-to-medical-surgery-with-slender-continuum-robots-i">COBRA: From Industrial to Medical Surgery with Slender Continuum Robots (I)</a></li><li><a href="#a-generalized-framework-for-concentric-tube-robot-design-using-gradient-based-optimization-i">A Generalized Framework for Concentric Tube Robot Design Using Gradient-Based Optimization (I)</a></li><li><a href="#magnetic-soft-continuum-robots-with-braided-reinforcement">Magnetic Soft Continuum Robots with Braided Reinforcement</a></li><li><a href="#kinetostatic-modeling-of-tendon-driven-parallel-continuum-robots-i">Kinetostatic Modeling of Tendon-Driven Parallel Continuum Robots (I)</a></li></ul></li><li><a href="#posters">Posters</a><ul><li><a href="#a-soft-hybrid-actuated-continuum-robot-based-on-dual-origami-structures">A Soft Hybrid-Actuated Continuum Robot Based on Dual Origami Structures</a></li><li><a href="#image-based-pose-estimation-and-shape-reconstruction-for-robot-manipulators-and-soft-continuum-robots-via-differentiable-rendering">Image-Based Pose Estimation and Shape Reconstruction for Robot Manipulators and Soft, Continuum Robots Via Differentiable Rendering</a></li><li><a href="#discrete-time-model-based-control-of-soft-manipulator-with-fbg-sensing">Discrete-Time Model Based Control of Soft Manipulator with FBG Sensing</a></li><li><a href="#a-soft-robot-with-three-dimensional-shape-sensing-and-contact-recognition-multi-modal-sensing-via-tunable-soft-optical-sensors">A Soft Robot with Three Dimensional Shape Sensing and Contact Recognition Multi-Modal Sensing Via Tunable Soft Optical Sensors</a></li><li><a href="#on-tendon-driven-continuum-robots-with-compressible-backbones">On Tendon Driven Continuum Robots with Compressible Backbones</a></li><li><a href="#data-driven-estimation-of-forces-along-the-backbone-of-concentric-tube-continuum-robots">Data-Driven Estimation of Forces Along the Backbone of Concentric Tube Continuum Robots</a></li><li><a href="#modeling-of-a-robotic-transcatheter-delivery-system">Modeling of a Robotic Transcatheter Delivery System</a></li><li><a href="#a-novel-concentric-tube-steerable-drilling-robot-for-minimally-invasive-treatment-of-spinal-tumors-using-cavity-and-u-shape-drilling-techniques">A Novel Concentric Tube Steerable Drilling Robot for Minimally Invasive Treatment of Spinal Tumors Using Cavity and U-Shape Drilling Techniques</a></li><li><a href="#magnetic-ball-chain-robots-for-endoluminal-interventions">Magnetic Ball Chain Robots for Endoluminal Interventions</a></li><li><a href="#model-based-pose-estimation-of-steerable-catheters-under-bi-plane-image-feedback">Model-Based Pose Estimation of Steerable Catheters under Bi-Plane Image Feedback</a></li><li><a href="#image-segmentation-for-continuum-robots-from-a-kinematic-prior">Image Segmentation for Continuum Robots from a Kinematic Prior</a></li><li><a href="#an-equivalent-two-section-method-for-calculating-the-workspace-of-multi-segment-continuum-robots">An Equivalent Two Section Method for Calculating the Workspace of Multi-Segment Continuum Robots</a></li><li><a href="#happarray-haptic-pneumatic-pouch-array-for-feedback-in-hand-held-robots">HaPPArray: Haptic Pneumatic Pouch Array for Feedback in Hand-Held Robots</a></li></ul></li></ul>
-
             </nav>
           </aside>
         
@@ -544,7 +545,7 @@ In this paper, we extend an approach based on assumed strain modes developed for
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#research" class="page__taxonomy-item" rel="tag">research</a>
+      <a href="/categories/#research" class="page__taxonomy-item p-category" rel="tag">research</a>
     
     </span>
   </p>
@@ -552,19 +553,20 @@ In this paper, we extend an approach based on assumed strain modes developed for
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-05-12T00:00:00-04:00">2023-05-12</time></p>
-
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-05-12T00:00:00-04:00">2023-05-12</time></p>
 
       </footer>
 
       <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
   
 
   <a href="https://twitter.com/intent/tweet?text=Continuum+Robots+%40ICRA23%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2023%2F05%2F12%2Ficra2023-cr-highlights.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2023%2F05%2F12%2Ficra2023-cr-highlights.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2023%2F05%2F12%2Ficra2023-cr-highlights.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.opencontinuumrobotics.com/research/2023/05/12/icra2023-cr-highlights.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -589,6 +591,7 @@ In this paper, we extend an approach based on assumed strain modes developed for
   
 </div>
 
+      
     </div>
 
     
@@ -600,6 +603,8 @@ In this paper, we extend an approach based on assumed strain modes developed for
 <!-- end custom footer snippets -->
         <div class="page__footer-follow">
   <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
     
 
     
@@ -620,7 +625,7 @@ In this paper, we extend an approach based on assumed strain modes developed for
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2024 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2026 <a href="https://www.opencontinuumrobotics.com"></a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -639,6 +644,5 @@ In this paper, we extend an approach based on assumed strain modes developed for
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
   </script>
-
   </body>
 </html>

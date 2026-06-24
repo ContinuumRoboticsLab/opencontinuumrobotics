@@ -1,0 +1,581 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-GB" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Open Source FTL Motion Planner -</title>
+<meta name="description" content="In this tutorial we share how to use our open source TDCR follow-the-leader motion planner (Python, Matplotlib viewer). Our code is capable of defining 3D curves and solving for a sequence of configurations that performs follow-the-leader motion along the 3D curve.">
+
+
+  <meta name="author" content="Nicholas Baldassini">
+  
+  <meta property="article:author" content="Nicholas Baldassini">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Open Source FTL Motion Planner">
+<meta property="og:url" content="https://www.opencontinuumrobotics.com/research/2026/05/28/sb-ftl-cr-planner.html">
+
+
+  <meta property="og:description" content="In this tutorial we share how to use our open source TDCR follow-the-leader motion planner (Python, Matplotlib viewer). Our code is capable of defining 3D curves and solving for a sequence of configurations that performs follow-the-leader motion along the 3D curve.">
+
+
+
+  <meta property="og:image" content="https://www.opencontinuumrobotics.com/assets/images/posts/research/FTLteaser.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2026-05-28T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.opencontinuumrobotics.com/research/2026/05/28/sb-ftl-cr-planner.html">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.opencontinuumrobotics.com/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.opencontinuumrobotics.com/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.opencontinuumrobotics.com/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://www.opencontinuumrobotics.com/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://www.opencontinuumrobotics.com/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://www.opencontinuumrobotics.com/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/software/"
+                
+                
+              >Software</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/hardware/"
+                
+                
+              >Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://www.opencontinuumrobotics.com/">
+        <img src="/assets/images/nb_author.png" alt="Nicholas Baldassini" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://www.opencontinuumrobotics.com/" itemprop="url">Nicholas Baldassini</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>MSc Computer Science Student</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">University of Toronto, Canada</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:nicholas.baldassini@mail.utoronto.ca" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/nicholas-baldassini-6584821b6" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Open Source FTL Motion Planner">
+    <meta itemprop="description" content="In this tutorial we share how to use our open source TDCR follow-the-leader motion planner (Python, Matplotlib viewer). Our code is capable of defining 3D curves and solving for a sequence of configurations that performs follow-the-leader motion along the 3D curve.">
+    <meta itemprop="datePublished" content="2026-05-28T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://www.opencontinuumrobotics.com/research/2026/05/28/sb-ftl-cr-planner.html" itemprop="url">Open Source FTL Motion Planner
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2026-05-28T00:00:00-04:00">2026-05-28</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#problem-defintion">Problem Defintion</a></li><li><a href="#code-organization">Code Organization</a><ul><li><a href="#robot-class">Robot Class</a></li><li><a href="#motion-planner-class">Motion Planner Class</a></li><li><a href="#desired-curve-class">Desired Curve Class</a></li></ul></li><li><a href="#code-walkthrough">Code Walkthrough</a></li><li><a href="#references">References</a></li></ul>
+            </nav>
+          </aside>
+        
+        <p>Follow-the-leader (FTL) motion exploits the unique morphology of continuum robots to navigate confined spaces by having the body retrace the path of the tip. We have developed a new approach to achieve FTL motion with a sampling-based motion planner that jointly considers robot configuration and base pose. The key idea is to decouple global shape search from base pose determination by computing the base pose through a closed-form geometric construction, thereby avoiding iterative optimization during online planning. The approach supports general forward models and enables efficient planning by shifting the majority of computation offline. As part of our OpenCR project, We have open sourced the code and planner used in the paper. Additional implementation details can be found in the <a href="https://arxiv.org/abs/2605.11618">paper</a>. We also set up an interactive demo on our project website where you can run the planner in the browser <a href="https://continuumroboticslab.github.io/sb-ftl-cr-planner/">here</a>.</p>
+
+<figure class=""><img src="/assets/images/posts/research/FTLteaser.png" alt="" /></figure>
+
+<p>In this post, we present a tutorial on how to use our open source <a href="https://github.com/ContinuumRoboticsLab/sb-ftl-cr-planner">sb-ftl-cr-planner</a> codebase. With our implementation, you can define a 3D curve and execute our motion planner to perform FTL motion along the curve. The planner is implemented in Python and uses Matplotlib for visualization.</p>
+
+<h2 id="problem-defintion">Problem Defintion</h2>
+<p>FTL motion is roughly characterized by having the CR body follows the path traced by its tip during insertion <sup id="fnref:FTLDefinition"><a href="#fn:FTLDefinition" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>. The desired path is given as an order set of 3D waypoints \(\mathcal{W}=\{\mathbf{w}_1, \mathbf{w}_2, ..., \mathbf{w}_n\}\). To formalize the requirments of FTL motion, we define two properties that should hold throughout the trajectory.</p>
+<ol>
+  <li>\(\textbf{Tip tracking}:\) The tip should be placed at waypoint \(\mathbf{w}_i\) when passing through it, and follow a smooth interpolation (e.g, linear) between consecutive waypoints.</li>
+  <li>\(\textbf{Shape following:}\) The inserted portion of the robot should minimize deviation from the corresponding segment of the path.</li>
+</ol>
+
+<p>We consider a CR mounted to a 6-DOF base, representing practical systems where CRs are attached to serial manipulators. The CR configuration space is denoted by \(\mathcal{Q} \in \mathbb{R}^d\) and the combined system configuration space is \(\mathcal{K}=SE(3)\times\mathcal{Q}\). The goal of a FTL motion planner is to generate a sequence of \(N\) configurations \(\{(\mathbf{T}_{b,1}, \mathbf{q}_1),...,(\mathbf{T}_{b,N}, \mathbf{q}_N)\}\) that guides the robot through the path \(\mathcal{W}\) while obeying the two listed properties above.</p>
+
+<figure class=""><img src="/assets/images/posts/research/FTLexample.gif" alt="" /></figure>
+
+<hr />
+
+<h2 id="code-organization">Code Organization</h2>
+<p>The planner can be ran in headless mode or with a visualizer using Matplotlib. Installation instructions can be found in the README <a href="https://github.com/ContinuumRoboticsLab/sb-ftl-cr-planner/blob/main/README.md">here</a>. Three core classes are utilized in this repository.</p>
+
+<h3 id="robot-class">Robot Class</h3>
+<p>The robot class <code class="language-plaintext highlighter-rouge">ContinuumRobotModel(num_segments, segment_lengths, tendon_offset, *args, **kwargs)</code> contains necessary helper functions used throughout the planner. Notable is the <code class="language-plaintext highlighter-rouge">forward_kinematics(clark_coordinates: np.ndarray)</code> which returns an array of points along the robot backbone. Forward kinematics is left as an abstract unimplemented method in the parent class. Our planner is model agnostic meaning any forward model (e.g, Constant Curvature, Cosserat Rod, Simulation) can be used. We provide a <code class="language-plaintext highlighter-rouge">ConstantCurvature(*args, **kwargs)</code> child class that implements the forward kinematics based on the the constant curvature model. To add in your own model, all you have to do is inherit the parent <code class="language-plaintext highlighter-rouge">ContinuumRobotModel</code> class and implement your own forward kinematics function.</p>
+
+<h3 id="motion-planner-class">Motion Planner Class</h3>
+<p>The FTL motion planner is implemented as inherited classes of the parent class <code class="language-plaintext highlighter-rouge">GeneralMotionPlanner(*args, **kwargs)</code>. Similar to the robot class, it contains helper functions with the <code class="language-plaintext highlighter-rouge">follow_path()</code> function to be implemented in child classes. We provide 3 planners</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">No Cluster/Linear Sampling</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Threshold Cluster</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Direct Optimization</code></li>
+</ol>
+
+<p>which all inherit the parent <code class="language-plaintext highlighter-rouge">GeneralMotionPlanner</code> class. Each have their own implementation of <code class="language-plaintext highlighter-rouge">follow_path()</code> and discussed further in the <a href="https://arxiv.org/abs/2605.11618">paper</a>.</p>
+
+<h3 id="desired-curve-class">Desired Curve Class</h3>
+<p>To define the desired path for the CR to follow, the <code class="language-plaintext highlighter-rouge">TaskGenerator(*args, **kwargs)</code> class is used. Once initialized, this class has many methods to generate 3D curves. Some of the provided curves are,</p>
+<ol>
+  <li>Quadratic bezier curve: <code class="language-plaintext highlighter-rouge">generate_curved_path()</code></li>
+  <li>Cubic bezier curve: <code class="language-plaintext highlighter-rouge">generate_cubic_bezier_path()</code></li>
+  <li>Circular arc: <code class="language-plaintext highlighter-rouge">generate_c_shape_path()</code></li>
+  <li>Straight zig-zag: <code class="language-plaintext highlighter-rouge">generate_z_shape_path()</code></li>
+  <li>Spiral curve: <code class="language-plaintext highlighter-rouge">generate_spiral_path()</code></li>
+</ol>
+
+<p>This list is not exhaustive, but if nothing fits your use case, feel free to define your own custom path. As long as the curve is a numpy array of 3D points, our planner can follow it!</p>
+
+<h2 id="code-walkthrough">Code Walkthrough</h2>
+<p>We will now walkthrough the provided starter script <code class="language-plaintext highlighter-rouge">run_example.py</code>. You can do a quick run with</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python run_example.py
+</code></pre></div></div>
+
+<p>or use any of the provided command line arguments (<code class="language-plaintext highlighter-rouge">python run_example.py --help</code>). A few useful variations are,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Linear-search baseline on an S-shape, 20k library, no animation</span>
+python run_example.py <span class="nt">--planner</span> <span class="s2">"No Cluster/Linear Sampling"</span> <span class="nt">--curve</span> s <span class="se">\</span>
+    <span class="nt">--num-samples</span> 20000 <span class="nt">--no-animate</span>
+
+<span class="c"># Use an externally produced shape library (skips library generation)</span>
+python run_example.py <span class="nt">--shape-lib-path</span> /path/to/library.json
+
+<span class="c"># Save the dense motion plan (Clarke coords + base SE(3) + shape per step) to JSON</span>
+python run_example.py <span class="nt">--save-history</span> my_plan.json
+</code></pre></div></div>
+
+<p>First, the robot model is initialized with the desired system parameters.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">robot</span> <span class="o">=</span> <span class="nc">ConstantCurvature</span><span class="p">(</span>
+    <span class="n">num_segments</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">segment_lengths</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">tendon_offset</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span>
+    <span class="n">points_resolution</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>After the robot is created, we define the desired path using the provided helper function and command line arguments,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">generator</span> <span class="o">=</span> <span class="nc">TaskGenerator</span><span class="p">(</span><span class="n">robot</span><span class="p">)</span>
+<span class="n">waypoints</span> <span class="o">=</span> <span class="nf">_build_curve</span><span class="p">(</span><span class="n">generator</span><span class="p">,</span> <span class="n">args</span><span class="p">.</span><span class="n">curve</span><span class="p">,</span> <span class="n">args</span><span class="p">.</span><span class="n">num_waypoints</span><span class="p">,</span> <span class="n">p1</span><span class="o">=</span><span class="n">args</span><span class="p">.</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="o">=</span><span class="n">args</span><span class="p">.</span><span class="n">p2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>by default, a quadratic bezier curve is created,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">generator</span><span class="p">.</span><span class="nf">generate_curved_path</span><span class="p">(</span>
+    <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span>
+    <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">]),</span>
+    <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">]),</span>
+    <span class="n">num_waypoints</span><span class="o">=</span><span class="n">num_waypoints</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now it is time to create the shape library! The high dimensioal configuration space of \(\mathcal{K}\) and nonlinear CR dynamics make iterative optimiztion approaches computationally exspensive. Generating a shape library offline then performing global shape search is the technique that makes our method <strong>Model agnostic, Efficient and Theoretically Guaranteed</strong>. These benefits are discussed more in the <a href="https://arxiv.org/abs/2605.11618">paper</a>.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">general_follower</span> <span class="o">=</span> <span class="nc">GeneralPathFollower</span><span class="p">(</span><span class="n">robot</span><span class="p">)</span>
+<span class="n">sampler</span> <span class="o">=</span> <span class="n">general_follower</span><span class="p">.</span><span class="nf">get_sampling_methods_by_name</span><span class="p">([</span><span class="n">args</span><span class="p">.</span><span class="n">planner</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="bp">...</span>
+<span class="n">follower</span> <span class="o">=</span> <span class="nf">sampler</span><span class="p">(</span><span class="o">**</span><span class="n">sampler_kwargs</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Initalizing the <code class="language-plaintext highlighter-rouge">sampler</code> class generates the shape library using the provided <code class="language-plaintext highlighter-rouge">robot</code> object and saves the library as an attribute.</p>
+
+<p class="notice--success"><strong><em>Generating a Shape Library</em></strong>:
+A core feature of our motion planner is that the shape library can be generated offline and reused. This enables the ability to generate very large or computationally exspensive libraries with complex models beyond just Constant Curvature once, and not have it effect the runtime of the planner. In <code class="language-plaintext highlighter-rouge">run_example.py</code> we generate a fresh library on each run as the cost for generation with the <code class="language-plaintext highlighter-rouge">ConstantCurvature</code> forward model is low and takes less than 30 seconds with 20,000 shapes.</p>
+
+<p>Here is a visualization of 60 shapes from a shape library,</p>
+<figure class=""><img src="/assets/images/posts/research/FTLShapeLib.png" alt="" /></figure>
+
+<p>Finally, lets Follow-The-Leader!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">history</span> <span class="o">=</span> <span class="n">follower</span><span class="p">.</span><span class="nf">follow_path</span><span class="p">(</span><span class="n">waypoints</span><span class="p">)</span>
+<span class="n">interp_history</span><span class="p">,</span> <span class="n">interp_waypoints</span> <span class="o">=</span> <span class="n">general_follower</span><span class="p">.</span><span class="nf">interpolate_mp</span><span class="p">(</span>
+    <span class="n">history</span><span class="p">,</span> <span class="n">steps_per_waypoint</span><span class="o">=</span><span class="n">args</span><span class="p">.</span><span class="n">interpolation_steps</span><span class="p">,</span> <span class="n">enable_optimization</span><span class="o">=</span><span class="bp">True</span>
+<span class="p">)</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">follow_path()</code> generates the sparse motion plan, one configuration \((\textbf{T}_{b, i}, \textbf{q}_{i})\) for each waypoint \(\mathbf{w}_i\) while <code class="language-plaintext highlighter-rouge">interpolate_mp()</code> fills in the gaps between each waypoint by intelligently interpolating between each configuration from <code class="language-plaintext highlighter-rouge">follow_path()</code>.</p>
+
+<p>Once the motion plan is created, we include support to record deviation statistics and save the motion plan to disk.</p>
+
+<p>Matplotlib is used to visualize the motion plan,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">visualizer</span> <span class="o">=</span> <span class="nc">PathVisualizer</span><span class="p">(</span><span class="n">robot</span><span class="p">)</span>
+<span class="n">visualizer</span><span class="p">.</span><span class="nf">plot_history</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">waypoints</span><span class="p">,</span> <span class="n">show_animation</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">visualizer</span><span class="p">.</span><span class="nf">plot_history</span><span class="p">(</span><span class="n">interp_history</span><span class="p">,</span> <span class="n">waypoints</span><span class="p">,</span> <span class="n">show_animation</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">animation_interval</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+</code></pre></div></div>
+<p>both the sparse motion plan and interpolated motion plan are animated. The animation for the sparse plan (left) and interpolated plan (right) are shown below.</p>
+
+<figure class=""><img src="/assets/images/posts/research/FTL_SideBySide.gif" alt="" /></figure>
+
+<p>Happy tendon-driven continuum robotic simulating!</p>
+
+<p><a href="https://arxiv.org/abs/2605.11618" class="btn btn--info">Paper</a> 
+<a href="https://github.com/ContinuumRoboticsLab/sb-ftl-cr-planner" class="btn btn--danger">GitHub</a> 
+<a href="https://continuumroboticslab.github.io/sb-ftl-cr-planner/" class="btn btn--success">Website</a></p>
+
+<h2 id="references">References</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:FTLDefinition">
+      <p>Maria Neumann and Jessica Burgner-Kahrs. Considerations for follow-the-leader motion of extensible tendon-driven continuum robots. IEEE International Conference on Robotics and Automation, pages 917–923, 2016. doi: <a href="https://doi.org/10.1109/ICRA.2016.7487223">10.1109/ICRA.2016.7487223</a> <a href="#fnref:FTLDefinition" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#research" class="page__taxonomy-item p-category" rel="tag">research</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-05-28T00:00:00-04:00">2026-05-28</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Open+Source+FTL+Motion+Planner%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2026%2F05%2F28%2Fsb-ftl-cr-planner.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2026%2F05%2F28%2Fsb-ftl-cr-planner.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.opencontinuumrobotics.com/research/2026/05/28/sb-ftl-cr-planner.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/research/2024/06/14/tdcr-contact-model.html" class="pagination--pager" title="Open Source TDCR Contact Model
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/OpenCRProject1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 <a href="https://www.opencontinuumrobotics.com"></a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+  </body>
+</html>

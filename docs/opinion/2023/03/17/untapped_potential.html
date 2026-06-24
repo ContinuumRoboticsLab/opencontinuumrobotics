@@ -1,11 +1,12 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
-<html lang="en" class="no-js">
+
+<html lang="en-GB" class="no-js">
   <head>
     <meta charset="utf-8">
 
@@ -48,16 +49,7 @@
 
 
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Open Continuum Robotics Project",
-      "url": "https://www.opencontinuumrobotics.com/"
-    
-  }
-</script>
+
 
 
 
@@ -70,19 +62,17 @@
 
 
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
+<script type="text/javascript">
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
 </script>
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 
 
 
@@ -116,10 +106,6 @@
   </ul>
 </nav>
 
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
     
 
 <div class="masthead">
@@ -134,11 +120,23 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/software/">Software</a>
+              <a
+                href="/software/"
+                
+                
+              >Software</a>
             </li><li class="masthead__menu-item">
-              <a href="/hardware/">Hardware</a>
+              <a
+                href="/hardware/"
+                
+                
+              >Hardware</a>
             </li><li class="masthead__menu-item">
-              <a href="/blog/">Blog</a>
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -157,28 +155,30 @@
 
 
 
+
+
 <div id="main" role="main">
   
   <div class="sidebar sticky">
   
 
 
-<div itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   
     <div class="author__avatar">
-      
-        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image">
-      
+      <a href="https://www.opencontinuumrobotics.com/">
+        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image" class="u-photo">
+      </a>
     </div>
   
 
   <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://www.opencontinuumrobotics.com/" itemprop="url">Jessica Burgner-Kahrs</a>
+    </h3>
     
-      <h3 class="author__name" itemprop="name">Jessica Burgner-Kahrs</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
+      <div class="author__bio p-note" itemprop="description">
         <p>Professor. Roboticist.</p>
 
       </div>
@@ -190,18 +190,18 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">University of Toronto, Canada</span>
         </li>
       
 
       
         
           
-            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
           
         
           
-            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
           
         
       
@@ -214,7 +214,7 @@
 
       
         <li>
-          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
           </a>
         </li>
@@ -224,7 +224,7 @@
 
       
         <li>
-          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
           </a>
         </li>
@@ -268,7 +268,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -291,8 +291,10 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Beyond Medical Applications
-</h1>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://www.opencontinuumrobotics.com/opinion/2023/03/17/untapped_potential.html" itemprop="url">Beyond Medical Applications
+</a>
+          </h1>
           
 
   <p class="page__meta">
@@ -335,7 +337,7 @@
 
 <p>The trend towards more minimally invasive surgey and ultimatley keyhole access to operate promises benefits for patient care, such as shorter hopsitalization and quicker recovery times. While industrial style robots certainly play an important role in medical robotics today, their large footprint and size naturally places them beside physicians and outside of the patient. But as soon as one wants to move away from large incisions and the need to open the body, thin, versatile, and dextrous robotics enters the scene. Small-scale continuum robots could sneak into a patient with more dextrous motion capabilties than conventional robots and the ability to reach surgical sites inaccessible by conventional robots or standard medical instruments! And that ability is more defining than accuracy and payload. In contrast to industrial automation, small-scale continuum robots promise significant benefit over serial robot arms!</p>
 
-<p>With medical applications, continuum robots found a compelling use case. Motivated by unsought of minimally-invasie approaches and the ability to navigate within the human body through natural orifices or miniscule inscisions, research in continuum robotics excelled. Over the past decades we have witnessed a vast surge in medical continuum robots. In fact, the majority of continuum robot papers draw their motivation from medical applications. The prominent surveys in the field of continuum robotics are centered around medicine<sup id="fnref:BurgnerKahrs2015" role="doc-noteref"><a href="#fn:BurgnerKahrs2015" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:daVeiga2020" role="doc-noteref"><a href="#fn:daVeiga2020" class="footnote" rel="footnote">2</a></sup> <sup id="fnref:Dupont2022" role="doc-noteref"><a href="#fn:Dupont2022" class="footnote" rel="footnote">3</a></sup> and I refer the interested reader to those surveys to learn about the breadth and depth of medical continuum robotics research.</p>
+<p>With medical applications, continuum robots found a compelling use case. Motivated by unsought of minimally-invasie approaches and the ability to navigate within the human body through natural orifices or miniscule inscisions, research in continuum robotics excelled. Over the past decades we have witnessed a vast surge in medical continuum robots. In fact, the majority of continuum robot papers draw their motivation from medical applications. The prominent surveys in the field of continuum robotics are centered around medicine<sup id="fnref:BurgnerKahrs2015"><a href="#fn:BurgnerKahrs2015" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> <sup id="fnref:daVeiga2020"><a href="#fn:daVeiga2020" class="footnote" rel="footnote" role="doc-noteref">2</a></sup> <sup id="fnref:Dupont2022"><a href="#fn:Dupont2022" class="footnote" rel="footnote" role="doc-noteref">3</a></sup> and I refer the interested reader to those surveys to learn about the breadth and depth of medical continuum robotics research.</p>
 
 <h2 id="the-untapped-potential">The Untapped Potential</h2>
 <p>One may argue that continuum robots found their sweet spot in the medical application domain. While this is certainly the case, the untapped potential of continuum robots in non-medical applications is enormous! Think about autonomous small-scale or medium-scale continuum robots in in-situ and non-destructive inspection, maintenance, repair, and operations.</p>
@@ -372,13 +374,13 @@ In fact, non-medical applications for continuum robots are characterized by simi
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:BurgnerKahrs2015" role="doc-endnote">
+    <li id="fn:BurgnerKahrs2015">
       <p>J. Burgner-Kahrs, D.C. Rucker, and H. Choset: Continuum Robots for Medical Applications: A Survey. IEEE Transactions on Robotics, 31(6), pp.1261–1280. doi: <a href="https://doi.org/10.1109/TRO.2015.2489500">10.1109/TRO.2015.2489500</a> <a href="#fnref:BurgnerKahrs2015" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:daVeiga2020" role="doc-endnote">
+    <li id="fn:daVeiga2020">
       <p>T. da Veiga, J.H. Chandler, P. Lloyd, G. Pittiglio,  N.J. Wilkinson, A.K. Hoshiar, R.A. Harris, and P. Valdastri: Challenges of continuum robots in clinical context: a review. Progress in Biomedical Engineering, 2(3): 032003, 2020. doi: <a href="https://doi.org/10.1088/2516-1091/ab9f41">10.1088/2516-1091/ab9f41</a> <a href="#fnref:daVeiga2020" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:Dupont2022" role="doc-endnote">
+    <li id="fn:Dupont2022">
       <p>P.E. Dupont, N. Simaan, H. Choset, and D.C. Rucker: Continuum robots for medical interventions. Proceedings of the IEEE, 110(7):847-870, 2022. <a href="https://doi.org/10.1109/JPROC.2022.3141338">10.1109/JPROC.2022.3141338</a> <a href="#fnref:Dupont2022" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
@@ -401,7 +403,7 @@ In fact, non-medical applications for continuum robots are characterized by simi
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#opinion" class="page__taxonomy-item" rel="tag">opinion</a>
+      <a href="/categories/#opinion" class="page__taxonomy-item p-category" rel="tag">opinion</a>
     
     </span>
   </p>
@@ -409,19 +411,20 @@ In fact, non-medical applications for continuum robots are characterized by simi
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-03-17T00:00:00-04:00">2023-03-17</time></p>
-
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-03-17T00:00:00-04:00">2023-03-17</time></p>
 
       </footer>
 
       <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
   
 
   <a href="https://twitter.com/intent/tweet?text=Beyond+Medical+Applications%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fopinion%2F2023%2F03%2F17%2Funtapped_potential.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fopinion%2F2023%2F03%2F17%2Funtapped_potential.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fopinion%2F2023%2F03%2F17%2Funtapped_potential.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.opencontinuumrobotics.com/opinion/2023/03/17/untapped_potential.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -446,6 +449,7 @@ In fact, non-medical applications for continuum robots are characterized by simi
   
 </div>
 
+      
     </div>
 
     
@@ -457,6 +461,8 @@ In fact, non-medical applications for continuum robots are characterized by simi
 <!-- end custom footer snippets -->
         <div class="page__footer-follow">
   <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
     
 
     
@@ -477,7 +483,7 @@ In fact, non-medical applications for continuum robots are characterized by simi
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2024 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2026 <a href="https://www.opencontinuumrobotics.com"></a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -496,6 +502,5 @@ In fact, non-medical applications for continuum robots are characterized by simi
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
   </script>
-
   </body>
 </html>

@@ -1,11 +1,12 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
-<html lang="en" class="no-js">
+
+<html lang="en-GB" class="no-js">
   <head>
     <meta charset="utf-8">
 
@@ -48,16 +49,7 @@
 
 
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Open Continuum Robotics Project",
-      "url": "https://www.opencontinuumrobotics.com/"
-    
-  }
-</script>
+
 
 
 
@@ -70,19 +62,17 @@
 
 
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
+<script type="text/javascript">
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
 </script>
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 
 
 
@@ -116,10 +106,6 @@
   </ul>
 </nav>
 
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
     
 
 <div class="masthead">
@@ -134,11 +120,23 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/software/">Software</a>
+              <a
+                href="/software/"
+                
+                
+              >Software</a>
             </li><li class="masthead__menu-item">
-              <a href="/hardware/">Hardware</a>
+              <a
+                href="/hardware/"
+                
+                
+              >Hardware</a>
             </li><li class="masthead__menu-item">
-              <a href="/blog/">Blog</a>
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -157,28 +155,30 @@
 
 
 
+
+
 <div id="main" role="main">
   
   <div class="sidebar sticky">
   
 
 
-<div itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   
     <div class="author__avatar">
-      
-        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image">
-      
+      <a href="https://www.opencontinuumrobotics.com/">
+        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image" class="u-photo">
+      </a>
     </div>
   
 
   <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://www.opencontinuumrobotics.com/" itemprop="url">Jessica Burgner-Kahrs</a>
+    </h3>
     
-      <h3 class="author__name" itemprop="name">Jessica Burgner-Kahrs</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
+      <div class="author__bio p-note" itemprop="description">
         <p>Professor. Roboticist.</p>
 
       </div>
@@ -190,18 +190,18 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">University of Toronto, Canada</span>
         </li>
       
 
       
         
           
-            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
           
         
           
-            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
           
         
       
@@ -214,7 +214,7 @@
 
       
         <li>
-          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
           </a>
         </li>
@@ -224,7 +224,7 @@
 
       
         <li>
-          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
           </a>
         </li>
@@ -268,7 +268,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -291,8 +291,10 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Open-source Modeling Dataset
-</h1>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://www.opencontinuumrobotics.com/research/2022/10/25/openCRDataset.html" itemprop="url">Open-source Modeling Dataset
+</a>
+          </h1>
           
 
   <p class="page__meta">
@@ -330,24 +332,24 @@
 
 <p><a href="https://github.com/ContinuumRoboticsLab/CRL-Dataset-CTCR-Pose"><img src="https://www.opencontinuumrobotics.com/assets/images/posts/research/github_link_image.jpg" alt="GitHub" /></a></p>
 
-<p>The dataset was captured from a three-tube concentric tube continuum robot for use in learning-based kinetostatic modeling research. It consists of 100,000 joint configurations and the corresponding 6-dof pose measurements (base and end of each tube) measured with an electromagnetic tracking system. This was a great Continuum Robotics Laboratory team effort spearheaded by <a href="https://reinhardgrassmann.github.io">Reinhard Grassmann</a> with Ryan Chen and Nan Liang funded by the Natural Sciences and Engineering Research Council of Canada (NSERC). We share our insights on suitable joint space and task space representations as well as one-shot sampling methods in the corresponding paper<sup id="fnref:fn1" role="doc-noteref"><a href="#fn:fn1" class="footnote" rel="footnote">1</a></sup> alongside benchmarking results.</p>
+<p>The dataset was captured from a three-tube concentric tube continuum robot for use in learning-based kinetostatic modeling research. It consists of 100,000 joint configurations and the corresponding 6-dof pose measurements (base and end of each tube) measured with an electromagnetic tracking system. This was a great Continuum Robotics Laboratory team effort spearheaded by <a href="https://reinhardgrassmann.github.io">Reinhard Grassmann</a> with Ryan Chen and Nan Liang funded by the Natural Sciences and Engineering Research Council of Canada (NSERC). We share our insights on suitable joint space and task space representations as well as one-shot sampling methods in the corresponding paper<sup id="fnref:fn1"><a href="#fn:fn1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> alongside benchmarking results.</p>
 
 <p><a href="https://www.cs.toronto.edu/~jbk/pubs/2022_Grassmann_DatasetAndBenchmarkCTCR_IROS.pdf" class="btn btn--info">Paper</a> 
 <a href="https://youtu.be/vP3yqEIiH-Q" class="btn btn--success">Video</a></p>
 
-<!-- Courtesy of embedresponsively.com //-->
+<!-- Courtesy of embedresponsively.com -->
 
 <div class="responsive-video-container">
     <iframe src="https://www.youtube-nocookie.com/embed/vP3yqEIiH-Q" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
   </div>
 
-<p class="notice"><strong><em>Note:</em></strong> While the paper<sup id="fnref:fn1:1" role="doc-noteref"><a href="#fn:fn1" class="footnote" rel="footnote">1</a></sup> was in press for IROS, we presented it at a workshop @RSS 2022:
+<p class="notice"><strong><em>Note:</em></strong> While the paper<sup id="fnref:fn1:1"><a href="#fn:fn1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> was in press for IROS, we presented it at a workshop @RSS 2022:
 Reinhard M. Grassmann, Ryan Zeyuan Chen, Nan Liang, and Jessica Burgner-Kahrs: A Dataset and Benchmark for Learning the Kinematics of Concentric Tube Continuum Robots. Robotics: Science and Systems – Workshop on Learning from Diverse, Offline Data (L-DOD), 2022. <a href="https://openreview.net/pdf?id=DW9uz_GZ0og">pdf</a> <strong><em>Cite the IROS Paper!</em></strong></p>
 
 <h2 id="references">References</h2>
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:fn1" role="doc-endnote">
+    <li id="fn:fn1">
       <p>Reinhard M. Grassmann, Ryan Zeyuan Chen, Nan Liang, and Jessica Burgner-Kahrs: A Dataset and Benchmark for Learning the Kinematics of Concentric Tube Continuum Robots. IEEE/RSJ International Conference on Intelligent Robots and Systems, 2022. doi: <a href="https://dx.doi.org/tbd">tbd</a>. <a href="#fnref:fn1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:fn1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
     </li>
   </ol>
@@ -370,7 +372,7 @@ Reinhard M. Grassmann, Ryan Zeyuan Chen, Nan Liang, and Jessica Burgner-Kahrs: A
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#research" class="page__taxonomy-item" rel="tag">research</a>
+      <a href="/categories/#research" class="page__taxonomy-item p-category" rel="tag">research</a>
     
     </span>
   </p>
@@ -378,19 +380,20 @@ Reinhard M. Grassmann, Ryan Zeyuan Chen, Nan Liang, and Jessica Burgner-Kahrs: A
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-10-25T00:00:00-04:00">2022-10-25</time></p>
-
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-10-25T00:00:00-04:00">2022-10-25</time></p>
 
       </footer>
 
       <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
   
 
   <a href="https://twitter.com/intent/tweet?text=Open-source+Modeling+Dataset%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2022%2F10%2F25%2FopenCRDataset.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2022%2F10%2F25%2FopenCRDataset.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2022%2F10%2F25%2FopenCRDataset.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.opencontinuumrobotics.com/research/2022/10/25/openCRDataset.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -415,6 +418,7 @@ Reinhard M. Grassmann, Ryan Zeyuan Chen, Nan Liang, and Jessica Burgner-Kahrs: A
   
 </div>
 
+      
     </div>
 
     
@@ -426,6 +430,8 @@ Reinhard M. Grassmann, Ryan Zeyuan Chen, Nan Liang, and Jessica Burgner-Kahrs: A
 <!-- end custom footer snippets -->
         <div class="page__footer-follow">
   <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
     
 
     
@@ -446,7 +452,7 @@ Reinhard M. Grassmann, Ryan Zeyuan Chen, Nan Liang, and Jessica Burgner-Kahrs: A
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2024 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2026 <a href="https://www.opencontinuumrobotics.com"></a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -465,6 +471,5 @@ Reinhard M. Grassmann, Ryan Zeyuan Chen, Nan Liang, and Jessica Burgner-Kahrs: A
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
   </script>
-
   </body>
 </html>

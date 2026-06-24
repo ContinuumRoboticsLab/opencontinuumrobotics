@@ -1,11 +1,12 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
-<html lang="en" class="no-js">
+
+<html lang="en-GB" class="no-js">
   <head>
     <meta charset="utf-8">
 
@@ -48,16 +49,7 @@
 
 
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Open Continuum Robotics Project",
-      "url": "https://www.opencontinuumrobotics.com/"
-    
-  }
-</script>
+
 
 
 
@@ -70,19 +62,17 @@
 
 
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
+<script type="text/javascript">
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
 </script>
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 
 
 
@@ -116,10 +106,6 @@
   </ul>
 </nav>
 
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
     
 
 <div class="masthead">
@@ -134,11 +120,23 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/software/">Software</a>
+              <a
+                href="/software/"
+                
+                
+              >Software</a>
             </li><li class="masthead__menu-item">
-              <a href="/hardware/">Hardware</a>
+              <a
+                href="/hardware/"
+                
+                
+              >Hardware</a>
             </li><li class="masthead__menu-item">
-              <a href="/blog/">Blog</a>
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -157,28 +155,30 @@
 
 
 
+
+
 <div id="main" role="main">
   
   <div class="sidebar sticky">
   
 
 
-<div itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   
     <div class="author__avatar">
-      
-        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image">
-      
+      <a href="https://www.opencontinuumrobotics.com/">
+        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image" class="u-photo">
+      </a>
     </div>
   
 
   <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://www.opencontinuumrobotics.com/" itemprop="url">Jessica Burgner-Kahrs</a>
+    </h3>
     
-      <h3 class="author__name" itemprop="name">Jessica Burgner-Kahrs</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
+      <div class="author__bio p-note" itemprop="description">
         <p>Professor. Roboticist.</p>
 
       </div>
@@ -190,18 +190,18 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">University of Toronto, Canada</span>
         </li>
       
 
       
         
           
-            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
           
         
           
-            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
           
         
       
@@ -214,7 +214,7 @@
 
       
         <li>
-          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
           </a>
         </li>
@@ -224,7 +224,7 @@
 
       
         <li>
-          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
           </a>
         </li>
@@ -268,7 +268,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -291,8 +291,10 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Continuum Robots @IROS22
-</h1>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://www.opencontinuumrobotics.com/research/2022/10/18/iros-cr-highlights.html" itemprop="url">Continuum Robots @IROS22
+</a>
+          </h1>
           
 
   <p class="page__meta">
@@ -330,7 +332,6 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
               <ul class="toc__menu"><li><a href="#design">Design</a><ul><li><a href="#multiple-curvatures-in-a-tendon-driven-continuum-robot-using-a-novel-magnetic-locking-mechanism">Multiple Curvatures in a Tendon-Driven Continuum Robot Using a Novel Magnetic Locking Mechanism</a></li><li><a href="#design-of-a-modular-continuum-robot-with-alterable-compliance-using-tubular-actuation">Design of a Modular Continuum Robot with Alterable Compliance Using Tubular-Actuation</a></li><li><a href="#a-geometric-design-approach-for-continuum-robots-by-piecewise-approximation-of-free-form-shapes">A Geometric Design Approach for Continuum Robots by Piecewise Approximation of Free-Form Shapes</a></li><li><a href="#design-teleoperation-control-and-experimental-validation-of-a-dexterous-robotic-flexible-endoscope-for-laparoscopic-surgery">Design, Teleoperation Control and Experimental Validation of a Dexterous Robotic Flexible Endoscope for Laparoscopic Surgery</a></li><li><a href="#a-miniature-continuum-robot-with-integrated-piezoelectric-beacon-transducers-and-its-ultrasonic-shape-detection-in-robot-assisted-minimally-invasive-surgeries">A Miniature Continuum Robot with Integrated Piezoelectric Beacon Transducers and Its Ultrasonic Shape Detection in Robot-Assisted Minimally Invasive Surgeries</a></li><li><a href="#development-of-a-6-dof-soft-robotic-manipulator-with-integrated-sensing-skin">Development of a 6 DOF Soft Robotic Manipulator with Integrated Sensing Skin</a></li><li><a href="#design-and-experimental-characterization-of-a-push-pull-flexible-rod-driven-soft-bodied-robot">Design and Experimental Characterization of a Push-Pull Flexible Rod-Driven Soft-Bodied Robot</a></li><li><a href="#shape-memory-polymer-variable-stiffness-magnetic-catheters-with-hybrid-stiffness-control">Shape Memory Polymer Variable Stiffness Magnetic Catheters with Hybrid Stiffness Control</a></li><li><a href="#prismatic-soft-actuator-augments-the-workspace-of-soft-continuum-robots">Prismatic Soft Actuator Augments the Workspace of Soft Continuum Robots</a></li></ul></li><li><a href="#modeling">Modeling</a><ul><li><a href="#towards-adaptive-continuous-control-of-soft-robotic-manipulator-using-reinforcement-learning">Towards Adaptive Continuous Control of Soft Robotic Manipulator Using Reinforcement Learning</a></li><li><a href="#physics-informed-recurrent-neural-networks-for-soft-pneumatic-actuators">Physics-Informed Recurrent Neural Networks for Soft Pneumatic Actuators</a></li><li><a href="#a-simulation-framework-for-magnetic-continuum-robots">A Simulation Framework for Magnetic Continuum Robots</a></li><li><a href="#towards-accurate-modeling-of-modular-soft-pneumatic-robots-from-volume-fem-to-cosserat-rod">Towards Accurate Modeling of Modular Soft Pneumatic Robots: From Volume FEM to Cosserat Rod</a></li><li><a href="#a-dataset-and-benchmark-for-learning-the-kinematics-of-concentric-tube-continuum-robots">A Dataset and Benchmark for Learning the Kinematics of Concentric Tube Continuum Robots</a></li><li><a href="#nonlinear-dynamics-modeling-and-fault-detection-for-a-soft-trunk-robot-an-adaptive-nn-based-approach">Nonlinear Dynamics Modeling and Fault Detection for a Soft Trunk Robot: An Adaptive NN-Based Approach</a></li><li><a href="#shape-representation-and-modeling-of-tendon-driven-continuum-robots-using-euler-arc-splines">Shape Representation and Modeling of Tendon-Driven Continuum Robots Using Euler Arc Splines</a></li></ul></li><li><a href="#sensingstate-estimation">Sensing/State Estimation</a><ul><li><a href="#environmental-interaction-with-continuum-robots-exploiting-impact">Environmental Interaction with Continuum Robots Exploiting Impact</a></li><li><a href="#tactile-perception-for-growing-robots-via-discrete-curvature-measurements">Tactile Perception for Growing Robots Via Discrete Curvature Measurements</a></li><li><a href="#contact-localization-of-continuum-and-flexible-robot-using-data-driven-approach">Contact Localization of Continuum and Flexible Robot Using Data-Driven Approach</a></li><li><a href="#shape-reconstruction-of-soft-manipulators-using-vision-and-imu-feedback">Shape Reconstruction of Soft Manipulators Using Vision and IMU Feedback</a></li><li><a href="#fbg-based-variable-length-estimation-for-shape-sensing-of-extensible-soft-robotic-manipulators">FBG-Based Variable-Length Estimation for Shape Sensing of Extensible Soft Robotic Manipulators</a></li><li><a href="#a-proprioceptive-method-for-soft-robots-using-inertial-measurement-units">A Proprioceptive Method for Soft Robots Using Inertial Measurement Units</a></li><li><a href="#model-based-contact-detection-and-accommodation-for-soft-bending-actuators-an-integrated-directindirect-adaptive-robust-approach">Model-Based Contact Detection and Accommodation for Soft Bending Actuators: An Integrated Direct/Indirect Adaptive Robust Approach</a></li><li><a href="#3d-curvature-based-tip-load-estimation-for-continuum-robots">3D Curvature-Based Tip Load Estimation for Continuum Robots</a></li><li><a href="#estimating-forces-along-continuum-robots">Estimating Forces Along Continuum Robots</a></li><li><a href="#continuum-body-pose-estimation-from-partial-sensor-information-using-recurrent-neural-networks">Continuum-Body-Pose Estimation from Partial Sensor Information Using Recurrent Neural Networks</a></li></ul></li><li><a href="#motion-planning">Motion Planning</a><ul><li><a href="#equilibrium-manipulation-planning-for-a-soft-elastic-rod-considering-an-external-distributed-force-and-intrinsic-curvature">Equilibrium Manipulation Planning for a Soft Elastic Rod Considering an External Distributed Force and Intrinsic Curvature</a></li><li><a href="#rrt-based-path-planning-for-continuum-arms">RRT*-Based Path Planning for Continuum Arms</a></li><li><a href="#contact-implicit-trajectory-and-grasp-planning-for-soft-continuum-manipulators">Contact-Implicit Trajectory and Grasp Planning for Soft Continuum Manipulators</a></li></ul></li><li><a href="#control">Control</a><ul><li><a href="#autonomous-intraluminal-navigation-of-a-soft-robot-using-deep-learning-based-visual-servoing">Autonomous Intraluminal Navigation of a Soft Robot Using Deep-Learning-Based Visual Servoing</a></li><li><a href="#a-unified-and-modular-model-predictive-control-framework-for-soft-continuum-manipulators-under-internal-and-external-constraints">A Unified and Modular Model Predictive Control Framework for Soft Continuum Manipulators under Internal and External Constraints</a></li><li><a href="#model-based-disturbance-estimation-for-a-fiber-reinforced-soft-manipulator-using-orientation-sensing">Model-Based Disturbance Estimation for a Fiber-Reinforced Soft Manipulator Using Orientation Sensing</a></li><li><a href="#task-space-control-of-continuum-robots-using-underactuated-discrete-rod-models">Task-Space Control of Continuum Robots Using Underactuated Discrete Rod Models</a></li><li><a href="#geometrically-exact-inverse-kinematic-control-of-sof-manipulators-with-general-threadlike-actuators-routing">Geometrically-Exact Inverse Kinematic Control of Sof Manipulators with General Threadlike Actuators’ Routing</a></li><li><a href="#hybrid-eye-in-handeye-to-hand-image-based-visual-servoing-for-soft-continuum-arms">Hybrid Eye-In-Hand/Eye-To-Hand Image Based Visual Servoing for Soft Continuum Arms</a></li><li><a href="#deep-learning-based-compliant-motion-control-of-a-pneumatically-driven-robotic-catheter">Deep-Learning-Based Compliant Motion Control of a Pneumatically-Driven Robotic Catheter</a></li></ul></li></ul>
-
             </nav>
           </aside>
         
@@ -621,7 +622,7 @@ Dankelman, Jenny (TU Delft); Moccia, Sara	(Scuola Superiore Sant’Anna); Rosa, 
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#research" class="page__taxonomy-item" rel="tag">research</a>
+      <a href="/categories/#research" class="page__taxonomy-item p-category" rel="tag">research</a>
     
     </span>
   </p>
@@ -629,19 +630,20 @@ Dankelman, Jenny (TU Delft); Moccia, Sara	(Scuola Superiore Sant’Anna); Rosa, 
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-10-18T00:00:00-04:00">2022-10-18</time></p>
-
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-10-18T00:00:00-04:00">2022-10-18</time></p>
 
       </footer>
 
       <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
   
 
   <a href="https://twitter.com/intent/tweet?text=Continuum+Robots+%40IROS22%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2022%2F10%2F18%2Firos-cr-highlights.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2022%2F10%2F18%2Firos-cr-highlights.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2022%2F10%2F18%2Firos-cr-highlights.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.opencontinuumrobotics.com/research/2022/10/18/iros-cr-highlights.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -666,6 +668,7 @@ Dankelman, Jenny (TU Delft); Moccia, Sara	(Scuola Superiore Sant’Anna); Rosa, 
   
 </div>
 
+      
     </div>
 
     
@@ -677,6 +680,8 @@ Dankelman, Jenny (TU Delft); Moccia, Sara	(Scuola Superiore Sant’Anna); Rosa, 
 <!-- end custom footer snippets -->
         <div class="page__footer-follow">
   <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
     
 
     
@@ -697,7 +702,7 @@ Dankelman, Jenny (TU Delft); Moccia, Sara	(Scuola Superiore Sant’Anna); Rosa, 
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2024 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2026 <a href="https://www.opencontinuumrobotics.com"></a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -716,6 +721,5 @@ Dankelman, Jenny (TU Delft); Moccia, Sara	(Scuola Superiore Sant’Anna); Rosa, 
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
   </script>
-
   </body>
 </html>

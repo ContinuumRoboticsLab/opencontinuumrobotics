@@ -1,11 +1,12 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
-<html lang="en" class="no-js">
+
+<html lang="en-GB" class="no-js">
   <head>
     <meta charset="utf-8">
 
@@ -48,16 +49,7 @@
 
 
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Open Continuum Robotics Project",
-      "url": "https://www.opencontinuumrobotics.com/"
-    
-  }
-</script>
+
 
 
 
@@ -70,19 +62,17 @@
 
 
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
+<script type="text/javascript">
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
 </script>
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 
 
 
@@ -116,10 +106,6 @@
   </ul>
 </nav>
 
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
     
 
 <div class="masthead">
@@ -134,11 +120,23 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/software/">Software</a>
+              <a
+                href="/software/"
+                
+                
+              >Software</a>
             </li><li class="masthead__menu-item">
-              <a href="/hardware/">Hardware</a>
+              <a
+                href="/hardware/"
+                
+                
+              >Hardware</a>
             </li><li class="masthead__menu-item">
-              <a href="/blog/">Blog</a>
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -157,28 +155,30 @@
 
 
 
+
+
 <div id="main" role="main">
   
   <div class="sidebar sticky">
   
 
 
-<div itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   
     <div class="author__avatar">
-      
-        <img src="/assets/images/rmg_author.jpg" alt="Reinhard M. Grassmann" itemprop="image">
-      
+      <a href="https://www.opencontinuumrobotics.com/">
+        <img src="/assets/images/rmg_author.jpg" alt="Reinhard M. Grassmann" itemprop="image" class="u-photo">
+      </a>
     </div>
   
 
   <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://www.opencontinuumrobotics.com/" itemprop="url">Reinhard M. Grassmann</a>
+    </h3>
     
-      <h3 class="author__name" itemprop="name">Reinhard M. Grassmann</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
+      <div class="author__bio p-note" itemprop="description">
         <p>PhD Candidate.</p>
 
       </div>
@@ -190,18 +190,18 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">University of Toronto, Canada</span>
         </li>
       
 
       
         
           
-            <li><a href="mailto:reinhard.grassmann@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+            <li><a href="mailto:reinhard.grassmann@utoronto.ca" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
           
         
           
-            <li><a href="https://reinhardgrassmann.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+            <li><a href="https://reinhardgrassmann.github.io" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
           
         
       
@@ -256,7 +256,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -279,8 +279,10 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">One Actuation Module to Create them All
-</h1>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://www.opencontinuumrobotics.com/hands-on/2023/04/28/one-actuation-module.html" itemprop="url">One Actuation Module to Create them All
+</a>
+          </h1>
           
 
   <p class="page__meta">
@@ -314,27 +316,27 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>We are excited to announce that our open continuum robotics hardware is now out. It has been a humbling long journey that lead to our manuscript (which is now in review but available as pre-print on arXiv<sup id="fnref:arXiv2023" role="doc-noteref"><a href="#fn:arXiv2023" class="footnote" rel="footnote">1</a></sup>). To increase the reproducibility and accessibility of continuum robotics research, we release the hardware design, component lists, assembly instructions, and software open source here on our website.</p>
+        <p>We are excited to announce that our open continuum robotics hardware is now out. It has been a humbling long journey that lead to our manuscript (which is now in review but available as pre-print on arXiv<sup id="fnref:arXiv2023"><a href="#fn:arXiv2023" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>). To increase the reproducibility and accessibility of continuum robotics research, we release the hardware design, component lists, assembly instructions, and software open source here on our website.</p>
 
 <p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/hands-on/one-module-teaser.jpeg" alt="" /></p>
 
-<p>As you are reading this on our blog, you are already aware of our initiative called the OpenCR Project. With this week’s post, we are releasing our open actuation module <sup id="fnref:arXiv2023:1" role="doc-noteref"><a href="#fn:arXiv2023" class="footnote" rel="footnote">1</a></sup> for the continuum robotics community to build torque-controlled continuum robots. The actuation module is capable of measuring the external torque as demonstrated with very simplified toy examples. Its versatile and modular characteristics are highlighted by building three different types of continuum robot prototypes. The presented prototypes are capable of torque control and fast trajectory tracking making them the first of a kind of the respective continuum robot type.</p>
+<p>As you are reading this on our blog, you are already aware of our initiative called the OpenCR Project. With this week’s post, we are releasing our open actuation module <sup id="fnref:arXiv2023:1"><a href="#fn:arXiv2023" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> for the continuum robotics community to build torque-controlled continuum robots. The actuation module is capable of measuring the external torque as demonstrated with very simplified toy examples. Its versatile and modular characteristics are highlighted by building three different types of continuum robot prototypes. The presented prototypes are capable of torque control and fast trajectory tracking making them the first of a kind of the respective continuum robot type.</p>
 
 <h2 id="the-why">The Why</h2>
 <p>Stepping aside, what problem are we actually addressing? In short – the lack of torque-controlled continuum robot prototypes available to all researchers. In fact, this lack is grounded on two observations we made by observing our research community and relating to other research areas in robotics.</p>
 
-<p>First, in our previous study <sup id="fnref:WS_RSS_2020" role="doc-noteref"><a href="#fn:WS_RSS_2020" class="footnote" rel="footnote">2</a></sup>, we observed that precious time and focus are devoted to building custom prototypes. One can acknowledge that experiments on physical hardware in robotics are necessary and valuable for evaluations. However, over 60% of all prototypes are used for only a single publication. This demonstrates an inefficient habit of not reusing existing prototypes. Thus, a significant amount of time is devoted to creating proprietary hardware and software. This large and growing number of <strong><em>single-use prototypes</em></strong> imposes a barrier for the research community shifting away time and efforts from important research questions.</p>
+<p>First, in our previous study <sup id="fnref:WS_RSS_2020"><a href="#fn:WS_RSS_2020" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>, we observed that precious time and focus are devoted to building custom prototypes. One can acknowledge that experiments on physical hardware in robotics are necessary and valuable for evaluations. However, over 60% of all prototypes are used for only a single publication. This demonstrates an inefficient habit of not reusing existing prototypes. Thus, a significant amount of time is devoted to creating proprietary hardware and software. This large and growing number of <strong><em>single-use prototypes</em></strong> imposes a barrier for the research community shifting away time and efforts from important research questions.</p>
 
 <p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/hands-on/reused_robot_over_time.png" alt="" /></p>
 
-<p>Second, on a more personal note, having the opportunity <sup id="fnref:RoboterFabrik" role="doc-noteref"><a href="#fn:RoboterFabrik" class="footnote" rel="footnote">3</a></sup>, <sup id="fnref:TeachingLab" role="doc-noteref"><a href="#fn:TeachingLab" class="footnote" rel="footnote">4</a></sup> to regularly work with torque-controlled manipulators such as the Franka Emika Panda<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">5</a></sup>, utilizing torque control for continuum robots seems to be a natural next stepping stone. Torque control has a rich history, especially for serial kinematic mechanisms <sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">6</a></sup> <sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">7</a></sup> <sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">8</a></sup> <sup id="fnref:16:1" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">5</a></sup>. However, for some reason, the spread and success of torque-control used in pHRI (physical human-robot interaction) research has not reached our continuum robotics community. Perhaps, one reason is that not much time has been directed to build a continuum robot prototype capable of torque control.</p>
+<p>Second, on a more personal note, having the opportunity <sup id="fnref:RoboterFabrik"><a href="#fn:RoboterFabrik" class="footnote" rel="footnote" role="doc-noteref">3</a></sup>, <sup id="fnref:TeachingLab"><a href="#fn:TeachingLab" class="footnote" rel="footnote" role="doc-noteref">4</a></sup> to regularly work with torque-controlled manipulators such as the Franka Emika Panda<sup id="fnref:16"><a href="#fn:16" class="footnote" rel="footnote" role="doc-noteref">5</a></sup>, utilizing torque control for continuum robots seems to be a natural next stepping stone. Torque control has a rich history, especially for serial kinematic mechanisms <sup id="fnref:13"><a href="#fn:13" class="footnote" rel="footnote" role="doc-noteref">6</a></sup> <sup id="fnref:14"><a href="#fn:14" class="footnote" rel="footnote" role="doc-noteref">7</a></sup> <sup id="fnref:15"><a href="#fn:15" class="footnote" rel="footnote" role="doc-noteref">8</a></sup> <sup id="fnref:16:1"><a href="#fn:16" class="footnote" rel="footnote" role="doc-noteref">5</a></sup>. However, for some reason, the spread and success of torque-control used in pHRI (physical human-robot interaction) research has not reached our continuum robotics community. Perhaps, one reason is that not much time has been directed to build a continuum robot prototype capable of torque control.</p>
 
 <h2 id="the-opencr-actuation-module">The OpenCR Actuation Module</h2>
 <p>To provide torque-controlled continuum robot prototypes, we propose a modular actuation module consisting of a high-torque brushless electric motor, a high-resolution optical encoder, and a low-gear-ratio transmission. This choice of hardware allows for torque control and fast trajectory tracking in real time. Furthermore, it enables proprioceptive torque sensing by measuring motor currents without relying on additional sensors, e.g., tension sensors or load cells. In addition, the actuation module and its coupling system can be used in different actuation modes for a wide range of continuum robots. For instance, tendon displacement/tension and backbone rotation/torque can be controlled and measured.</p>
 
 <p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/hands-on/one-module-assembly.gif" alt="" /></p>
 
-<p>Recapping the technological trend towards torque-controlled robot systems in other research fields, we are forecasting a likely impact of the proposed actuation module and continuum robot prototypes built on it. The manuscript <sup id="fnref:arXiv2023:2" role="doc-noteref"><a href="#fn:arXiv2023" class="footnote" rel="footnote">1</a></sup> takes initial steps towards advanced control methodologies. We are confident that the ability of continuum robots utilizing our actuation module (or one with similar capabilities) has a decisive advantage over previous existing prototypes. For example, a CTCR can detect external disturbance as shown here:</p>
+<p>Recapping the technological trend towards torque-controlled robot systems in other research fields, we are forecasting a likely impact of the proposed actuation module and continuum robot prototypes built on it. The manuscript <sup id="fnref:arXiv2023:2"><a href="#fn:arXiv2023" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> takes initial steps towards advanced control methodologies. We are confident that the ability of continuum robots utilizing our actuation module (or one with similar capabilities) has a decisive advantage over previous existing prototypes. For example, a CTCR can detect external disturbance as shown here:</p>
 
 <p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/hands-on/one-module-ctcr-snap.gif" alt="" /></p>
 
@@ -343,7 +345,7 @@
 
 <p><img src="https://www.opencontinuumrobotics.com/assets/images/posts/hands-on/one-module-create-all.jpeg" alt="" /></p>
 
-<p>To improve our prototypes, we took great inspiration from the Open Dynamic Robot Initiative, where efforts are made to build cost-efficient actuators for torque-controlled legged robots <sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">9</a></sup> and manipulators <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">10</a></sup>. As a matter of fact, open robot hardware projects proliferate progress in robotics <sup id="fnref:RAM_Survey_2023" role="doc-noteref"><a href="#fn:RAM_Survey_2023" class="footnote" rel="footnote">11</a></sup>. Therefore, we encourage you – dear reader – to participate in the development of open-source software and hardware as well as to join the journey of leveraging torque-controlled prototypes. Let’s pave the way with new stepping stones toward untapped or under-investigated research directions.</p>
+<p>To improve our prototypes, we took great inspiration from the Open Dynamic Robot Initiative, where efforts are made to build cost-efficient actuators for torque-controlled legged robots <sup id="fnref:12"><a href="#fn:12" class="footnote" rel="footnote" role="doc-noteref">9</a></sup> and manipulators <sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote" role="doc-noteref">10</a></sup>. As a matter of fact, open robot hardware projects proliferate progress in robotics <sup id="fnref:RAM_Survey_2023"><a href="#fn:RAM_Survey_2023" class="footnote" rel="footnote" role="doc-noteref">11</a></sup>. Therefore, we encourage you – dear reader – to participate in the development of open-source software and hardware as well as to join the journey of leveraging torque-controlled prototypes. Let’s pave the way with new stepping stones toward untapped or under-investigated research directions.</p>
 
 <p>We hope that the open source nature will bear fruit by opening untapped or under-investigated research directions related to dynamics and advanced control of continuum robots.</p>
 
@@ -355,37 +357,37 @@
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:arXiv2023" role="doc-endnote">
+    <li id="fn:arXiv2023">
       <p>Reinhard M. Grassmann, Chengnan Shentu, Taqi Hamoda, Puspita Triana Dewi, Jessica Burgner-Kahrs. “Open Continuum Robotics – One Actuation Module to Create them All,” 2023, arXiv: <a href="https://arxiv.org/abs/2304.11850">2304.11850</a> <a href="#fnref:arXiv2023" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:arXiv2023:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:arXiv2023:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
     </li>
-    <li id="fn:WS_RSS_2020" role="doc-endnote">
+    <li id="fn:WS_RSS_2020">
       <p>R. M. Grassmann, S. Lilge, P. Le, and J. Burgner-Kahrs, “CTCR prototype development: An obstacle in the research community?” in Robotics Retrospectives Workshop at RSS, 2020. <a href="https://openreview.net/forum?id=bYLFxFQPFtX">Online</a> <a href="#fnref:WS_RSS_2020" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:RoboterFabrik" role="doc-endnote">
+    <li id="fn:RoboterFabrik">
       <p>Sami Haddadin, Lars Johannsmeier, Johannes Schmid, Tobias Ende, Sven Parusel, Simon Haddadin, Moritz Schappler, Torsten Lilge, and Marvin Becker. “roboterfabrik: A pilot to link and unify german robotics education to match industrial and societal demands.” International Conference on Robotics and Education, 2018. DOI: <a href="https://doi.org/10.1007/978-3-319-97085-1_1">10.1007/978-3-319-97085-1_1</a> <a href="#fnref:RoboterFabrik" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:TeachingLab" role="doc-endnote">
+    <li id="fn:TeachingLab">
       <p>Kristy Strauss, “‘It’s a really cool place’: U of T Mississauga students get hands-on experience in new robotics teaching lab.” Accessed: April 25, 2023 <a href="https://www.utoronto.ca/news/it-s-really-cool-place-u-t-mississauga-undergrads-get-hands-experience-new-robotics-teaching">Online</a> <a href="#fnref:TeachingLab" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:16" role="doc-endnote">
+    <li id="fn:16">
       <p>S. Haddadin, S. Parusel, L. Johannsmeier, S. Golz, S. Gabl, F. Walch, M. Sabaghian, C. Jaehne, L. Hausperger, and S. Haddadin, “The Franka Emika Robot: A reference platform for robotics research and education,” IEEE Robotics &amp; Automation Magazine, vol. 29, no. 2, pp. 46-64, 2022. DOI: <a href="https://doi.org/10.1109/MRA.2021.3138382">10.1109/MRA.2021.3138382</a> <a href="#fnref:16" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:16:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
     </li>
-    <li id="fn:13" role="doc-endnote">
+    <li id="fn:13">
       <p>J. Luh, W. Fisher, and R. Paul, “Joint torque control by a direct feedback for industrial robots,” Transactions on Automatic Control, vol. 28, no. 2, pp. 153–161, 1983. DOI: <a href="https://doi.org/10.1109/TAC.1983.1103215">10.1109/TAC.1983.1103215</a> <a href="#fnref:13" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:14" role="doc-endnote">
+    <li id="fn:14">
       <p>L. E. Pfeffer, O. Khatib, and J. Hake, “Joint torque sensory feedback in the control of a PUMA manipulator,” IEEE Transactions on Robotics and Automation, vol. 5, no. 4, pp. 418–425, 1989. DOI: <a href="https://doi.org/10.1109/70.88056">10.1109/70.88056</a> <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:15" role="doc-endnote">
+    <li id="fn:15">
       <p>R. Bischoff, J. Kurth, G. Schreiber, R. Koeppe, A. Albu-Schäffer, A. Beyer, O. Eiberger, S. Haddadin, A. Stemmer, G. Grunwald, and G. Hirzinger, “The kuka-dlr lightweight robot arm-a new reference platform for robotics research and manufacturing,” in International Symposium on Robotics, 2010, pp. 1–8. <a href="https://ieeexplore.ieee.org/document/5756872">online</a> <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:12" role="doc-endnote">
+    <li id="fn:12">
       <p>F. Grimminger, A. Meduri, M. Khadiv, J. Viereck, M. Wüthrich, M. Naveau, V. Berenz, S. Heim, F. Widmaier, T. Flayols, J. Fiene, A. Badri-Spröwitz, and L. Righetti, “An open torque-controlled modular robot architecture for legged locomotion research,” IEEE Robotics and Automation Letters, vol. 5, no. 2, pp. 3650–3657, 2020. DOI: <a href="https://doi.org/10.1109/LRA.2020.2976639">10.1109/LRA.2020.2976639</a> <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6" role="doc-endnote">
+    <li id="fn:6">
       <p>M. Wüthrich, F. Widmaier, F. Grimminger, J. Akpo, S. Joshi, V. Agrawal, B. Hammoud, M. Khadiv, M. Bogdanovic, V. Berenz, J. Viereck, M. Naveau, L. Righetti, B. Schölkopf, and S. Bauer, “Trifinger: An open-source robot for learning dexterity,” in Conference on Robot Learning, 2020. arXiv: <a href="https://doi.org/10.48550/arXiv.2008.03596">2008.03596</a> <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:RAM_Survey_2023" role="doc-endnote">
+    <li id="fn:RAM_Survey_2023">
       <p>V. V. Patel, M. V. Liarokapis, and A. M. Dollar, “Open robot hardware: Progress, benefits, challenges, and best practices,” IEEE Robotics &amp; Automation Magazine, pp. 2–9, 2022. DOI: <a href="https://doi.org/10.1109/MRA.2022.3225725">10.1109/MRA.2022.3225725</a> <a href="#fnref:RAM_Survey_2023" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
@@ -408,7 +410,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#hands-on" class="page__taxonomy-item" rel="tag">hands-on</a>
+      <a href="/categories/#hands-on" class="page__taxonomy-item p-category" rel="tag">hands-on</a>
     
     </span>
   </p>
@@ -416,19 +418,20 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-04-28T00:00:00-04:00">2023-04-28</time></p>
-
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-04-28T00:00:00-04:00">2023-04-28</time></p>
 
       </footer>
 
       <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
   
 
   <a href="https://twitter.com/intent/tweet?text=One+Actuation+Module+to+Create+them+All%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fhands-on%2F2023%2F04%2F28%2Fone-actuation-module.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fhands-on%2F2023%2F04%2F28%2Fone-actuation-module.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fhands-on%2F2023%2F04%2F28%2Fone-actuation-module.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.opencontinuumrobotics.com/hands-on/2023/04/28/one-actuation-module.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -453,6 +456,7 @@
   
 </div>
 
+      
     </div>
 
     
@@ -464,6 +468,8 @@
 <!-- end custom footer snippets -->
         <div class="page__footer-follow">
   <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
     
 
     
@@ -484,7 +490,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2024 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2026 <a href="https://www.opencontinuumrobotics.com"></a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -503,6 +509,5 @@
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
   </script>
-
   </body>
 </html>

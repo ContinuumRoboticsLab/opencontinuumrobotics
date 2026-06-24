@@ -1,11 +1,12 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
-<html lang="en" class="no-js">
+
+<html lang="en-GB" class="no-js">
   <head>
     <meta charset="utf-8">
 
@@ -48,16 +49,7 @@
 
 
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Open Continuum Robotics Project",
-      "url": "https://www.opencontinuumrobotics.com/"
-    
-  }
-</script>
+
 
 
 
@@ -70,19 +62,17 @@
 
 
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
+<script type="text/javascript">
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
 </script>
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 
 
 
@@ -116,10 +106,6 @@
   </ul>
 </nav>
 
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
     
 
 <div class="masthead">
@@ -134,11 +120,23 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/software/">Software</a>
+              <a
+                href="/software/"
+                
+                
+              >Software</a>
             </li><li class="masthead__menu-item">
-              <a href="/hardware/">Hardware</a>
+              <a
+                href="/hardware/"
+                
+                
+              >Hardware</a>
             </li><li class="masthead__menu-item">
-              <a href="/blog/">Blog</a>
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -157,28 +155,30 @@
 
 
 
+
+
 <div id="main" role="main">
   
   <div class="sidebar sticky">
   
 
 
-<div itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   
     <div class="author__avatar">
-      
-        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image">
-      
+      <a href="https://www.opencontinuumrobotics.com/">
+        <img src="/assets/images/jbk.png" alt="Jessica Burgner-Kahrs" itemprop="image" class="u-photo">
+      </a>
     </div>
   
 
   <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://www.opencontinuumrobotics.com/" itemprop="url">Jessica Burgner-Kahrs</a>
+    </h3>
     
-      <h3 class="author__name" itemprop="name">Jessica Burgner-Kahrs</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
+      <div class="author__bio p-note" itemprop="description">
         <p>Professor. Roboticist.</p>
 
       </div>
@@ -190,18 +190,18 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">University of Toronto, Canada</span>
         </li>
       
 
       
         
           
-            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+            <li><a href="mailto:jessica.burgnerkahrs@utoronto.ca" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
           
         
           
-            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+            <li><a href="https://www.cs.toronto.edu/~jbk/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
           
         
       
@@ -214,7 +214,7 @@
 
       
         <li>
-          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://twitter.com/BurgnerKahrs" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
           </a>
         </li>
@@ -224,7 +224,7 @@
 
       
         <li>
-          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://www.linkedin.com/in/jessica-burgner-kahrs" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
           </a>
         </li>
@@ -268,7 +268,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -291,8 +291,10 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Continuum Robotics 101
-</h1>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://www.opencontinuumrobotics.com/101/2022/10/21/cr-intro.html" itemprop="url">Continuum Robotics 101
+</a>
+          </h1>
           
 
   <p class="page__meta">
@@ -330,7 +332,6 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
               <ul class="toc__menu"><li><a href="#four-examples">Four Examples</a><ul><li><a href="#example-1-bionic-motion-robot">Example 1: Bionic Motion Robot</a></li><li><a href="#example-2-snake-arm-robot">Example 2: Snake-arm Robot</a></li><li><a href="#example-3-multi-articulated-instruments">Example 3: Multi-articulated Instruments</a></li><li><a href="#example-4-soft-finger-gripper">Example 4: Soft Finger Gripper</a></li></ul></li><li><a href="#definition">Definition</a></li><li><a href="#summary">Summary</a></li><li><a href="#references">References</a></li></ul>
-
             </nav>
           </aside>
         
@@ -361,7 +362,7 @@ Continuum robots differ fundamentally from traditional robots, as they are joint
 <p>The company FESTO has been pioneering continuum robots at comparable size to collaborative serial robot arms. Here, we see the latest version of their pneumatically actuated continuum robot called the Bionic Motion Robot. Consisting of three concatenated segments, each of which consists of three elastomer bellows, it can extend/contract and bend by changing the pressure within the bellows. With a diameter of 13cm and length of 85 cm, the Bionic Motion Robot weighs about 3kg and can also carry about 3kg. The Bionic Motion Robot is advertised for collaborative tasks with humans as it is light-weight and safe, e.g. in assembly.
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/JbGhtpSfPmU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --></p>
 
-<!-- Courtesy of embedresponsively.com //-->
+<!-- Courtesy of embedresponsively.com -->
 
 <div class="responsive-video-container">
     <iframe src="https://www.youtube-nocookie.com/embed/JbGhtpSfPmU" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
@@ -371,7 +372,7 @@ Continuum robots differ fundamentally from traditional robots, as they are joint
 <p>The snake-arm robot developed by OCRobotics is probably the longest among all continuum robots with 5m length. The snake-arm robot is driven by wire ropes guided through channels on the circumference of the cylinders composing the robot structure. Two wire ropes terminate at each cylinder along the robot, forming the links. As a result, by pushing/pulling on a wire rope, the respective segment can bend up to 27.5 degrees. At a diameter of 12.5cm and overall length of up to 5m (3m of which are articulated) the robot has a payload of up to 10kg. OCRobotics has been acquired by GE Aviation in 2017 to move the technology towards use in aviation industry for repair and operations.
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Ij8VX9YUT_Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --></p>
 
-<!-- Courtesy of embedresponsively.com //-->
+<!-- Courtesy of embedresponsively.com -->
 
 <div class="responsive-video-container">
     <iframe src="https://www.youtube-nocookie.com/embed/Ij8VX9YUT_Y" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
@@ -380,7 +381,7 @@ Continuum robots differ fundamentally from traditional robots, as they are joint
 <h3 id="example-3-multi-articulated-instruments">Example 3: Multi-articulated Instruments</h3>
 <p>The multi-articulated instruments developed by Titan Medical Inc. are following a comparable actuation mechanism as the snake-arm robot. To achieve bending into an S-curve the instrument is composed of two segments each of which are driven by four wires terminating at their end. Pushing or pulling on the wire pairs achieves bending in all directions. These multi-articulated instruments are part of a surgical robot system intended for use in single-port interventions, i.e. entering the human body through a single incision. The instruments are teleoperated by the surgeon, i.e. the motion of the instruments is commanded via an input device at the surgeon’s console. The system is not yet commercially available.</p>
 
-<!-- Courtesy of embedresponsively.com //-->
+<!-- Courtesy of embedresponsively.com -->
 
 <div class="responsive-video-container">
     <iframe src="https://player.vimeo.com/video/462286259?dnt=true" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
@@ -389,7 +390,7 @@ Continuum robots differ fundamentally from traditional robots, as they are joint
 <h3 id="example-4-soft-finger-gripper">Example 4: Soft Finger Gripper</h3>
 <p>Using continuously bending structures to realize grippers for industrial automation applications has advantages over conventional 2- or 3-claws grippers when a wide range of objects need to be handled which are delicate or amorphous (e.g. food). One example of such a soft gripper is commercially available from Soft Robotic Inc. Each finger is composed of a soft silicone and resembles an accordion. Actuation is achieved by pneumatics: changing the pressure results in bending of a finger. The fingers can be arranged in a parallel or circular pattern depending on the objects to be handled.</p>
 
-<!-- Courtesy of embedresponsively.com //-->
+<!-- Courtesy of embedresponsively.com -->
 
 <div class="responsive-video-container">
     <iframe src="https://www.youtube-nocookie.com/embed/4HVSr3ouCdk" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
@@ -400,21 +401,21 @@ Continuum robots differ fundamentally from traditional robots, as they are joint
 <h2 id="definition">Definition</h2>
 <p>Researchers in the continuum robot community have not yet converged to a single definition, such that there exist three major definitions, which are stated in chronological order.</p>
 
-<p>The very first formal definition of continuum robots as a class of robots was proposed by <strong>Robinson &amp; Davies</strong><sup id="fnref:fn1" role="doc-noteref"><a href="#fn:fn1" class="footnote" rel="footnote">1</a></sup> in 1999:</p>
+<p>The very first formal definition of continuum robots as a class of robots was proposed by <strong>Robinson &amp; Davies</strong><sup id="fnref:fn1"><a href="#fn:fn1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> in 1999:</p>
 <blockquote>
   <p>Continuum robots do not contain rigid links and identifiable rotational joints. Instead the structures bend continuously along their length via elastic deformation and produce motion through the generation of smooth curves, similar to tentacles or tongues of the animal kingdom.</p>
 </blockquote>
 
 <p>The definition focusses on the appearance of continuum robots and puts continuous bending and elastic deformation as key characteristics. It also explicitly excludes rigid links and identifiable joints, such that snake-like robot structures as in Example 2 would formally not qualify for a continuum robot based on this definition.</p>
 
-<p>Defining a continuum robot by relating its kinematic structure to the animal kingdom was proposed by <strong>Walker</strong><sup id="fnref:fn2" role="doc-noteref"><a href="#fn:fn2" class="footnote" rel="footnote">2</a></sup> in 2013:</p>
+<p>Defining a continuum robot by relating its kinematic structure to the animal kingdom was proposed by <strong>Walker</strong><sup id="fnref:fn2"><a href="#fn:fn2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup> in 2013:</p>
 <blockquote>
   <p>Continuum robots can be viewed as being invertebrate robots, as compared with the vertebrate design of conventional rigid-link robots. Continuum robots can bend (and often extend/contract and sometimes twist) at any point along their structure.</p>
 </blockquote>
 
 <p>This definition follows the formalism of invertebrates, i.e. animals without a backbone or bony skeleton. According to this, continuum robots have no rigid links and joints as well. Interestingly, the structure of a continuum robot is often referred to as its backbone - even though it is continuous. In comparison to Robinson &amp; Davies definition, Walker’s definition explicitly includes extension and contraction as a characteristic of continuum robots.</p>
 
-<p>To mathematically formalize the existing definitions, <strong>Burgner-Kahrs, Rucker &amp; Choset</strong><sup id="fnref:fn3" role="doc-noteref"><a href="#fn:fn3" class="footnote" rel="footnote">3</a></sup> propose the following definition:</p>
+<p>To mathematically formalize the existing definitions, <strong>Burgner-Kahrs, Rucker &amp; Choset</strong><sup id="fnref:fn3"><a href="#fn:fn3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup> propose the following definition:</p>
 <blockquote>
   <p>A continuum robot is an actuatable structure, whose constitutive material forms curves with continuous tangent vectors.</p>
 </blockquote>
@@ -440,13 +441,13 @@ Continuum robots differ fundamentally from traditional robots, as they are joint
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:fn1" role="doc-endnote">
+    <li id="fn:fn1">
       <p>G. Robinson and J.B.C. Davies: Continuum robots - a state of the art. IEEE International Conference on Robotics and Automation, 1999, pp. 2849-2854 vol.4, doi: <a href="https://dx.doi.org/10.1109/ROBOT.1999.774029">10.1109/ROBOT.1999.774029</a>. <a href="#fnref:fn1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:fn2" role="doc-endnote">
+    <li id="fn:fn2">
       <p>I.D. Walker: Continuous Backbone “Continuum” Robot Manipulators. ISRN Robotics, 2013, pp.1–19. doi: <a href="https://doi.org/10.5402/2013/726506">10.5402/2013/726506</a> <a href="#fnref:fn2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:fn3" role="doc-endnote">
+    <li id="fn:fn3">
       <p>J. Burgner-Kahrs, D.C. Rucker and H. Choset: Continuum Robots for Medical Applications: A Survey. IEEE Transactions on Robotics, 31(6), pp.1261–1280. doi: <a href="https://doi.org/10.1109/TRO.2015.2489500">10.1109/TRO.2015.2489500</a> <a href="#fnref:fn3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
@@ -469,7 +470,7 @@ Continuum robots differ fundamentally from traditional robots, as they are joint
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#101" class="page__taxonomy-item" rel="tag">101</a>
+      <a href="/categories/#101" class="page__taxonomy-item p-category" rel="tag">101</a>
     
     </span>
   </p>
@@ -477,19 +478,20 @@ Continuum robots differ fundamentally from traditional robots, as they are joint
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-10-21T00:00:00-04:00">2022-10-21</time></p>
-
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-10-21T00:00:00-04:00">2022-10-21</time></p>
 
       </footer>
 
       <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
   
 
   <a href="https://twitter.com/intent/tweet?text=Continuum+Robotics+101%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2F101%2F2022%2F10%2F21%2Fcr-intro.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2F101%2F2022%2F10%2F21%2Fcr-intro.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.opencontinuumrobotics.com%2F101%2F2022%2F10%2F21%2Fcr-intro.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.opencontinuumrobotics.com/101/2022/10/21/cr-intro.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -514,6 +516,7 @@ Continuum robots differ fundamentally from traditional robots, as they are joint
   
 </div>
 
+      
     </div>
 
     
@@ -525,6 +528,8 @@ Continuum robots differ fundamentally from traditional robots, as they are joint
 <!-- end custom footer snippets -->
         <div class="page__footer-follow">
   <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
     
 
     
@@ -545,7 +550,7 @@ Continuum robots differ fundamentally from traditional robots, as they are joint
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2024 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2026 <a href="https://www.opencontinuumrobotics.com"></a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -564,6 +569,5 @@ Continuum robots differ fundamentally from traditional robots, as they are joint
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
   </script>
-
   </body>
 </html>

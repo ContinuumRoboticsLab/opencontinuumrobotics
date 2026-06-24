@@ -1,11 +1,12 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
-<html lang="en" class="no-js">
+
+<html lang="en-GB" class="no-js">
   <head>
     <meta charset="utf-8">
 
@@ -48,16 +49,7 @@
 
 
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Open Continuum Robotics Project",
-      "url": "https://www.opencontinuumrobotics.com/"
-    
-  }
-</script>
+
 
 
 
@@ -70,19 +62,17 @@
 
 
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
+<script type="text/javascript">
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
 </script>
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 
 
 
@@ -116,10 +106,6 @@
   </ul>
 </nav>
 
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
     
 
 <div class="masthead">
@@ -134,11 +120,23 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/software/">Software</a>
+              <a
+                href="/software/"
+                
+                
+              >Software</a>
             </li><li class="masthead__menu-item">
-              <a href="/hardware/">Hardware</a>
+              <a
+                href="/hardware/"
+                
+                
+              >Hardware</a>
             </li><li class="masthead__menu-item">
-              <a href="/blog/">Blog</a>
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -157,29 +155,31 @@
 
 
 
+
+
 <div id="main" role="main">
   
   <div class="sidebar sticky">
   
 
 
-<div itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   
     <div class="author__avatar">
-      
-        <img src="/assets/images/nb_author.png" alt="Nicholas Baldassini" itemprop="image">
-      
+      <a href="https://www.opencontinuumrobotics.com/">
+        <img src="/assets/images/nb_author.png" alt="Nicholas Baldassini" itemprop="image" class="u-photo">
+      </a>
     </div>
   
 
   <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://www.opencontinuumrobotics.com/" itemprop="url">Nicholas Baldassini</a>
+    </h3>
     
-      <h3 class="author__name" itemprop="name">Nicholas Baldassini</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
-        <p>Computer Science Student</p>
+      <div class="author__bio p-note" itemprop="description">
+        <p>MSc Computer Science Student</p>
 
       </div>
     
@@ -190,14 +190,14 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">University of Toronto, Canada</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">University of Toronto, Canada</span>
         </li>
       
 
       
         
           
-            <li><a href="mailto:nicholas.baldassini@mail.utoronto.ca" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+            <li><a href="mailto:nicholas.baldassini@mail.utoronto.ca" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
           
         
       
@@ -214,7 +214,7 @@
 
       
         <li>
-          <a href="https://www.linkedin.com/in/nicholas-baldassini-6584821b6" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://www.linkedin.com/in/nicholas-baldassini-6584821b6" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
           </a>
         </li>
@@ -258,7 +258,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -281,8 +281,10 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Open Source TDCR Contact Model
-</h1>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://www.opencontinuumrobotics.com/research/2024/06/14/tdcr-contact-model.html" itemprop="url">Open Source TDCR Contact Model
+</a>
+          </h1>
           
 
   <p class="page__meta">
@@ -320,16 +322,14 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
               <ul class="toc__menu"><li><a href="#model-defintion">Model Defintion</a></li><li><a href="#code-organization">Code Organization</a></li><li><a href="#code-walkthrough">Code Walkthrough</a><ul><li><a href="#taskspace">Taskspace</a></li><li><a href="#robot">Robot</a></li><li><a href="#motion-planning">Motion Planning</a></li><li><a href="#forward-kinematics">Forward kinematics</a></li><li><a href="#visualizing-a-configuration">Visualizing a Configuration</a></li><li><a href="#visualizing-a-motion-plan">Visualizing a Motion Plan</a></li></ul></li><li><a href="#references">References</a></li></ul>
-
             </nav>
           </aside>
         
-        <p>In a previous <a href="https://www.opencontinuumrobotics.com/research/2024/04/05/tdcr-can.html">blogpost</a>, we explained a new approach for contact aided motion planning. As part of our OpenCR project, we have open sourced the model we use for simulation<sup id="fnref:Ashwin" role="doc-noteref"><a href="#fn:Ashwin" class="footnote" rel="footnote">1</a></sup>. Additional implementation details and examples can be found in our paper<sup id="fnref:Rao" role="doc-noteref"><a href="#fn:Rao" class="footnote" rel="footnote">2</a></sup>.</p>
+        <p>In a previous <a href="https://www.opencontinuumrobotics.com/research/2024/04/05/tdcr-can.html">blogpost</a>, we explained a new approach for contact aided motion planning. As part of our OpenCR project, we have open sourced the model we use for simulation<sup id="fnref:Ashwin"><a href="#fn:Ashwin" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>. Additional implementation details and examples can be found in our paper<sup id="fnref:Rao"><a href="#fn:Rao" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>.</p>
 
 <p>In this blog we present a tutorial on how to use our open source <a href="https://github.com/ContinuumRoboticsLab/OpenTDCRContactModel">OpenTDCRContactModel</a>. With our code, you can build custom taskspaces with circular obstacles and apply our contact-aided search to tendon driven continuum robots to reach a target position in a 2D taskspace. The model is implemented in C++ and Matlab. We also provide an easy to use interface written in Python. For a quickstart, have a look to our <a href="https://colab.research.google.com/drive/12blCye60rOwlRdw1ya80a9P254LK0z9w?usp=sharing#scrollTo=YBk1qHRE2Iwe">Google collab demo notebook</a>.</p>
 
-<figure class="">
-  <img src="/assets/images/posts/research/contactmodel_still_figure.png" alt="" /></figure>
+<figure class=""><img src="/assets/images/posts/research/contactmodel_still_figure.png" alt="" /></figure>
 
 <h2 id="model-defintion">Model Defintion</h2>
 <p>The model is posed as a nonlinear optimisation problem. The robot is said to be defined by ‘m’  piecewise constant curvature arcs. The objective of this problem is to find a set of m curvatures that minimize the robots potential energy. The nonlinear equality constraint makes sure that the input  tendon length is equal to the calculated tendon length. The nonlinear inequality constraint ensures that points on the robot lie outside all the obstacles.</p>
@@ -385,7 +385,7 @@ config_init.run_forward_model(workspace, True, "KINEMATIC_CPP")
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>taskspace.generate_path(initial_Node, target=[x, y, z], filename='filename')
 </code></pre></div></div>
 
-<p>This method performs a greedy heuristic search through joint space sequences using Euclidean distance as a metric. More details can be found in Rao et al.<sup id="fnref:Rao:1" role="doc-noteref"><a href="#fn:Rao" class="footnote" rel="footnote">2</a></sup>  The heuristic can be replaced with a custom heuristic you wish to investigate. Feel free to play around with it. The heuristic is defined in <code class="language-plaintext highlighter-rouge">/utils/taskspace.py</code>. Alternatively, you may load one of the premade path located in <code class="language-plaintext highlighter-rouge">/sample_paths</code>.</p>
+<p>This method performs a greedy heuristic search through joint space sequences using Euclidean distance as a metric. More details can be found in Rao et al.<sup id="fnref:Rao:1"><a href="#fn:Rao" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>  The heuristic can be replaced with a custom heuristic you wish to investigate. Feel free to play around with it. The heuristic is defined in <code class="language-plaintext highlighter-rouge">/utils/taskspace.py</code>. Alternatively, you may load one of the premade path located in <code class="language-plaintext highlighter-rouge">/sample_paths</code>.</p>
 
 <h3 id="forward-kinematics">Forward kinematics</h3>
 <p>After the path is created, we then iterate over each position in the joint space csv file previously created. The forward kinematics of each value is calculated and saved to a list <code class="language-plaintext highlighter-rouge">traced_path</code>.</p>
@@ -416,8 +416,7 @@ helpers.saveFigure()
 # plt.show()
 </code></pre></div></div>
 
-<figure class="">
-  <img src="/assets/images/posts/research/contactmodel_init.png" alt="" /></figure>
+<figure class=""><img src="/assets/images/posts/research/contactmodel_init.png" alt="" /></figure>
 
 <h3 id="visualizing-a-motion-plan">Visualizing a Motion Plan</h3>
 <p>For every motion plan that is generated and simulated, it can be visualized as a mp4 video.</p>
@@ -425,8 +424,7 @@ helpers.saveFigure()
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>helpers.visualizing(traced_path, workspace, "filename")
 </code></pre></div></div>
 <p>Using the default taskspace and <code class="language-plaintext highlighter-rouge">3_sample_path.csv</code>, the resulting video is:</p>
-<figure class="">
-  <img src="/assets/images/posts/research/contactmodel_pathing.gif" alt="" /></figure>
+<figure class=""><img src="/assets/images/posts/research/contactmodel_pathing.gif" alt="" /></figure>
 
 <p>Happy tendon driven continuum robotic simulating!</p>
 
@@ -438,10 +436,10 @@ helpers.saveFigure()
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:Ashwin" role="doc-endnote">
+    <li id="fn:Ashwin">
       <p>K.P. Ashwin, Soumya Kanti Mahapatra, Ashitava Ghosal: Profile and contact force estimation of cable-driven continuum robots in presence of obstacles. Mechanism and Machine Theory, 164:104404, 2021. doi: <a href="https://doi.org/10.1016/j.mechmachtheory.2021.104404">10.1016/j.mechmachtheory.2021.104404</a> <a href="#fnref:Ashwin" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:Rao" role="doc-endnote">
+    <li id="fn:Rao">
       <p>Priyanka Rao, Itai Spigelman, Oren Salzman, Jessica Burgner-Kahrs: Computationally Efficient Lookahead Search for Contact-aided Navigation for Tendon-driven Continuum Robots. CRL, 164:104404, 2024. <a href="https://crl.utm.utoronto.ca/assets/paper/2024_ROBOSOFT_Lookahead.pdf">pdf</a> <a href="#fnref:Rao" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:Rao:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
     </li>
   </ol>
@@ -464,7 +462,7 @@ helpers.saveFigure()
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#research" class="page__taxonomy-item" rel="tag">research</a>
+      <a href="/categories/#research" class="page__taxonomy-item p-category" rel="tag">research</a>
     
     </span>
   </p>
@@ -472,19 +470,20 @@ helpers.saveFigure()
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-06-14T00:00:00-04:00">2024-06-14</time></p>
-
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-06-14T00:00:00-04:00">2024-06-14</time></p>
 
       </footer>
 
       <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
   
 
   <a href="https://twitter.com/intent/tweet?text=Open+Source+TDCR+Contact+Model%20https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2024%2F06%2F14%2Ftdcr-contact-model.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2024%2F06%2F14%2Ftdcr-contact-model.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.opencontinuumrobotics.com%2Fresearch%2F2024%2F06%2F14%2Ftdcr-contact-model.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.opencontinuumrobotics.com/research/2024/06/14/tdcr-contact-model.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -495,7 +494,8 @@ helpers.saveFigure()
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/research/2026/05/28/sb-ftl-cr-planner.html" class="pagination--pager" title="Open Source FTL Motion Planner
+">Next</a>
     
   </nav>
 
@@ -508,6 +508,7 @@ helpers.saveFigure()
   
 </div>
 
+      
     </div>
 
     
@@ -519,6 +520,8 @@ helpers.saveFigure()
 <!-- end custom footer snippets -->
         <div class="page__footer-follow">
   <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
     
 
     
@@ -539,7 +542,7 @@ helpers.saveFigure()
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2024 Open Continuum Robotics Project. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2026 <a href="https://www.opencontinuumrobotics.com"></a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -558,6 +561,5 @@ helpers.saveFigure()
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
   </script>
-
   </body>
 </html>
