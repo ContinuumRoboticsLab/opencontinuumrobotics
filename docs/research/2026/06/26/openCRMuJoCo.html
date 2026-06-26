@@ -1,0 +1,550 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-GB" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Introducing OpenCR-MuJoCo -</title>
+<meta name="description" content="An open-source MuJoCo workflow for tendon-driven continuum robots, contact-rich manipulation, and reproducible benchmarking.">
+
+
+  <meta name="author" content="Chengnan (Jimmy) Shentu">
+  
+  <meta property="article:author" content="Chengnan (Jimmy) Shentu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Introducing OpenCR-MuJoCo">
+<meta property="og:url" content="http://localhost:4000/research/2026/06/26/openCRMuJoCo.html">
+
+
+  <meta property="og:description" content="An open-source MuJoCo workflow for tendon-driven continuum robots, contact-rich manipulation, and reproducible benchmarking.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/research/mujoco/teaser.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2026-06-26T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/research/2026/06/26/openCRMuJoCo.html">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:4000/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:4000/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="http://localhost:4000/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="http://localhost:4000/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L7XX6LPRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7XX6LPRC');
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/openCRProject_logo_header.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/software/"
+                
+                
+              >Software</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/hardware/"
+                
+                
+              >Hardware</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/cjs_author.jpg" alt="Chengnan (Jimmy) Shentu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Chengnan (Jimmy) Shentu</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>PhD Candidate. Computer Science.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">University of Toronto, Canada</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:cshentu@cs.toronto.edu" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/chengnan-jimmy-shentu" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Introducing OpenCR-MuJoCo">
+    <meta itemprop="description" content="An open-source MuJoCo workflow for tendon-driven continuum robots, contact-rich manipulation, and reproducible benchmarking.">
+    <meta itemprop="datePublished" content="2026-06-26T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/research/2026/06/26/openCRMuJoCo.html" itemprop="url">Introducing OpenCR-MuJoCo
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2026-06-26T00:00:00-04:00">2026-06-26</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#building-on-the-existing-foundation">Building on the Existing Foundation</a></li><li><a href="#what-we-contribute">What We Contribute</a></li><li><a href="#validation-from-mechanics-to-hardware-to-policies">Validation: From Mechanics to Hardware to Policies</a></li><li><a href="#what-is-included">What Is Included</a></li><li><a href="#our-vision-for-future-work">Our Vision for Future Work</a></li></ul>
+            </nav>
+          </aside>
+        
+        <figure class=""><a href="/assets/images/posts/research/mujoco/teaser.png" class="image-popup"><img src="/assets/images/posts/research/mujoco/teaser.png" alt="" /></a></figure>
+
+<p>We are excited to introduce <strong>OpenCR-MuJoCo</strong>, an open-source project that brings tendon-driven continuum robots (TDCRs) into native MuJoCo through a mechanics-informed representation.</p>
+
+<p>The motivation is simple. Continuum robots are compelling because they bend, conform, and make compliant contact along their whole body. That distributed compliance is one of the reasons they are promising for constrained manipulation, medical robotics, inspection, and delicate physical interaction.</p>
+
+<p>It is also one of the reasons they are hard to simulate. For many existing learning and manipulation workflows, mature simulation infrastructure has become part of the research loop: fast rollouts, contact-rich scenes, robot arms, objects, actuators, teleoperation, and standard interfaces to learning code. In continuum robotics, we have a strong modeling foundation, but it is often harder to plug that foundation directly into the everyday simulation workflows used for contact-rich robot learning.</p>
+
+<p>OpenCR-MuJoCo is our attempt to make that easier.</p>
+
+<h2 id="building-on-the-existing-foundation">Building on the Existing Foundation</h2>
+
+<p>Continuum robotics has benefited enormously from physically grounded simulation methods. Cosserat rod models, finite-element methods, discrete elastic rod formulations, and tools such as SoRoSim, SOFA, Elastica, DisMech, and related simulators have shaped how the field understands continuum robot mechanics. These methods remain important, and our work is very much built on the foundation they provide. Here, we ask a more infrastructure-oriented question:</p>
+
+<p><strong>Can we put a TDCR directly inside MuJoCo in a way that is simple, fast, interpretable, and accurate enough to support real robot workflows?</strong></p>
+
+<p>The answer we explore in OpenCR-MuJoCo is deliberately simple in nature. We discretize the continuum backbone into a serial chain of rigid links connected by elastic joints. The key is that the joint stiffnesses are derived from the robot’s material and geometric properties, rather than treated only as arbitrary fit parameters. Tendons are routed through sites along the backbone and actuated using MuJoCo’s native tendon model.</p>
+
+<p>This lets the TDCR live as a native MuJoCo model: it can contact objects, share a scene with a robot arm, use standard MuJoCo actuators and tendons, and connect naturally to teleoperation and learning code. At the same time, the model keeps an interpretable relationship to the underlying continuum mechanics.</p>
+
+<figure class=""><a href="/assets/images/posts/research/mujoco/method.png" class="image-popup" title="Mechanics-informed TDCR discretization and native MuJoCo integration.
+"><img src="/assets/images/posts/research/mujoco/method.png" alt="" /></a><figcaption>
+      Mechanics-informed TDCR discretization and native MuJoCo integration.
+
+    </figcaption></figure>
+
+<h2 id="what-we-contribute">What We Contribute</h2>
+
+<p>The main contribution is a practical way to represent and use TDCRs inside native MuJoCo, built around this mechanics-informed discretization.</p>
+
+<p>On the modeling side, the TDCR backbone is represented by rigid links and elastic joints whose stiffness comes from beam theory. As the discretization is refined, the approximation converges toward the continuum rod model, while each parameter still has a physical interpretation. In practice, this gives a useful balance: the model is simple enough to run quickly inside MuJoCo, but structured enough that changing material, geometry, tendon routing, or discretization resolution remains meaningful.</p>
+
+<p>On the systems side, the model is encoded in standard MJCF and uses MuJoCo’s existing physics pipeline. That means native tendon actuation, contact handling, rigid-object interaction, and robot-arm integration happen in one MuJoCo scene. For contact-rich manipulation, this is especially useful: the contact locations and forces do not need to be specified ahead of time, but can emerge from the interaction between the compliant robot body, the objects, and the environment.</p>
+
+<p>This is the part we are most excited about for the community. If continuum robots can be easier to instantiate, control, validate, and benchmark in a common simulation environment, then more researchers can compare methods on shared tasks instead of rebuilding similar infrastructure from scratch.</p>
+
+<h2 id="validation-from-mechanics-to-hardware-to-policies">Validation: From Mechanics to Hardware to Policies</h2>
+
+<p>A modeling workflow only becomes useful when researchers can trust it for the questions they want to ask. For OpenCR-MuJoCo, we evaluated that trust at three levels.</p>
+
+<p>First, we compare against <strong>SoRoSim</strong>, a well-established Cosserat rod simulator. This is an important reference point because it tests whether the MuJoCo discretization behaves like a continuum-mechanics model, not merely whether it looks plausible. We evaluate static equilibrium shapes and dynamic tip-release trajectories across two materials spanning a large stiffness range, randomized loading conditions, and multiple discretization resolutions. In the practical operating regime used in our experiments, the static and dynamic errors are below 1% of robot length while maintaining real-time simulation.</p>
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="/assets/images/posts/research/mujoco/sorosim_statics_shapes.png" alt="Static TDCR shapes from MuJoCo compared with SoRoSim references." />
+    </td>
+    <td width="50%">
+      <img src="/assets/images/posts/research/mujoco/sorosim_statics_error.png" alt="Static tip error versus discretization resolution." />
+    </td>
+  </tr>
+</table>
+
+<figure class=""><a href="/assets/images/posts/research/mujoco/sorosim_dynamics_overview.png" class="image-popup" title="Dynamic tip-release trajectories from MuJoCo compared with SoRoSim references.
+"><img src="/assets/images/posts/research/mujoco/sorosim_dynamics_overview.png" alt="" /></a><figcaption>
+      Dynamic tip-release trajectories from MuJoCo compared with SoRoSim references.
+
+    </figcaption></figure>
+
+<p>Second, we compare against <strong>real hardware</strong>. We calibrate the MuJoCo model to a physical three-segment, nine-tendon TDCR. After system identification, the model reaches a mean tip tracking error of about 7.7 mm, or 4.1% of the 186.5 mm robot length, on held-out hardware data. This test is important because real TDCRs include effects that are difficult to model perfectly, such as friction, hysteresis, assembly tolerances, and tendon pretension.</p>
+
+<p>Third, we test whether the native MuJoCo representation is useful for <strong>policy learning and sim-to-real transfer</strong>. We collect teleoperated demonstrations in simulation, train state-based imitation-learning policies, and deploy them zero-shot on the physical robot. The tasks are intentionally contact-rich: one policy wraps the continuum body around a cylinder to lift and drop it into a bin, while another flips a small wall-mounted switch from behind. In the reported experiments, real-world success rates match or slightly exceed simulation: 76% for the grasping task and 78% for the switch task.</p>
+
+<video src="/assets/images/posts/research/mujoco/opencr_mujoco_video.mp4" controls="" muted="" playsinline="" poster="/assets/images/posts/research/mujoco/opencr_mujoco_video_poster.jpg" style="display:block; width:100%; height:auto;"></video>
+
+<p>We see this policy transfer as the ultimate practical test of the approach. Matching a reference model is necessary, and matching hardware trajectories is encouraging, but contact-rich manipulation asks whether the MuJoCo integration supports a full research workflow: model generation, calibration, teleoperation, data collection, policy training, and real robot deployment.</p>
+
+<h2 id="what-is-included">What Is Included</h2>
+
+<p>OpenCR-MuJoCo is meant to be research infrastructure, not just a static release for one paper. The repository includes:</p>
+
+<ul>
+  <li>A config-driven TDCR generator for material-based stiffness, pretension, collision settings, and modular heterogeneous robots.</li>
+  <li>Native MuJoCo scenes for TDCR-only setups and TDCRs mounted on a Franka Panda arm.</li>
+  <li>Teleoperation and controller tools for joint- and task-space TDCR control.</li>
+  <li>Evaluation scripts and bundled reference data for reproducing the validation.</li>
+</ul>
+
+<p>For a new user, the intended workflow is lightweight: choose a JSON configuration, generate a MuJoCo scene, and run it with our teleop controller or a custom control loop.</p>
+
+<table>
+  <tr>
+    <td width="33%">
+      <img src="/assets/images/posts/research/mujoco/tdcr_tip_trace.gif" alt="Closed-loop TDCR tip tracing." />
+    </td>
+    <td width="33%">
+      <img src="/assets/images/posts/research/mujoco/franka_tdcr_trace.gif" alt="Station keeping while the Franka arm moves." />
+    </td>
+    <td width="33%">
+      <img src="/assets/images/posts/research/mujoco/kick_goal.gif" alt="Elastic kick interaction demo." />
+    </td>
+  </tr>
+</table>
+
+<h2 id="our-vision-for-future-work">Our Vision for Future Work</h2>
+
+<p>We are releasing OpenCR-MuJoCo because we want continuum robotics to have simulation infrastructure that is easier to use, easier to reproduce, and easier to benchmark with.</p>
+
+<p>Many groups build different TDCRs with different tendon routings, different materials, and for different tasks. That diversity is valuable. At the same time, it can make methods difficult to compare. We hope OpenCR-MuJoCo can provide one useful common ground.</p>
+
+<p>There is still a lot to do. OpenCR-MuJoCo currently focuses on slender tendon-driven continuum robots where the Kirchhoff rod assumptions are appropriate. Other soft robot morphologies, richer sensing, shape feedback, vision-based policies, broader benchmarks, and deeper comparisons between learning methods are all open directions.</p>
+
+<p>If you work on continuum robot modeling, control, learning, hardware design, or benchmarking, we would love for you to try it and tell us what would make it more useful. Bug reports, feature requests, benchmark ideas, new robot configurations, and pull requests are all welcome.</p>
+
+<p>Try the demo, clone the repository, reproduce the validation, or build a model of your own TDCR! We are looking forward to seeing what the community does with it.</p>
+
+<p><a href="https://continuumroboticslab.github.io/opencr-mujoco/" class="btn btn--success">Project Page</a>
+<a href="https://github.com/ContinuumRoboticsLab/opencr-mujoco" class="btn btn--danger">GitHub</a> 
+<a href="https://arxiv.org/abs/2606.22397" class="btn btn--info">Paper</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#research" class="page__taxonomy-item p-category" rel="tag">research</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-06-26T00:00:00-04:00">2026-06-26</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Introducing+OpenCR-MuJoCo%20http%3A%2F%2Flocalhost%3A4000%2Fresearch%2F2026%2F06%2F26%2FopenCRMuJoCo.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fresearch%2F2026%2F06%2F26%2FopenCRMuJoCo.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/research/2026/06/26/openCRMuJoCo.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/research/2026/05/28/sb-ftl-cr-planner.html" class="pagination--pager" title="Open Source FTL Motion Planner
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/ContinuumRoboticsLab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 <a href="http://localhost:4000"></a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+  </body>
+</html>

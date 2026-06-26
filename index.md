@@ -13,11 +13,16 @@ feature_row:
     excerpt: "A set of MATLAB and Python functions for visualization and plotting of continuum robots. And utility functions to support your research."
     url: /hands-on/2023/01/24/openCRVis.html
     btn_class: "btn--success"
-  - image_path: /assets/images/posts/hands-on/openCR_actuationModule.jpg
-    title: "OpenCR Hardware"
-    excerpt: "CAD drawings, components, assembly instructions, code, etc. for you to build a continuum robot for research."
-    url: /hardware/
+  - image_path: /assets/images/tdcr_tip_trace.gif
+    title: "OpenCR-MuJoCo"
+    excerpt: "A native MuJoCo simulation of continuum robots. Tendon forces, body contact, and dynamics in a single physics pipeline!"
+    url: /research/2026/06/26/openCRMuJoCo.html
     btn_class: "btn--info"
+  # - image_path: /assets/images/posts/hands-on/openCR_actuationModule.jpg
+  #   title: "OpenCR Hardware"
+  #   excerpt: "CAD drawings, components, assembly instructions, code, etc. for you to build a continuum robot for research."
+  #   url: /hardware/
+  #   btn_class: "btn--info"
 ---
 &nbsp;  
 # Welcome to the Open CR Project 

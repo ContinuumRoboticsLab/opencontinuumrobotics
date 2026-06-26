@@ -238,4 +238,10 @@ var store = [{
         "tags": [],
         "url": "/research/2026/05/28/sb-ftl-cr-planner.html",
         "teaser": "/assets/images/posts/research/FTLteaser.png"
+      },{
+        "title": "Introducing OpenCR-MuJoCo",
+        "excerpt":"We are excited to introduce OpenCR-MuJoCo, an open-source project that brings tendon-driven continuum robots (TDCRs) into native MuJoCo through a mechanics-informed representation. The motivation is simple. Continuum robots are compelling because they bend, conform, and make compliant contact along their whole body. That distributed compliance is one of the reasons...","categories": ["research"],
+        "tags": [],
+        "url": "/research/2026/06/26/openCRMuJoCo.html",
+        "teaser": "/assets/images/posts/research/mujoco/teaser.png"
       }]

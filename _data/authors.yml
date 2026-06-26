@@ -83,7 +83,7 @@ os:
 
 aa:
   name        : "Ankit Aggarwal"
-  bio         : "Mechatronics Engineering Student"
+  bio         : "Mechatronics Engineering Student."
   avatar      : "/assets/images/ankit.jpeg"
   location    : "Manipal Institute of Technology, India"
   linkedin    : "ankitaggarw"
@@ -94,7 +94,7 @@ aa:
 
 nb: 
   name        : "Nicholas Baldassini"
-  bio         : "MSc Computer Science Student"
+  bio         : "MSc Student. Computer Science."
   avatar      : "/assets/images/nb_author.png"
   location    : "University of Toronto, Canada"
   linkedin    : "nicholas-baldassini-6584821b6"
@@ -102,3 +102,14 @@ nb:
   - label     : "Email"
     icon      : "fas fa-fw fa-envelope-square"
     url       : "mailto:nicholas.baldassini@mail.utoronto.ca"
+
+cjs:
+  name   :  "Chengnan (Jimmy) Shentu"
+  bio    :  "PhD Candidate. Computer Science."
+  avatar      : "/assets/images/cjs_author.jpg"
+  location    : "University of Toronto, Canada"
+  linkedin    : "chengnan-jimmy-shentu"
+  links:
+  - label     : "Email"
+    icon      : "fas fa-fw fa-envelope-square"
+    url       : "mailto:cshentu@cs.toronto.edu"

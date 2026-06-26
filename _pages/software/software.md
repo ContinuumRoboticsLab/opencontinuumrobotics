@@ -16,7 +16,7 @@ feature_row1:
        style="width:400px; max-width:100%; height:auto; flex:0 0 auto;" />
   <div style="flex:1 1 320px; min-width:280px;" markdown="1">
 
-## OpenCR MuJoCo
+## OpenCR-MuJoCo
 A native MuJoCo simulation of tendon-driven continuum robots. Tendon forces, body contact, and dynamics in a single physics pipeline!
 
 <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin:0.6rem 0;">
@@ -26,7 +26,8 @@ A native MuJoCo simulation of tendon-driven continuum robots. Tendon forces, bod
 </div>
 
 [GitHub](https://github.com/ContinuumRoboticsLab/opencr-mujoco){: .btn .btn--info}
-[Learn More](https://continuumroboticslab.github.io/opencr-mujoco/){: .btn .btn--success}
+[Blog Post]({% post_url /2026-06-26-openCRMuJoCo %}){: .btn .btn--success}
+[Learn More](https://continuumroboticslab.github.io/opencr-mujoco/){: .btn .btn--danger}
 
   </div>
 </div>
